@@ -26,3 +26,15 @@ Route::get('signUp', function (){
 Route::get('cart', function (){
 	return view('cart');
 });
+
+Route::get('addProduct', function (){
+	return view('addProduct');
+});
+
+Route::get('events', function(){
+	return view('events');
+});
+
+Route::get('pastEvents', function () {
+	return view('pastEvents');
+});

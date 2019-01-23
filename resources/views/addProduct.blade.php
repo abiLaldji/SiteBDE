@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Panier</title>
+	<title>Ajout de produit</title>
 	<meta charset="utf-8">
-
 	<link rel="stylesheet" type="text/css" href="./css/home.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
-
 </head>
 <body>
 
-<header id="header">
+	<header id="header">
         <div id="logo-cesi">
             <img src="./pictures/logoCesi.png">
         </div>
@@ -49,8 +47,8 @@
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="pastEvents">A venir</a></li>
-                <li><a href="#">Historique</a></li>
+                <li><a href="#">A venir</a></li>
+                <li><a href="pastEvents">Historique</a></li>
             </ul>
          </li>
 
@@ -66,83 +64,67 @@
   </div>
 </nav>
 
-
-
 <main>
 
 	<article class="article-center2">
 
-		<h2 class="h2white">Panier</h2>
-
 		<section class="section-center">
 
-			
 
-				<table class="table-cart">
 
-					<tr>
-						<th>Image</th>
-						<th>Description</th>
-						<th>Quantité</th>
-						<th>Prix unitaire</th>
-						<th>Prix total</th>
-						<th>Annuler</th>
-					</tr>
 
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
-					</tr>
 
-					<tr>
-					<td><img src="./pictures/stylo1.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
-					</tr>
+			<h2> Ajout de produit </h2>
 
-					<tr>
-					<td><img src="./pictures/stylo3.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
-					</tr>
+				<div>
+			    <img src="./pictures/stylo2.png" alt="" class="picture-product">
+			    </div>
+    				<label class="btn btn-default btn-file">
+    				Parcourir <input type="file" style="display: none;">
+					</label>
 
-				</table>
+				<form>
+					<div class="formulaire">
+  						<div class="form-group">
+    						<input type="text" class="form-control" placeholder="Nom du produit">
+ 					 	</div>
+ 					 	<select class=form-control>
+							 <option value=un>T-shirt</option>
+							 <option value=deux>Pull</option>
+							 <option value=trois>Goodies</option>
+						</select>
+  						 <div class="form-group">
+    						<input type="price" class="form-control" placeholder="Prix">
+  						</div>
+  						<div class="form-group">
+    						<input type="text" class="form-control" placeholder="Description">
+  						</div>
 
-					<div class="confirmation-cart">
-						<p class="prix-total-cart">Prix total : <span class="right">500K €</span></p>						
-						<button type="button" values="Commander" onclick="" class="order-cart">Commander</button>
-					</div>
+  					</div>
+
+  					<div class="connecIns">
+  							<button type="submit" class="btn btn-primary">Valider</button>
+  					</div>
+				</form>
+
+
+
+
+
+
+
+
+
 
 		</section>
 
+
 	</article>
-
-
-
-
-
-
 
 </main>
 
+<footer>   
 
-
-
-
-
-
-
-    <footer>      
         <p class="footer-text">
             Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
         </p>
@@ -150,7 +132,4 @@
     </footer>
 
 </body>
-
-
-
 </html>

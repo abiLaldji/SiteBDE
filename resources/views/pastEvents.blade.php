@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Panier</title>
+	<title>Évènements passés</title>
 	<meta charset="utf-8">
-
 	<link rel="stylesheet" type="text/css" href="./css/home.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
-
 </head>
 <body>
 
-<header id="header">
+
+	<header id="header">
         <div id="logo-cesi">
             <img src="./pictures/logoCesi.png">
         </div>
@@ -49,8 +48,8 @@
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="pastEvents">A venir</a></li>
-                <li><a href="#">Historique</a></li>
+                <li><a href="#">A venir</a></li>
+                <li><a href="pastEvents">Historique</a></li>
             </ul>
          </li>
 
@@ -66,91 +65,74 @@
   </div>
 </nav>
 
-
-
 <main>
 
-	<article class="article-center2">
+	<article class="article-center4">
 
-		<h2 class="h2white">Panier</h2>
+		<h2 class="h2white"> Évènements passés </h2>
 
 		<section class="section-center">
-
-			
 
 				<table class="table-cart">
 
 					<tr>
-						<th>Image</th>
-						<th>Description</th>
-						<th>Quantité</th>
-						<th>Prix unitaire</th>
-						<th>Prix total</th>
-						<th>Annuler</th>
+						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
+						<td class="td-event-left">
+							<p class="bold">Titre :</p>
+							<p class="bold">Organisateur :</p>
+							<p class="bold">Date :</p> 
+							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							<div>
+  								<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
+  							</div>
+						</td>
 					</tr>
 
 					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
+					<td><img src="./pictures/stylo1.png" alt="" class="pic-event"></td>
+						<td class="td-event-left">
+							<p class="bold">Titre :</p>
+							<p class="bold">Organisateur :</p>
+							<p class="bold">Date :</p> 
+							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							<div>
+  								<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
+  							</div>
+  						</td>
 					</tr>
 
 					<tr>
-					<td><img src="./pictures/stylo1.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
-					</tr>
-
-					<tr>
-					<td><img src="./pictures/stylo3.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
+						<td><img src="./pictures/stylo3.png" alt="" class="pic-event"></td>
+							<td class="td-event-left">
+								<p class="bold">Titre :</p>
+								<p class="bold">Organisateur :</p>
+								<p class="bold">Date :</p> 
+								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+								<div>
+  									<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
+  								</div>
+							</td>
+							
 					</tr>
 
 				</table>
 
-					<div class="confirmation-cart">
-						<p class="prix-total-cart">Prix total : <span class="right">500K €</span></p>						
-						<button type="button" values="Commander" onclick="" class="order-cart">Commander</button>
-					</div>
+
 
 		</section>
 
 	</article>
-
-
-
-
-
-
-
+	
 </main>
 
-
-
-
-
-
-
-
-    <footer>      
+<footer>   
         <p class="footer-text">
             Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
         </p>
 
-    </footer>
+</footer>
+
+
 
 </body>
-
-
-
 </html>

@@ -47,12 +47,12 @@
       
          </li>
 
-         <li><a href="#" class="categories">Évènements</a></li>
+         <li><a href="events" class="categories">Évènements</a></li>
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#">A venir</a></li>
-                <li><a href="#">Historique</a></li>
+                <li><a href="pastEvents">Historique</a></li>
             </ul>
          </li>
 
@@ -120,5 +120,9 @@
 
     </footer>
 
+
+
 </body>
+
+
 </html>

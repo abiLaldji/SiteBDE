@@ -93,6 +93,8 @@
     float: left;
 }
 
+
+
 .article-home
 {
     background-color: green;
@@ -112,7 +114,6 @@
 h2
 {
     text-align: center;
-    font-weight: bold;
     color: white;
 }
 
@@ -127,6 +128,9 @@ footer
     color: gray;
     text-align: center;
     display: inline;
+    position: relative;
+    bottom: 0;
+    clear: both;
 }
 
 .dropdown
@@ -143,6 +147,7 @@ footer
 {
     padding-right: 20%;
     padding-left: 20%;
+    margin: 0;
 }
 
 .img-accueil
@@ -172,14 +177,14 @@ footer
     padding-top: 0%;
 }
 
-.gras
+.bold
 {
     font-weight: bold;
 }
 
 h3
 {
-    font-weight: bold;
+    text-align: center;
 }
 
 /* Article principal des pages Inscription et connection*/
@@ -218,14 +223,6 @@ h3
 /*Section centrale des section inscription et connection*/
 .section-center
 {   
-    background-color: white;
-    border: solid black 2px;
-    border-radius: 10px;
-}
-
-/*Section centrale de la page panier*/
-.section-center2
-{
     background-color: white;
     border: solid black 2px;
     border-radius: 10px;
@@ -286,25 +283,175 @@ th
     max-height: 20%;
 }
 
-.confirmation-cart
-{
-    display: inline-flex;
-    margin-left: 65%;
-    margin-bottom: 5%;
-    background-color: yellow;
-}
-
 .prix-total-cart
 {
     border: solid black 2px;
     border-radius: 7px;
     color: white;
     background-color: rgb(40, 40, 40);
+    width: 15%;
+    margin-left: 40%;
+    float: left;
+    margin-bottom: 30px;
 }
 
 
 
-.order
+.order-cart
 {
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    background-color: lightblue;
+    border: solid black 2px;
+}
+
+
+
+/*Ajout de produit*/
+
+
+.picture-product
+{   
+    margin-top: 3%;
+    max-width: 30%;
+    border: solid black 2px;
+    margin-left: 35%;
+}
+
+.btn-file
+{
+    margin-left: 56%;
+}
+
+/*Aside page evenements*/
+.aside-event
+{   
+
+    background-color: rgb(40, 40, 40);
     float: right;
+    min-width: 30%;
+    max-width: 30%;
+    margin-right: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: solid black 2px;
+    border-radius: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/*Article principal de la page evenements*/
+.article-center3
+{   
+    margin-left: 5%;
+    margin-right: 35%;
+    background-color: rgb(40, 40, 40);
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.section-aside-event
+{
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.h2white
+{
+    color:white;
+    margin-bottom: 6%;
+}
+
+.desc-event-month
+{
+    border: solid black 2px;
+    border-radius: 10px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+
+}
+
+.pic-view
+{
+    border: solid black 4px;
+    border-radius: 10px;
+    margin: 10%;
+}
+
+.event-month-pic
+{
+    max-width: 60%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+}
+
+/*Massage d'erreur en cas de mdp incorrect ou adresse mail incorrect*/
+.error
+{
+    color: red;
+}
+
+.desc-event
+{
+}
+
+table
+{
+    margin-top: 7%;
+}
+
+.td-event-left
+{
+    text-align: left;
+    padding-bottom: 1%;
+}
+
+.pic-event
+{
+    max-width: 80%;
+    max-height: 50%;
+}
+
+.td-img-event
+{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+main
+{
+    margin-top: -20px;
+}
+
+.button-ins-event
+{   
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: rgb(92, 136, 218);
+}
+
+/*Article principal de la page évenements passés*/
+.article-center4
+{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: rgb(40, 40, 40);
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.btn-infos
+{
+    float:right;
+    margin-right: 1%;
+    margin-bottom: 50%;
 }

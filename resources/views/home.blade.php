@@ -61,12 +61,12 @@
       
          </li>
 
-         <li><a href="#" class="categories">Évènements</a></li>
+         <li><a href="events" class="categories">Évènements</a></li>
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#">A venir</a></li>
-                <li><a href="#">Historique</a></li>
+                <li><a href="pastEvents">Historique</a></li>
             </ul>
          </li>
 
@@ -199,9 +199,9 @@ Animation du campus :
 </main>
 
     <footer>      
-        <p class="footer-text">
+        <div class="footer-text">
             Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
-        </p>
+        </div>
 
     </footer>
 
