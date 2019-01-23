@@ -79,4 +79,23 @@ class Controller extends BaseController
 
 		return redirect('/');
 	}
+
+	public function addProduct(){
+
+	}
+
+	public function getEvents(){
+		$events = [['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceci'],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic']];
+		return $events;
+	}
+
+	public function getIdeas(){
+		$ideas = [['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceci'],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic']];
+		return $ideas;
+	}
+
+	public function getMonthEvent(){
+		$event = ['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceci'];
+		return $event;
+	}
 }

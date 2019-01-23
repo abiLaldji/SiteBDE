@@ -68,7 +68,7 @@
     @else
       <ul class="nav navbar-nav navbar-right">
         <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-        <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
+        <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
       </ul>
     @endif
 

@@ -1,3 +1,7 @@
+<?php 
+use App\Http\Controllers\Controller
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +63,7 @@
 
     <ul class="nav navbar-nav navbar-right">
       <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-      <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
+      <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
     </ul>
 
   </div>
@@ -75,45 +79,32 @@
 
 				<table class="table-cart">
 
+
+<?php 
+
+$controller = new Controller();
+$events = $controller->getEvents();
+
+ ?>
+ 					@for ($i = 0; $i < sizeof($events); $i++)
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
-							<p class="bold">Titre :</p>
-							<p class="bold">Organisateur :</p>
-							<p class="bold">Date :</p> 
-							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							<p class="bold">Titre : {{$events[$i]['title']}}</p>
+							<p class="bold">Organisateur : {{$events[$i]['organizator']}}</p>
+							<p class="bold">Date : {{$events[$i]['date']}}</p> 
+							<p class="desc-event"><span class="bold">Description : </span>{{$events[$i]['description']}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 							<div>
   								<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
   							</div>
 						</td>
 					</tr>
-
-					<tr>
-					<td><img src="./pictures/stylo1.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<p class="bold">Titre :</p>
-							<p class="bold">Organisateur :</p>
-							<p class="bold">Date :</p> 
-							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-							<div>
-  								<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
-  							</div>
-  						</td>
-					</tr>
-
-					<tr>
-						<td><img src="./pictures/stylo3.png" alt="" class="pic-event"></td>
-							<td class="td-event-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-								<div>
-  									<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
-  								</div>
-							</td>
-							
-					</tr>
+					@endfor
 
 				</table>
 

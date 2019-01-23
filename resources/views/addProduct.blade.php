@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +60,7 @@
 
     <ul class="nav navbar-nav navbar-right">
       <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-      <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
+      <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
     </ul>
 
   </div>
@@ -83,21 +85,21 @@
     				Parcourir <input type="file" style="display: none;">
 					</label>
 
-				<form>
+				<form method="POST" action="addProduct">
 					<div class="formulaire">
   						<div class="form-group">
-    						<input type="text" class="form-control" placeholder="Nom du produit">
+    						<input type="text" class="form-control" placeholder="Nom du produit" name="name">
  					 	</div>
- 					 	<select class=form-control>
+ 					 	<select class=form-control name="category">
 							 <option value=un>T-shirt</option>
 							 <option value=deux>Pull</option>
 							 <option value=trois>Goodies</option>
 						</select>
   						 <div class="form-group">
-    						<input type="price" class="form-control" placeholder="Prix">
+    						<input type="price" class="form-control" placeholder="Prix" name="price">
   						</div>
   						<div class="form-group">
-    						<input type="text" class="form-control" placeholder="Description">
+    						<input type="text" class="form-control" placeholder="Description" name="description">
   						</div>
 
   					</div>
