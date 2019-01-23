@@ -333,8 +333,8 @@ th
     min-width: 30%;
     max-width: 30%;
     margin-right: 2%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
     border: solid black 2px;
     border-radius: 20px;
     padding-top: 2%;
@@ -410,7 +410,7 @@ table
 .td-event-left
 {
     text-align: left;
-    padding-bottom: 1%;
+    padding-bottom: 1%;s
 }
 
 .pic-event

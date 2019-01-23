@@ -38,3 +38,8 @@ Route::get('events', function(){
 Route::get('pastEvents', function () {
 	return view('pastEvents');
 });
+
+Route::get('ideaBox', function ()
+{
+	return view('ideaBox');
+});

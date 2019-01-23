@@ -54,7 +54,7 @@
             </ul>
          </li>
 
-        <li><a href="#" class="categories">Boite à idées</a></li>
+        <li><a href="ideaBox" class="categories">Boite à idées</a></li>
 
     </ul>
 

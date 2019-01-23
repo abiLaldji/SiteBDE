@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Évènements</title>
+	<title>Boite à idées</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="./css/home.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -71,7 +71,7 @@
 
 	<aside class="aside-event">
 
-		<h2 class="h2white">Évènement du mois</h2>
+		<h2 class="h2white">Création d'évènement</h2>
 
 
 
@@ -103,7 +103,7 @@
 
 	<article class="article-center3">
 
-		<h2 class="h2white">Évènements à venir</h2>
+		<h2 class="h2white">Liste des idées</h2>
 
 		<section class="section-center">
 
