@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,10 +60,17 @@
 
     </ul>
 
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-      <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
-    </ul>
+    @if (isset($_SESSION['firstName']))
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{$_SESSION['firstName']}} {{$_SESSION['lastName']}}</a></li>
+        <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in"></span> Deconnexion</a></li>
+      </ul>
+    @else
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+        <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
+      </ul>
+    @endif
 
   </div>
 </nav>
@@ -96,7 +105,8 @@
 						<td><i class="fas fa-times cross"></i></td>
 					</tr>
 
-					<td><img src="./pictures/stylo1.png" alt="" class="img-article"></td>
+					<tr>
+						<td><img src="./pictures/stylo1.png" alt="" class="img-article"></td>
 						<td>Ce produit est très intéréssant</td>
 						<td>2</td>
 						<td>50</td>
@@ -104,7 +114,8 @@
 						<td><i class="fas fa-times cross"></i></td>
 					</tr>
 
-					<td><img src="./pictures/stylo3.png" alt="" class="img-article"></td>
+					<tr>
+						<td><img src="./pictures/stylo3.png" alt="" class="img-article"></td>
 						<td>Ce produit est très intéréssant</td>
 						<td>2</td>
 						<td>50</td>

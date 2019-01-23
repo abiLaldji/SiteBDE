@@ -17,12 +17,19 @@ Route::get('/', function () {
 
 Route::get('signIn', function () {
 	return view('signIn');
-});
+})->name('signIn');
 
 Route::get('signUp', function (){
 	return view('signUp');
-});
+})->name('signUp');
 
 Route::get('cart', function (){
 	return view('cart');
 });
+
+
+Route::post('/signUp', 'Controller@signUp');
+
+Route::post('/signIn', 'Controller@signIn');
+
+Route::get('/deconnexion', 'Controller@deconnect');

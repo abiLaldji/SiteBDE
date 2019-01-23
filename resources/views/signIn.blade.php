@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,10 +62,17 @@
 
     </ul>
 
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-      <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
-    </ul>
+    @if (isset($_SESSION['firstName']))
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{$_SESSION['firstName']}} {{$_SESSION['lastName']}}</a></li>
+        <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in"></span> Deconnexion</a></li>
+      </ul>
+    @else
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+        <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
+      </ul>
+    @endif
 
   </div>
 </nav>
@@ -77,33 +86,42 @@
 
 			<h2>Connexion</h2>
 
-			<article class="article2">
 
-				<form>
-					<div class="formulaire">
-  						<div class="form-group">
-    						<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Adresse mail">
- 					 	</div>
-  						<div class="form-group">
-    						<input type="password" class="form-control" placeholder="Mot de passe">
-  						</div>
-  					</div>
+      @if (isset($_SESSION['firstName']))
+        <p> Vous êtes déjà connecté </p>
+      @else
+  			<article class="article2">
 
-  					<div class="connecIns">
-  						<div class="form-check">
-   						 	<input type="checkbox" class="form-check-input">
-    						<label class="form-check-label">Se souvenir de moi</label>
-  						</div>
-  							<button type="submit" class="btn btn-primary">Se connecter</button>
-  					</div>
-				</form>
+  				<form method="POST" action="signIn">
+  					<div class="formulaire">
 
-  				<div class="already">Pas encore inscrit ? <a href="signUp"><span>S'inscrire</span></a> </div>
+              @csrf
 
+    					<div class="form-group">
+      						<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Adresse mail" name="email">
+   					 	</div>
+    						<div class="form-group">
+      						<input type="password" class="form-control" placeholder="Mot de passe" name="password">
+    						</div>
+    					</div>
 
+              @if(isset($_GET['notRegistered']))
+                <p class="error">  Identifiants incorrect</p>
+              @endif
 
-			</article>
+    					<div class="connecIns">
+    						<div class="form-check">
+     						 	<input type="checkbox" class="form-check-input">
+      						<label class="form-check-label">Se souvenir de moi</label>
+    						</div>
+    							<button type="submit" class="btn btn-primary">Se connecter</button>
+    					</div>
+  				</form>
 
+    				<div class="already">Pas encore inscrit ? <a href="signUp"><span>S'inscrire</span></a> </div>
+
+  			</article>
+      @endif
 
 
 		</section>

@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,10 +60,17 @@
 
     </ul>
 
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-      <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
-    </ul>
+    @if (isset($_SESSION['firstName']))
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{$_SESSION['firstName']}} {{$_SESSION['lastName']}}</a></li>
+        <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in"></span> Deconnexion</a></li>
+      </ul>
+    @else
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+        <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
+      </ul>
+    @endif
 
   </div>
 </nav>
@@ -75,43 +84,61 @@
 
 			<h2>Inscription</h2>
 
-			<article class="article2">
 
-				<form>
-					<div class="formulaire">
+      @if (isset($_SESSION['firstName']))
+        <p> Vous êtes déjà connecté </p>
+      @else
+  			<article class="article2">
 
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Prenom">
-              </div>
+  				<form method="POST" action="signUp">
+  					<div class="formulaire">
 
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nom">
-              </div>
+                @csrf
 
-  						<div class="form-group">
-    						<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Adresse mail">
- 					 	  </div>
+                @isset ($_GET['fieldEmpty'])
+                  <p class="error">Tous les champs doivent être remplis<p>
+                @endisset
 
-  						<div class="form-group">
-    						<input type="password" class="form-control" placeholder="Mot de passe">
-  						</div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="firstName" placeholder="Prenom">
+                </div>
 
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="Confirmez le mot de passe">
-              </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="lastName" placeholder="Nom">
+                </div>
 
-  				</div>
+    						<div class="form-group">
+      						<input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Adresse mail">
+   					 	  </div>
 
-  					<div class="connecIns">
-  							<button type="submit" class="btn btn-primary">S'inscrire</button>
-  					</div>
+                @isset ($_GET['badEmail'])
+                  <p class="error">L'adresse mail doit être de type @viacesi.fr ou @cesi.fr</p>
+                @endisset
 
-				</form>
+    						<div class="form-group">
+      						<input type="password" class="form-control" name="password" placeholder="Mot de passe">
+    						</div>
 
-        <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="passwordConf" placeholder="Confirmez le mot de passe">
+                </div>
 
-			</article>
+                @isset ($_GET['differentPasswords'])
+                  <p class="error">Les mots de passe doivent être identique<p>
+                @endisset
 
+    				</div>
+
+    					<div class="connecIns">
+    							<button type="submit" class="btn btn-primary">S'inscrire</button>
+    					</div>
+
+  				</form>
+
+          <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
+
+  			</article>
+      @endif
 
 
 		</section>
