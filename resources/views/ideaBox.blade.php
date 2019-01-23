@@ -69,33 +69,51 @@
 
 
 
-	<aside class="aside-event">
+	<aside class="aside-ideaBox">
 
 		<h2 class="h2white">Création d'évènement</h2>
 
 
 
 
-		<section class="section-aside-event">
+		<section class="section-aside-ideaBox">
 
-			<h3>Titre évènement</h3>
+			<form method="POST" action="signUp">
+  					<div class="formulaire">
 
-			<div class="pic-view">
-				<img src="./pictures/stylo2.png" alt="" class="event-month-pic">
-			</div>
 
-				<div class="desc-event-month">
-					<p><span class="bold">Description :</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Titre">
+                </div>
 
-				</div>
+                <div class="form-group">
+                  <textarea class="form-control" placeholder="Description" rows="3"></textarea>
+                </div>
 
-		<p><span class="bold">Organisateur :</span></p>
-		<p><span class="bold">Date :</span></p>
+    			<div class="form-group">
+      				<input type="date" class="form-control optional" placeholder="Date (optionnel)">
+      				<p class="optional-text">Optionnel</p>
+   				</div>
+
+    				</div>
+
+
+    						<div class="center">
+			    			<img src="./pictures/stylo2.png" alt="" class="picture-event">
+          					</div>
+
+          					<div class="center">
+    								<label class="btn btn-default btn-file">
+    								Parcourir <input type="file" style="display: none;">
+									</label>
+							</div>
+
+    					<div class="connecIns">
+    							<button type="submit" class="btn btn-primary">Publier</button>
+
+    					</div>
+
+  				</form>
 
 		</section>
 
@@ -103,60 +121,104 @@
 
 	<article class="article-center3">
 
-		<h2 class="h2white">Liste des idées</h2>
+		<h2 class="h2white">Idées d'évènements</h2>
 
 		<section class="section-center">
 
-			<table class="table-cart">
+			<table class="table-event">
 
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
-							<p class="bold">Titre :</p>
-							<p class="bold">Organisateur :</p>
-							<p class="bold">Date :</p> 
-							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							<div class="desc-right">
+								<i class="fas fa-check"></i>
+								<i class="fas fa-times"></i>
+								<i class="fas fa-thumbs-up"></i>
+							</div>
+							<div class="desc-left">
+								<p class="bold">Titre :</p>
+								<p class="bold">Organisateur :</p>
+								<p class="bold">Date :</p> 
+								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							</div>
+							
 						</td>
-						<td class="td-img-event">
-							<div>
-  								<button type="submit" class="btn btn-primary">S'inscrire</button>
-  							</div>
-  						</td>
 					</tr>
 
 					<tr>
 					<td><img src="./pictures/stylo1.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
-							<p class="bold">Titre :</p>
-							<p class="bold">Organisateur :</p>
-							<p class="bold">Date :</p> 
-							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							<div class="desc-right">
+								<i class="fas fa-check"></i>
+								<i class="fas fa-times"></i>
+								<i class="fas fa-thumbs-up"></i>
+							</div>
+							<div class="desc-left">
+								<p class="bold">Titre :</p>
+								<p class="bold">Organisateur :</p>
+								<p class="bold">Date :</p> 
+								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							</div>
+							
 						</td>
-						<td class="td-img-event">
-							<div>
-  								<button type="submit" class="btn btn-primary">S'inscrire</button>
-  							</div>
-  						</td>
 					</tr>
 
 					<tr>
 						<td><img src="./pictures/stylo3.png" alt="" class="pic-event"></td>
 							<td class="td-event-left">
+								<div class="desc-right">
+									<i class="fas fa-check"></i>
+									<i class="fas fa-times"></i>
+									<i class="fas fa-thumbs-up"></i>
+								</div>
+								<div class="desc-left">
+									<p class="bold">Titre :</p>
+									<p class="bold">Organisateur :</p>
+									<p class="bold">Date :</p> 
+									<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+								</div>
+								
+							</td>
+					</tr>
+
+					<tr>
+						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
+						<td class="td-event-left">
+							<div class="desc-right">
+								<i class="fas fa-check"></i>
+								<i class="fas fa-times"></i>
+								<i class="fas fa-thumbs-up"></i>
+							</div>
+							<div class="desc-left">
 								<p class="bold">Titre :</p>
 								<p class="bold">Organisateur :</p>
 								<p class="bold">Date :</p> 
 								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-							</td>
-							<td class="td-img-event">
-								<div>
-	  								<button type="submit" class="btn btn-primary">S'inscrire</button>
-	  							</div>
-  							</td>
+							</div>
+							
+						</td>
+					</tr>
+
+					<tr>
+						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
+						<td class="td-event-left">
+							<div class="desc-right">
+								<i class="fas fa-check"></i>
+								<i class="fas fa-times"></i>
+								<i class="fas fa-thumbs-up"></i>
+							</div>
+							<div class="desc-left">
+								<p class="bold">Titre :</p>
+								<p class="bold">Organisateur :</p>
+								<p class="bold">Date :</p> 
+								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							</div>
+							
+						</td>
 					</tr>
 
 				</table>
-			
-			
+
 		</section>
 
 

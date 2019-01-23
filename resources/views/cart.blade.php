@@ -104,7 +104,7 @@
 						<td>2</td>
 						<td>50</td>
 						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
+						<td><i class="fas fa-times"></i></td>
 					</tr>
 
 					<tr>
@@ -114,7 +114,7 @@
 						<td>2</td>
 						<td>50</td>
 						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
+						<td><i class="fas fa-times"></i></td>
 					</tr>
 
 					<tr>
@@ -123,7 +123,7 @@
 						<td>2</td>
 						<td>50</td>
 						<td>100</td>
-						<td><i class="fas fa-times cross"></i></td>
+						<td><i class="fas fa-times"></i></td>
 					</tr>
 
 				</table>

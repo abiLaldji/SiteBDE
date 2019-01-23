@@ -272,10 +272,6 @@ th
     padding-right: 20%;
 }
 
-.cross
-{
-    color: red;
-}
 
 .img-article
 {
@@ -316,12 +312,6 @@ th
     margin-top: 3%;
     max-width: 30%;
     border: solid black 2px;
-    margin-left: 35%;
-}
-
-.btn-file
-{
-    margin-left: 56%;
 }
 
 /*Aside page evenements*/
@@ -339,8 +329,8 @@ th
     border-radius: 20px;
     padding-top: 2%;
     padding-bottom: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 /*Article principal de la page evenements*/
@@ -410,7 +400,8 @@ table
 .td-event-left
 {
     text-align: left;
-    padding-bottom: 1%;s
+    padding-bottom: 1%;
+    padding-right: 1%;
 }
 
 .pic-event
@@ -449,9 +440,105 @@ main
     padding-right: 4%;
 }
 
+.table-event
+{
+    margin-left: 3%;
+    margin-bottom: 6%;
+    width: 95%;
+    text-align: center;
+    display: block;
+    overflow-y: auto;
+    max-height: 515px;
+}
+
 .btn-infos
 {
-    float:right;
-    margin-right: 1%;
-    margin-bottom: 50%;
+    float: right;
+}
+
+.desc-left
+{
+    margin-right: 10%;
+}
+
+.desc-right
+{   
+    padding-top: 2%;
+    float: right;
+    text-align: center;
+    height: 100%;
+}
+
+.fa-times
+{   
+    width: 100%;
+    color: red;
+    font-size: 300%;
+}
+
+.fa-check
+{   
+    width: 100%;
+    color: green;
+    font-size: 300%;
+}
+
+.fa-thumbs-up
+{   
+    width: 100%;
+    color: rgb(92, 136, 218);
+    font-size: 300%;
+}
+
+.section-aside-ideaBox
+{
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.aside-ideaBox
+{   
+    background-color: rgb(40, 40, 40);
+    float: right;
+    min-width: 30%;
+    max-width: 30%;
+    margin-right: 2%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    border: solid black 2px;
+    border-radius: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.optional
+{
+    margin-bottom: 0%;
+}
+
+.optional-text
+{
+    font-size: 80%;
+    color: red;
+}
+
+.picture-event
+{   
+    text-align: center;
+    margin-top: 3%;
+    max-width: 58%;
+    border: solid black 2px;
+}
+
+.center
+{
+    text-align: center;
+}
+
+.right
+{
+    text-align: right;
 }

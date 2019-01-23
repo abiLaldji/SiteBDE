@@ -70,20 +70,18 @@
 
 	<article class="article-center2">
 
+    <h2 class="h2white"> Ajout de produit </h2>
+
 		<section class="section-center">
 
-
-
-
-
-			<h2> Ajout de produit </h2>
-
-				<div>
+				<div class="center">
 			    <img src="./pictures/stylo2.png" alt="" class="picture-product">
-			    </div>
+        </div>
+        <div class="center">
     				<label class="btn btn-default btn-file">
     				Parcourir <input type="file" style="display: none;">
-					</label>
+					 </label>
+        </div>
 
 				<form method="POST" action="addProduct">
 					<div class="formulaire">
@@ -99,7 +97,7 @@
     						<input type="price" class="form-control" placeholder="Prix" name="price">
   						</div>
   						<div class="form-group">
-    						<input type="text" class="form-control" placeholder="Description" name="description">
+    						<textarea class="form-control" placeholder="Description" rows="3"></textarea>
   						</div>
 
   					</div>
