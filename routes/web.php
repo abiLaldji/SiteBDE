@@ -50,6 +50,30 @@ Route::get('contact', function()
 	return view('contact');
 });
 
+Route::get('commentImageEvent', function (){
+	return view('commentImageEvent');
+});
+
+Route::get('imageEvent', function (){
+	return view('imageEvent');
+});
+
+Route::get('myAccount', function (){
+	return view('myAccount');
+});
+
+Route::get('shop', function (){
+	return view('shop');
+});
+
+Route::get('shopArticle', function (){
+	return view('shopArticle');
+});
+
+Route::get('shopCategory', function (){
+	return view('shopCategory');
+});
+
 Route::get('deconnexion', 'Controller@deconnect');
 
 Route::post('signUp', 'Controller@signUp');
