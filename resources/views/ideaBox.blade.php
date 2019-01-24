@@ -1,3 +1,7 @@
+<?php 
+use App\Http\Controllers\Controller
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +84,7 @@
 
 		<section class="section-aside-ideaBox">
 
-			<form method="POST" action="signUp">
+			<form method="POST" action="submitIdea">
   					<div class="formulaire">
 
 
@@ -101,12 +105,12 @@
 
 
     						<div class="center">
-			    			<img src="./pictures/stylo2.png" alt="" class="picture-event">
+			    			<img src="./pictures/stylo2.png" alt="" class="picture-event preview">
           					</div>
 
           					<div class="center">
     								<label class="btn btn-default btn-file">
-    								Parcourir <input type="file" style="display: none;">
+    								Parcourir <input type="file" style="display: none;" onchange="readURL(this);">
 									</label>
 							</div>
 
@@ -271,8 +275,11 @@
         <div class="footer-text">
             Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
         </div>
-
     </footer>
+
+
+
+<script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
 
 </body>
 

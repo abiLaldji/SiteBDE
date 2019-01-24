@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php 
+use App\Http\Controllers\Controller;
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -38,6 +41,7 @@
       
          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
             <ul class="dropdown-menu">
+
                 <li><a href="#">T-shirt</a></li>
                 <li><a href="#">Pull</a></li>
                 <li><a href="#">Goodies</a></li>
@@ -81,11 +85,11 @@
 		<section class="section-center">
 
 				<div class="center">
-			    <img src="./pictures/stylo2.png" alt="" class="picture-product">
+			    <img src="./pictures/stylo2.png" alt="" class="picture-product preview">
         </div>
         <div class="center">
     				<label class="btn btn-default btn-file">
-    				Parcourir <input type="file" style="display: none;">
+    				Parcourir <input type="file" style="display: none;" onchange="readURL(this);">
 					 </label>
         </div>
 
@@ -95,9 +99,13 @@
     						<input type="text" class="form-control" placeholder="Nom du produit" name="name">
  					 	</div>
  					 	<select class=form-control name="category">
-							 <option value=un>T-shirt</option>
-							 <option value=deux>Pull</option>
-							 <option value=trois>Goodies</option>
+<?php 
+  $controller = new Controller();
+  $categories = $controller->getCategories();
+ ?>
+              @for ($i = 0; $i < sizeof($categories); $i++)
+                <option value="{{$categories[$i]}}">{{$categories[$i]}}</option>
+              @endfor
 						</select>
   						 <div class="form-group">
     						<input type="price" class="form-control" placeholder="Prix" name="price">
@@ -112,14 +120,6 @@
   							<button type="submit" class="btn btn-primary">Valider</button>
   					</div>
 				</form>
-
-
-
-
-
-
-
-
 
 
 		</section>
@@ -145,6 +145,8 @@
         </div>
 
     </footer>
+
+<script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
 
 </body>
 </html>

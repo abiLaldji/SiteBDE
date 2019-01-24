@@ -50,10 +50,12 @@ Route::get('contact', function()
 	return view('contact');
 });
 
+Route::get('deconnexion', 'Controller@deconnect');
+
 Route::post('signUp', 'Controller@signUp');
 
 Route::post('signIn', 'Controller@signIn');
 
 Route::post('addProduct', 'Controller@addProduct');
 
-Route::get('deconnexion', 'Controller@deconnect');
+Route::post('submitIdea', 'Controller@submitIdea');

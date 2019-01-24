@@ -1,4 +1,7 @@
-
+<?php 
+use App\Http\Controllers\Controller;
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -102,29 +105,27 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
 
-      <div class="item active">
-        <img src="./pictures/stylo1.png" alt="Los Angeles" class="top-slide">
+<?php 
+$controller = new Controller();
+$topSales = $controller->getTopSales();
+?>
+
+      @for ($i = 0; $i < sizeof($topSales); $i++)
+      <div class="item 
+
+      @if ($i == 0)
+        active
+      @endif
+
+      ">
+        <img src="{{ $topSales[$i]['pictureURL']}}" alt="Los Angeles" class="top-slide">
         <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>LA is always so much fun!</p>
+          <h3>{{$topSales[$i]['name']}}</h3>
+          <p>{{$topSales[$i]['description']}}</p>
         </div>
       </div>
 
-      <div class="item">
-        <img src="./pictures/stylo2.png" alt="Chicago" class="top-slide">
-        <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago!</p>
-        </div>
-      </div>
-    
-      <div class="item">
-        <img src="./pictures/stylo2.png" alt="New York" class="top-slide">
-        <div class="carousel-caption">
-          <h3>Stylo bleu</h3>
-          <p>We love the Big Apple!</p>
-        </div>
-      </div>
+      @endfor
   
     </div>
 
@@ -180,12 +181,16 @@ Animation du campus :
 
   <h2> Prochain évènement </h2>
 
-  <img src="./pictures/activite.jpeg" alt="activite" class="img-accueil"/>
+<?php 
+$nextEvent = $controller->getNextEvent();
+?>
+
+  <img src="{{ $nextEvent['pictureURL']}}"" alt="activite" class="img-accueil"/>
 
   <div class="description">
-    <h3>Description :</h3>
-    <p>Voici </p>
-    <p> <span class="gras">Date : </span>25/04/2019</p>
+    <h3>{{$nextEvent['title']}}</h3>
+    <p>{{ $nextEvent['description'] }}</p>
+    <p> <span class="gras">Date : </span>{{ $nextEvent['date'] }}</p>
   </div>
 
 
