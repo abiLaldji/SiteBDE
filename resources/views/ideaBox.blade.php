@@ -1,3 +1,7 @@
+<?php 
+use App\Http\Controllers\Controller
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,7 +82,7 @@
 
 		<section class="section-aside-ideaBox">
 
-			<form method="POST" action="signUp">
+			<form method="POST" action="submitIdea">
   					<div class="formulaire">
 
 
@@ -99,12 +103,12 @@
 
 
     						<div class="center">
-			    			<img src="./pictures/stylo2.png" alt="" class="picture-event">
+			    			<img src="./pictures/stylo2.png" alt="" class="picture-event preview">
           					</div>
 
           					<div class="center">
     								<label class="btn btn-default btn-file">
-    								Parcourir <input type="file" style="display: none;">
+    								Parcourir <input type="file" style="display: none;" onchange="readURL(this);">
 									</label>
 							</div>
 
@@ -127,97 +131,35 @@
 
 			<table class="table-event">
 
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<div class="desc-right">
-								<i class="fas fa-check"></i>
-								<i class="fas fa-times"></i>
-								<i class="fas fa-thumbs-up"></i>
-							</div>
-							<div class="desc-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-							</div>
+<?php 
+$controller = new Controller();
+$ideas = $controller->getEvents();
+?>
+ 				@for ($i = 0; $i < sizeof($ideas); $i++)
+				<tr>
+					<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
+					<td class="td-event-left">
+						<div class="desc-right">
+							<i class="fas fa-check"></i>
+							<i class="fas fa-times"></i>
+							<i class="fas fa-thumbs-up"></i>
+						</div>
+						<div class="desc-left">
+							<p class="bold">Titre : {{$ideas[$i]['title']}}</p>
+							<p class="bold">Organisateur : {{$ideas[$i]['organizator']}}</p>
+							<p class="bold">Date : {{$ideas[$i]['date']}}</p> 
+							<p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
 							
-						</td>
-					</tr>
-
-					<tr>
-					<td><img src="./pictures/stylo1.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<div class="desc-right">
-								<i class="fas fa-check"></i>
-								<i class="fas fa-times"></i>
-								<i class="fas fa-thumbs-up"></i>
-							</div>
-							<div class="desc-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-							</div>
-							
-						</td>
-					</tr>
-
-					<tr>
-						<td><img src="./pictures/stylo3.png" alt="" class="pic-event"></td>
-							<td class="td-event-left">
-								<div class="desc-right">
-									<i class="fas fa-check"></i>
-									<i class="fas fa-times"></i>
-									<i class="fas fa-thumbs-up"></i>
-								</div>
-								<div class="desc-left">
-									<p class="bold">Titre :</p>
-									<p class="bold">Organisateur :</p>
-									<p class="bold">Date :</p> 
-									<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-								</div>
-								
-							</td>
-					</tr>
-
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<div class="desc-right">
-								<i class="fas fa-check"></i>
-								<i class="fas fa-times"></i>
-								<i class="fas fa-thumbs-up"></i>
-							</div>
-							<div class="desc-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-							</div>
-							
-						</td>
-					</tr>
-
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<div class="desc-right">
-								<i class="fas fa-check"></i>
-								<i class="fas fa-times"></i>
-								<i class="fas fa-thumbs-up"></i>
-							</div>
-							<div class="desc-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-							</div>
-							
-						</td>
-					</tr>
-
-				</table>
+					</td>
+				</tr>
+				@endfor
+			</table>
 
 		</section>
 
@@ -237,6 +179,7 @@
 
 </footer>
 
+<script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
 
 </body>
 

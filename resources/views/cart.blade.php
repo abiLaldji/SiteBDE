@@ -85,54 +85,48 @@
 
 		<section class="section-center">
 
-			
-
+			<?php /*$_SESSION['cart'] = [['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '52', 'unitPrice' => '14'], ['pictureURL' => './pictures/stylo2.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '14', 'unitPrice' => '128'],['pictureURL' => './pictures/stylo3.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '25', 'unitPrice' => '4'],['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '8', 'unitPrice' => '54']] */ ?>
+			@if (isset($_SESSION['cart']))
 				<table class="table-cart">
 
-					<tr>
-						<th>Image</th>
-						<th>Description</th>
-						<th>Quantité</th>
-						<th>Prix unitaire</th>
-						<th>Prix total</th>
-						<th>Annuler</th>
-					</tr>
+						<tr>
+							<th>Image</th>
+							<th>Description</th>
+							<th>Quantité</th>
+							<th>Prix unitaire</th>
+							<th>Prix total</th>
+							<th>Annuler</th>
+						</tr>
 
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times"></i></td>
-					</tr>
+						<?php $total = 0; ?>
+						@for ($i = 0; $i < sizeof($_SESSION['cart']) ; $i++)
+							<tr>
+								<td><img src="{{$_SESSION['cart'][$i]['pictureURL']}}" alt="" class="img-article"></td>
+								<td><span class="blod">{{$_SESSION['cart'][$i]['name']}} : </span>{{$_SESSION['cart'][$i]['description']}}</td>
+								<td>{{$_SESSION['cart'][$i]['quantity']}}</td>
+								<td>{{$_SESSION['cart'][$i]['unitPrice']}}</td>
+								<td>
+									<?php 
+										$subTotal = $_SESSION['cart'][$i]['quantity'] * $_SESSION['cart'][$i]['unitPrice'];
+										$total += $subTotal;
+										echo $subTotal;
+									?>
+								</td>
+								<td><i class="fas fa-times"></i></td>
+							</tr>
+						@endfor
 
-					<tr>
-
-					<td><img src="./pictures/stylo1.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times"></i></td>
-					</tr>
-
-					<tr>
-					<td><img src="./pictures/stylo3.png" alt="" class="img-article"></td>
-						<td>Ce produit est très intéréssant</td>
-						<td>2</td>
-						<td>50</td>
-						<td>100</td>
-						<td><i class="fas fa-times"></i></td>
-					</tr>
+					
 
 				</table>
 
 					<div class="confirmation-cart">
-						<p class="prix-total-cart">Prix total : <span class="right">500K €</span></p>						
+						<p class="prix-total-cart">Prix total : <span class="right">{{$total}} €</span></p>						
 						<button type="button" values="Commander" onclick="" class="order-cart">Commander</button>
 					</div>
-
+			@else
+				<p>Vous n'avez pas de produits dans votre panier.</p>
+			@endif
 		</section>
 
 	</article>

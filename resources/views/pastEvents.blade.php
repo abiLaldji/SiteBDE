@@ -81,11 +81,9 @@ use App\Http\Controllers\Controller
 
 
 <?php 
-
 $controller = new Controller();
 $events = $controller->getEvents();
-
- ?>
+?>
  					@for ($i = 0; $i < sizeof($events); $i++)
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
@@ -105,20 +103,6 @@ $events = $controller->getEvents();
 						</td>
 					</tr>
 					@endfor
-
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<p class="bold">Titre :</p>
-							<p class="bold">Organisateur :</p>
-							<p class="bold">Date :</p> 
-							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-							<div>
-  								<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
-  							</div>
-						</td>
-					</tr>
-
 				</table>
 
 
