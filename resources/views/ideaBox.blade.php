@@ -133,15 +133,19 @@
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<div class="desc-right">
-								<i class="fas fa-check"></i>
-								<i class="fas fa-times"></i>
-								<i class="fas fa-thumbs-up"></i>
+								<i class="fas fa-check ideabox-check"></i>
+								<i class="fas fa-times ideabox-cross"></i>
 							</div>
 							<div class="desc-left">
 								<p class="bold">Titre :</p>
 								<p class="bold">Organisateur :</p>
 								<p class="bold">Date :</p> 
 								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+								<div class="like">
+									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
+									<p class="like-counter">1</p>
+									<i class="fas fa-flag ideabox-flag"></i>
+								</div>
 							</div>
 							
 						</td>
@@ -151,15 +155,19 @@
 					<td><img src="./pictures/stylo1.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<div class="desc-right">
-								<i class="fas fa-check"></i>
-								<i class="fas fa-times"></i>
-								<i class="fas fa-thumbs-up"></i>
+								<i class="fas fa-check ideabox-check"></i>
+								<i class="fas fa-times ideabox-cross"></i>
 							</div>
 							<div class="desc-left">
 								<p class="bold">Titre :</p>
 								<p class="bold">Organisateur :</p>
 								<p class="bold">Date :</p> 
 								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+								<div class="like">
+									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
+									<p class="like-counter">1</p>
+									<i class="fas fa-flag ideabox-flag"></i>
+								</div>
 							</div>
 							
 						</td>
@@ -169,15 +177,19 @@
 						<td><img src="./pictures/stylo3.png" alt="" class="pic-event"></td>
 							<td class="td-event-left">
 								<div class="desc-right">
-									<i class="fas fa-check"></i>
-									<i class="fas fa-times"></i>
-									<i class="fas fa-thumbs-up"></i>
+									<i class="fas fa-check ideabox-check"></i>
+									<i class="fas fa-times ideabox-cross"></i>
 								</div>
 								<div class="desc-left">
 									<p class="bold">Titre :</p>
 									<p class="bold">Organisateur :</p>
 									<p class="bold">Date :</p> 
 									<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+									<div class="like">
+										<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
+										<p class="like-counter">1</p>
+										<i class="fas fa-flag ideabox-flag"></i>
+									</div>
 								</div>
 								
 							</td>
@@ -187,15 +199,22 @@
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<div class="desc-right">
-								<i class="fas fa-check"></i>
-								<i class="fas fa-times"></i>
-								<i class="fas fa-thumbs-up"></i>
+								<i class="fas fa-check ideabox-check"></i>
+								<i class="fas fa-times ideabox-cross"></i>
 							</div>
+
 							<div class="desc-left">
 								<p class="bold">Titre :</p>
 								<p class="bold">Organisateur :</p>
 								<p class="bold">Date :</p> 
 								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+								
+								<div class="like">
+									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
+									<p class="like-counter">1</p>
+									<i class="fas fa-flag ideabox-flag"></i>
+								</div>
+
 							</div>
 							
 						</td>
@@ -205,15 +224,22 @@
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<div class="desc-right">
-								<i class="fas fa-check"></i>
-								<i class="fas fa-times"></i>
-								<i class="fas fa-thumbs-up"></i>
+								<i class="fas fa-check ideabox-check"></i>
+								<i class="fas fa-times ideabox-cross"></i>
 							</div>
 							<div class="desc-left">
 								<p class="bold">Titre :</p>
 								<p class="bold">Organisateur :</p>
 								<p class="bold">Date :</p> 
 								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+
+								<div class="like">
+									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
+									<p class="like-counter">1</p>
+									<i class="fas fa-flag ideabox-flag"></i>
+								</div>
+
+
 							</div>
 							
 						</td>

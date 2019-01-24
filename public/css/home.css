@@ -2,7 +2,57 @@
 /*Title*/
 
 
+/*--------Global---------*/
 
+
+.center
+{
+    text-align: center;
+}
+
+h2
+{
+    text-align: center;
+    color: white;
+}
+
+nav
+{
+    position: fixed;
+}
+
+footer
+{
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: inline;
+    position: relative;
+    bottom: 0;
+    clear: both;
+}
+
+.italique
+{
+    font-style: italic;
+}
+
+h3
+{
+    text-align: center;
+}
+
+td
+{
+border: solid black 2px;
+}
+
+th
+{   
+    padding-right: 20%;
+}
+
+/*----------Header---------*/
 
 #logo-cesi{
     position: relative;
@@ -65,6 +115,8 @@
 }
 
 
+/*---------Acceuil-----------*/
+
 .aside-right
 {
     min-width: 10%;
@@ -97,27 +149,8 @@
     background-color: red;
 }
 
-h2
-{
-    text-align: center;
-    color: white;
-}
 
-nav
-{
-    position: fixed;
-}
-
-footer
-{
-    background-color: black;
-    color: white;
-    text-align: center;
-    display: inline;
-    position: relative;
-    bottom: 0;
-    clear: both;
-}
+/*-------------Footer--------------*/
 
 .dropdown
 {
@@ -149,6 +182,11 @@ footer
     margin-right: 10%;
 }
 
+
+/*---------Mise en forme texte de naviguation ---------*/
+
+
+
 .ycolor
 {
 color: rgb(255 194 82);
@@ -178,6 +216,9 @@ color: rgb(255 194 82);
     display: inline-flex;
 }
 
+
+
+/*---------------Footer------------*/
 .footer-text
 {
     padding-right: 20%;
@@ -198,10 +239,7 @@ color: rgb(255 194 82);
     color: white;
 }
 
-.italique
-{
-    font-style: italic;
-}
+
 
 .description
 {   
@@ -219,10 +257,7 @@ color: rgb(255 194 82);
     font-weight: bold;
 }
 
-h3
-{
-    text-align: center;
-}
+
 
 /* Article principal des pages Inscription et connection*/
 .article-center
@@ -299,15 +334,7 @@ h3
     margin-right: 1%;
 }
 
-td
-{
-border: solid black 2px;
-}
 
-th
-{   
-    padding-right: 20%;
-}
 
 
 .img-article
@@ -510,19 +537,62 @@ main
     font-size: 300%;
 }
 
-.fa-check
+
+
+
+/*------------------Idea Box--------------------*/
+
+.ideabox-cross
+{   
+    width: 100%;
+    color: red;
+    font-size: 300%;
+}
+
+.ideabox-check
 {   
     width: 100%;
     color: green;
     font-size: 300%;
 }
 
-.fa-thumbs-up
+.ideabox-flag
 {   
     width: 100%;
-    color: rgb(92, 136, 218);
-    font-size: 300%;
+    color: black;
+    font-size: 130%;
+    margin-left: 20%;
+    margin-top: 8%;
 }
+
+.ideabox-flag:hover
+{
+    color: red;
+}
+
+/*Pouce levé (evenements)*/
+.ideabox-thumb
+{
+    font-size: 150%;
+    color: rgb(92, 136, 218);
+}
+
+/*Div comprenant le nombre de like et le symbole de pouce levé*/
+.like
+{
+    float: left;
+    display: inline-flex;
+    margin-left: 1%;
+}
+
+/*Nombre de like*/
+.like-counter
+{
+    margin-top: 2%;
+    margin-bottom: 0;
+}
+
+
 
 .section-aside-ideaBox
 {
@@ -600,7 +670,7 @@ main
     font-size: 200%;
 }
 
-/*---Email---*/
+/*-------Email-------*/
 .email-div
 {
     text-align: center;
@@ -617,7 +687,6 @@ main
     font-size: 200%;
 }
 
-.center
-{
-    text-align: center;
-}
+
+
+
