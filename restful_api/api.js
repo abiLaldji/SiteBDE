@@ -10,13 +10,12 @@ const app = express();
 
 const router = express.Router();
 
+// required to parse body of HTTP request
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-router.route('/').all((req, res) => {
-	res.json({ message: "Bienvenue sur notre API ", methode: req.method });
-});
 
+// Init params DB connection
 let connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
@@ -24,55 +23,60 @@ let connection = mysql.createConnection({
 	database: 'bde_site'
 })
 
+// Actual connection to DB
 connection.connect(err => {
 	if (err) throw err
 	console.log('Connected. . .')
 })
 
+// API route :field is the name of the column we want to SELECT and :value is the value selected
+// Example : /bde_site/api/user/id_user/3/
 router.route('/bde_site/api/:table/:field?/:value?/')
 
+	// HTTP GET verb
 	.get((req, res) => {
-		console.log(req.params);
 
-		let r = 'SELECT * FROM ' + req.params.table
+		let table = req.params.table;
+		let field = req.params.field;
+		let value = req.params.value;
 
-		if (req.params.field != undefined && req.params.value != undefined) r += " WHERE " + req.params.field + "='" + req.params.value + "'";
+		let r = 'SELECT * FROM ' + table;
+
+		// If :field and :value are defined, add WHERE statement
+		if (field != undefined && value != undefined) r += " WHERE " + field + "='" + value + "'";
+
+		if (table == "event") {
+				r = "SELECT e.*, u.name FROM  event e INNER JOIN user u ON e.id_user = u.id_user"; 
+				if (field === date) r += "WHERE e." + field + "=" + value;
+				if (field === is_approved) r += "WHERE e." + field + "=" + value;
+				if (field === is_public) r += "WHERE e." + field + "=" + value;
+
+		} else if (table === "picture") {
+			r = "SELECT p.*, u.first_name FROM picture p INNER JOIN user u ON p.id_user = u.id_user WHERE p." + field + "=" + value;
+		} else if (table === "comment") {
+			r = "SELECT c.*, u.first_name, p.url  FROM comment c INNER JOIN picture p ON p.id_picture = c.id_picture " +
+				"INNER JOIN user u ON u.id_user = p.id_user WHERE c." + field + " = " + value;
+		}
 
 		connection.query(r, (err, result) => {
 			if (err) throw err
 			res.json(result);
 		})
 	})
+	// HTTP POST verb
 	.post((req, res) => {
-		console.log(req.body);
-		let keys = Object.keys(req.body).toString()
+		let keys = Object.keys(req.body).toString();
+
 		let values = Object.values(req.body).map(x => "'" + x + "'").join(",");
 
-		switch (req.params.table) {
-			case "pictures":
-				// let r = 'INSERT INTO ' + req.params.table + ' (' + keys + ') ' + 'VALUES (' + values + ')'
-				connection.query(r, (error, results, fields) => {
-					if (error) throw error;
-					res.end(JSON.stringify(results));
-				});
-				break;
+		let r = 'INSERT INTO ' + req.params.table + ' (' + keys + ')' + ' VALUES  (' + values + ')'
 
-			case "event":
-				connection.query('INSERT INTO ' + req.params.table + ' (' + keys + ')' + ' VALUES  (' + values + ')', (error, results, fields) => {
-					if (error) throw error;
-					res.end(JSON.stringify(results));
-				});
-				break;
-			case "product":
-			case "user":
-				let r = 'INSERT INTO ' + req.params.table + ' (' + keys + ')' + ' VALUES  (' + values + ')'
-				connection.query(r, (error, results, fields) => {
-					if (error) throw error;
-					res.end(JSON.stringify(results));
-				});
-				break;
-		}
+		connection.query(r, (error, results, fields) => {
+			if (error) throw error;
+			res.end(JSON.stringify(results));
+		});
 	})
+	// HTTP PUT verb
 	.put((req, res) => {
 		let columns = Object.keys(req.body);
 
@@ -84,6 +88,7 @@ router.route('/bde_site/api/:table/:field?/:value?/')
 			res.end(JSON.stringify(results));
 		});
 	})
+	// HTTP DELETE verb
 	.delete((req, res) => {
 		let r = 'DELETE FROM ' + req.params.table + ' WHERE ' + req.params.field + '=' + req.params.value;
 
