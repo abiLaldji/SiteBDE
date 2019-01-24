@@ -6,10 +6,16 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Input;
+
+const IP = '10.64.128.131';
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    
+
 
     // sign in a new user
     public function signIn(){
@@ -32,12 +38,12 @@ class Controller extends BaseController
 
 	public function signUp(){
 		// format user's entry
-		$_POST['firstName'] = ucfirst($_POST['firstName']);
-		$_POST['lastName'] = ucfirst($_POST['lastName']);
+		$_POST['first_name'] = ucfirst($_POST['first_name']);
+		$_POST['last_name'] = ucfirst($_POST['last_name']);
 		$_POST['email'] = strtolower($_POST['email']);
 
 		// return an error if a field is empty
-		if(empty($_POST['firstName']) || empty($_POST['lastName']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['passwordConf'])){
+		if(empty($_POST['first_name']) || empty($_POST['last_name']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password_conf']) || empty($_POST['campus'])){
 			return redirect()->route('signUp', 'fieldEmpty');
 		}
 
@@ -47,23 +53,33 @@ class Controller extends BaseController
 		}
 
 		//return an error if passwords are not the same
-		if($_POST['password'] != $_POST['passwordConf']){
+		if($_POST['password'] != $_POST['password_conf']){
 			return redirect()->route('signUp', 'differentPasswords');
 		}
 		
-
 		// L'utilisateur a t il deja un compte 
-
-
 		$_POST['password'] = hash('sha256', $_POST['password']);
 
-		json_encode($_POST);
 
-/*
-		if($state){
-			return redirect('/signUp');
-		}*/
-		return redirect('/');
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . ":3000/bde_site/api/user/");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+
+		unset($_POST['_token']);
+		unset($_POST['password_conf']);
+		var_dump($_POST);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($_POST));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+
+		var_dump($output);
+
+
+		//return redirect('/');
 	}
 
 	public function deconnect(){
@@ -81,12 +97,12 @@ class Controller extends BaseController
 	}
 
 	public function getEvents(){
-		$events = [['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceci', 'pictureURL' => ''],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => ''],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => ''],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => ''],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => '']];
+		$events = [['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceci', 'pictureURL' => './pictures/stylo3.png'],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => './pictures/stylo3.png'],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => './pictures/stylo3.png'],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => './pictures/stylo3.png'],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => './pictures/stylo3.png']];
 		return $events;
 	}
 
 	public function getIdeas(){
-		$ideas = [['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceci', 'pictureURL' => ''],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => ''],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => ''],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => '']];
+		$ideas = [['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceci', 'pictureURL' => './pictures/stylo3.png'],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => './pictures/stylo3.png'],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => './pictures/stylo3.png '],['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceic', 'pictureURL' => './pictures/stylo3.png']];
 		return $ideas;
 	}
 
@@ -99,6 +115,37 @@ class Controller extends BaseController
 		if(empty($_POST['title']) || empty($_POST['description'])){
 			return redirect()->route('ideaBox', 'fieldEmpty');
 		}
+
+/*
+if(Input::hasFile('file')){
+
+			echo 'Uploaded';
+			$file = Input::file('file');
+			$file->move('uploads', $file->getClientOriginalName());
+			echo '';
+		}*/
+
+
+
+
+
+		/*$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . ":3000/bde_site/api/user/");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+
+		unset($_POST['_token']);
+
+
+
+		unset($_POST['picture']);
+
+
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($_POST));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);*/
 	}
 
 	public function getNextEvent(){
@@ -119,5 +166,10 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'pict
 	public function getCategories(){
 		$categories = ['stylo', 'pull', 'saccoche', 'fourchette', 'voiture', 'fusée', 'etoile', 'divers'];
 		return $categories;
+	}
+
+	public function getCampus(){
+		$campus = ['pau', 'toulouse', 'angouleme', 'paris', 'lille', 'tarbes', 'nantes', 'nanterres'];
+		return $campus;
 	}
 }

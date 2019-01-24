@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php 
+session_start();
+use App\Http\Controllers\Controller;
+?>
 
 <!DOCTYPE html>
 <html>
@@ -95,16 +98,26 @@
                 @csrf
 
                 @isset ($_GET['fieldEmpty'])
-                  <p class="error">Tous les champs doivent être remplis<p>
+                  <p class="error">Tous les champs doivent être remplis</p>
                 @endisset
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="firstName" placeholder="Prenom">
+                  <input type="text" class="form-control" name="first_name" placeholder="Prenom">
                 </div>
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="lastName" placeholder="Nom">
+                  <input type="text" class="form-control" name="last_name" placeholder="Nom">
                 </div>
+
+                <select class=form-control name="campus">
+<?php 
+  $controller = new Controller();
+  $campus = $controller->getCampus();
+?>
+                  @for ($i = 0; $i < sizeof($campus); $i++)
+                    <option value="{{$campus[$i]}}">{{$campus[$i]}}</option>
+                  @endfor
+                 </select>
 
     						<div class="form-group">
       						<input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Adresse mail">
@@ -119,12 +132,14 @@
     						</div>
 
                 <div class="form-group">
-                  <input type="password" class="form-control" name="passwordConf" placeholder="Confirmez le mot de passe">
+                  <input type="password" class="form-control" name="password_conf" placeholder="Confirmez le mot de passe">
                 </div>
 
                 @isset ($_GET['differentPasswords'])
-                  <p class="error">Les mots de passe doivent être identique<p>
+                  <p class="error">Les mots de passe doivent être identique</p>
                 @endisset
+
+                <input type="hidden" name="status" value="etudiant">
 
     				</div>
 

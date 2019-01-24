@@ -87,22 +87,23 @@ use App\Http\Controllers\Controller
 			<form method="POST" action="submitIdea">
   					<div class="formulaire">
 
+              @csrf
 
+              @if (isset($_GET['fieldEmpty']))
+                <p class='error'>Tous les champs obligatoires doivent être remplis</p>
+              @endif
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Titre">
+                  <input type="text" class="form-control" placeholder="Titre" name="title">
                 </div>
 
                 <div class="form-group">
-                  <textarea class="form-control" placeholder="Description" rows="3"></textarea>
+                  <textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
                 </div>
 
-    			<div class="form-group">
-      				<input type="date" class="form-control optional" placeholder="Date (optionnel)">
-      				<p class="optional-text">Optionnel</p>
-   				</div>
-
-    				</div>
-
+          			<div class="form-group">
+            				<input type="date" class="form-control optional" placeholder="Date (optionnel)" name="date">
+            				<p class="optional-text">Optionnel</p>
+         				</div>
 
     						<div class="center">
 			    			<img src="./pictures/stylo2.png" alt="" class="picture-event preview">
@@ -110,7 +111,7 @@ use App\Http\Controllers\Controller
 
           					<div class="center">
     								<label class="btn btn-default btn-file">
-    								Parcourir <input type="file" style="display: none;" onchange="readURL(this);">
+    								Parcourir <input type="file" style="display: none;" onchange="readURL(this);" name="picture">
 									</label>
 							</div>
 
@@ -118,7 +119,7 @@ use App\Http\Controllers\Controller
     							<button type="submit" class="btn btn-primary">Publier</button>
 
     					</div>
-
+            </div>
   				</form>
 
 		</section>
@@ -133,121 +134,39 @@ use App\Http\Controllers\Controller
 
 			<table class="table-event">
 
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<div class="desc-right">
-								<i class="fas fa-check ideabox-check"></i>
-								<i class="fas fa-times ideabox-cross"></i>
-							</div>
-							<div class="desc-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-								<div class="like">
-									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
-									<p class="like-counter">1</p>
-									<i class="fas fa-flag ideabox-flag"></i>
-								</div>
-							</div>
-							
-						</td>
-					</tr>
 
-					<tr>
-					<td><img src="./pictures/stylo1.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<div class="desc-right">
-								<i class="fas fa-check ideabox-check"></i>
-								<i class="fas fa-times ideabox-cross"></i>
-							</div>
-							<div class="desc-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-								<div class="like">
-									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
-									<p class="like-counter">1</p>
-									<i class="fas fa-flag ideabox-flag"></i>
-								</div>
-							</div>
-							
-						</td>
-					</tr>
-
-					<tr>
-						<td><img src="./pictures/stylo3.png" alt="" class="pic-event"></td>
-							<td class="td-event-left">
-								<div class="desc-right">
-									<i class="fas fa-check ideabox-check"></i>
-									<i class="fas fa-times ideabox-cross"></i>
-								</div>
-								<div class="desc-left">
-									<p class="bold">Titre :</p>
-									<p class="bold">Organisateur :</p>
-									<p class="bold">Date :</p> 
-									<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-									<div class="like">
-										<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
-										<p class="like-counter">1</p>
-										<i class="fas fa-flag ideabox-flag"></i>
-									</div>
-								</div>
-								
-							</td>
-					</tr>
-
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<div class="desc-right">
-								<i class="fas fa-check ideabox-check"></i>
-								<i class="fas fa-times ideabox-cross"></i>
-							</div>
-
-							<div class="desc-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-								
-								<div class="like">
-									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
-									<p class="like-counter">1</p>
-									<i class="fas fa-flag ideabox-flag"></i>
-								</div>
-
-							</div>
-							
-						</td>
-					</tr>
-
-					<tr>
-						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<div class="desc-right">
-								<i class="fas fa-check ideabox-check"></i>
-								<i class="fas fa-times ideabox-cross"></i>
-							</div>
-							<div class="desc-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-
-								<div class="like">
-									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
-									<p class="like-counter">1</p>
-									<i class="fas fa-flag ideabox-flag"></i>
-								</div>
-
-
-							</div>
-							
-						</td>
-					</tr>
+<?php 
+$controller = new Controller();
+$ideas = $controller->getIdeas();
+?>
+        @for ($i = 0; $i < sizeof($ideas); $i++)
+        <tr>
+          <td><img src="{{$ideas[$i]['pictureURL']}}" alt="" class="pic-event"></td>
+          <td class="td-event-left">
+            <div class="desc-right">
+              <i class="fas fa-check ideabox-check"></i>
+              <i class="fas fa-times ideabox-cross"></i>
+            </div>
+            <div class="desc-left">
+              <p class="bold">Titre : {{$ideas[$i]['title']}}</p>
+              <p class="bold">Organisateur : {{$ideas[$i]['organizator']}}</p>
+              <p class="bold">Date : {{$ideas[$i]['date']}}</p> 
+              <p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <div class="like">
+                <a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
+                <p class="like-counter">1</p>
+                <i class="fas fa-flag ideabox-flag"></i>
+              </div>
+            </div>
+              
+          </td>
+        </tr>
+        @endfor
 
 				</table>
 

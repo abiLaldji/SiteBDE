@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('signIn', function () {
 	return view('signIn');
@@ -25,30 +25,29 @@ Route::get('signUp', function (){
 
 Route::get('cart', function (){
 	return view('cart');
-});
-
+})->name('cart');
 
 Route::get('addProduct', function (){
 	return view('addProduct');
-});
+})->name('addProduct');
 
 Route::get('events', function(){
 	return view('events');
-});
+})->name('events');
 
 Route::get('pastEvents', function () {
 	return view('pastEvents');
-});
+})->name('pastEvents');
 
-Route::get('ideaBox', function ()
+Route::any('ideaBox', function ()
 {
 	return view('ideaBox');
-});
+})->name('ideaBox');
 
 Route::get('contact', function()
 {
 	return view('contact');
-});
+})->name('contact');
 
 Route::get('deconnexion', 'Controller@deconnect');
 
@@ -59,3 +58,5 @@ Route::post('signIn', 'Controller@signIn');
 Route::post('addProduct', 'Controller@addProduct');
 
 Route::post('submitIdea', 'Controller@submitIdea');
+
+
