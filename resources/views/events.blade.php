@@ -1,3 +1,7 @@
+<?php 
+use App\Http\Controllers\Controller
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,9 +62,15 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> INSCRIPTION</span></a></li>
-      <li><a href="signIn"><span class="glyphicon glyphicon-log-in ycolor"></span class="navtext"><span  class="navtext"> CONNEXION</span></a></li>
+    @if (isset($_SESSION['firstName']))
+        <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['firstName']}} {{$_SESSION['lastName']}}</span></a></li>
+        <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> DECONNEXION</span></a></li>
+    @else
+        <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span  class="navtext"> INSCRIPTION</span></a></li>
+        <li><a href="signIn"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> CONNEXION</span></a></li>
+    @endif
     </ul>
+
 
   </div>
 </nav>
@@ -78,14 +88,19 @@
 
 		<section class="section-aside-event">
 
-			<h3>Titre évènement</h3>
+<?php 
+$controller = new Controller();
+$monthEvent = $controller->getMonthEvent();
+?>
+
+			<h3>{{$monthEvent['title']}}</h3>
 
 			<div class="pic-view">
 				<img src="./pictures/stylo2.png" alt="" class="event-month-pic">
 			</div>
 
 				<div class="desc-event-month">
-					<p><span class="bold">Description :</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					<p><span class="bold">Description :</span> {{$monthEvent['description']}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -94,8 +109,8 @@
 
 				</div>
 
-		<p><span class="bold">Organisateur :</span></p>
-		<p><span class="bold">Date :</span></p>
+		<p><span class="bold">Organisateur : {{$monthEvent['organizator']}}</span></p>
+		<p><span class="bold">Date : {{$monthEvent['date']}}</span></p>
 
 		</section>
 
@@ -109,13 +124,21 @@
 
 			<table class="table-event">
 
+<?php 
+
+
+$events = $controller->getEvents();
+
+ ?>
+
+ 					@for ($i = 0; $i < sizeof($events); $i++)
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
-							<p class="bold">Titre :</p>
-							<p class="bold">Organisateur :</p>
-							<p class="bold">Date :</p> 
-							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
+							<p class="bold">Titre : {{$events[$i]['title']}}</p>
+							<p class="bold">Organisateur : {{$events[$i]['organizator']}}</p>
+							<p class="bold">Date : {{$events[$i]['date']}}</p> 
+							<p class="desc-event"><span class="bold">Description :</span> {{$events[$i]['description']}}ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
 						</td>
 						<td class="td-img-event">
 							<div>
@@ -123,36 +146,8 @@
   							</div>
   						</td>
 					</tr>
+					@endfor
 
-					<tr>
-					<td><img src="./pictures/stylo1.png" alt="" class="pic-event"></td>
-						<td class="td-event-left">
-							<p class="bold">Titre :</p>
-							<p class="bold">Organisateur :</p>
-							<p class="bold">Date :</p> 
-							<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-						</td>
-						<td class="td-img-event">
-							<div>
-  								<button type="submit" class="btn btn-primary">S'inscrire</button>
-  							</div>
-  						</td>
-					</tr>
-
-					<tr>
-						<td><img src="./pictures/stylo3.png" alt="" class="pic-event"></td>
-							<td class="td-event-left">
-								<p class="bold">Titre :</p>
-								<p class="bold">Organisateur :</p>
-								<p class="bold">Date :</p> 
-								<p class="desc-event"><span class="bold">Description :</span>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
-							</td>
-							<td class="td-img-event">
-								<div>
-	  								<button type="submit" class="btn btn-primary">S'inscrire</button>
-	  							</div>
-  							</td>
-					</tr>
 
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>

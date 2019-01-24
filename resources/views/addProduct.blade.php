@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,9 +59,15 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> INSCRIPTION</span></a></li>
-      <li><a href="signIn"><span class="glyphicon glyphicon-log-in ycolor"></span class="navtext"><span  class="navtext"> CONNEXION</span></a></li>
+    @if (isset($_SESSION['firstName']))
+        <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['firstName']}} {{$_SESSION['lastName']}}</span></a></li>
+        <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> DECONNEXION</span></a></li>
+    @else
+        <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span  class="navtext"> INSCRIPTION</span></a></li>
+        <li><a href="signIn"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> CONNEXION</span></a></li>
+    @endif
     </ul>
+
 
   </div>
 </nav>
@@ -81,18 +89,18 @@
 					 </label>
         </div>
 
-				<form>
+				<form method="POST" action="addProduct">
 					<div class="formulaire">
   						<div class="form-group">
-    						<input type="text" class="form-control" placeholder="Nom du produit">
+    						<input type="text" class="form-control" placeholder="Nom du produit" name="name">
  					 	</div>
- 					 	<select class=form-control>
+ 					 	<select class=form-control name="category">
 							 <option value=un>T-shirt</option>
 							 <option value=deux>Pull</option>
 							 <option value=trois>Goodies</option>
 						</select>
   						 <div class="form-group">
-    						<input type="price" class="form-control" placeholder="Prix">
+    						<input type="price" class="form-control" placeholder="Prix" name="price">
   						</div>
   						<div class="form-group">
     						<textarea class="form-control" placeholder="Description" rows="3"></textarea>
