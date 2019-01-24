@@ -50,20 +50,6 @@
     margin-top: -15px;
 }
 
-/*Home Aside left*/
-.fa-twitter
-{
-    color : #3cf;
-    font-size: 300%;
-}
-
-.fa-facebook
-{
-    color : #3b5998;
-     font-size: 300%;
-     margin-left: 20%;
-}
-
 .fa-shopping-cart
 {
     font-size: 400%;
@@ -125,7 +111,7 @@ nav
 footer
 {
     background-color: black;
-    color: gray;
+    color: white;
     text-align: center;
     display: inline;
     position: relative;
@@ -138,9 +124,58 @@ footer
     margin-left: -3%;
 }
 
+.fa-twitter
+{
+    color : #3cf;
+    font-size: 300%;
+}
+
+.fa-facebook
+{
+    color : #3b5998;
+     font-size: 300%;
+}
+
 .reseau-logo
 {
-    text-align: center;
+   float: left;
+   margin-left: 1%;
+   margin-top: 0.3%;
+}
+
+.phone-mini
+{
+    font-size: 140%;
+    margin-right: 10%;
+}
+
+.ycolor
+{
+color: rgb(255 194 82);
+}
+
+.navtext
+{
+    color: white;
+    font-weight: bold;
+}
+
+.navtext:hover
+{
+    color: rgb(255 194 82);
+}
+
+.caret
+{
+    color: rgb(255 194 82);
+}
+
+.contact
+{
+    float: right;
+    margin-right: 1%;
+    margin-top: 1%;
+    display: inline-flex;
 }
 
 .footer-text
@@ -148,6 +183,7 @@ footer
     padding-right: 20%;
     padding-left: 20%;
     margin: 0;
+    color: white;
 }
 
 .img-accueil
@@ -158,7 +194,8 @@ footer
 
 .presentation-title
 {
-    background-color: lightblue;
+    background-color: black;
+    color: white;
 }
 
 .italique
@@ -388,9 +425,6 @@ th
     color: red;
 }
 
-.desc-event
-{
-}
 
 table
 {
@@ -522,7 +556,7 @@ main
 .optional-text
 {
     font-size: 80%;
-    color: red;
+    color: gray;
 }
 
 .picture-event
@@ -541,4 +575,49 @@ main
 .right
 {
     text-align: right;
+}
+
+/*------------Contact--------------*/
+
+/*---Numéro de telephone---*/
+.phone-number-div
+{
+    text-align: center;
+    margin-top: 10%;
+    padding-top: 0;
+    margin-bottom: 10%;
+}
+
+.phone-pic
+{   
+    margin-top: 0%;
+    font-size: 1000%;
+}
+
+.phone-number
+{   
+    margin-top: 2%;
+    font-size: 200%;
+}
+
+/*---Email---*/
+.email-div
+{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.email-pic
+{
+    font-size: 1000%;
+}
+
+.email-address
+{
+    font-size: 200%;
+}
+
+.center
+{
+    text-align: center;
 }

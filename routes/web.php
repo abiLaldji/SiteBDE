@@ -45,6 +45,10 @@ Route::get('ideaBox', function ()
 	return view('ideaBox');
 });
 
+Route::get('contact', function()
+{
+	return view('contact');
+});
 
 Route::get('deconnexion', 'Controller@deconnect');
 
