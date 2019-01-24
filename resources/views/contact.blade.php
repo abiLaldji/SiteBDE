@@ -1,21 +1,17 @@
-<?php session_start() ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inscription</title>
+	<title>Contact</title>
 	<meta charset="utf-8">
-
-  <link rel="stylesheet" type="text/css" href="./css/home.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="./bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-
+	<link rel="stylesheet" type="text/css" href="./css/home.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
 </head>
 <body>
 
-<header id="header">
+	<header id="header">
         <div id="logo-cesi">
             <img src="./pictures/logoCesi.png">
         </div>
@@ -69,69 +65,34 @@
 </nav>
 
 
+
 <main>
 
-	<article class="article-center">
+	<article class="article-center2">
+
+
 
 		<section class="section-center">
 
-			<h2>Inscription</h2>
+			<h2>Contact</h2>
 
+			<div class="center">
 
-      @if (isset($_SESSION['firstName']))
-        <p> Vous êtes déjà connecté </p>
-      @else
-  			<article class="article2">
+			<div class="email-div">
 
-  				<form method="POST" action="signUp">
-  					<div class="formulaire">
+				<i class="fas fa-envelope email-pic"></i>
+				<p class="email-address"><a href="mailto:bde.pau@cesi.fr">bde.pau@cesi.fr</a></p>
+				
+			</div>
+			
+			<div class="phone-number-div">
 
-                @csrf
+				<i class="fas fa-phone phone-pic"></i>
+				<p class="phone-number"><a href="tel:0651898314">0651898314</a></p>
 
-                @isset ($_GET['fieldEmpty'])
-                  <p class="error">Tous les champs doivent être remplis<p>
-                @endisset
+			</div>
 
-                <div class="form-group">
-                  <input type="text" class="form-control" name="firstName" placeholder="Prenom">
-                </div>
-
-                <div class="form-group">
-                  <input type="text" class="form-control" name="lastName" placeholder="Nom">
-                </div>
-
-    						<div class="form-group">
-      						<input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Adresse mail">
-   					 	  </div>
-
-                @isset ($_GET['badEmail'])
-                  <p class="error">L'adresse mail doit être de type @viacesi.fr ou @cesi.fr</p>
-                @endisset
-
-    						<div class="form-group">
-      						<input type="password" class="form-control" name="password" placeholder="Mot de passe">
-    						</div>
-
-                <div class="form-group">
-                  <input type="password" class="form-control" name="passwordConf" placeholder="Confirmez le mot de passe">
-                </div>
-
-                @isset ($_GET['differentPasswords'])
-                  <p class="error">Les mots de passe doivent être identique<p>
-                @endisset
-
-    				</div>
-
-    					<div class="connecIns">
-    							<button type="submit" class="btn btn-primary">S'inscrire</button>
-    					</div>
-
-  				</form>
-
-          <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
-
-  			</article>
-      @endif
+		</div>
 
 
 		</section>

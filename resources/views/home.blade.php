@@ -14,14 +14,8 @@
  
  
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-<!--
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- 
--->
+
   <script src="./bootstrap/js/bootstrap.min.js"></script>
-  <!--
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  -->
 
   <!-- FontAwesome link-->
   <link rel="stylesheet" href="./fontawesome/css/all.min.css">
@@ -38,7 +32,7 @@
 
             <h1 id="titre">SITE BDE DU CESI PAU</h1>
             <a id="logo-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
-            <a id="logo-profile" href="myprofile.html"><i class="fas fa-user"></i></a>
+            <a id="logo-profile" href="myprofile"><i class="fas fa-user"></i></a>
         </div>
 </header>
 
@@ -48,9 +42,9 @@
 
     <ul class="nav navbar-nav">
 
-      <li class="active"><a href="/"><i class="fas fa-home"></i> Accueil</a></li>
+      <li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
-      <li><a href="#" class="categories">Boutique</a></li>
+      <li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
       
          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -61,7 +55,7 @@
       
          </li>
 
-         <li><a href="events" class="categories">Évènements</a></li>
+         <li><a href="events" class="categories"><span class="navtext">ÉVÈNEMENTS</span></a></li>
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -70,13 +64,13 @@
             </ul>
          </li>
 
-        <li><a href="ideaBox" class="categories">Boite à idées</a></li>
+        <li><a href="ideaBox" class="categories"><span class="navtext">BOITE À IDÉES</span></a></li>
 
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="signUp"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-      <li><a href="signIn"><span class="glyphicon glyphicon-log-in"></span> Connection</a></li>
+      <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> INSCRIPTION</span></a></li>
+      <li><a href="signIn"><span class="glyphicon glyphicon-log-in ycolor"></span class="navtext"><span  class="navtext"> CONNEXION</span></a></li>
     </ul>
 
   </div>
@@ -172,10 +166,7 @@ Animation du campus :
 
 <h2 class="presentation-title">Réseaux sociaux</h2>
 
-  <div class="reseau-logo">
-        <a href=""><i class="fab fa-twitter"></i></a>
-        <a href=""><i class="fab fa-facebook"></i></a>
-  </div>
+
 
 </aside>
 
@@ -186,10 +177,9 @@ Animation du campus :
   <img src="./pictures/activite.jpeg" alt="activite" class="img-accueil"/>
 
   <div class="description">
-  <h3>Description :</h3>
-  <p>Voici </p>
-  <p> <span class="gras">Date : </span>25/04/2019</p>
-
+    <h3>Description :</h3>
+    <p>Voici </p>
+    <p> <span class="gras">Date : </span>25/04/2019</p>
   </div>
 
 
@@ -198,7 +188,17 @@ Animation du campus :
 
 </main>
 
-    <footer>      
+   <footer> 
+
+        <div class="reseau-logo">
+          <a href=""><i class="fab fa-twitter"></i>     </a>
+           <a href=""><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="contact">
+          <i class="fas fa-phone ycolor phone-mini"></i>
+           <a href="contact"><p class="navtext">CONTACT</p></a>
+        </div>
+
         <div class="footer-text">
             Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
         </div>

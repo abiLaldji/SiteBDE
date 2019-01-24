@@ -45,6 +45,11 @@ Route::get('ideaBox', function ()
 	return view('ideaBox');
 });
 
+Route::get('contact', function()
+{
+	return view('contact');
+});
+
 Route::post('/signUp', 'Controller@signUp');
 
 Route::post('/signIn', 'Controller@signIn');
