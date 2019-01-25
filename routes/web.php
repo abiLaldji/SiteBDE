@@ -107,3 +107,8 @@ Route::post('addProduct', 'Controller@addProduct');
 Route::post('submitIdea', 'Controller@submitIdea');
 
 
+
+
+Route::get('test', 'Controller@getEvents');
+
+

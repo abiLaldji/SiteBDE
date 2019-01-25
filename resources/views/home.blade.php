@@ -39,7 +39,7 @@ session_start();
         @endif
 
         ">
-          <img src="{{ $topSales[$i]['pictureURL']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>
@@ -109,7 +109,7 @@ Animation du campus :
   ?>
 
 
-    <img src="{{ $nextEvent['pictureURL']}}" alt="activite" class="img-accueil"/>
+    <img src="{{ $nextEvent['picture_url']}}" alt="activite" class="img-accueil"/>
 
     <div class="description">
       <h3>{{$nextEvent['title']}}</h3>

@@ -134,7 +134,15 @@ class Controller extends BaseController
 		$info = curl_getinfo($ch);
 		curl_close($ch);
 
+		if($info['http_code'] != '200'){
+			return abort(500);
+		}
+
 		$events = json_decode($output, true);
+
+		if($events == []){
+			$events = [['title'=> '', 'description'=> '', 'date' => '', 'picture_url' => './pictures/stylo1.png']];
+		}
 
 		return $events;
 	}
@@ -201,7 +209,7 @@ class Controller extends BaseController
 		var_dump($_POST);
 	}
 
-	
+
 
 	public function getNextEvents(){
 
@@ -220,7 +228,7 @@ class Controller extends BaseController
 		return $nextEvents;
 	}
 
-		public function getNextEvent(){
+	public function getNextEvent(){
 
 		$events = $this->getEvents();
 
@@ -247,7 +255,7 @@ class Controller extends BaseController
 
 		var_dump($output);
 
-		$products = [['name' => 'rae', 'price' => '11', 'pctureURL' => './pictures/stylo1', 'description' =>'decrire'],['name' => 'rae', 'price' => '10', 'pctureURL' => './pictures/stylo1', 'description' =>'decrire'],['name' => 'rae', 'price' => '9', 'pctureURL' => './pictures/stylo1', 'description' =>'decrire'],['name' => 'rae', 'price' => '12', 'pctureURL' => './pictures/stylo1', 'description' =>'decrire']];
+		$products = [['name' => 'rae', 'price' => '11', 'picture_url' => './pictures/stylo1.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '10', 'picture_url' => './pictures/stylo1.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '9', 'picture_url' => './pictures/stylo1.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '12', 'picture_url' => './pictures/stylo1.png', 'description' =>'decrire']];
 
 		$price = array_column($products, 'price');
 
