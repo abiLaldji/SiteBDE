@@ -78,14 +78,17 @@
 
 <main>
 
-	<article class="article-center2">
+	<article class="cart-article-center">
 
 		<h2 class="h2white">Panier</h2>
 
-		<section class="section-center">
+		
 
 			<?php /*$_SESSION['cart'] = [['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '52', 'unitPrice' => '14'], ['pictureURL' => './pictures/stylo2.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '14', 'unitPrice' => '128'],['pictureURL' => './pictures/stylo3.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '25', 'unitPrice' => '4'],['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '8', 'unitPrice' => '54']] */ ?>
 			@if (isset($_SESSION['cart']))
+
+			<section class="cart-section-center">
+
 				<table class="table-cart">
 
 						<tr>
@@ -123,10 +126,15 @@
 						<p class="prix-total-cart">Prix total : <span class="right">{{$total}} €</span></p>						
 						<button type="button" values="Commander" onclick="" class="order-cart">Commander</button>
 					</div>
+
+				</section>
 			@else
-				<p>Vous n'avez pas de produits dans votre panier.</p>
+
+				<section class="section-center section-empty-cart">
+					<p>Vous n'avez pas de produits dans votre panier.</p>
+				</section>
 			@endif
-		</section>
+		
 
 	</article>
 
@@ -134,17 +142,34 @@
 
     <footer> 
 
+      <div class="footer-ln">
+        <div>
+          <p><a href="legalNotice" class="navtext">Mentions légales</a></p>
+        </div>
+        <div class="f-center">
+          <p><a href="privacyPolicy" class="navtext">Politique de confidentialité</a></p>
+        </div>
+        <div>
+          <p><a href="terms&conditions" class="navtext">Conditions générales de vente</a></p>
+        </div>
+      </div>
+
         <div class="reseau-logo">
-          <a href=""><i class="fab fa-twitter"></i>     </a>
-           <a href=""><i class="fab fa-facebook"></i></a>
+          <a href=""><i class="fab fa-twitter"> </i></a>
+          <a href=""><i class="fab fa-facebook"> </i></a>
+          <a href=""><i class="fab fa-instagram"> </i></a>
+          <a href=""><i class="fab fa-linkedin-in"> </i></a>
         </div>
         <div class="contact">
           <i class="fas fa-phone ycolor phone-mini"></i>
-           <a href="contact"><p class="navtext">CONTACT</p></a>
+          <p><a href="contact" class="navtext">CONTACT</a></p>
         </div>
 
         <div class="footer-text">
             Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
+        </div>
+        <div class="footer-text">
+           © CESI 2019
         </div>
 
     </footer>
