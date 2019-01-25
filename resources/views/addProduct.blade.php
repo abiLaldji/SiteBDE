@@ -87,18 +87,22 @@ session_start();
 				<div class="center">
 			    <img src="./pictures/stylo2.png" alt="" class="picture-product preview">
         </div>
-        <div class="center">
-    				<label class="btn btn-default btn-file">
-    				Parcourir <input type="file" style="display: none;" onchange="readURL(this);">
-					 </label>
-        </div>
+
 
 				<form method="POST" action="addProduct">
+          <div class="center">
+              <label class="btn btn-default btn-file">
+              Parcourir <input type="file" style="display: none;" onchange="readURL(this);" name="picutre_url">
+             </label>
+          </div>
+
+          @csrf
+
 					<div class="formulaire">
   						<div class="form-group">
     						<input type="text" class="form-control" placeholder="Nom du produit" name="name">
  					 	</div>
- 					 	<select class=form-control name="category">
+ 					 	<select class=form-control name="name_category">
 <?php 
   $controller = new Controller();
   $categories = $controller->getCategories();
@@ -111,7 +115,7 @@ session_start();
     						<input type="price" class="form-control" placeholder="Prix" name="price">
   						</div>
   						<div class="form-group">
-    						<textarea class="form-control" placeholder="Description" rows="3"></textarea>
+    						<textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
   						</div>
 
   					</div>

@@ -3,6 +3,7 @@ use App\Http\Controllers\Controller;
 session_start();
 ?>
 
+
 @include("header")
 
   
@@ -38,10 +39,11 @@ session_start();
         @endif
 
         ">
-          <img src="{{ $topSales[$i]['pictureURL']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>
+
         </div>
 
         @endfor
@@ -99,7 +101,9 @@ Animation du campus :
 
 <article class="article-home">
 
-  
+
+  <h2 class="titre-page"> Prochain évènement </h2>
+
   <section id="section-home">
   <h2 class="titre_page"> Prochain évènement </h2>
   <div class="blue-stripe"><br></div>
@@ -107,7 +111,8 @@ Animation du campus :
   $nextEvent = $controller->getNextEvent();
   ?>
 
-    <img src="{{ $nextEvent['pictureURL']}}" alt="activite" class="img-accueil"/>
+
+    <img src="{{ $nextEvent['picture_url']}}" alt="activite" class="img-accueil"/>
 
     <div class="description">
       <h3>{{$nextEvent['title']}}</h3>

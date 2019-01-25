@@ -84,11 +84,11 @@
 
 		
 
-			<?php /*$_SESSION['cart'] = [['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '52', 'unitPrice' => '14'], ['pictureURL' => './pictures/stylo2.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '14', 'unitPrice' => '128'],['pictureURL' => './pictures/stylo3.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '25', 'unitPrice' => '4'],['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '8', 'unitPrice' => '54']] */ ?>
-			@if (isset($_SESSION['cart']))
+
+			<?php /*$_COOKIE['cart'] = [['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '52', 'unitPrice' => '14'], ['pictureURL' => './pictures/stylo2.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '14', 'unitPrice' => '128'],['pictureURL' => './pictures/stylo3.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '25', 'unitPrice' => '4'],['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '8', 'unitPrice' => '54']] */ ?>
+			@if (isset($_COOKIE['cart']))
 
 			<section class="cart-section-center">
-
 				<table class="table-cart">
 
 						<tr>
@@ -101,15 +101,15 @@
 						</tr>
 
 						<?php $total = 0; ?>
-						@for ($i = 0; $i < sizeof($_SESSION['cart']) ; $i++)
+						@for ($i = 0; $i < sizeof($_COOKIE['cart']) ; $i++)
 							<tr>
-								<td><img src="{{$_SESSION['cart'][$i]['pictureURL']}}" alt="" class="img-article"></td>
-								<td><span class="blod">{{$_SESSION['cart'][$i]['name']}} : </span>{{$_SESSION['cart'][$i]['description']}}</td>
-								<td>{{$_SESSION['cart'][$i]['quantity']}}</td>
-								<td>{{$_SESSION['cart'][$i]['unitPrice']}}</td>
+								<td><img src="{{$_COOKIE['cart'][$i]['pictureURL']}}" alt="" class="img-article"></td>
+								<td><span class="blod">{{$_COOKIE['cart'][$i]['name']}} : </span>{{$_COOKIE['cart'][$i]['description']}}</td>
+								<td>{{$_COOKIE['cart'][$i]['quantity']}}</td>
+								<td>{{$_COOKIE['cart'][$i]['unitPrice']}}</td>
 								<td>
 									<?php 
-										$subTotal = $_SESSION['cart'][$i]['quantity'] * $_SESSION['cart'][$i]['unitPrice'];
+										$subTotal = $_COOKIE['cart'][$i]['quantity'] * $_COOKIE['cart'][$i]['unitPrice'];
 										$total += $subTotal;
 										echo $subTotal;
 									?>
