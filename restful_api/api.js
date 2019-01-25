@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 
-// const hostname = '10.64.128.131';
-const hostname = 'localhost';
-const port = 3000;
+const hostname = '10.64.128.131';
+// const hostname = 'localhost';
+const port = 3001;
 
 const app = express();
 
@@ -40,22 +40,34 @@ router.route('/bde_site/api/:table/:field?/:value?/')
 		let field = req.params.field;
 		let value = req.params.value;
 
-		let r = 'SELECT * FROM ' + table;
+		let r;
 
-		// If :field and :value are defined, add WHERE statement
-		if (field != undefined && value != undefined) r += " WHERE " + field + "='" + value + "'";
+		switch (table) {
+			case 'event':
+				r = "SELECT e.*, u.first_name, u.last_name FROM  event e INNER JOIN user u ON e.id_user = u.id_user";
+				if (field != undefined) r += "WHERE e." + field + "=" + value;
+				break;
+			case 'picture':
+				r = "SELECT p.*, u.first_name, u.last_name FROM picture p INNER JOIN user u ON p.id_user = u.id_user WHERE p." + field + "=" + value;
+				break;
+			case 'comment':
+				r = "SELECT c.*, u.first_name, p.url, u.last_name  FROM comment c INNER JOIN picture p ON p.id_picture = c.id_picture " +
+					"INNER JOIN user u ON u.id_user = p.id_user WHERE c." + field + " = " + value;
+				break;
+			case 'subscribe':
+				r = "SELECT u.first_name, u.last_name FROM subscribe s INNER JOIN event e ON s.id_event = e.id_event INNER JOIN user u ON u.id_user = e.id_user WHERE e." + field + "=" + value;
+				break;
+			case 'likes':
+				r = "SELECT u.first_name, u.last_name FROM user u INNER JOIN likes l ON l.id_user = u.id_user WHERE l." + field + " = " + value;
+				break;
+			case 'contain':
 
-		if (table == "event") {
-				r = "SELECT e.*, u.name FROM  event e INNER JOIN user u ON e.id_user = u.id_user"; 
-				if (field === date) r += "WHERE e." + field + "=" + value;
-				if (field === is_approved) r += "WHERE e." + field + "=" + value;
-				if (field === is_public) r += "WHERE e." + field + "=" + value;
+				break;
+			default:
+				r = 'SELECT * FROM ' + table;
 
-		} else if (table === "picture") {
-			r = "SELECT p.*, u.first_name FROM picture p INNER JOIN user u ON p.id_user = u.id_user WHERE p." + field + "=" + value;
-		} else if (table === "comment") {
-			r = "SELECT c.*, u.first_name, p.url  FROM comment c INNER JOIN picture p ON p.id_picture = c.id_picture " +
-				"INNER JOIN user u ON u.id_user = p.id_user WHERE c." + field + " = " + value;
+				// If :field and :value are defined, add WHERE statement
+				if (field != undefined && value != undefined) r += " WHERE " + field + "='" + value + "'";
 		}
 
 		connection.query(r, (err, result) => {
@@ -67,11 +79,13 @@ router.route('/bde_site/api/:table/:field?/:value?/')
 	.post((req, res) => {
 		let keys = Object.keys(req.body).toString();
 
-		let values = Object.values(req.body).map(x => "'" + x + "'").join(",");
+		let values = Object.values(req.body).map(x => { if (x != 'now()' && x != 'NOW()') { return "'" + x + "'" } else return x });
 
-		let r = 'INSERT INTO ' + req.params.table + ' (' + keys + ')' + ' VALUES  (' + values + ')'
+		values.join(",");
 
-		connection.query(r, (error, results, fields) => {
+		let r = 'INSERT INTO ' + req.params.table + ' (' + keys + ')' + ' VALUES  (' + values + ')';
+
+		connection.query(r, (error, results) => {
 			if (error) throw error;
 			res.end(JSON.stringify(results));
 		});
@@ -83,7 +97,7 @@ router.route('/bde_site/api/:table/:field?/:value?/')
 		let r = 'UPDATE ' + req.params.table + ' SET ' + Object.values(req.body).map((x, i) => columns[i] + "='" + x + "'")
 			+ ' WHERE ' + req.params.field + '=' + req.params.value;
 
-		connection.query(r, (error, results, fields) => {
+		connection.query(r, (error, results) => {
 			if (error) throw error;
 			res.end(JSON.stringify(results));
 		});
