@@ -141,7 +141,7 @@ class Controller extends BaseController
 		$events = json_decode($output, true);
 
 		if($events == []){
-			$events = [['title'=> '', 'description'=> '', 'date' => '', 'picture_url' => './pictures/stylo1.png']];
+			$events = [['title'=> '', 'description'=> '', 'date' => '', 'picture_url' => './pictures/stylo1.png', 'is_approved'=> 1, 'is_public' => 1, 'first_name' => '', 'last_name' => '']];
 		}
 
 		return $events;
