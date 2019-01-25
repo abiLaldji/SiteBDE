@@ -12,13 +12,13 @@
 <body>
         <header id="header">
                 <div id="logo-cesi">
-                    <a href="index.html"><img src="assets/style/image/cesi-logob.png"></a>
+                    <a href="index.html"><img src="pictures/logoCesi.png"></a>
                 </div>
                 <div id="header-right">
         
                     <h1 id="titre">SITE BDE DU CESI PAU</h1>
                     <a href="mon_compte.html">mon compte</a>
-                    <a id="logo-cart" href="cart.html"><img src="assets/style/image/cart.png"><p id="panier">panier</p></a>
+                    <a id="logo-cart" href="cart.html"><img src="pictures/cart.png"><p id="panier">panier</p></a>
                 </div>
         </header>
         <nav class="navbar navbar-inverse">

@@ -74,6 +74,15 @@ Route::get('shopCategory', function (){
 	return view('shopCategory');
 });
 
+Route::get('header', function (){
+	return view('header');
+})->name('header');
+
+Route::get('headerShop', function (){
+	return view('headerShop');
+});
+
+
 Route::get('deconnexion', 'Controller@deconnect');
 
 Route::post('signUp', 'Controller@signUp');

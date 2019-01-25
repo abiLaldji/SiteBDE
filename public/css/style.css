@@ -5,100 +5,17 @@ body{
 main{
     margin-top: -20px;
 }
-#logo-cesi{
-    position: relative;
-    float: left;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-#header{ 
-    width: 1920px;
-    height: 100px;
-    background-color: rgb(40, 40, 40);
-}
-#logo-cart{
-    position: absolute;
-    left: 90%;
-    padding-top: 15px;
-    color: white;
-    text-decoration: none;
-}
-#logo-cart:visited{
-    color: white;
-    text-decoration: none;
-}
-#panier{
-    position: relative;
-    left: 10px;
-    margin-top: -15px;
-}
-#titre{
-    position: absolute;
-    float: left;
-    color: white;
-    left: 37%;
-    font-family: Roboto,sans-serif;
-    margin-top: 10px;
-}
+
 #main{
     position: relative;
 }
-#cart-content{
-    position: relative;
-    display: block;
-    border: solid black;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 25px;
-}
-#cart-content article{
-    border: solid 1px gray;
-    height: 128px;
-}
-#cart-content img{
-    float: left;
-    width: 126px;
-    height: 126px;
-}
-#submit-order{
-    position: relative;
-    padding-top: 5px;
-    margin-left: 52%;
-}
-#price{
-    position: relative;
-    width: 30%;
-    border: solid black;
-    background-color:rgb(40, 40, 40);
-    color: white;
-    text-align: center;
-    float: left;
-}
-#submit-order-button{
-    position: relative;
-    width: 20%;
-    border: solid black;
-    background-color:rgb(40, 40, 40);
-    color: white;
-    margin-left: 30px;
-}
-.cart-article{
-    position: relative;
-    vertical-align: middle;
-}
-.description{
-    float: left;
-    width: 60%;
-}
-.prix{
-    text-align: right;
-}
+
 /*------------------------------------------------------------------------------------------------------------------*/
 #main_compte{
     margin-top: -20px;   
 }
 #article_compte{
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     color: white;
     text-align: center;
     width: 50%;
@@ -118,10 +35,20 @@ main{
 }
 #valider-les-modifications{
     position: relative;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     color: white;
     border-radius: 10px;
     margin-left: 35%;
+}
+#valider-les-modifications:hover{
+    color: rgb(255 194 82);
+}
+.input-account{
+    border:1px solid black;
+    background-color: default;
+    padding: default;
+    font-size: default;
+    width: 25% !important;
 }
 .border-raduis{
     border-radius: 10px;
@@ -131,6 +58,26 @@ label{
 }
 #first-label-compte{
     padding-top: 20px;
+}
+#key-admin{
+    background-color: white;
+    border: none;
+    font-size: 3em;
+    float: right;
+
+}
+#key-admin:hover{
+    color: rgb(255 194 82);
+}
+#download-all-pic{
+    background-color: white;
+    border: none;
+    font-size: 3em;
+    float: right;
+
+}
+#download-all-pic:hover{
+    color: rgb(255 194 82);
 }
 /*-----------------------------------------------------------------------------------------------------------------------*/
 #main-shop{
