@@ -78,11 +78,11 @@ session_start();
 
 <main>
 
-	<article class="article-center2">
+	<article class="addProduct-article-center">
 
     <h2 class="h2white"> Ajout de produit </h2>
 
-		<section class="section-center">
+		<section class="addProduct-section-center">
 
 				<div class="center">
 			    <img src="./pictures/stylo2.png" alt="" class="picture-product preview">
@@ -135,17 +135,34 @@ session_start();
 
     <footer> 
 
+      <div class="footer-ln">
+        <div>
+          <p><a href="legalNotice" class="navtext">Mentions légales</a></p>
+        </div>
+        <div class="f-center">
+          <p><a href="privacyPolicy" class="navtext">Politique de confidentialité</a></p>
+        </div>
+        <div>
+          <p><a href="terms&conditions" class="navtext">Conditions générales de vente</a></p>
+        </div>
+      </div>
+
         <div class="reseau-logo">
-          <a href=""><i class="fab fa-twitter"></i>     </a>
-           <a href=""><i class="fab fa-facebook"></i></a>
+          <a href=""><i class="fab fa-twitter"> </i></a>
+          <a href=""><i class="fab fa-facebook"> </i></a>
+          <a href=""><i class="fab fa-instagram"> </i></a>
+          <a href=""><i class="fab fa-linkedin-in"> </i></a>
         </div>
         <div class="contact">
           <i class="fas fa-phone ycolor phone-mini"></i>
-           <a href="contact"><p class="navtext">CONTACT</p></a>
+          <p><a href="contact" class="navtext">CONTACT</a></p>
         </div>
 
         <div class="footer-text">
             Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
+        </div>
+        <div class="footer-text">
+           © CESI 2019
         </div>
 
     </footer>

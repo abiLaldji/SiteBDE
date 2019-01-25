@@ -1,24 +1,20 @@
-<?php 
-session_start();
-use App\Http\Controllers\Controller;
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inscription</title>
-	<meta charset="utf-8">
 
-  <link rel="stylesheet" type="text/css" href="./css/home.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="./bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+	<title>Conditions générales de vente</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/home.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
 
 </head>
+
 <body>
 
-<header id="header">
+	<header id="header">
         <div id="logo-cesi">
             <img src="./pictures/logoCesi.png">
         </div>
@@ -29,7 +25,7 @@ use App\Http\Controllers\Controller;
             <a id="logo-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
             <a id="logo-profile" href="myprofile"><i class="fas fa-user"></i></a>
         </div>
-</header>
+	</header>
 
 
 <nav class="navbar navbar-inverse">
@@ -77,89 +73,66 @@ use App\Http\Controllers\Controller;
   </div>
 </nav>
 
+	<main>
 
-<main>
+		<article class="ln-article-center">
 
-	<article class="signUp-article-center">
+			<div class="ln-header">
+				<h2 class="h2white ln-h2">Conditions générales de ventes</h2>
+			</div>
 
-		<section class="signUp-section-center">
+			<div class="ln-ystripe">
+				<br/>
+			</div>
 
-			<h2>Inscription</h2>
+			<div class="ln-corp">
 
+				<h3 class="h3-ln">Objet</h3>
 
-      @if (isset($_SESSION['firstName']))
-        <p> Vous êtes déjà connecté </p>
-      @else
-
-  				<form method="POST" action="signUp">
-  					<div class="formulaire">
-
-                @csrf
-
-                @isset ($_GET['fieldEmpty'])
-                  <p class="error">Tous les champs doivent être remplis</p>
-                @endisset
-
-                <div class="form-group">
-                  <input type="text" class="form-control" name="first_name" placeholder="Prenom">
-                </div>
-
-                <div class="form-group">
-                  <input type="text" class="form-control" name="last_name" placeholder="Nom">
-                </div>
-
-                <select class=form-control name="campus">
-<?php 
-  $controller = new Controller();
-  $campus = $controller->getCampus();
-?>
-                  @for ($i = 0; $i < sizeof($campus); $i++)
-                    <option value="{{$campus[$i]}}">{{$campus[$i]}}</option>
-                  @endfor
-                 </select>
-
-    						<div class="form-group">
-      						<input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Adresse mail">
-   					 	  </div>
-
-                @isset ($_GET['badEmail'])
-                  <p class="error">L'adresse mail doit être de type @viacesi.fr ou @cesi.fr</p>
-                @endisset
-
-    						<div class="form-group">
-      						<input type="password" class="form-control" name="password" placeholder="Mot de passe">
-    						</div>
-
-                <div class="form-group">
-                  <input type="password" class="form-control" name="password_conf" placeholder="Confirmez le mot de passe">
-                </div>
-
-                @isset ($_GET['differentPasswords'])
-                  <p class="error">Les mots de passe doivent être identiques</p>
-                @endisset
-
-                <input type="hidden" name="status" value="etudiant">
-
-    				</div>
-
-    					<div class="connecIns">
-    							<button type="submit" class="btn btn-primary">S'inscrire</button>
-    					</div>
-
-  				</form>
-
-          <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
-
-      @endif
+				<div>
+					L'objet de ce contrat est la vente en ligne de Produits proposés par le BDE du CESI.
+				</div>
 
 
-		</section>
+				<h3 class="h3-ln">Prix</h3>
 
-	</article>
+				<div>
+					Les prix sont indiqués en euros toutes taxes comprises  (TVA + autres taxes éventuelles) sur la page de commande des produits.<br>
+					Seul les membres du CESI de PAU peuvent commander sur la boutique.<br>
+					Le CESI s'accorde le droit de modifier ses tarifs à tout moment et facturer les marchandises commandées aux prix indiqués lors de l'enregistrement de la commande.
+				</div>
 
-</main>
+				<h3 class="h3-ln">Escompte</h3>
 
-    <footer> 
+				<div>
+					Aucun escompte ne sera consenti car le paiement ne pourra pas être réalisé en avance.
+				</div>
+
+				<h3 class="h3-ln">Modalités de paiement</h3>
+
+				<div>
+					Le paiement devra être effectué au moment de la commande.<br>
+					Le règlement s'effectue :<br>
+					<ul>
+						<li>soit par carte bancaire</li>
+						<li>soit par paypal</li>
+					</ul>
+
+				</div>
+
+				<h3 class="h3-ln">Livraison</h3>
+
+				<div>
+					Une fois commandés, les produits seront livrés sous 48h (jours ouvrés seulement) directement en main propre par un membre du BDE, si le produit n'a pas été livré sous 48h ou que le contenu de la commande est incorrect, <a href="contact">contactez nous</a>, nous règleront le problème le plus rapidement possible.
+				</div>
+
+			</div>
+
+		</article>
+
+	</main>
+
+<footer> 
 
       <div class="footer-ln">
         <div>

@@ -49,6 +49,53 @@ Route::get('contact', function()
 	return view('contact');
 })->name('contact');
 
+
+Route::get('legalNotice', function(){
+	return view('legalNotice');
+});
+
+Route::get('privacyPolicy', function() {
+	return view('privacypolicy');
+});
+
+Route::get('terms&conditions', function()
+{
+	return view('terms&conditions');
+});
+
+Route::get('commentImageEvent', function (){
+	return view('commentImageEvent');
+});
+
+Route::get('imageEvent', function (){
+	return view('imageEvent');
+});
+
+Route::get('myAccount', function (){
+	return view('myAccount');
+});
+
+Route::get('shop', function (){
+	return view('shop');
+});
+
+Route::get('shopArticle', function (){
+	return view('shopArticle');
+});
+
+Route::get('shopCategory', function (){
+	return view('shopCategory');
+});
+
+Route::get('header', function (){
+	return view('header');
+})->name('header');
+
+Route::get('headerShop', function (){
+	return view('headerShop');
+});
+
+
 Route::get('deconnexion', 'Controller@deconnect');
 
 Route::post('signUp', 'Controller@signUp');

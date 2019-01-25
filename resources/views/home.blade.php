@@ -3,88 +3,8 @@ use App\Http\Controllers\Controller;
 session_start();
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Index</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-
-   
- 
- 
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-
-  <script src="./bootstrap/js/bootstrap.min.js"></script>
-
-  <!-- FontAwesome link-->
-  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  
-</head>
-<body>
-
-<header id="header">
-        <div id="logo-cesi">
-            <img src="./pictures/logoCesi.png">
-        </div>
-
-        <div id="header-right">
-
-            <h1 id="titre">SITE BDE DU CESI PAU</h1>
-            <a id="logo-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
-            <a id="logo-profile" href="myprofile"><i class="fas fa-user"></i></a>
-        </div>
-</header>
-
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-
-    <ul class="nav navbar-nav">
-
-      <li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
-
-      <li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
-      
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">T-shirt</a></li>
-                <li><a href="#">Pull</a></li>
-                <li><a href="#">Goodies</a></li>
-            </ul>
-      
-         </li>
-
-         <li><a href="events" class="categories"><span class="navtext">ÉVÈNEMENTS</span></a></li>
-
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">A venir</a></li>
-                <li><a href="pastEvents">Historique</a></li>
-            </ul>
-         </li>
-
-        <li><a href="ideaBox" class="categories"><span class="navtext">BOITE À IDÉES</span></a></li>
-
-    </ul>
-
-
-     <ul class="nav navbar-nav navbar-right">
-    @if (isset($_SESSION['first_name']))
-        <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['first_name']}} {{$_SESSION['last_name']}}</span></a></li>
-        <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> DECONNEXION</span></a></li>
-    @else
-        <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span  class="navtext"> INSCRIPTION</span></a></li>
-        <li><a href="signIn"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> CONNEXION</span></a></li>
-    @endif
-    </ul>
-
-  </div>
-</nav>
-
+@include("header")
 
   
 
@@ -94,52 +14,54 @@ session_start();
 
 
   <h2>Top des ventes</h2>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+  <article id="article-aside-right-home">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active li-carousel"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="li-carousel"></li>
+        <li data-target="#myCarousel" data-slide-to="2" class="li-carousel"></li>
+      </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
 
-<?php 
-$controller = new Controller();
-$topSales = $controller->getTopSales();
-?>
+  <?php 
+  $controller = new Controller();
+  $topSales = $controller->getTopSales();
+  ?>
 
-      @for ($i = 0; $i < sizeof($topSales); $i++)
-      <div class="item 
+        @for ($i = 0; $i < sizeof($topSales); $i++)
+        <div class="item 
 
-      @if ($i == 0)
-        active
-      @endif
+        @if ($i == 0)
+          active
+        @endif
 
-      ">
-        <img src="./pictures/stylo2.png" alt="Los Angeles" class="top-slide">
-        <div class="carousel-caption">
-          <h3>{{$topSales[$i]['name']}}</h3>
-          <p>{{$topSales[$i]['description']}}</p>
+        ">
+          <img src="{{ $topSales[$i]['pictureURL']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <div class="carousel-caption">
+            <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
+          </div>
+
         </div>
+
+        @endfor
+    
       </div>
 
-      @endfor
-  
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
+  </article>
+  <div><br><br></div>
 </aside>
 
 <aside class="aside-left">
@@ -179,44 +101,65 @@ Animation du campus :
 
 <article class="article-home">
 
-  <h2> Prochain évènement </h2>
 
-<?php 
-$nextEvent = $controller->getNextEvent();
-?>
-
-  <img src="./pictures/stylo2.png" alt="activite" class="img-accueil"/>
-
-  <div class="description">
-    <h3>{{$nextEvent['title']}}</h3>
-    <p>{{ $nextEvent['description'] }}</p>
-    <p> <span class="gras">Date : </span>{{ $nextEvent['date'] }}</p>
-  </div>
+  <h2 class="titre-page"> Prochain évènement </h2>
+  <section id="section-home">
+  <?php 
+  $nextEvent = $controller->getNextEvent();
+  ?>
 
 
+    <img src="{{ $nextEvent['pictureURL']}}" alt="activite" class="img-accueil"/>
 
+    <div class="description">
+      <h3>{{$nextEvent['title']}}</h3>
+      <p >{{ $nextEvent['description'] }}</p>
+      <p> <span class="gras">Date : </span>{{ $nextEvent['date'] }}</p>
+    </div>
+    <div><br></div>
+  </section>
+  <div> <br> </div>
 </article>
 
 </main>
 
    <footer> 
 
+      <div class="footer-ln">
+        <div>
+          <p><a href="legalNotice" class="navtext">Mentions légales</a></p>
+        </div>
+        <div class="f-center">
+          <p><a href="privacyPolicy" class="navtext">Politique de confidentialité</a></p>
+        </div>
+        <div>
+          <p><a href="terms&conditions" class="navtext">Conditions générales de vente</a></p>
+        </div>
+      </div>
+
         <div class="reseau-logo">
-          <a href=""><i class="fab fa-twitter"></i>     </a>
-           <a href=""><i class="fab fa-facebook"></i></a>
+          <a href=""><i class="fab fa-twitter"> </i></a>
+          <a href=""><i class="fab fa-facebook"> </i></a>
+          <a href=""><i class="fab fa-instagram"> </i></a>
+          <a href=""><i class="fab fa-linkedin-in"> </i></a>
         </div>
         <div class="contact">
           <i class="fas fa-phone ycolor phone-mini"></i>
-           <a href="contact"><p class="navtext">CONTACT</p></a>
+          <p><a href="contact" class="navtext">CONTACT</a></p>
         </div>
 
         <div class="footer-text">
             Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
         </div>
+        <div class="footer-text">
+           © CESI 2019
+        </div>
 
     </footer>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/autoComplete.js"></script>
 
 </body>
 </html>
