@@ -23,7 +23,7 @@
 
                 <h1 id="titre">SITE BDE DU CESI PAU</h1>
                 <a id="logo-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
-                <a id="logo-profile" href="myprofile"><i class="fas fa-user"></i></a>
+                <a id="logo-profile" href="myAccount"><i class="fas fa-user"></i></a>
             </div>
     </header>
 
@@ -35,13 +35,13 @@
 
         <li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
-        <li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
+        <li><a href="shop" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
         
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">T-shirt</a></li>
-                    <li><a href="#">Pull</a></li>
-                    <li><a href="#">Goodies</a></li>
+                    <li><a href="shopCategory">T-shirt</a></li>
+                    <li><a href="shopCategory">Pull</a></li>
+                    <li><a href="shopCategory">Goodies</a></li>
                 </ul>
         
             </li>
@@ -50,7 +50,7 @@
 
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">A venir</a></li>
+                    <li><a href="events">A venir</a></li>
                     <li><a href="pastEvents">Historique</a></li>
                 </ul>
             </li>

@@ -23,6 +23,8 @@ nav
 #navbar-id{
     background-color: black;
     border-radius: 0px;
+    border-bottom: 1px solid rgb(40, 40, 40);
+    border-top: 1px solid rgb(40, 40, 40);
 }
 
 footer
@@ -130,11 +132,13 @@ th
     float: right;
     width: 24.25%;
     margin-right: 2.125%;
-    margin-top: 8%;
+    margin-top: 6%;
     text-align: center;
     padding-left: 1%;
     padding-right: 1%;
     border-radius: 10px;
+    border: 1px solid black;
+    
 }
 
 #article-aside-right-home{
@@ -156,13 +160,14 @@ th
     margin-left: 4.25%;
     margin-top: 2%;
     float: left;
+    color: white;
 }
 
 
 
 .article-home
 {
-    background-color: black;;
+    background-color: black;
     margin-left: 21.5%;
     width: 50%;
     text-align: center;
@@ -177,8 +182,7 @@ th
     background-color: white;
     color: black;
     padding-top: 20px;
-    border: solid black;
-    border-radius: 10px;
+    
 }
 
 
