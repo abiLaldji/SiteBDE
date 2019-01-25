@@ -114,7 +114,7 @@ use App\Http\Controllers\Controller;
   $campus = $controller->getCampus();
 ?>
                   @for ($i = 0; $i < sizeof($campus); $i++)
-                    <option value="{{$campus[$i]}}">{{$campus[$i]}}</option>
+                    <option value="{{$campus[$i]['campus_name']}}">{{$campus[$i]['campus_name']}}</option>
                   @endfor
                  </select>
 

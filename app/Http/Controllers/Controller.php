@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 const IP = '10.64.128.131:3001';
+const TOKEN = '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F';
 
 class Controller extends BaseController
 {
@@ -17,14 +18,21 @@ class Controller extends BaseController
     
     // sign in a new user
     public function signIn(){
+
 		json_encode($_POST);
 
 		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/user/email/" . $_POST['email']);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
 		curl_close($ch);
+
+		if($info['http_code'] != '200'){
+			return abort(500);
+		}
 
 		if($output){
 			$output = json_decode($output, true)[0];
@@ -77,15 +85,19 @@ class Controller extends BaseController
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/user/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
 
 		unset($_POST['_token']);
 		unset($_POST['password_conf']);
-		var_dump($_POST);
+
 		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($_POST));
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
 		curl_close($ch);
+
+		if($info['http_code'] != '200'){
+			return abort(500);
+		}
 
 		return redirect('/');
 	}
@@ -107,7 +119,7 @@ class Controller extends BaseController
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/product/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
 
 		unset($_POST['_token']);
 
@@ -115,12 +127,16 @@ class Controller extends BaseController
 		$_POST['item_sold'] = 0;
 		$_POST['Stock'] = 2;
 		var_dump($_POST);
-		/*curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($_POST));
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($_POST));
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
 		curl_close($ch);
 
-		return redirect('/');*/
+		if($info['http_code'] != '200'){
+			return abort(500);
+		}
+
+		return redirect('/');
 	}
 
 	public function getEvents(){
@@ -128,7 +144,7 @@ class Controller extends BaseController
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/event");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
@@ -141,7 +157,7 @@ class Controller extends BaseController
 		$events = json_decode($output, true);
 
 		if($events == []){
-			$events = [['title'=> '', 'description'=> '', 'date' => '', 'picture_url' => './pictures/stylo1.png', 'is_approved'=> 1, 'is_public' => 1, 'first_name' => '', 'last_name' => '']];
+			$events = [['title'=> '', 'description'=> '', 'date' => '', 'picture_url' => './pictures/defaultImage.png', 'is_approved'=> 1, 'is_public' => 1, 'first_name' => '', 'last_name' => '']];
 		}
 
 		return $events;
@@ -185,7 +201,7 @@ class Controller extends BaseController
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/event/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
 
 		unset($_POST['_token']);
 		$_POST['is_approved'] = 1;
@@ -244,6 +260,7 @@ class Controller extends BaseController
 
 	public function getTopSales(){
 		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/product");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		
@@ -255,7 +272,7 @@ class Controller extends BaseController
 
 		var_dump($output);
 
-		$products = [['name' => 'rae', 'price' => '11', 'picture_url' => './pictures/stylo1.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '10', 'picture_url' => './pictures/stylo1.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '9', 'picture_url' => './pictures/stylo1.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '12', 'picture_url' => './pictures/stylo1.png', 'description' =>'decrire']];
+		$products = [['name' => 'rae', 'price' => '11', 'picture_url' => './pictures/defaultImage.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '10', 'picture_url' => './pictures/defaultImage.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '9', 'picture_url' => './pictures/defaultImage.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '12', 'picture_url' => './pictures/defaultImage.png', 'description' =>'decrire']];
 
 		$price = array_column($products, 'price');
 
@@ -265,9 +282,6 @@ class Controller extends BaseController
 		$topSales[1] = $products[1];
 		$topSales[2] = $products[2];
 
-
-
-
 		return $topSales;
 	}
 
@@ -275,9 +289,9 @@ class Controller extends BaseController
 		$categories = ['stylo', 'pull', 'saccoche', 'fourchette', 'voiture', 'fusée', 'etoile', 'divers'];
 
 		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/category/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
@@ -285,26 +299,23 @@ class Controller extends BaseController
 
 		var_dump($output);
 
-		return $categories;
+		//return $categories;
 	}
 
 	public function getCampus(){
-		
 
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/idea/");
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/campus/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
 		curl_close($ch);
 
-		var_dump($output);
 
 		$campus = json_decode($output, true);
 
-$campus = ['pau', 'toulouse', 'angouleme', 'paris', 'lille', 'tarbes', 'nantes', 'nanterres'];
 
 		return $campus;
 	}
