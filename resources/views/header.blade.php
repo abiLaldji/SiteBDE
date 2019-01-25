@@ -3,7 +3,6 @@
 <head>
     <title>Index</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
      <!-- bootstrap link-->

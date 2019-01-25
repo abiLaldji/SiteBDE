@@ -103,7 +103,10 @@ Animation du campus :
 
 
   <h2 class="titre-page"> Prochain évènement </h2>
+
   <section id="section-home">
+  <h2 class="titre_page"> Prochain évènement </h2>
+  <div class="blue-stripe"><br></div>
   <?php 
   $nextEvent = $controller->getNextEvent();
   ?>

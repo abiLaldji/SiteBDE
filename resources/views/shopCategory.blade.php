@@ -52,8 +52,10 @@
             <h1>Tri</h1>
             <section id="aside-section-category" class="border-raduis">
                 <h3>Prix</h3>
-                <label>Min</label><input id="input-text-min-aside-section-category" type="text">
-                <label>Max</label><input id="input-text-max-aside-section-category" type="text">
+                <form>
+                    <label>Min</label><input id="input-text-min-aside-section-category" type="text">
+                    <label>Max</label><input id="input-text-max-aside-section-category" type="text">
+                </form>
             </section>
             <div> <br></div>
         </aside>
