@@ -1,5 +1,6 @@
 <?php 
-use App\Http\Controllers\Controller
+use App\Http\Controllers\Controller;
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -88,9 +89,13 @@ use App\Http\Controllers\Controller
   					<div class="formulaire">
 
               @csrf
-
+              
               @if (isset($_GET['fieldEmpty']))
                 <p class='error'>Tous les champs obligatoires doivent être remplis</p>
+              @endif
+
+              @if (isset($_GET['notConnected']))
+                <p class="error">Vous devez être connecté pour ajouter une idée</p>
               @endif
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Titre" name="title">

@@ -89,13 +89,15 @@ use App\Http\Controllers\Controller
 <?php 
 $controller = new Controller();
 $events = $controller->getEvents();
+
+var_dump($events);
 ?>
  					@for ($i = 0; $i < sizeof($events); $i++)
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<p class="bold">Titre : {{$events[$i]['title']}}</p>
-							<p class="bold">Organisateur : {{$events[$i]['organizator']}}</p>
+							<p class="bold">Organisateur : {{$events[$i]['first_name'] . ' ' . $events[$i]['last_name']}}</p>
 							<p class="bold">Date : {{$events[$i]['date']}}</p> 
 							<p class="desc-event"><span class="bold">Description : </span>{{$events[$i]['description']}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

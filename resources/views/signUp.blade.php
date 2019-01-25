@@ -136,7 +136,7 @@ use App\Http\Controllers\Controller;
                 </div>
 
                 @isset ($_GET['differentPasswords'])
-                  <p class="error">Les mots de passe doivent être identique</p>
+                  <p class="error">Les mots de passe doivent être identiques</p>
                 @endisset
 
                 <input type="hidden" name="status" value="etudiant">

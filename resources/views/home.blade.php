@@ -73,8 +73,8 @@ session_start();
 
 
      <ul class="nav navbar-nav navbar-right">
-    @if (isset($_SESSION['firstName']))
-        <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['firstName']}} {{$_SESSION['lastName']}}</span></a></li>
+    @if (isset($_SESSION['first_name']))
+        <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['first_name']}} {{$_SESSION['last_name']}}</span></a></li>
         <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> DECONNEXION</span></a></li>
     @else
         <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span  class="navtext"> INSCRIPTION</span></a></li>
@@ -118,7 +118,7 @@ $topSales = $controller->getTopSales();
       @endif
 
       ">
-        <img src="{{ $topSales[$i]['pictureURL']}}" alt="Los Angeles" class="top-slide">
+        <img src="./pictures/stylo2.png" alt="Los Angeles" class="top-slide">
         <div class="carousel-caption">
           <h3>{{$topSales[$i]['name']}}</h3>
           <p>{{$topSales[$i]['description']}}</p>
@@ -185,7 +185,7 @@ Animation du campus :
 $nextEvent = $controller->getNextEvent();
 ?>
 
-  <img src="{{ $nextEvent['pictureURL']}}"" alt="activite" class="img-accueil"/>
+  <img src="./pictures/stylo2.png" alt="activite" class="img-accueil"/>
 
   <div class="description">
     <h3>{{$nextEvent['title']}}</h3>

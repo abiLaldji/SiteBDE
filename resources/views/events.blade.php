@@ -125,7 +125,7 @@ $monthEvent = $controller->getMonthEvent();
 			<table class="table-event">
 
 <?php 
-$events = $controller->getEvents();
+$events = $controller->getNextEvents();
 ?>
 
  					@for ($i = 0; $i < sizeof($events); $i++)
@@ -133,7 +133,7 @@ $events = $controller->getEvents();
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<p class="bold">Titre : {{$events[$i]['title']}}</p>
-							<p class="bold">Organisateur : {{$events[$i]['organizator']}}</p>
+							<p class="bold">Organisateur : {{$events[$i]['first_name'] . ' ' . $events[$i]['last_name']}}</p>
 							<p class="bold">Date : {{$events[$i]['date']}}</p> 
 							<p class="desc-event"><span class="bold">Description :</span> {{$events[$i]['description']}}ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo	consequat.</p>
 						</td>
