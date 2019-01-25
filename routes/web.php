@@ -50,6 +50,19 @@ Route::get('contact', function()
 	return view('contact');
 });
 
+Route::get('legalNotice', function(){
+	return view('legalNotice');
+});
+
+Route::get('privacyPolicy', function() {
+	return view('privacypolicy');
+});
+
+Route::get('terms&conditions', function()
+{
+	return view('terms&conditions');
+});
+
 Route::get('deconnexion', 'Controller@deconnect');
 
 Route::post('signUp', 'Controller@signUp');
