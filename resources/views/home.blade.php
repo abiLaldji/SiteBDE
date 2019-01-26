@@ -112,7 +112,7 @@ Animation du campus :
   ?>
 
 
-    <img src="{{ $nextEvent['picture_url']}}" alt="activite" class="img-accueil"/>
+    <img src="./pictures/defaultPicture.png" alt="activite" class="img-accueil"/>
 
     <div class="description">
       <h3>{{$nextEvent['title']}}</h3>

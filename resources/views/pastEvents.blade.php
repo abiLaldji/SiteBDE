@@ -89,8 +89,6 @@ use App\Http\Controllers\Controller
 <?php 
 $controller = new Controller();
 $events = $controller->getEvents();
-
-var_dump($events);
 ?>
  					@for ($i = 0; $i < sizeof($events); $i++)
 					<tr>

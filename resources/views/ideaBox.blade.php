@@ -146,7 +146,7 @@ $ideas = $controller->getIdeas();
 ?>
         @for ($i = 0; $i < sizeof($ideas); $i++)
         <tr>
-          <td><img src="{{$ideas[$i]['pictureURL']}}" alt="" class="pic-event"></td>
+          <td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
           <td class="td-event-left">
             <div class="desc-right">
               <i class="fas fa-check ideabox-check"></i>
@@ -154,7 +154,7 @@ $ideas = $controller->getIdeas();
             </div>
             <div class="desc-left">
               <p class="bold">Titre : {{$ideas[$i]['title']}}</p>
-              <p class="bold">Organisateur : {{$ideas[$i]['organizator']}}</p>
+              <p class="bold">Organisateur : {{$ideas[$i]['first_name'] . ' ' . $ideas[$i]['last_name']}}</p>
               <p class="bold">Date : {{$ideas[$i]['date']}}</p> 
               <p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

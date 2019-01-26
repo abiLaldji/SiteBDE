@@ -109,6 +109,6 @@ Route::post('submitIdea', 'Controller@submitIdea');
 
 
 
-Route::get('test', 'Controller@getCampus');
+Route::get('test', 'Controller@test');
 
 
