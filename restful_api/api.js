@@ -3,10 +3,6 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql");
 require('dotenv').load();
 
-const hostname = '10.64.128.131';
-// const hostname = 'localhost';
-const port = 3001;
-
 const app = express();
 
 const router = express.Router();
@@ -32,46 +28,46 @@ connection.connect(err => {
 
 // API route :field is the name of the column we want to SELECT and :value is the value selected
 // Example : /bde_site/api/user/id_user/3/
-router.route('/bde_site/api/:table/:field?/:value?/')
+router.route('/bde_site/api/:table/:field?/:value?/:add?')
 
 	// HTTP GET verb
 	.get((req, res) => {
+
+		// Verify if token in header correspond with the variable in .env file
 		if (process.env.TOKEN !== req.header("Authorization") || req.header("Authorization") === undefined) res.json({ message: "Invalid Token" })
 
 		let table = req.params.table;
 		let field = req.params.field;
 		let value = req.params.value;
 
-		console.log(table + field);
-
+		// Request string variable
 		let r;
 
+		// SELECT request are differents depending on table name
 		switch (table) {
 			case 'event':
-				r = "SELECT e.*, count(v.id_event) vote_count, u.first_name, u.last_name FROM event e LEFT JOIN vote v ON e.id_event = v.id_event "
-					+ "INNER JOIN user u ON u.id_user = e.id_user";
+				r = process.env.getEvent;
 				if (field != undefined && field != 'date') r += " WHERE e." + field + "=" + value;
 				r += " GROUP BY e.id_event";
 				break;
 			case 'picture':
-				r = "SELECT p.*, u.first_name, u.last_name, COUNT(l.id_picture) like_count FROM picture p LEFT JOIN user u ON p.id_user = u.id_user" +
-					" INNER JOIN likes l ON p.id_picture = l.id_picture "
+				r = process.env.getPicture;
 				if (field != undefined) r += "WHERE p." + field + "=" + value;
 				r += " GROUP BY p.id_picture";
 				break;
 			case 'comment':
-				r = "SELECT c.*, u.first_name, p.url, u.last_name  FROM comment c INNER JOIN picture p ON p.id_picture = c.id_picture " +
-					"INNER JOIN user u ON u.id_user = p.id_user WHERE c." + field + " = " + value;
+				r = process.env.getComment;
+				if (field != undefined) r += "WHERE c." + field + "=" + value;
 				break;
 			case 'subscribe':
-				r = "SELECT u.first_name, u.last_name FROM subscribe s INNER JOIN event e ON s.id_event = e.id_event "
-					+ "INNER JOIN user u ON u.id_user = e.id_user ";
+				r = process.env.getSubscribe
 				if (field != undefined) r += "WHERE e." + field + "=" + value;
+
 				break;
-			// case 'product':
-			// 	''
-			// 	// "SELECT p.*, o.date, c.quantity FROM product p INNER JOIN contain c ON c.id_product = p.id_product INNER JOIN order o ON o.id_order = c.id_order";
-			// 	break;
+			case 'purchase':
+				r = process.env.getPurchase
+				if (field != undefined) r += "WHERE p." + field + "=" + value;
+				break;
 			default:
 				r = 'SELECT * FROM ' + table;
 
@@ -79,10 +75,10 @@ router.route('/bde_site/api/:table/:field?/:value?/')
 				if (field != undefined && value != undefined) r += " WHERE " + field + "='" + value + "'";
 		}
 
+		if (field === 'date') if (value === 'futur') r += "WHERE e.date > now()"; else r += "WHERE e.date <= now()";
+
 		connection.query(r, (err, result) => {
 			if (err) throw err
-			if (field === 'date') { if (value === 'sup') result.filter(x => new Date() < x.date); };
-			// console.log(result);
 			res.json(result);
 		})
 	})
@@ -90,15 +86,15 @@ router.route('/bde_site/api/:table/:field?/:value?/')
 	.post((req, res) => {
 		if (process.env.TOKEN !== req.header("Authorization") || req.header("Authorization") === undefined) res.json({ message: "Invalid Token" })
 
-		let keys = Object.keys(req.body).toString();
+		/*
+			Insert into the field given in POST body keys.
+			Then map all POST body values to a string surrounded by "'".
+			If the value is a fonction, matches "name()", do not surround with "'".
+		*/
+		let r = 'INSERT INTO ' + req.params.table + ' (' + Object.keys(req.body).toString() + ')' +
+			' VALUES  (' + Object.values(req.body).map(x => { if (new RegExp(/.+\(\)/).test(x)) { return "'" + x + "'" } else return x }).join(",") + ')';
 
-		let values = Object.values(req.body).map(x => { if (x != 'now()' && x != 'NOW()') { return "'" + x + "'" } else return x });
-
-		values.join(",");
-
-		let r = 'INSERT INTO ' + req.params.table + ' (' + keys + ')' + ' VALUES  (' + values + ')';
-
-		connection.query("insert into campus value ('" + x + "')", (error, results) => {
+		connection.query(r, (error, results) => {
 			if (error) throw error;
 			res.end(JSON.stringify(results));
 		});
@@ -106,12 +102,21 @@ router.route('/bde_site/api/:table/:field?/:value?/')
 
 	// HTTP PUT verb
 	.put((req, res) => {
+
+		let table = req.params.table;
+		let field = req.params.field;
+		let value = req.params.value;
+		let add = req.params.add;
+
 		if (process.env.TOKEN !== req.header("Authorization") || req.header("Authorization") === undefined) res.json({ message: "Invalid Token" })
 
-		let columns = Object.keys(req.body);
-
-		let r = 'UPDATE ' + req.params.table + ' SET ' + Object.values(req.body).map((x, i) => columns[i] + "='" + x + "'")
-			+ ' WHERE ' + req.params.field + '=' + req.params.value;
+		// :add parametre in route is meant to tell if the value has to be added to the current valu in the database
+		if (add != undefined) {
+			let r = process.env.postAdd;
+		} else {
+			let r = 'UPDATE ' + table + ' SET ' + Object.values(req.body).map((x, i) => Object.keys(req.body)[i] + "='" + x + "'")
+				+ ' WHERE ' + field + '=' + value;
+		}
 
 		connection.query(r, (error, results) => {
 			if (error) throw error;
@@ -128,13 +133,12 @@ router.route('/bde_site/api/:table/:field?/:value?/')
 			if (error) throw error;
 			res.end(JSON.stringify(results));
 		});
-	})
+	});
 
-
-// Nous demandons à l'application d'utiliser notre routeur
+// Use the route defined before
 app.use(router);
 
-// Démarrer le serveur 
-app.listen(port, hostname, () => {
-	console.log("Running on http://" + hostname + ":" + port + '. . .');
-});	
+//Listen for incoming connection
+app.listen(process.env.PORT, process.env.HOSTNAME, () => {
+	console.log("Running on http://" + process.env.HOSTNAME + ":" + process.env.PORT + '. . .');
+});
