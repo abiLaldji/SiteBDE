@@ -70,6 +70,11 @@ th{
     margin-bottom: 3%;
 }
 
+.gray-stripe{
+    background-color: rgb(80, 80, 80) ;
+    margin-bottom: 3%;
+}
+
 .border-raduis{
     border-radius: 10px;
 }
@@ -111,6 +116,10 @@ table{
 
 .right{
     text-align: right;
+}
+
+.image-carousel{
+ width: 100%;
 }
 
 /*---------------------------------------------------------Header--------------------------------------------------------*/
@@ -473,7 +482,7 @@ table{
 .event-article-center{
     margin-left: 5%;
     margin-right: 35%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 4%;
@@ -579,7 +588,7 @@ table{
 /*------------------------------------------------------Aside page evenements-------------------------------------------*/
 
 .event-aside{   
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     float: right;
     min-width: 30%;
     max-width: 30%;
@@ -1170,6 +1179,17 @@ table{
     border: 1px solid rgb(40, 40, 40);
 }
 
+#input-button-aside-section-category{
+    background-color: black;
+    color: white;
+    margin-top: 3%;
+    margin-left: 10%
+}
+
+#input-button-aside-section-category:hover{
+    color: rgb(255, 194, 82);
+}
+
 #article-category{
     background-color: black;
     color: white;
@@ -1244,7 +1264,7 @@ table{
 
 .td-2-category a:hover{
     text-decoration: none;
-    color: hsla(39,100%,66%,1);
+    color: rgb(255, 194, 82);
 }
 
 .td-4-category{
@@ -1301,7 +1321,7 @@ table{
 
 #button-article:hover{
     background-color: black;
-    color: hsla(39,100%,66%,1);
+    color: rgb(255, 194, 82);
     margin-right: -15%;
     margin-top: 12.5%;
     float: right;

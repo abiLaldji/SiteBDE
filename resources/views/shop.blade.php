@@ -32,7 +32,7 @@ session_start();
                 <div class="carousel-inner">
             
                   <div class="item active">
-                    <img src="pictures/hoodi.png" alt="hoodi" class="top-slide" width="100%">
+                    <img src="pictures/hoodi.png" alt="hoodi" class="top-slide image-carousel">
                     <div class="carousel-caption">
                       <h3 class="text-black titre-carousel">hoodi</h3>
                       
@@ -40,7 +40,7 @@ session_start();
                   </div>
             
                   <div class="item">
-                    <img src="pictures/mug.jpg" alt="mug" class="top-slide" width="100%">
+                    <img src="pictures/mug.jpg" alt="mug" class="top-slide image-carousel" >
                     <div class="carousel-caption">
                       <h3 class="text-black titre-carousel">mug</h3>
                       
@@ -48,7 +48,7 @@ session_start();
                   </div>
                 
                   <div class="item">
-                    <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide" width="100%">
+                    <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide image-carousel" >
                     <div class="carousel-caption">
                       <h3 class="text-black titre-carousel">Stylo</h3>
 
@@ -58,8 +58,10 @@ session_start();
               
                 </div>
               </div>
+
               <div>
                 <br>
+
             </div>
         </aside>
         <article id="article-shop">
@@ -93,17 +95,21 @@ session_start();
                 <div class="carousel-inner">
             <div class="carousel-inner">
 
+
   <?php 
   $controller = new Controller();
   $topSales = $controller->getTopSales();
   ?>
 
+
         @for ($i = 0; $i < sizeof($topSales); $i++)
         <div class="item 
+
 
         @if ($i == 0)
           active
         @endif
+
 
         ">
           <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
@@ -124,7 +130,7 @@ session_start();
         <br>
       </div>
     </aside>
-
+        
   </main>
 
 @include("footer")

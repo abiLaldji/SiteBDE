@@ -25,13 +25,13 @@ use App\Http\Controllers\Controller
 
 		<aside class="event-aside">
 
-			<h2 class="h2white">Évènement du mois</h2>
+			
 
 
 
 
 			<section class="section-aside-event">
-
+				<h2>Évènement du mois</h2>
 				<?php 
 				$controller = new Controller();
 				$monthEvent = $controller->getMonthEvent();
@@ -58,10 +58,10 @@ use App\Http\Controllers\Controller
 
 		<article class="event-article-center">
 
-			<h2 class="h2white">Évènements à venir</h2>
+			
 
 			<section class="event-section-center">
-
+			<h2>Évènements à venir</h2>
 				<table class="table-event">
 
 					<?php 

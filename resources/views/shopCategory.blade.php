@@ -18,12 +18,17 @@
         
     <main>
         <aside id="aside-category" class="border-raduis">
-            <h1>Tri</h1>
+            
             <section id="aside-section-category" class="border-raduis">
+                <h2>Tri</h2>
+                <div class="gray-stripe"><br></div>
                 <h3>Prix</h3>
                 <form>
                     <label>Min</label><input id="input-text-min-aside-section-category" type="text">
                     <label>Max</label><input id="input-text-max-aside-section-category" type="text">
+                    <br>
+                    <input type="button" value="Trier" id="input-button-aside-section-category" class="border-raduis">
+                    <br> 
                 </form>
             </section>
             <div> <br></div>
@@ -32,6 +37,7 @@
             
             <section id="section-category">
             <h2 class="titre_page">Liste des articles</h2>
+            <div class="blue-stripe"><br></div>
                 <article class="article-category">
                     <table id="table-category">
                         <tr class="tr-category">
