@@ -3,10 +3,21 @@ use App\Http\Controllers\Controller;
 session_start();
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
+     <!-- bootstrap link-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+     <!-- FontAwesome link-->
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  
+</head>
 
 @include("header")
-
-
 
 <main>
 
@@ -39,7 +50,7 @@ session_start();
           @endif
 
           ">
-          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide image-carousel">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>
@@ -47,7 +58,7 @@ session_start();
         </div>
 
         @endfor
-        
+
       </div>
 
       <!-- Left and right controls -->
@@ -93,7 +104,7 @@ session_start();
 
   </div>
 
-  <h2 class="presentation-title">Réseaux sociaux</h2>
+  
 
 
 
@@ -102,7 +113,7 @@ session_start();
 <article class="article-home">
 
 
-  <h2 class="titre-page"> Prochain évènement </h2>
+
 
   <section id="section-home">
     <h2 class="titre_page"> Prochain évènement </h2>
@@ -126,51 +137,6 @@ session_start();
 
 </main>
 
-<div class="cookie-stripe">
-  En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de <a href="privacyPolicy"> Cookies</a>  ou autres traceurs.
-  <div class="cookie-buttons">
-    <button values="Accepter" class="cookie-a">Accepter</button>
-    <button values="Refuser" class="cookie-r">Refuser</button>
-  </div>
-</div>
 
-<footer> 
-
-  <div class="footer-ln">
-    <div>
-      <p><a href="legalNotice" class="navtext">Mentions légales</a></p>
-    </div>
-    <div class="f-center">
-      <p><a href="privacyPolicy" class="navtext">Politique de confidentialité</a></p>
-    </div>
-    <div>
-      <p><a href="terms&conditions" class="navtext">Conditions générales de vente</a></p>
-    </div>
-  </div>
-
-  <div class="reseau-logo">
-    <a href=""><i class="fab fa-twitter"> </i></a>
-    <a href=""><i class="fab fa-facebook"> </i></a>
-    <a href=""><i class="fab fa-instagram"> </i></a>
-    <a href=""><i class="fab fa-linkedin-in"> </i></a>
-  </div>
-  <div class="contact">
-    <i class="fas fa-phone ycolor phone-mini"></i>
-    <p><a href="contact" class="navtext">CONTACT</a></p>
-  </div>
-
-  <div class="footer-text">
-    Site officiel du BDE du centre CESI de Pau. Nous proposons régulièrement des activités afin d'animer la vie au campus, nous vous permettont également de proposer des idées d'activités et de voter pour celles qui sont proposés. Une boutique est également à votre disposition afin d'acquérir différents goudies en rapport avec le CESI, ce qui vous permettra de garder un souvenir de votre scolarité. 
-  </div>
-  <div class="footer-text">
-   © CESI 2019
- </div>
-
-</footer>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./bootstrap/js/bootstrap.min.js"></script>
-<script src="./js/autoComplete.js"></script>
-
-</body>
-</html>
+@include("footer")
+   

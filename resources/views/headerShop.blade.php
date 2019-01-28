@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Index</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
-    <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-    
-</head>
+
 <body>
 
     <header id="header">
         <div id="logo-cesi">
-            <img src="./pictures/logoCesi.png">
+            <a href="/"><img src="./pictures/logoCesi.png" alt="logo du cesi"></a>
         </div>
 
         <div id="header-right">
 
-            <h1 id="titre">SITE BDE DU CESI PAU</h1>
-            <a id="logo-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
-            <a id="logo-profile" href="myprofile"><i class="fas fa-user"></i></a>
-        </div>
+
+                <h1 id="titre">SITE BDE DU CESI PAU</h1>
+                <a id="logo-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
+                <a id="logo-profile" href="myAccount"><i class="fas fa-user"></i></a>
+            </div>
+
     </header>
 
 
@@ -33,13 +24,13 @@
 
                 <li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
-                <li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
+                <li><a href="shop" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
                 
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">T-shirt</a></li>
-                        <li><a href="#">Pull</a></li>
-                        <li><a href="#">Goodies</a></li>
+                        <li><a href="shopCategory">T-shirt</a></li>
+                        <li><a href="shopCategory">Pull</a></li>
+                        <li><a href="shopCategory">Goodies</a></li>
                     </ul>
                     
                 </li>
@@ -48,7 +39,7 @@
 
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">A venir</a></li>
+                        <li><a href="events">A venir</a></li>
                         <li><a href="pastEvents">Historique</a></li>
                     </ul>
                 </li>
@@ -70,7 +61,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 @if (isset($_SESSION['first_name']))
-                <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['first_name']}} {{$_SESSION['last_name']}}</span></a></li>
+                <li><a href="myAccount"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['first_name']}} {{$_SESSION['last_name']}}</span></a></li>
                 <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> DECONNEXION</span></a></li>
                 @else
                 <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span  class="navtext"> INSCRIPTION</span></a></li>
@@ -85,8 +76,6 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
-    <script src="./js/autoComplete.js"></script>
+
 </body>
 </html>
