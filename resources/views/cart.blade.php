@@ -6,7 +6,6 @@
     <title>Index</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    
      <!-- bootstrap link-->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
      <!-- FontAwesome link-->
@@ -14,11 +13,7 @@
   
 </head>
 
-
 @include("headerShop")
-
-
-
 
   <main>
 
