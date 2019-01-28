@@ -6,13 +6,21 @@ if (!isset($_SESSION['id_user'])){
 }
 use App\Http\Controllers\Controller;
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
+     <!-- bootstrap link-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+     <!-- FontAwesome link-->
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  
+</head>
 
 @include("header")
-        
-        <main id="main_compte">
-            <article id="article_compte">
-                <h1 class="titre_page">Mon compte</h1>
-                <section id="section_compte" class="border-raduis">
 
                     @if($_SESSION['status'] == 'bde_member')
                         <button id="key-admin"><i class="fas fa-key"></i></button>
@@ -25,8 +33,8 @@ use App\Http\Controllers\Controller;
 
                         @csrf
 
-                        <label id="first-label-compte"> Nom : {{$_SESSION['first_name']}}   </label><input type="text" placeholder="Nouveau nom"  class="border-raduis input-account" name="first_name"><br><br>
-                        <label> Prénom : {{$_SESSION['last_name']}}</label>   <input type="text" placeholder="Nouveau prenom"  class="border-raduis input-account" name="last_name"><br><br>
+                        <label id="first-label-compte"> Nom : {{$_SESSION['last_name']}}   </label><input type="text" placeholder="Nouveau nom"  class="border-raduis input-account" name="first_name"><br><br>
+                        <label> Prénom : {{$_SESSION['first_name']}}</label>   <input type="text" placeholder="Nouveau prenom"  class="border-raduis input-account" name="last_name"><br><br>
                         <label for="campus">Centre CESI : </label>
                         <select name="campus_name" id="campus" class="border-raduis">
                             <optgroup label='Centre Actuel'>
@@ -36,11 +44,11 @@ use App\Http\Controllers\Controller;
 <?php  
 $controller = new Controller();
 $campus = $controller->getCampus();
-
 ?>
                                 @for($i=0 ; $i < sizeof($campus) ; $i++)
                                     <option value="{{$campus[$i]['campus_name']}}">{{$campus[$i]['campus_name']}}</option>
                                 @endfor
+
                             </optgroup>
 
                         </select><br><br>
@@ -49,9 +57,10 @@ $campus = $controller->getCampus();
                         <label> Retaper le nouveau mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account" name="password_conf"><br><br>
                         <input id="valider-les-modifications" type="submit" value="Valider les modifications">
                     </form>
-                   <div><br></div>
+                    <div><br></div>
                 </section>
             </article>
         </main>
-</body>
-</html>
+
+        
+@include(footer)
