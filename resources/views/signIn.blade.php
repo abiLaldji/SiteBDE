@@ -12,6 +12,7 @@
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
+	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
 
 </head>
 
@@ -90,22 +91,22 @@
 				<p> Vous êtes déjà connecté </p>
 				@else
 
-				<form method="POST" action="signIn">
+				<form name="login" method="POST" onsubmit="return validateFormSignIn(this);" action="signIn">
 					<div class="formulaire">
 
 						@csrf
 
 						<div class="form-group">
 							<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Adresse mail" name="email">
+							<div id ="error_email">
+							 </div>
 						</div>
 						<div class="form-group">
 							<input type="password" class="form-control" placeholder="Mot de passe" name="password">
+							<div id ="error_password">
+							</div>
 						</div>
 					</div>
-
-					@if(isset($_GET['notRegistered']))
-					<p class="error">  Identifiants incorrect</p>
-					@endif
 
 					<div class="connecIns">
 						<div class="form-check">
