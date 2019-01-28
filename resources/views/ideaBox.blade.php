@@ -63,8 +63,8 @@ session_start();
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-    @if (isset($_SESSION['firstName']))
-        <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['firstName']}} {{$_SESSION['lastName']}}</span></a></li>
+    @if (isset($_SESSION['first_name']))
+        <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['first_name']}} {{$_SESSION['last_name']}}</span></a></li>
         <li><a href="deconnexion"><span class="glyphicon glyphicon-log-in ycolor"></span><span  class="navtext"> DECONNEXION</span></a></li>
     @else
         <li><a href="signUp"><span class="glyphicon glyphicon-user ycolor"></span><span  class="navtext"> INSCRIPTION</span></a></li>
@@ -156,12 +156,7 @@ $ideas = $controller->getIdeas();
               <p class="bold">Titre : {{$ideas[$i]['title']}}</p>
               <p class="bold">Organisateur : {{$ideas[$i]['first_name'] . ' ' . $ideas[$i]['last_name']}}</p>
               <p class="bold">Date : {{$ideas[$i]['date']}}</p> 
-              <p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}</p>
               <div class="like">
                 <a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
                 <p class="like-counter">1</p>

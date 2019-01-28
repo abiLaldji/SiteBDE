@@ -59,6 +59,7 @@
             </ul>
 
 
+
             <ul class="nav navbar-nav navbar-right">
                 @if (isset($_SESSION['firstName']))
                 <li><a href="#"><span class="glyphicon glyphicon-user ycolor"></span><span class="navtext"> {{$_SESSION['firstName']}} {{$_SESSION['lastName']}}</span></a></li>
