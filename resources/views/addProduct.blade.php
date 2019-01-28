@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Ajouter produit</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
      <!-- bootstrap link-->
@@ -48,10 +48,10 @@ session_start();
           <input type="text" class="form-control" placeholder="Nom du produit" name="name">
         </div>
         <select class=form-control name="name_category">
-          <?php 
-          $controller = new Controller();
-          $categories = $controller->getCategories();
-          ?>
+<?php 
+ $controller = new Controller();
+ $categories = $controller->getCategories();
+?>
           @for ($i = 0; $i < sizeof($categories); $i++)
           <option value="{{$categories[$i]}}">{{$categories[$i]}}</option>
           @endfor

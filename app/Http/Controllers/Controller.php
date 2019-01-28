@@ -19,6 +19,10 @@ class Controller extends BaseController
     
     // sign in a new user
     public function signIn(){
+    	if(isset($_COOKIE['isUsingCookies']) && $_COOKIE['isUsingCookies'] == true && isset($_POST['remember_me'])){
+    		unset($_POST['remember_me']);
+    		setcookie('remember_me', true, time()+60*60*24*365);
+    	}
 
 		json_encode($_POST);
 
@@ -46,6 +50,11 @@ class Controller extends BaseController
 				$_SESSION['id_user'] = $output['id_user'];
 				$_SESSION['campus_name'] = $output['campus_name'];
 				$_SESSION['status'] = $output['status'];
+				if(isset($_COOKIE['isUsingCookies']) && $_COOKIE['isUsingCookies'] == true){
+					setcookie('first_name');
+					setcookie('last_name');
+					setcookie('last_name');
+				}
 			}else{
 				return redirect()->route('signIn', 'notRegistered');
 			}
@@ -354,7 +363,6 @@ class Controller extends BaseController
 
 	// returns the products categories from the API
 	public function getCategories(){
-		$categories = ['stylo', 'pull', 'saccoche', 'fourchette', 'voiture', 'fusée', 'etoile', 'divers'];
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
@@ -365,9 +373,7 @@ class Controller extends BaseController
 		$info = curl_getinfo($ch);
 		curl_close($ch);
 
-		var_dump($output);
-
-		//return $categories;
+		return $categories;
 	}
 
 	// returns the campuses from the API
@@ -429,5 +435,19 @@ class Controller extends BaseController
 
 		// update the campus in the current session
 		$_SESSION['campus_name'] = $_POST['campus_name'];
+
+
+		return redirect()->route('myAccount', 'success');
 	}
+
+	public function acceptCookies(){
+		setcookie('isUsingCookies', true, time()+60*60*24*365);
+		return redirect()->route('home');
+	}
+
+	public function declineCookies(){
+		setcookie('isUsingCookies', false, time()+60*60*24*365);
+		return redirect()->route('home');
+	}
+
 }

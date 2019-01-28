@@ -9,7 +9,7 @@ session_start();
 <head>
 
 
-    <title>Index</title>
+    <title>Boutique</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -25,7 +25,8 @@ session_start();
    
     <main id="main-shop">
         <aside id="aside-1-shop" class="border-raduis">
-            <h2 class="titre-page h2white">Nouveautés</h2>
+            <h2>Nouveautés</h2>
+            <div class="gray-stripe-111"><br></div>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
             
                 <!-- Wrapper for slides -->
@@ -66,7 +67,8 @@ session_start();
             </div>
         </aside>
         <article id="article-shop">
-            <h1 class="titre-page">Catégories d'article</h1>
+            <h2>Catégories d'article</h2>
+            <div class="blue-stripe"><br></div>
             <section id="section-shop" class="border-raduis">
                 <article class="article-shop">
                     <a class="a-shop" href="shopCategory"><img src="pictures/hoodi.png" class="image-shop"><p class="p-shop">salut</p></a>
@@ -89,7 +91,8 @@ session_start();
             </section>
         </article>
         <aside id="aside-2-shop" class="border-raduis">
-            <h1 class="titre-page">Top vente</h1>
+            <h2>Top vente</h2>
+            <div class="gray-stripe-111"><br></div>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
             
                 <!-- Wrapper for slides -->

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Panier</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
      <!-- bootstrap link-->
@@ -19,12 +19,14 @@
 
    <article class="cart-article-center">
 
-    <h2 class="h2white">Panier</h2>
+    
 
     <?php /*$_COOKIE['cart'] = [['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '52', 'unitPrice' => '14'], ['pictureURL' => './pictures/stylo2.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '14', 'unitPrice' => '128'],['pictureURL' => './pictures/stylo3.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '25', 'unitPrice' => '4'],['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '8', 'unitPrice' => '54']] */ ?>
     @if (isset($_COOKIE['cart']))
 
     <section class="cart-section-center">
+      <h2>Panier</h2>
+      <div class="blue-stripe"><br></div>
       <table class="table-cart">
 
         <tr>
@@ -67,6 +69,8 @@
 @else
 
 <section class="section-center section-empty-cart">
+  <h2>Panier</h2>
+    <div class="blue-stripe"><br></div>
  <p>Vous n'avez pas de produits dans votre panier.</p>
 </section>
 @endif

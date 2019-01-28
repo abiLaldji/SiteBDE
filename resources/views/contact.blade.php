@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Contact</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -28,6 +28,7 @@
 			<section class="contact-section-center">
 
 				<h2>Contact</h2>
+				<div class="blue-stripe"><br></div>
 
 				<div class="center">
 
