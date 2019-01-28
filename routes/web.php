@@ -111,3 +111,5 @@ Route::post('putUser', 'Controller@updateUser');
 Route::get('acceptCookies', 'Controller@acceptCookies');
 
 Route::get('declineCookies', 'Controller@declineCookies');
+
+Route::get('test', 'Controller@getNewProducts');
