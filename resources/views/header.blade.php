@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Index</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    
-    <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-    
-</head>
+
 
 <body>
 
     <header id="header">
         <div id="logo-cesi">
-            <img src="./pictures/logoCesi.png" alt="logo du cesi">
-        </div>
+        <a href="/"><img src="./pictures/logoCesi.png" alt="logo du cesi"></a>
+        </div> 
 
         <div id="header-right">
 

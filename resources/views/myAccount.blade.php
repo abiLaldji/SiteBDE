@@ -22,6 +22,12 @@ use App\Http\Controllers\Controller;
 
 @include("header")
 
+   
+    <main>
+        <article id="article_compte">
+            <section id="section_compte">
+                <h2>Mon compte</h2>
+                <div class="blue-stripe"><br></div>
                     @if($_SESSION['status'] == 'bde_member')
                         <button id="key-admin"><i class="fas fa-key"></i></button>
                     @endif
