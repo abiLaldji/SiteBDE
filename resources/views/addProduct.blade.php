@@ -56,7 +56,7 @@ session_start();
           @endfor
         </select>
         <div class="form-group">
-          <input type="price" class="form-control" placeholder="Prix" name="price">
+          <input type="number" class="form-control" placeholder="Prix" name="price">
         </div>
         <div class="form-group">
           <textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>

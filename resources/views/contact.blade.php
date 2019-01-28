@@ -12,7 +12,9 @@
   
 </head>
 
+
 @include("header")
+
 
 
 
@@ -33,9 +35,9 @@
 
 						<i class="fas fa-envelope email-pic"></i>
 						<p class="email-address"><a href="mailto:bde.pau@cesi.fr">bde.pau@cesi.fr</a></p>
-						
+
 					</div>
-					
+
 					<div class="phone-number-div">
 
 						<i class="fas fa-phone phone-pic"></i>

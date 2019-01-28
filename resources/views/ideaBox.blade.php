@@ -21,9 +21,8 @@ session_start();
 @include("header")
 
 
+
 	<main>
-
-
 
 		<aside class="aside-ideaBox">
 
@@ -35,7 +34,7 @@ session_start();
 					<div class="formulaire">
 
 						@csrf
-						
+
 						@if (isset($_GET['fieldEmpty']))
 						<p class='error'>Tous les champs obligatoires doivent être remplis</p>
 						@endif
@@ -52,7 +51,7 @@ session_start();
 						</div>
 
 						<div class="form-group">
-							<input type="date" class="form-control optional" placeholder="Date (optionnel)" name="date">
+							<input type="date" class="form-control optional" name="date">
 							<p class="optional-text">Optionnel</p>
 						</div>
 
@@ -109,7 +108,7 @@ session_start();
 									<i class="fas fa-flag ideabox-flag"></i>
 								</div>
 							</div>
-							
+
 						</td>
 					</tr>
 					@endfor
@@ -121,9 +120,8 @@ session_start();
 
 		</article>
 
-
-
 	</main>
+
 
 
 

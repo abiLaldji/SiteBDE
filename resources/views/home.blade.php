@@ -50,7 +50,7 @@ session_start();
           @endif
 
           ">
-          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>
@@ -58,7 +58,7 @@ session_start();
         </div>
 
         @endfor
-        
+
       </div>
 
       <!-- Left and right controls -->
@@ -136,6 +136,7 @@ session_start();
 </article>
 
 </main>
+
 
 
 @include("footer")

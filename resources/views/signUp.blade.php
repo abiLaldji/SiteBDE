@@ -18,7 +18,9 @@ use App\Http\Controllers\Controller;
 </head>
 
 
+
 @include("header")
+
 
 
 
@@ -96,7 +98,6 @@ use App\Http\Controllers\Controller;
    <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
 
    @endif
-
 
  </section>
 

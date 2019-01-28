@@ -86,15 +86,12 @@ use App\Http\Controllers\Controller
 					@endfor
 				</table>
 				
-				
 			</section>
-
 
 		</article>
 
-
-
 	</main>
+
 
 
 
