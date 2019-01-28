@@ -13,6 +13,8 @@ session_start();
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
+	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
+
 </head>
 <body>
 
@@ -85,24 +87,21 @@ session_start();
 
 			<section class="section-aside-ideaBox">
 
-				<form method="POST" action="submitIdea">
+				<form method="POST" action="submitIdea" onsubmit="return validateFormIdeaBox(this);">
 					<div class="formulaire">
 
 						@csrf
 						
-						@if (isset($_GET['fieldEmpty']))
-						<p class='error'>Tous les champs obligatoires doivent être remplis</p>
-						@endif
-
-						@if (isset($_GET['notConnected']))
-						<p class="error">Vous devez être connecté pour ajouter une idée</p>
-						@endif
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Titre" name="title">
+							<div id ="error_title">
+							</div>
 						</div>
 
 						<div class="form-group">
 							<textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
+							<div id ="error_description">
+							</div>
 						</div>
 
 						<div class="form-group">
