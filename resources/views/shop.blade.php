@@ -36,14 +36,20 @@ session_start();
 $controller = new Controller();
 $newProducts = $controller->getNewProducts();
  ?>
-                  <div class="item active">
-                    <img src="pictures/hoodi.png" alt="{{newProducts['name']}}" class="top-slide image-carousel">
+                  @for($i=0 ; $i < sizeof($newProducts) ; $i++)
+                  <div class="item 
+
+                  @if ($i == 0)
+                     active
+                  @endif
+                   ">
+                    <img src="{{$newProducts[$i]['picture_url']}}" alt="{{$newProducts[$i]['picture_alt']}}" class="top-slide image-carousel">
                     <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">{{newProducts['name']}}</h3>
+                      <h3 class="text-black titre-carousel">{{$newProducts[$i]['name']}}</h3>
                       
                     </div>
                   </div>
-            
+                  @endfor
                   <div class="item">
                     <img src="pictures/mug.jpg" alt="mug" class="top-slide image-carousel" >
                     <div class="carousel-caption">
