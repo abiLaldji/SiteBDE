@@ -15,7 +15,6 @@ use App\Http\Controllers\Controller
 </head>
 <body>
 
-
 	<header id="header">
 		<div id="logo-cesi">
 			<img src="./pictures/logoCesi.png">
@@ -107,8 +106,6 @@ use App\Http\Controllers\Controller
 					@endfor
 				</table>
 
-
-
 			</section>
 
 		</article>
@@ -148,8 +145,6 @@ use App\Http\Controllers\Controller
 		</div>
 
 	</footer>
-
-
 
 </body>
 </html>

@@ -27,7 +27,6 @@
 		</div>
 	</header>
 
-
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 
@@ -36,14 +35,14 @@
 				<li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
 				<li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
-				
+
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">T-shirt</a></li>
 						<li><a href="#">Pull</a></li>
 						<li><a href="#">Goodies</a></li>
 					</ul>
-					
+
 				</li>
 
 				<li><a href="events" class="categories"><span class="navtext">ÉVÈNEMENTS</span></a></li>
@@ -69,7 +68,6 @@
 				@endif
 			</ul>
 
-
 		</div>
 	</nav>
 
@@ -92,7 +90,6 @@
 					CESI est engagé dans une démarche continue de conformité avec le Règlement général sur la protection des données du 27 avril 2016. Avec ce nouveau règlement CESI renforce sa politique de protection de données personnelles afin que les données de nos utilisateurs soient collectées et utilisées de manière transparente, confidentielle et sécurisée.
 
 				</div>
-
 
 				<p class="ln-title">Politique de protection des données personnelles à partir du 25 mai 2018</p>
 

@@ -105,8 +105,8 @@ use App\Http\Controllers\Controller
 
 				</div>
 
-		<p><span class="bold">Organisateur : {{$monthEvent['first_name'] . ' ' . $monthEvent['last_name']}}</span></p>
-		<p><span class="bold">Date : {{$monthEvent['date']}}</span></p>
+				<p><span class="bold">Organisateur : {{$monthEvent['first_name'] . ' ' . $monthEvent['last_name']}}</span></p>
+				<p><span class="bold">Date : {{$monthEvent['date']}}</span></p>
 
 			</section>
 
