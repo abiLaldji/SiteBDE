@@ -100,6 +100,10 @@ use App\Http\Controllers\Controller;
                   <p class="error">Tous les champs doivent être remplis</p>
                 @endisset
 
+                @isset ($_GET['userExist'])
+                  <p class="error">L'adresse email est déjà utilisée</p>
+                @endisset
+
                 <div class="form-group">
                   <input type="text" class="form-control" name="first_name" placeholder="Prenom">
                 </div>
@@ -108,7 +112,7 @@ use App\Http\Controllers\Controller;
                   <input type="text" class="form-control" name="last_name" placeholder="Nom">
                 </div>
 
-                <select class=form-control name="campus">
+                <select class=form-control name="campus_name">
 <?php 
   $controller = new Controller();
   $campus = $controller->getCampus();

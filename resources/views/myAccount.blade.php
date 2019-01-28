@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if (!isset($_SESSION['id_user'])){
+    header("Location: signIn");
+    exit();
+}
 use App\Http\Controllers\Controller;
 ?>
 
@@ -16,54 +20,34 @@ use App\Http\Controllers\Controller;
                     @if($_SESSION['status'] == 'employe')
                         <button id="download-all-pic"><i class="fas fa-file-download"></i></button>
                     @endif
+                    
+                    <form method="POST" action="putUser">
 
-                    <form>
-                        <label id="first-label-compte"> Nom : {{$_SESSION['first_name']}}   </label><input type="text" placeholder="Nouveau nom"  class="border-raduis input-account"><br><br>
-                        <label> Prénom : {{$_SESSION['last_name']}}</label><input type="text" placeholder="Nouveau prenom"  class="border-raduis input-account"><br><br>
-                        <label for="pays">Centre CESI : </label>
-                        <select name="pays" id="pays" class="border-raduis">
+                        @csrf
+
+                        <label id="first-label-compte"> Nom : {{$_SESSION['first_name']}}   </label><input type="text" placeholder="Nouveau nom"  class="border-raduis input-account" name="first_name"><br><br>
+                        <label> Prénom : {{$_SESSION['last_name']}}</label>   <input type="text" placeholder="Nouveau prenom"  class="border-raduis input-account" name="last_name"><br><br>
+                        <label for="campus">Centre CESI : </label>
+                        <select name="campus_name" id="campus" class="border-raduis">
                             <optgroup label='Centre Actuel'>
-                                <option value="{{$_SESSION['campus']}}">{{$_SESSION['campus']}}</option>
+                                <option value="{{$_SESSION['campus_name']}}">{{$_SESSION['campus_name']}}</option>
                             </optgroup>
                             <optgroup label='Nouveau Centre'>
 <?php  
 $controller = new Controller();
 $campus = $controller->getCampus();
+
 ?>
                                 @for($i=0 ; $i < sizeof($campus) ; $i++)
                                     <option value="{{$campus[$i]['campus_name']}}">{{$campus[$i]['campus_name']}}</option>
                                 @endfor
-                            <!--    <option value="Aix-en-Provence">Aix-en-Provence</option>
-                                <option value="Angoulême">Angoulême</option>
-                                <option value="Arras">Arras</option>
-                                <option value="Bordeaux">Bordeaux</option>
-                                <option value="Brest">Brest</option>
-                                <option value="Caen">Caen</option>
-                                <option value="Dijon">Dijon</option>
-                                <option value="Grenoble">Grenoble</option>
-                                <option value="La Rochelle">La Rochelle</option>
-                                <option value="Le mans">Le mans</option>
-                                <option value="Lille">Lille</option>
-                                <option value="Lyon">Lyon</option>
-                                <option value="Montpellier">Montpellier</option>
-                                <option value="Nancy">Nancy</option>
-                                <option value="Nantes">Nantes</option>
-                                <option value="Nice">Nice</option>
-                                <option value="Orléans">Orléans</option>
-                                <option value="Paris Nanterre">Paris Nanterre</option>
-                                <option value="Pau">Pau</option>
-                                <option value="Reims">Reims</option>
-                                <option value="Rouen">Rouen</option>
-                                <option value="Saint-Nazaire">Saint-Nazaire</option>
-                                <option value="Strasbourg">Strasbourg</option>
-                                <option value="Toulouse">Toulouse</option>-->
                             </optgroup>
 
                         </select><br><br>
-                        <label> Adresse mail : {{$_SESSION['email']}}   </label><input type="text" placeholder="Nouvelle adresse"  class="border-raduis input-account"><br><br>
-                        <label> Changer de mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account"><br><br>
-                        <label> Retaper le nouveau mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account"><br><br>
-                        <input id="valider-les-modifications" type="button" value="Valider les modifications">
+                        <label> Adresse mail : {{$_SESSION['email']}}   </label><input type="text" placeholder="Nouvelle adresse"  class="border-raduis input-account" name="email"><br><br>
+                        <label> Changer de mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account" name="password"><br><br>
+                        <label> Retaper le nouveau mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account" name="password_conf"><br><br>
+                        <input id="valider-les-modifications" type="submit" value="Valider les modifications">
                     </form>
                    <div><br></div>
                 </section>

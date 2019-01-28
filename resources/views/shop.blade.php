@@ -1,3 +1,9 @@
+<?php 
+use App\Http\Controllers\Controller;
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,32 +118,31 @@
             
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-            
-                  <div class="item active">
-                    <img src="pictures/hoodi.png" alt="hoodi" class="top-slide" width="100%">
-                    <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">hoodi</h3>
-                      
-                    </div>
-                  </div>
-            
-                  <div class="item">
-                    <img src="pictures/mug.jpg" alt="mug" class="top-slide" width="100%">
-                    <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">mug</h3>
-                      
-                    </div>
-                  </div>
-                
-                  <div class="item">
-                    <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide" width="100%">
-                    <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">Stylo</h3>
-                      
-                    </div>
-                  </div>
-              
-                </div>
+            <div class="carousel-inner">
+
+  <?php 
+  $controller = new Controller();
+  $topSales = $controller->getTopSales();
+  ?>
+
+        @for ($i = 0; $i < sizeof($topSales); $i++)
+        <div class="item 
+
+        @if ($i == 0)
+          active
+        @endif
+
+        ">
+          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <div class="carousel-caption">
+            <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
+          </div>
+
+        </div>
+
+        @endfor
+    
+      </div>
               </div>
               <div>
                   <br>
