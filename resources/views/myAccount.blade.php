@@ -63,4 +63,4 @@ $campus = $controller->getCampus();
         </main>
 
         
-@include(footer)
+@include("footer")
