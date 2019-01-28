@@ -142,16 +142,11 @@ use App\Http\Controllers\Controller
 					@endfor
 				</table>
 				
-				
 			</section>
-
 
 		</article>
 
-
-
 	</main>
-
 
 	<footer> 
 
@@ -186,7 +181,6 @@ use App\Http\Controllers\Controller
 		</div>
 
 	</footer>
-
 
 </body>
 

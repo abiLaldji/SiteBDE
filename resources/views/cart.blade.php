@@ -37,14 +37,14 @@
         <li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
         <li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
-        
+
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">T-shirt</a></li>
             <li><a href="#">Pull</a></li>
             <li><a href="#">Goodies</a></li>
           </ul>
-          
+
         </li>
 
         <li><a href="events" class="categories"><span class="navtext">ÉVÈNEMENTS</span></a></li>
@@ -70,20 +70,14 @@
         @endif
       </ul>
 
-
     </div>
   </nav>
-
-
 
   <main>
 
    <article class="cart-article-center">
 
     <h2 class="h2white">Panier</h2>
-
-    
-
 
     <?php /*$_COOKIE['cart'] = [['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '52', 'unitPrice' => '14'], ['pictureURL' => './pictures/stylo2.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '14', 'unitPrice' => '128'],['pictureURL' => './pictures/stylo3.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '25', 'unitPrice' => '4'],['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '8', 'unitPrice' => '54']] */ ?>
     @if (isset($_COOKIE['cart']))
@@ -118,7 +112,7 @@
      </tr>
      @endfor
 
-     
+
 
    </table>
 
@@ -175,7 +169,5 @@
 </footer>
 
 </body>
-
-
 
 </html>

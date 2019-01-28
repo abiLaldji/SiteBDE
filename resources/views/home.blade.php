@@ -39,7 +39,7 @@ session_start();
           @endif
 
           ">
-          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>
@@ -47,7 +47,7 @@ session_start();
         </div>
 
         @endfor
-        
+
       </div>
 
       <!-- Left and right controls -->
@@ -129,8 +129,8 @@ session_start();
 <div class="cookie-stripe">
   En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de <a href="privacyPolicy"> Cookies</a>  ou autres traceurs.
   <div class="cookie-buttons">
-    <button values="Accepter" class="cookie-a">Accepter</button>
-    <button values="Refuser" class="cookie-r">Refuser</button>
+    <button class="cookie-a">Accepter</button>
+    <button class="cookie-r">Refuser</button>
   </div>
 </div>
 

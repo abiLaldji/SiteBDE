@@ -15,7 +15,7 @@
             <a href="index.html"><img src="assets/style/image/cesi-logob.png"></a>
         </div>
         <div id="header-right">
-            
+
             <h1 id="titre">SITE BDE DU CESI PAU</h1>
             <a href="mon_compte.html">mon compte</a>
             <a id="logo-cart" href="cart.html"><img src="assets/style/image/cart.png"><p id="panier">panier</p></a>
@@ -106,7 +106,6 @@
         </section>
     </article>
 </main>
-
 
 </body>
 </html>

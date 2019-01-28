@@ -16,7 +16,6 @@ session_start();
 </head>
 <body>
 
-
 	<header id="header">
 		<div id="logo-cesi">
 			<img src="./pictures/logoCesi.png">
@@ -39,14 +38,14 @@ session_start();
 				<li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
 				<li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
-				
+
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">T-shirt</a></li>
 						<li><a href="#">Pull</a></li>
 						<li><a href="#">Goodies</a></li>
 					</ul>
-					
+
 				</li>
 
 				<li><a href="events" class="categories"><span class="navtext">ÉVÈNEMENTS</span></a></li>
@@ -77,8 +76,6 @@ session_start();
 
 	<main>
 
-
-
 		<aside class="aside-ideaBox">
 
 			<h2 class="h2white">Création d'évènement</h2>
@@ -89,7 +86,7 @@ session_start();
 					<div class="formulaire">
 
 						@csrf
-						
+
 						@if (isset($_GET['fieldEmpty']))
 						<p class='error'>Tous les champs obligatoires doivent être remplis</p>
 						@endif
@@ -106,7 +103,7 @@ session_start();
 						</div>
 
 						<div class="form-group">
-							<input type="date" class="form-control optional" placeholder="Date (optionnel)" name="date">
+							<input type="date" class="form-control optional" name="date">
 							<p class="optional-text">Optionnel</p>
 						</div>
 
@@ -163,7 +160,7 @@ session_start();
 									<i class="fas fa-flag ideabox-flag"></i>
 								</div>
 							</div>
-							
+
 						</td>
 					</tr>
 					@endfor
@@ -175,10 +172,7 @@ session_start();
 
 		</article>
 
-
-
 	</main>
-
 
 	<footer> 
 
@@ -213,8 +207,6 @@ session_start();
 		</div>
 
 	</footer>
-
-
 
 	<script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
 

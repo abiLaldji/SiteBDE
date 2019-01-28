@@ -271,7 +271,7 @@ class Controller extends BaseController
 		for ($i = 1; $i < sizeof($events); $i++){
 			$event = array_shift($events);
 			if($events[$i]['is_approved'] == 1 && $events[$i]['is_public'] == 1 && $events[$i]['date'] > $nextEvent['date']){
-				$nextEvent = $event[$i];
+				$nextEvent = $event;
 			}
 		}
 		return $nextEvent;

@@ -54,7 +54,7 @@
         <div class="carousel-inner">
 
           <div class="item active">
-            <img src="pictures/hoodi.png" alt="hoodi" class="top-slide" width="100%">
+            <img src="pictures/hoodi.png" alt="hoodi" class="top-slide">
             <div class="carousel-caption">
               <h3 class="text-black titre-carousel">hoodi</h3>
 
@@ -62,7 +62,7 @@
           </div>
 
           <div class="item">
-            <img src="pictures/mug.jpg" alt="mug" class="top-slide" width="100%">
+            <img src="pictures/mug.jpg" alt="mug" class="top-slide">
             <div class="carousel-caption">
               <h3 class="text-black titre-carousel">mug</h3>
 
@@ -70,7 +70,7 @@
           </div>
 
           <div class="item">
-            <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide" width="100%">
+            <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide">
             <div class="carousel-caption">
               <h3 class="text-black titre-carousel">Stylo</h3>
 
@@ -108,13 +108,13 @@
     </article>
     <aside id="aside-2-shop" class="border-raduis">
       <h1 class="titre-page">Top vente</h1>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel slide" data-ride="carousel">
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
 
           <div class="item active">
-            <img src="pictures/hoodi.png" alt="hoodi" class="top-slide" width="100%">
+            <img src="pictures/hoodi.png" alt="hoodi" class="top-slide">
             <div class="carousel-caption">
               <h3 class="text-black titre-carousel">hoodi</h3>
 
@@ -122,7 +122,7 @@
           </div>
 
           <div class="item">
-            <img src="pictures/mug.jpg" alt="mug" class="top-slide" width="100%">
+            <img src="pictures/mug.jpg" alt="mug" class="top-slide">
             <div class="carousel-caption">
               <h3 class="text-black titre-carousel">mug</h3>
 
@@ -130,7 +130,7 @@
           </div>
 
           <div class="item">
-            <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide" width="100%">
+            <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide">
             <div class="carousel-caption">
               <h3 class="text-black titre-carousel">Stylo</h3>
 
@@ -144,7 +144,7 @@
       </div>
 
     </aside>
-    
+
   </main>
 
 </body>

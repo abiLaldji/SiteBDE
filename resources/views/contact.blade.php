@@ -33,14 +33,14 @@
 				<li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
 				<li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
-				
+
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">T-shirt</a></li>
 						<li><a href="#">Pull</a></li>
 						<li><a href="#">Goodies</a></li>
 					</ul>
-					
+
 				</li>
 
 				<li><a href="events" class="categories"><span class="navtext">ÉVÈNEMENTS</span></a></li>
@@ -70,9 +70,6 @@
 		</div>
 	</nav>
 
-
-
-
 	<main>
 
 		<article class="contact-article-center">
@@ -89,9 +86,9 @@
 
 						<i class="fas fa-envelope email-pic"></i>
 						<p class="email-address"><a href="mailto:bde.pau@cesi.fr">bde.pau@cesi.fr</a></p>
-						
+
 					</div>
-					
+
 					<div class="phone-number-div">
 
 						<i class="fas fa-phone phone-pic"></i>
