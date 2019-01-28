@@ -2,6 +2,19 @@
 session_start();
 use App\Http\Controllers\Controller;
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
+     <!-- bootstrap link-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+     <!-- FontAwesome link-->
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  
+</head>
 
 @include("header")
         
@@ -69,5 +82,5 @@ $campus = $controller->getCampus();
                 </section>
             </article>
         </main>
-</body>
-</html>
+        
+@include(footer)
