@@ -9,13 +9,14 @@
 
 body{
     font-family: Roboto,sans-serif;
-    color: white;
+    color: black;
     font: 16px ;  
 }
 
 main{
     margin-top: -20px;
     background-color: black;
+    min-height: 875px;
 }
 
 .cente{
@@ -24,7 +25,7 @@ main{
 
 h2{
     text-align: center;
-    color: white;
+    color: black;
 }
 
 nav{
@@ -69,6 +70,11 @@ th{
     margin-bottom: 3%;
 }
 
+.gray-stripe{
+    background-color: rgb(80, 80, 80) ;
+    margin-bottom: 3%;
+}
+
 .border-raduis{
     border-radius: 10px;
 }
@@ -76,6 +82,7 @@ th{
 .titre_page{
     margin-top: -7px;
     padding-bottom: 10px;
+    color: black;
 }
 
 label{
@@ -109,6 +116,15 @@ table{
 
 .right{
     text-align: right;
+}
+
+.image-carousel{
+ width: 100%;
+}
+
+.h2white{
+    color:white;
+    margin-bottom: 6%;
 }
 
 /*---------------------------------------------------------Header--------------------------------------------------------*/
@@ -471,7 +487,7 @@ table{
 .event-article-center{
     margin-left: 5%;
     margin-right: 35%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 4%;
@@ -577,7 +593,7 @@ table{
 /*------------------------------------------------------Aside page evenements-------------------------------------------*/
 
 .event-aside{   
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     float: right;
     min-width: 30%;
     max-width: 30%;
@@ -608,11 +624,6 @@ table{
     border: solid black 2px;
     border-radius: 10px;
     background-color: white;
-}
-
-.h2white{
-    color:white;
-    margin-bottom: 6%;
 }
 
 .desc-event-month{
@@ -1000,9 +1011,6 @@ input[type=submit]:hover {
 
 .input-account{
     border:1px solid black;
-    background-color: default;
-    padding: default;
-    font-size: default;
     width: 25% !important;
 }
 
@@ -1040,7 +1048,7 @@ input[type=submit]:hover {
 }
 
 #aside-1-shop{
-    background-color: rgb(40, 40, 40);
+    background-color:black;
     color: white;
     float: left;
     width: 20%;
@@ -1056,12 +1064,11 @@ input[type=submit]:hover {
 }
 
 #article-shop{
-    background-color: rgb(40, 40, 40);
-    color: white;
+    background-color: white;
+    color: black;
     float: left;
     width: 50%;
     margin-left: 2.5%;
-    height: 800px; 
     text-align: center;
 }
 
@@ -1109,7 +1116,7 @@ input[type=submit]:hover {
 }
 
 #aside-2-shop{
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     color: white;
     float: right;
     width: 20%;
@@ -1123,12 +1130,24 @@ input[type=submit]:hover {
 
 /*------------------------------------------------------Category----------------------------------------------------*/
 
+td{
+    border: none;
+}
+    
+th{   
+    padding-right: 0%;
+}
+
+table{
+    margin-top: 0%;
+}
+
 #aside-category{
     width: 25%;
     margin-left: 7.5%;
     margin-top: 8%;
     color: white;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     float: left;
     text-align: center;
 }
@@ -1149,25 +1168,38 @@ input[type=submit]:hover {
 
 #input-text-min-aside-section-category{
     width: 20%;
+    border: 1px solid rgb(40, 40, 40);
 }
 
 #input-text-max-aside-section-category{
     width: 20%;
+    border: 1px solid rgb(40, 40, 40);
+}
+
+#input-button-aside-section-category{
+    background-color: black;
+    color: white;
+    margin-top: 3%;
+    margin-left: 10%
+}
+
+#input-button-aside-section-category:hover{
+    color: rgb(255, 194, 82);
 }
 
 #article-category{
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     color: white;
     width: 50%;
     margin-left: 40%;
-    height: 800px; 
+    
     text-align: center;
 }
 
 #section-category{
     background-color: white;
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
+   
 }
 
 .article-category{
@@ -1175,6 +1207,8 @@ input[type=submit]:hover {
     border-left:solid black;
     border-right:solid black;
     background-color: white;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .image-category{
@@ -1186,13 +1220,17 @@ input[type=submit]:hover {
     float: right; 
 }
 
+#table-category{
+    margin-top: 0;
+}
+
 .tr-category{
     border-bottom: solid black;
 }
 
 .td-1-category{
     border-right:solid black;
-    height: 15%;
+    width: 15%;
 }
 
 .td-2-category{
@@ -1223,7 +1261,7 @@ input[type=submit]:hover {
 
 .td-2-category a:hover{
     text-decoration: none;
-    color: hsla(39,100%,66%,1);
+    color: rgb(255, 194, 82);
 }
 
 .td-4-category{
@@ -1234,7 +1272,7 @@ input[type=submit]:hover {
 /*----------------------------------------------------Article--------------------------------------------------------*/
 
 #article-article{
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     width: 50%;
     margin-left: 25%;
     color: white;
@@ -1259,7 +1297,7 @@ input[type=submit]:hover {
 
 #price-article{
     border: solid rgb(40, 40, 40);
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     color: white;
     width: 15%;
     text-align: center;
@@ -1270,7 +1308,7 @@ input[type=submit]:hover {
 }
 
 #button-article{
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     color: white;
     margin-right: -15%;
     margin-top: 12.5%;
@@ -1279,8 +1317,8 @@ input[type=submit]:hover {
 }
 
 #button-article:hover{
-    background-color: rgb(40, 40, 40);
-    color: hsla(39,100%,66%,1);
+    background-color: black;
+    color: rgb(255, 194, 82);
     margin-right: -15%;
     margin-top: 12.5%;
     float: right;
@@ -1298,12 +1336,13 @@ input[type=submit]:hover {
 /*------------------------------------------------------Image-Event---------------------------------------------------*/
 
 #article-image_event{
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     color: white;
     float: left;
     width: 50%;
     margin-left: 25%; 
     text-align: center;
+    margin-top: -20Px;
 }
 
 #section-image_event{
@@ -1388,7 +1427,7 @@ input[type=submit]:hover {
 /*---------------------------------------------------Comment-Image-Event----------------------------------------------*/
 
 #article-Comment_image_event{
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     width: 50%;
     height: 800px;
     margin-left: 25%;
@@ -1415,7 +1454,7 @@ input[type=submit]:hover {
 
 #button-section-image-Comment_image_event{
     border: none;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     font-size: 2em;
     float: left;
     margin-left: 50%;
@@ -1465,8 +1504,9 @@ input[type=submit]:hover {
 }
 
 #input-submit-Comment_image_event{
-    width: 23%; 
-    background-color: rgb(40, 40, 40);
+    width: 27%;
+    min-width: 170px;
+    background-color: black;
     color: white;
 }
 
