@@ -73,7 +73,7 @@ Route::get('imageEvent', function (){
 
 Route::get('myAccount', function (){
 	return view('myAccount');
-});
+})->name('myAccount');
 
 Route::get('shop', function (){
 	return view('shop');
@@ -108,6 +108,6 @@ Route::post('submitIdea', 'Controller@submitIdea');
 
 Route::post('putUser', 'Controller@updateUser');
 
-Route::get('test', 'Controller@addProduct');
+Route::get('acceptCookies', 'Controller@acceptCookies');
 
-
+Route::get('declineCookies', 'Controller@declineCookies');
