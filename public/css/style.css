@@ -1552,23 +1552,26 @@ table{
 .cookie-a{       
     margin-right: 14%;
     margin-left: 10%;
+
+}
+.cookie-a-bnt{       
+  
     background-color: white;
     border: solid black 1px;
 }
-
-.cookie-a:hover{
+.cookie-a-bnt:hover{
     background-color: black;
     color: rgb(255 194 82);
     border-color: white;
 }
 
-.cookie-r:hover{
+.cookie-r-bnt{
+    background-color: white;
+    border: solid black 1px;
+}
+
+.cookie-r-bnt:hover{
     background-color: black;
     color: rgb(255 194 82);
     border-color: white;
-}
-
-.cookie-r{
-    background-color: white;
-    border: solid black 1px;
 }
