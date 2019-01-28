@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Politique de confidentialité</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -23,7 +23,7 @@
 		<article class="ln-article-center">
 
 			<div class="ln-header">
-				<h2 class="h2white ln-h2">Politique de confidentialité</h2>
+				<h2 class="ln-h2">Politique de confidentialité</h2>
 			</div>
 
 			<div class="ln-ystripe">

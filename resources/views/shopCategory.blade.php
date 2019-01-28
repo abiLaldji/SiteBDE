@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Catégorie boutique</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -43,7 +43,7 @@
                         <tr class="tr-category">
                             <td class="td-1-category"><a href="shopArticle"><img src="pictures/mug.jpg" class="image-category"></a></td>
                             <td class="td-2-category">
-                                <a href="shop_article.html"><h4>Mug</h4></a>
+                                <a href="shopArticle"><h4>Mug</h4></a>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                     Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, 
                                     ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, 
@@ -55,7 +55,7 @@
                         <tr class="tr-category">
                             <td class="td-1-category"><a href="shopArticle"><img src="pictures/mug.jpg" class="image-category"></a></td>
                             <td class="td-2-category">
-                                <a href="shop_article.html"><h4>Mug</h4></a>
+                                <a href="shopArticle"><h4>Mug</h4></a>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                     Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, 
                                     ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, 
@@ -67,7 +67,7 @@
                         <tr class="tr-category">
                             <td class="td-1-category"><a href="shopArticle"><img src="pictures/mug.jpg" class="image-category"></a></td>
                             <td class="td-2-category">
-                                <a href="shop_article.html"><h4>Mug</h4></a>
+                                <a href="shopArticle"><h4>Mug</h4></a>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                     Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, 
                                     ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, 

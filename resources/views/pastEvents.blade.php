@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Evènement passé</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -26,10 +26,11 @@ use App\Http\Controllers\Controller
 
 		<article class="pastevent-article-center">
 
-			<h2 class="h2white"> Évènements passés </h2>
+			
 
 			<section class="pastevent-section-center">
-
+				<h2> Évènements passés </h2>
+				<div class="blue-stripe"><br></div>
 				<table class="table-event">
 
 

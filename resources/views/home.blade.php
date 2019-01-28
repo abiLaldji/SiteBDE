@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Accueil</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -25,6 +25,7 @@ session_start();
 
 
     <h2>Top des ventes</h2>
+    <div class="gray-stripe-109"><br></div>
     <article id="article-aside-right-home">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
