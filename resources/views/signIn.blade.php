@@ -27,7 +27,7 @@
 			<section class="signIn-section-center">
 
 				<h2>Connexion</h2>
-
+				<div class="blue-stripe"><br></div>
 
 				@if (isset($_SESSION['firstName']))
 				<p> Vous êtes déjà connecté </p>

@@ -32,6 +32,7 @@ use App\Http\Controllers\Controller;
     <section class="signUp-section-center">
 
      <h2>Inscription</h2>
+     <div class="blue-stripe"><br></div>
 
 
      @if (isset($_SESSION['id_user']))

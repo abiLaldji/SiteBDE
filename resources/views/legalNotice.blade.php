@@ -21,7 +21,7 @@
 		<article class="ln-article-center">
 
 			<div class="ln-header">
-				<h2 class="h2white ln-h2">Mentions légales</h2>
+				<h2 class="ln-h2">Mentions légales</h2>
 			</div>
 
 			<div class="ln-ystripe"><br/></div>

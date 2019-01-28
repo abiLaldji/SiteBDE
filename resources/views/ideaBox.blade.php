@@ -26,10 +26,11 @@ session_start();
 
 		<aside class="aside-ideaBox">
 
-			<h2 class="h2white">Création d'évènement</h2>
+			
 
 			<section class="section-aside-ideaBox">
-
+				<h2>Création d'évènement</h2>
+				<div class="gray-stripe"><br></div>
 				<form method="POST" action="submitIdea">
 					<div class="formulaire">
 
@@ -78,9 +79,11 @@ session_start();
 
 		<article class="ib-article-center">
 
-			<h2 class="h2white">Idées d'évènements</h2>
+			
 
 			<section class="ib-section-center">
+				<h2>Idées d'évènements</h2>
+				<div class="blue-stripe"><br></div>
 
 				<table class="table-event">
 

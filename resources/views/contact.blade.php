@@ -28,6 +28,7 @@
 			<section class="contact-section-center">
 
 				<h2>Contact</h2>
+				<div class="blue-stripe"><br></div>
 
 				<div class="center">
 
