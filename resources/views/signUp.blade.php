@@ -38,20 +38,6 @@ use App\Http\Controllers\Controller;
      <p> Vous êtes déjà connecté </p>
      @else
 
-     <form method="POST" action="signUp">
-       <div class="formulaire">
-
-        @csrf
-
-        @isset ($_GET['fieldEmpty'])
-        <p class="error">Tous les champs doivent être remplis</p>
-        @endisset
-
-
-      @if (isset($_SESSION['id_user']))
-        <p> Vous êtes déjà connecté </p>
-      @else
-
   				<form method="POST" action="signUp">
   					<div class="formulaire">
 
@@ -123,7 +109,6 @@ use App\Http\Controllers\Controller;
 </article>
 
 </main>
-
 
     @include("footer")
 

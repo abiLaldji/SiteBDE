@@ -16,7 +16,7 @@ body{
 main{
     margin-top: -20px;
     background-color: black;
-    min-height: 850px;
+    min-height: 875px;
 }
 
 .cente{
@@ -120,6 +120,11 @@ table{
 
 .image-carousel{
  width: 100%;
+}
+
+.h2white{
+    color:white;
+    margin-bottom: 6%;
 }
 
 /*---------------------------------------------------------Header--------------------------------------------------------*/
@@ -619,11 +624,6 @@ table{
     border: solid black 2px;
     border-radius: 10px;
     background-color: white;
-}
-
-.h2white{
-    color:white;
-    margin-bottom: 6%;
 }
 
 .desc-event-month{
@@ -1342,6 +1342,7 @@ table{
     width: 50%;
     margin-left: 25%; 
     text-align: center;
+    margin-top: -20Px;
 }
 
 #section-image_event{

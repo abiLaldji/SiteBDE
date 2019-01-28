@@ -19,13 +19,14 @@
 
 <main>
     <article id="article-Comment_image_event">
-        <h1 class="titre_page">Commentaire</h1>
         <section id="section-image-Comment_image_event" class="border-raduis" >
             <img id="image-Comment_image_event" class="border-raduis" src="pictures/mug.jpg">
             <button id="button-section-image-Comment_image_event"><i class="fas fa-thumbs-up"></i></button>
             <p id="p-section-image-Comment_image_event">10</p>
         </section>
-        <section id="section-Comment_image_event" class="border-raduis">
+        <section id="section-Comment_image_event" >
+        <h2 class="titre_page">Commentaire</h2>
+        <div class="blue-stripe"><br></div>
             <article class="article-Comment_image_event">
                 <div> <br></div>
                 <table id="table-Comment_image_event">

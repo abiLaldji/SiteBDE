@@ -18,8 +18,9 @@
     
         <main>
             <article id="article-article">
-                <H1 class="titre_page">Nom de l'article</H1>
-                <section class="border-raduis" id="section-article">
+                <section id="section-article">
+                    <h2 class="titre_page">Nom de l'article</h2>
+                    <div class="blue-stripe"><br></div>
                     <img id="image-article" src="pictures/mug.jpg">
                     <p id="price-article">6000€</p>
                     <input type="button" class="border-raduis" id="button-article" value="Ajouter au panier">

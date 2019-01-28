@@ -25,7 +25,7 @@ session_start();
    
     <main id="main-shop">
         <aside id="aside-1-shop" class="border-raduis">
-            <h1 class="titre-page">Nouveautés</h1>
+            <h2 class="titre-page h2white">Nouveautés</h2>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
             
                 <!-- Wrapper for slides -->
@@ -58,6 +58,7 @@ session_start();
               
                 </div>
               </div>
+
 
               <div>
                 <br>
@@ -94,6 +95,7 @@ session_start();
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
             <div class="carousel-inner">
+
 
 
   <?php 
