@@ -12,9 +12,11 @@
   
 </head>
 
+
 @include("header")
 
 	
+
 
 	<main>
 
@@ -74,5 +76,6 @@
 		</article>
 
 	</main>
+
 
 @include("footer")

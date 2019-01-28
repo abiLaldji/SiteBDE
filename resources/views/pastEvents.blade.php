@@ -16,25 +16,28 @@ use App\Http\Controllers\Controller
   
 </head>
 
+
 @include("header")
 
 
-<main>
 
-	<article class="pastevent-article-center">
+	<main>
 
-		<h2 class="h2white"> Évènements passés </h2>
 
-		<section class="pastevent-section-center">
+		<article class="pastevent-article-center">
+
+			<h2 class="h2white"> Évènements passés </h2>
+
+			<section class="pastevent-section-center">
 
 				<table class="table-event">
 
 
-<?php 
-$controller = new Controller();
-$events = $controller->getEvents();
-?>
- 					@for ($i = 0; $i < sizeof($events); $i++)
+					<?php 
+					$controller = new Controller();
+					$events = $controller->getEvents();
+					?>
+					@for ($i = 0; $i < sizeof($events); $i++)
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
@@ -42,13 +45,15 @@ $events = $controller->getEvents();
 							<p class="bold">Organisateur : {{$events[$i]['first_name'] . ' ' . $events[$i]['last_name']}}</p>
 							<p class="bold">Date : {{$events[$i]['date']}}</p> 
 							<p class="desc-event"><span class="bold">Description : </span>{{$events[$i]['description']}}</p>
+
 							<div>
-  								<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
-  							</div>
+								<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
+							</div>
 						</td>
 					</tr>
 					@endfor
 				</table>
+
 
 
 
@@ -59,3 +64,4 @@ $events = $controller->getEvents();
 </main>
 
     @include("footer")
+

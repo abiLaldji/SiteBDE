@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Index</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -12,7 +13,7 @@
   
 </head>
 
-@include("header")
+@include("headerShop")
 
     
         <main>

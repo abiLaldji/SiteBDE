@@ -21,35 +21,35 @@ session_start();
 
 <main>
 
-<aside class="aside-right">
+  <aside class="aside-right">
 
 
-  <h2>Top des ventes</h2>
-  <article id="article-aside-right-home">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active li-carousel"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="li-carousel"></li>
-        <li data-target="#myCarousel" data-slide-to="2" class="li-carousel"></li>
-      </ol>
+    <h2>Top des ventes</h2>
+    <article id="article-aside-right-home">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active li-carousel"></li>
+          <li data-target="#myCarousel" data-slide-to="1" class="li-carousel"></li>
+          <li data-target="#myCarousel" data-slide-to="2" class="li-carousel"></li>
+        </ol>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
 
-  <?php 
-  $controller = new Controller();
-  $topSales = $controller->getTopSales();
-  ?>
+          <?php 
+          $controller = new Controller();
+          $topSales = $controller->getTopSales();
+          ?>
 
-        @for ($i = 0; $i < sizeof($topSales); $i++)
-        <div class="item 
+          @for ($i = 0; $i < sizeof($topSales); $i++)
+          <div class="item 
 
-        @if ($i == 0)
+          @if ($i == 0)
           active
-        @endif
+          @endif
 
-        ">
+          ">
           <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
@@ -58,7 +58,7 @@ session_start();
         </div>
 
         @endfor
-    
+        
       </div>
 
       <!-- Left and right controls -->
@@ -77,34 +77,34 @@ session_start();
 
 <aside class="aside-left">
 
-<h2 class="presentation-title">Qui sommes nous ?</h2>
+  <h2 class="presentation-title">Qui sommes nous ?</h2>
 
 
-<div>
-Nous somme le BDE (<span class="italique">Bureau des élèves</span>) du campus CESI de Pau, nôtre objectif est d'améliorer le cadre de vie des
-étudiants en apportant de la vie sur le campus notament grace à l'organisation d'activitées.
-</div>
+  <div>
+    Nous somme le BDE (<span class="italique">Bureau des élèves</span>) du campus CESI de Pau, nôtre objectif est d'améliorer le cadre de vie des
+    étudiants en apportant de la vie sur le campus notament grace à l'organisation d'activitées.
+  </div>
 
-<h2 class="presentation-title">Nos objectifs</h2>
+  <h2 class="presentation-title">Nos objectifs</h2>
 
-<div>
-Animation du campus : 
-<br/>
-  -Organisation d'évènements<br/>
-  -Organisation de soirées
+  <div>
+    Animation du campus : 
+    <br/>
+    -Organisation d'évènements<br/>
+    -Organisation de soirées
 
-</div>
+  </div>
 
-<h2 class="presentation-title">Direction</h2>
+  <h2 class="presentation-title">Direction</h2>
 
-<div>
-  Le BDE est composé d'élèves de différentes promos, des réunions sont régulièrements organisés avec les représentant de chaques promotions l'objectifs étant d'amener un maximum de personne à chaque évènements.
+  <div>
+    Le BDE est composé d'élèves de différentes promos, des réunions sont régulièrements organisés avec les représentant de chaques promotions l'objectifs étant d'amener un maximum de personne à chaque évènements.
 
 
 
-</div>
+  </div>
 
-<h2 class="presentation-title">Réseaux sociaux</h2>
+  <h2 class="presentation-title">Réseaux sociaux</h2>
 
 
 
@@ -116,11 +116,11 @@ Animation du campus :
 
 
   <section id="section-home">
-  <h2 class="titre_page"> Prochain évènement </h2>
-  <div class="blue-stripe"><br></div>
-  <?php 
-  $nextEvent = $controller->getNextEvent();
-  ?>
+    <h2 class="titre_page"> Prochain évènement </h2>
+    <div class="blue-stripe"><br></div>
+    <?php 
+    $nextEvent = $controller->getNextEvent();
+    ?>
 
 
     <img src="./pictures/defaultPicture.png" alt="activite" class="img-accueil"/>

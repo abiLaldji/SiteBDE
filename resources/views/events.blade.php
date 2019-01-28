@@ -15,57 +15,60 @@ use App\Http\Controllers\Controller
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
   
 </head>
+
 @include("header")
 
-<main>
+
+	<main>
 
 
 
-	<aside class="event-aside">
+		<aside class="event-aside">
 
-		<h2 class="h2white">Évènement du mois</h2>
-
-
+			<h2 class="h2white">Évènement du mois</h2>
 
 
-		<section class="section-aside-event">
 
-<?php 
-$controller = new Controller();
-$monthEvent = $controller->getMonthEvent();
-?>
 
-			<h3>{{$monthEvent['title']}}</h3>
+			<section class="section-aside-event">
 
-			<div class="pic-view">
-				<img src="./pictures/stylo2.png" alt="" class="event-month-pic">
-			</div>
+				<?php 
+				$controller = new Controller();
+				$monthEvent = $controller->getMonthEvent();
+				?>
+
+				<h3>{{$monthEvent['title']}}</h3>
+
+				<div class="pic-view">
+					<img src="./pictures/stylo2.png" alt="" class="event-month-pic">
+				</div>
 
 				<div class="desc-event-month">
+
 					<p><span class="bold">Description :</span> {{$monthEvent['description']}}</p>
 
 				</div>
 
-		<p><span class="bold">Organisateur : {{$monthEvent['first_name'] . ' ' . $monthEvent['last_name']}}</span></p>
-		<p><span class="bold">Date : {{$monthEvent['date']}}</span></p>
+				<p><span class="bold">Organisateur : {{$monthEvent['first_name'] . ' ' . $monthEvent['last_name']}}</span></p>
+				<p><span class="bold">Date : {{$monthEvent['date']}}</span></p>
 
-		</section>
+			</section>
 
-	</aside>
+		</aside>
 
-	<article class="event-article-center">
+		<article class="event-article-center">
 
-		<h2 class="h2white">Évènements à venir</h2>
+			<h2 class="h2white">Évènements à venir</h2>
 
-		<section class="event-section-center">
+			<section class="event-section-center">
 
-			<table class="table-event">
+				<table class="table-event">
 
-<?php 
-$events = $controller->getNextEvents();
-?>
+					<?php 
+					$events = $controller->getNextEvents();
+					?>
 
- 					@for ($i = 0; $i < sizeof($events); $i++)
+					@for ($i = 0; $i < sizeof($events); $i++)
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
@@ -76,22 +79,23 @@ $events = $controller->getNextEvents();
 						</td>
 						<td class="td-img-event">
 							<div>
-  								<button type="submit" class="btn btn-primary">S'inscrire</button>
-  							</div>
-  						</td>
+								<button type="submit" class="btn btn-primary">S'inscrire</button>
+							</div>
+						</td>
 					</tr>
 					@endfor
 				</table>
-			
-			
-		</section>
+				
+				
+			</section>
 
 
-	</article>
+		</article>
 
 
 
-</main>
+	</main>
+
 
 
 @include("footer")

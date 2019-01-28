@@ -17,111 +17,114 @@ session_start();
   
 </head>
 
+
 @include("header")
 
-<main>
+
+	<main>
 
 
 
-	<aside class="aside-ideaBox">
+		<aside class="aside-ideaBox">
 
-		<h2 class="h2white">Création d'évènement</h2>
+			<h2 class="h2white">Création d'évènement</h2>
 
-		<section class="section-aside-ideaBox">
+			<section class="section-aside-ideaBox">
 
-			<form method="POST" action="submitIdea">
-  					<div class="formulaire">
+				<form method="POST" action="submitIdea">
+					<div class="formulaire">
 
-              @csrf
-              
-              @if (isset($_GET['fieldEmpty']))
-                <p class='error'>Tous les champs obligatoires doivent être remplis</p>
-              @endif
+						@csrf
+						
+						@if (isset($_GET['fieldEmpty']))
+						<p class='error'>Tous les champs obligatoires doivent être remplis</p>
+						@endif
 
-              @if (isset($_GET['notConnected']))
-                <p class="error">Vous devez être connecté pour ajouter une idée</p>
-              @endif
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Titre" name="title">
-                </div>
+						@if (isset($_GET['notConnected']))
+						<p class="error">Vous devez être connecté pour ajouter une idée</p>
+						@endif
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Titre" name="title">
+						</div>
 
-                <div class="form-group">
-                  <textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
-                </div>
+						<div class="form-group">
+							<textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
+						</div>
 
-          			<div class="form-group">
-            				<input type="date" class="form-control optional" placeholder="Date (optionnel)" name="date">
-            				<p class="optional-text">Optionnel</p>
-         				</div>
+						<div class="form-group">
+							<input type="date" class="form-control optional" placeholder="Date (optionnel)" name="date">
+							<p class="optional-text">Optionnel</p>
+						</div>
 
-    						<div class="center">
-			    			<img src="./pictures/stylo2.png" alt="" class="picture-event preview">
-          					</div>
+						<div class="center">
+							<img src="./pictures/stylo2.png" alt="" class="picture-event preview">
+						</div>
 
-          					<div class="center">
-    								<label class="btn btn-default btn-file">
-    								Parcourir <input type="file" style="display: none;" onchange="readURL(this);" name="picture">
-									</label>
+						<div class="center">
+							<label class="btn btn-default btn-file">
+								Parcourir <input type="file" style="display: none;" onchange="readURL(this);" name="picture">
+							</label>
+						</div>
+
+						<div class="connecIns">
+							<button type="submit" class="btn btn-primary">Publier</button>
+
+						</div>
+					</div>
+				</form>
+
+			</section>
+
+		</aside>
+
+		<article class="ib-article-center">
+
+			<h2 class="h2white">Idées d'évènements</h2>
+
+			<section class="ib-section-center">
+
+				<table class="table-event">
+
+
+					<?php 
+					$controller = new Controller();
+					$ideas = $controller->getIdeas();
+					?>
+					@for ($i = 0; $i < sizeof($ideas); $i++)
+					<tr>
+						<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
+						<td class="td-event-left">
+							<div class="desc-right">
+								<i class="fas fa-check ideabox-check"></i>
+								<i class="fas fa-times ideabox-cross"></i>
 							</div>
-
-    					<div class="connecIns">
-    							<button type="submit" class="btn btn-primary">Publier</button>
-
-    					</div>
-            </div>
-  				</form>
-
-		</section>
-
-	</aside>
-
-	<article class="ib-article-center">
-
-		<h2 class="h2white">Idées d'évènements</h2>
-
-		<section class="ib-section-center">
-
-			<table class="table-event">
-
-
-<?php 
-$controller = new Controller();
-$ideas = $controller->getIdeas();
-?>
-        @for ($i = 0; $i < sizeof($ideas); $i++)
-        <tr>
-          <td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
-          <td class="td-event-left">
-            <div class="desc-right">
-              <i class="fas fa-check ideabox-check"></i>
-              <i class="fas fa-times ideabox-cross"></i>
-            </div>
-            <div class="desc-left">
-              <p class="bold">Titre : {{$ideas[$i]['title']}}</p>
-              <p class="bold">Organisateur : {{$ideas[$i]['first_name'] . ' ' . $ideas[$i]['last_name']}}</p>
-              <p class="bold">Date : {{$ideas[$i]['date']}}</p> 
-              <p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}</p>
-              <div class="like">
-                <a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
-                <p class="like-counter">1</p>
-                <i class="fas fa-flag ideabox-flag"></i>
-              </div>
-            </div>
-              
-          </td>
-        </tr>
-        @endfor
+							<div class="desc-left">
+								<p class="bold">Titre : {{$ideas[$i]['title']}}</p>
+								<p class="bold">Organisateur : {{$ideas[$i]['first_name'] . ' ' . $ideas[$i]['last_name']}}</p>
+								<p class="bold">Date : {{$ideas[$i]['date']}}</p> 
+								<p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}</p>
+								<div class="like">
+									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
+									<p class="like-counter">1</p>
+									<i class="fas fa-flag ideabox-flag"></i>
+								</div>
+							</div>
+							
+						</td>
+					</tr>
+					@endfor
 
 				</table>
 
-		</section>
+			</section>
 
 
-	</article>
+		</article>
 
 
 
-</main>
+	</main>
+
 
 
     @include("footer")

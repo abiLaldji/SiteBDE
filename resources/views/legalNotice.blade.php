@@ -12,7 +12,9 @@
   
 </head>
 
+
 @include("header")
+
 
 	<main>
 
@@ -90,25 +92,27 @@
 				<div>
 
 				</div>
-					CESI SAS – Société par actions simplifiée au capital de 1.1M€<br>
-					342 707 502<br>
-					30 rue Cambronne – F-75015 Paris<br>
-					tél. : +33(0) 1 44 19 23 45 – fax : +33(0) 1 42 50 25 06<br>
-					Déclaration d’activité enregistrée sous le numéro 11 75 39666 75 auprès du Préfet de la région Ile-de-France.<br>
-					Cet enregistrement ne vaut pas agrément de l’État.<br>
-					<br>
-					CESI – association loi de 1901<br>
-					775 722 572<br>
-					30 rue Cambronne – F-75015 Paris<br>
-					tél. : +33(0) 1 44 13 23 45 – fax : +33(0) 1 42 50 25 06<br>
-					Déclaration d’activité enregistrée sous le numéro 11 75 47883 75 auprès du Préfet de la région Ile-de-France.<br>
-					Cet enregistrement ne vaut pas agrément de l’État.<br>
-				</div>
-
+				CESI SAS – Société par actions simplifiée au capital de 1.1M€<br>
+				342 707 502<br>
+				30 rue Cambronne – F-75015 Paris<br>
+				tél. : +33(0) 1 44 19 23 45 – fax : +33(0) 1 42 50 25 06<br>
+				Déclaration d’activité enregistrée sous le numéro 11 75 39666 75 auprès du Préfet de la région Ile-de-France.<br>
+				Cet enregistrement ne vaut pas agrément de l’État.<br>
+				<br>
+				CESI – association loi de 1901<br>
+				775 722 572<br>
+				30 rue Cambronne – F-75015 Paris<br>
+				tél. : +33(0) 1 44 13 23 45 – fax : +33(0) 1 42 50 25 06<br>
+				Déclaration d’activité enregistrée sous le numéro 11 75 47883 75 auprès du Préfet de la région Ile-de-France.<br>
+				Cet enregistrement ne vaut pas agrément de l’État.<br>
 			</div>
 
-		</article>
+		</div>
 
-	</main>
+	</article>
+
+</main>
+
 
 @include("footer")
+

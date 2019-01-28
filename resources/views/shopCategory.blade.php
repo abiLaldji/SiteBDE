@@ -12,7 +12,8 @@
   
 </head>
 
-@include("header")
+
+@include("headerShop")
 
         
     <main>

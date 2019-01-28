@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Index</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -52,9 +53,7 @@
                 <div id="div-image_event"> <br> </div>
             </section>
             <div> <br> </div>
-        </article>
-    </main>
-    
-
-    
+    </article>
+  </main>
+  
 @include("footer")

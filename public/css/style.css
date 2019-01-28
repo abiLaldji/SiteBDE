@@ -5,7 +5,7 @@
 /*-------------------------------------------------Global-----------------------------------------------------------*/
 * {
     box-sizing: border-box;
-  }
+}
 
 body{
     font-family: Roboto,sans-serif;
@@ -58,7 +58,7 @@ h3{
 }
 
 td{
-border: solid black 2px;
+    border: solid black 2px;
 }
 
 th{   
@@ -90,7 +90,7 @@ label{
 
 .ycolor
 {
-color: rgb(255 194 82);
+    color: rgb(255 194 82);
 }
 
 .bold{
@@ -247,7 +247,7 @@ table{
 
 .fa-facebook{
     color : white;
-     font-size: 200%;
+    font-size: 200%;
 }
 
 .fa-facebook:hover{
@@ -275,9 +275,9 @@ table{
 
 .reseau-logo{   
     display: inline-flex;
-   float: left;
-   margin-left: 1%;
-   margin-top: 1%;
+    float: left;
+    margin-left: 1%;
+    margin-top: 1%;
 }
 
 .phone-mini{
@@ -838,41 +838,41 @@ table{
 
 /*-------------------------------------the container must be positioned relative:----------------------------------------*/
 
-  .autocomplete {
+.autocomplete {
     position: relative;
     display: inline-block;
-  }
-  
-  input {
+}
+
+input {
     border: 1px solid transparent;
     background-color: #f1f1f1;
     padding: 10px;
     font-size: 16px;
-  }
-  
-  input[type=text] {
+}
+
+input[type=text] {
     background-color: #f1f1f1;
     width: 100%;
-  }
-  
-  input[type=submit] {
+}
+
+input[type=submit] {
     background-color: black;
     color: #fff;
     cursor: pointer;
     font-weight: bold;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
-  }
+}
 
-  input[type=submit]:hover {
+input[type=submit]:hover {
     background-color: black;
     color: rgb(255 194 82);
     font-weight: bold;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
-  }
-  
-  .autocomplete-items {
+}
+
+.autocomplete-items {
     position: absolute;
     border: 1px solid #d4d4d4;
     border-bottom: none;
@@ -882,34 +882,34 @@ table{
     top: 100%;
     left: 0;
     right: 0;
-  }
-  
-  .autocomplete-items div {
+}
+
+.autocomplete-items div {
     padding: 10px;
     cursor: pointer;
     background-color: #fff; 
     border-bottom: 1px solid #d4d4d4; 
-  }
-  
+}
 
-  /*-------------------------------------------------when hovering an item:---------------------------------------------*/
 
-  .autocomplete-items div:hover {
+/*-------------------------------------------------when hovering an item:---------------------------------------------*/
+
+.autocomplete-items div:hover {
     background-color: #e9e9e9; 
-  }
+}
 
-  
-  /*--------------------------------------when navigating through the items using the arrow keys:------------------------*/
 
-  .autocomplete-active {
+/*--------------------------------------when navigating through the items using the arrow keys:------------------------*/
+
+.autocomplete-active {
     background-color: rgb(255 194 82) !important; 
     color: #ffffff; 
-  }
+}
 
-  #navbar-search-bar{
-      float: left;
-      margin-left: 10%;
-  }
+#navbar-search-bar{
+  float: left;
+  margin-left: 10%;
+}
 
 
 /*----------------------------------------------------Mention légales---------------------------------------------------*/
@@ -924,11 +924,11 @@ table{
 }
 
 .ln-header{
-        background-color: rgb(40, 40, 40);
-        padding-top: 5%;
-        padding-bottom: 2%;
-        border-top-left-radius: 14px;
-        border-top-right-radius: 14px;
+    background-color: rgb(40, 40, 40);
+    padding-top: 5%;
+    padding-bottom: 2%;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
 }
 
 .ln-ystripe{
