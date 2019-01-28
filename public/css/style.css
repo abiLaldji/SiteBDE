@@ -1011,9 +1011,6 @@ input[type=submit]:hover {
 
 .input-account{
     border:1px solid black;
-    background-color: default;
-    padding: default;
-    font-size: default;
     width: 25% !important;
 }
 
@@ -1224,7 +1221,7 @@ table{
 }
 
 #table-category{
-    margin-top: none;
+    margin-top: 0;
 }
 
 .tr-category{
