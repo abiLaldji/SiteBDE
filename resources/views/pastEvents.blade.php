@@ -33,11 +33,13 @@ use App\Http\Controllers\Controller
 				<table class="table-event">
 
 
-					<?php 
-					$controller = new Controller();
-					$events = $controller->getEvents();
-					?>
-					@for ($i = 0; $i < sizeof($events); $i++)
+
+<?php 
+$controller = new Controller();
+$events = $controller->getPastEvents();
+?>
+ 					@for ($i = 0; $i < sizeof($events); $i++)
+
 					<tr>
 						<td><img src="./pictures/stylo2.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">

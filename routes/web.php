@@ -106,9 +106,8 @@ Route::post('addProduct', 'Controller@addProduct');
 
 Route::post('submitIdea', 'Controller@submitIdea');
 
+Route::post('putUser', 'Controller@updateUser');
 
-
-
-Route::get('test', 'Controller@test');
+Route::get('test', 'Controller@addProduct');
 
 

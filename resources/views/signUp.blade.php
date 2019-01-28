@@ -34,36 +34,41 @@ use App\Http\Controllers\Controller;
      <h2>Inscription</h2>
 
 
-     @if (isset($_SESSION['firstName']))
+     @if (isset($_SESSION['id_user']))
      <p> Vous êtes déjà connecté </p>
      @else
 
-     <form method="POST" action="signUp">
-       <div class="formulaire">
+  				<form method="POST" action="signUp">
+  					<div class="formulaire">
 
-        @csrf
+                @csrf
 
-        @isset ($_GET['fieldEmpty'])
-        <p class="error">Tous les champs doivent être remplis</p>
-        @endisset
+                @isset ($_GET['fieldEmpty'])
+                  <p class="error">Tous les champs doivent être remplis</p>
+                @endisset
 
-        <div class="form-group">
-          <input type="text" class="form-control" name="first_name" placeholder="Prenom">
-        </div>
+                @isset ($_GET['userExist'])
+                  <p class="error">L'adresse email est déjà utilisée</p>
+                @endisset
 
-        <div class="form-group">
-          <input type="text" class="form-control" name="last_name" placeholder="Nom">
-        </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="first_name" placeholder="Prenom">
+                </div>
 
-        <select class=form-control name="campus">
-          <?php 
-          $controller = new Controller();
-          $campus = $controller->getCampus();
-          ?>
-          @for ($i = 0; $i < sizeof($campus); $i++)
-          <option value="{{$campus[$i]['campus_name']}}">{{$campus[$i]['campus_name']}}</option>
-          @endfor
-        </select>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="last_name" placeholder="Nom">
+                </div>
+
+                <select class=form-control name="campus_name">
+<?php 
+  $controller = new Controller();
+  $campus = $controller->getCampus();
+?>
+                  @for ($i = 0; $i < sizeof($campus); $i++)
+                    <option value="{{$campus[$i]['campus_name']}}">{{$campus[$i]['campus_name']}}</option>
+                  @endfor
+                 </select>
+
 
         <div class="form-group">
           <input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Adresse mail">
@@ -104,7 +109,6 @@ use App\Http\Controllers\Controller;
 </article>
 
 </main>
-
 
     @include("footer")
 
