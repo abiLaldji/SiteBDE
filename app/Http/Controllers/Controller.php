@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
-const IP = '10.64.128.131:3001';
+const IP = 'localhost:3001';
 const TOKEN = '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F';
 
 class Controller extends BaseController
@@ -157,7 +157,7 @@ class Controller extends BaseController
 		$events = json_decode($output, true);
 
 		if($events == []){
-			$events = [['title'=> '', 'description'=> '', 'date' => '', 'picture_url' => './pictures/defaultImage.png', 'is_approved'=> 1, 'is_public' => 1, 'first_name' => '', 'last_name' => '']];
+			$events = [['title'=> '', 'description'=> '', 'date' => '', 'picture_url' => './pictures/defaultPicture.png', 'is_approved'=> 1, 'is_public' => 1, 'first_name' => '', 'last_name' => '']];
 		}
 
 		return $events;
@@ -272,7 +272,7 @@ class Controller extends BaseController
 
 		var_dump($output);
 
-		$products = [['name' => 'rae', 'price' => '11', 'picture_url' => './pictures/defaultImage.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '10', 'picture_url' => './pictures/defaultImage.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '9', 'picture_url' => './pictures/defaultImage.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '12', 'picture_url' => './pictures/defaultImage.png', 'description' =>'decrire']];
+		$products = [['name' => 'rae', 'price' => '11', 'picture_url' => './pictures/defaultPicture.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '10', 'picture_url' => './pictures/defaultPicture.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '9', 'picture_url' => './pictures/defaultPicture.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '12', 'picture_url' => './pictures/defaultPicture.png', 'description' =>'decrire']];
 
 		$price = array_column($products, 'price');
 
@@ -315,7 +315,6 @@ class Controller extends BaseController
 
 
 		$campus = json_decode($output, true);
-
 
 		return $campus;
 	}
