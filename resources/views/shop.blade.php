@@ -45,29 +45,13 @@
                     <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide" width="100%">
                     <div class="carousel-caption">
                       <h3 class="text-black titre-carousel">Stylo</h3>
-                      
-                    </div>
+                
+
+                     </div>
+                   </div>
+
                   </div>
-              
-                </div>
               </div>
-              <div>
-                <br>
-
-
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide">
-            <div class="carousel-caption">
-              <h3 class="text-black titre-carousel">Stylo</h3>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
       <div>
         <br>
       </div>
