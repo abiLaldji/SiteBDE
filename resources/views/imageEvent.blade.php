@@ -17,13 +17,19 @@
     
     <main>
         <article id="article-image_event">
+            <!-- display all image of one event-->
             <section id="section-image_event">
             <h2 class="text-black">Liste des photos</h2>
             <div class="blue-stripe"><br></div>
+                <!--title of event-->
                 <h3 id="name-event-image_event">Festival de Cannes</h3>
+                <!--one image-->
                 <article class="article-image_event">
+                    <!--title of image-->
                     <p class="name-image_event">Johnny Depp</p>
+                    <!--redirection to comment on the image-->
                     <a class="a-image_event" href="commentImageEvent"><img src="pictures/hoodi.png" class="image-image_event"><p class="p-image_event">Commenter</p></a>
+                    <!--this button allows us to count the number of likes-->
                     <button class="button-image_event"><i class="fas fa-thumbs-up"></i></button>
                 </article>
                 <article class="article-image_event">

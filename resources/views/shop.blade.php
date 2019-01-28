@@ -24,6 +24,7 @@ session_start();
 @include("headerShop")
    
     <main id="main-shop">
+        <!-- Carousel with news product -->
         <aside id="aside-1-shop" class="border-raduis">
             <h2>Nouveautés</h2>
             <div class="gray-stripe-111"><br></div>
@@ -54,26 +55,23 @@ $newProducts = $controller->getNewProducts();
                   <div class="item">
                     <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide image-carousel" >
                     <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">Stylo</h3>
-
-                      
+                      <h3 class="text-black titre-carousel">Stylo</h3>  
                     </div>
                   </div>
-              
                 </div>
               </div>
-
-
-              <div>
+            <div>
                 <br>
-
             </div>
         </aside>
+        
+        <!-- Display all categories of articles -->
         <article id="article-shop">
             <h2>Catégories d'article</h2>
             <div class="blue-stripe"><br></div>
             <section id="section-shop" class="border-raduis">
                 <article class="article-shop">
+                    <!--redirection to category-->
                     <a class="a-shop" href="shopCategory"><img src="pictures/hoodi.png" class="image-shop"><p class="p-shop">salut</p></a>
                 </article>
                 <article class="article-shop">
@@ -92,6 +90,7 @@ $newProducts = $controller->getNewProducts();
                     <a class="a-shop" href="shopCategory"><img src="pictures/stylo.jpg" class="image-shop"><p class="p-shop">salut</p></a>
                 </article>
             </section>
+        <!-- Carousel with top sales -->    
         </article>
         <aside id="aside-2-shop" class="border-raduis">
             <h2>Top vente</h2>

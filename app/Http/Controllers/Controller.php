@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-const IP = '10.64.128.131:3001';
+const IP = 'localhost:3001';
 const TOKEN = '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F';
 
 class Controller extends BaseController
@@ -371,10 +371,10 @@ class Controller extends BaseController
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
 		curl_close($ch);
-
+		
 		$products = json_decode($output, true);
-
-		array_push($newProducts, array_pop($products));
+		$newProducts = [];
+		//array_push($newProducts, array_pop($products));
 	}
 
 	// returns the products categories from the API
