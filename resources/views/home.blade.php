@@ -104,7 +104,7 @@ session_start();
 
   </div>
 
-  <h2 class="presentation-title">Réseaux sociaux</h2>
+  
 
 
 

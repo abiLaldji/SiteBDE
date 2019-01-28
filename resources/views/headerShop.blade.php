@@ -15,7 +15,7 @@
 
     <header id="header">
         <div id="logo-cesi">
-            <img src="./pictures/logoCesi.png" alt="logo du cesi">
+            <a href="/"><img src="./pictures/logoCesi.png" alt="logo du cesi"></a>
         </div>
 
         <div id="header-right">
@@ -36,22 +36,22 @@
 
                 <li class="active"><a href="/"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
-                <li><a href="#" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
-
+                <li><a href="shop" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
+                
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">T-shirt</a></li>
-                        <li><a href="#">Pull</a></li>
-                        <li><a href="#">Goodies</a></li>
+                        <li><a href="shopCategory">T-shirt</a></li>
+                        <li><a href="shopCategory">Pull</a></li>
+                        <li><a href="shopCategory">Goodies</a></li>
                     </ul>
-
+                    
                 </li>
 
                 <li><a href="events" class="categories"><span class="navtext">ÉVÈNEMENTS</span></a></li>
 
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">A venir</a></li>
+                        <li><a href="events">A venir</a></li>
                         <li><a href="pastEvents">Historique</a></li>
                     </ul>
                 </li>

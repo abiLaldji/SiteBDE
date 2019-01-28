@@ -17,9 +17,10 @@
     
     <main>
         <article id="article-image_event">
-            <h1 class="titre-page">Liste des photos</h1>
-            <section id="section-image_event" class="border-raduis">
-                <h2 id="name-event-image_event">Festival de Cannes</h2>
+            <section id="section-image_event">
+            <h2 class="text-black">Liste des photos</h2>
+            <div class="blue-stripe"><br></div>
+                <h3 id="name-event-image_event">Festival de Cannes</h3>
                 <article class="article-image_event">
                     <p class="name-image_event">Johnny Depp</p>
                     <a class="a-image_event" href="commentImageEvent"><img src="pictures/hoodi.png" class="image-image_event"><p class="p-image_event">Commenter</p></a>

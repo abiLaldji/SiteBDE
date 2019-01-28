@@ -47,7 +47,7 @@ use App\Http\Controllers\Controller
 							<p class="desc-event"><span class="bold">Description : </span>{{$events[$i]['description']}}</p>
 
 							<div>
-								<button type="submit" class="btn btn-primary btn-infos">Plus d'infos</button>
+								<a href="imageEvent" class="btn btn-primary btn-infos">Plus d'infos</a>
 							</div>
 						</td>
 					</tr>

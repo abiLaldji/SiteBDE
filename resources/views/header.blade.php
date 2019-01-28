@@ -17,8 +17,8 @@
 
     <header id="header">
         <div id="logo-cesi">
-            <img src="./pictures/logoCesi.png" alt="logo du cesi">
-        </div>
+        <a href="/"><img src="./pictures/logoCesi.png" alt="logo du cesi"></a>
+        </div> 
 
         <div id="header-right">
 
