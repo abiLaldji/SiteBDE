@@ -92,7 +92,10 @@ router.route('/bde_site/api/:table/:field?/:value?/:add?')
 			If the value is a fonction, matches "name()", do not surround with "'".
 		*/
 		let r = 'INSERT INTO ' + req.params.table + ' (' + Object.keys(req.body).toString() + ')' +
-			' VALUES  (' + Object.values(req.body).map(x => { if (new RegExp(/.+\(\)/).test(x)) { return "'" + x + "'" } else return x }).join(",") + ')';
+			' VALUES  (' + Object.values(req.body).map(x => { if (!new RegExp(/.+\(\)/).test(x)) { return "'" + x + "'" } else return x }).join(",") + ')';
+
+		console.log(r);
+
 
 		connection.query(r, (error, results) => {
 			if (error) throw error;
