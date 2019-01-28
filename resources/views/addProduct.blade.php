@@ -8,7 +8,6 @@ session_start();
     <title>Ajouter produit</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    
      <!-- bootstrap link-->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
      <!-- FontAwesome link-->
@@ -32,18 +31,20 @@ session_start();
        <img src="./pictures/stylo2.png" alt="" class="picture-product preview">
      </div>
 
-
+     <!--Formulaire pour ajouter un produit-->
      <form method="POST" action="addProduct">
       <div class="center">
+        <!--Selection de l'image-->
         <label class="btn btn-default btn-file">
           Parcourir <input type="file" style="display: none;" onchange="readURL(this);" name="picutre_url">
         </label>
       </div>
 
       @csrf
-
+      <!--Selection des autres informations-->
       <div class="formulaire">
         <div class="form-group">
+          <!-- Nom du produit-->
           <input type="text" class="form-control" placeholder="Nom du produit" name="name">
         </div>
         <select class=form-control name="name_category">
@@ -56,14 +57,16 @@ session_start();
           @endfor
         </select>
         <div class="form-group">
+          <!--Prix du produit-->
           <input type="number" class="form-control" placeholder="Prix" name="price">
         </div>
         <div class="form-group">
+          <!--Description-->
           <textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
         </div>
 
       </div>
-
+      <!-- Bouton de validation-->
       <div class="connecIns">
        <button type="submit" class="btn btn-primary">Valider</button>
      </div>
