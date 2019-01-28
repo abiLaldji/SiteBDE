@@ -110,14 +110,16 @@ router.route('/bde_site/api/:table/:field?/:value?/:add?')
 		let field = req.params.field;
 		let value = req.params.value;
 		let add = req.params.add;
+		let r;
 
 		if (process.env.TOKEN !== req.header("Authorization") || req.header("Authorization") === undefined) res.json({ message: "Invalid Token" })
 
 		// :add parametre in route is meant to tell if the value has to be added to the current valu in the database
 		if (add != undefined) {
-			let r = process.env.postAdd;
+			r = process.env.postAdd;
+
 		} else {
-			let r = 'UPDATE ' + table + ' SET ' + Object.values(req.body).map((x, i) => Object.keys(req.body)[i] + "='" + x + "'")
+			r = 'UPDATE ' + table + ' SET ' + Object.values(req.body).map((x, i) => Object.keys(req.body)[i] + "='" + x + "'")
 				+ ' WHERE ' + field + '=' + value;
 		}
 
