@@ -51,9 +51,12 @@ class Controller extends BaseController
 				$_SESSION['campus_name'] = $output['campus_name'];
 				$_SESSION['status'] = $output['status'];
 				if(isset($_COOKIE['isUsingCookies']) && $_COOKIE['isUsingCookies'] == true){
-					setcookie('first_name');
-					setcookie('last_name');
-					setcookie('last_name');
+					setcookie('first_name', $_SESSION['first_name'], time()+60*60*24*365);
+					setcookie('last_name', $_SESSION['last_name'], time()+60*60*24*365);
+					setcookie('email', $_SESSION['email'], time()+60*60*24*365);
+					setcookie('id_user', $_SESSION['id_user'], time()+60*60*24*365);
+					setcookie('campus_name', $_SESSION['campus_name'], time()+60*60*24*365);
+					setcookie('status', $_SESSION['status'], time()+60*60*24*365);
 				}
 			}else{
 				return redirect()->route('signIn', 'notRegistered');
@@ -350,15 +353,28 @@ class Controller extends BaseController
 
 		array_multisort($price, SORT_DESC, $products);
 
-		$topSales[0] = $products[0];
-		$topSales[1] = $products[1];
-		$topSales[2] = $products[2];
+		$topSales = [];
+
+		for($i=0;$i<3;$i++){
+			array_push($topSales, array_shift($products));
+		}
 
 		return $topSales;
 	}
 
 	public function getNewProducts(){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/product");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+
+		$products = json_decode($output, true);
+
+		array_push($newProducts, array_pop($products));
 	}
 
 	// returns the products categories from the API
@@ -446,7 +462,7 @@ class Controller extends BaseController
 	}
 
 	public function declineCookies(){
-		setcookie('isUsingCookies', false, time()+60*60*24*365);
+		setcookie('isUsingCookies', false, 0);
 		return redirect()->route('home');
 	}
 

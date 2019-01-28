@@ -1,5 +1,5 @@
 
-
+<?php if(!isset($_SESSION['id_user']) && isset($_COOKIE)) ?>
 <body>
 
     <header id="header">
