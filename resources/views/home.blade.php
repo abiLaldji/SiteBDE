@@ -50,7 +50,7 @@ session_start();
           @endif
 
           ">
-          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide image-carousel">
+          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide image-carousel-home">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>
