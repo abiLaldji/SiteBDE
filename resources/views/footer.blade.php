@@ -1,3 +1,8 @@
+@if(!isset($_COOKIE['isUsingCookies']))
+  @include('cookies')
+  <?php var_dump($_COOKIE) ?>
+@endif
+
 <footer> 
 
   <div class="footer-ln">

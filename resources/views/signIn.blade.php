@@ -52,7 +52,7 @@
 
 					<div class="connecIns">
 						<div class="form-check">
-							<input type="checkbox" class="form-check-input">
+							<input type="checkbox" class="form-check-input" name="remember_me">
 							<label class="form-check-label">Se souvenir de moi</label>
 						</div>
 						<button type="submit" class="btn btn-primary">Se connecter</button>

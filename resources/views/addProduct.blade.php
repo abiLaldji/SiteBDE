@@ -47,10 +47,10 @@ session_start();
           <input type="text" class="form-control" placeholder="Nom du produit" name="name">
         </div>
         <select class=form-control name="name_category">
-          <?php 
-          $controller = new Controller();
-          $categories = $controller->getCategories();
-          ?>
+<?php 
+ $controller = new Controller();
+ $categories = $controller->getCategories();
+?>
           @for ($i = 0; $i < sizeof($categories); $i++)
           <option value="{{$categories[$i]}}">{{$categories[$i]}}</option>
           @endfor
