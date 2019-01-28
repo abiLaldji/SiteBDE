@@ -1473,3 +1473,49 @@ table{
 #input-submit-Comment_image_event:hover{
     color: hsla(39,100%,66%,1);;
 }
+
+
+/*-------------------------------------------------------Cookies--------------------------------------------------------*/
+
+.cookie-stripe{
+    text-align: center;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border: black solid 1px;
+    font-size: 170%;
+    background-color: rgb(255 194 82);
+    position: fixed;
+    bottom: 0;
+    margin-right: 0;
+    width: 100%;
+    z-index: 10;
+    color: black;
+}
+
+.cookie-buttons{
+    display: inline-flex;
+}
+
+.cookie-a{       
+    margin-right: 14%;
+    margin-left: 10%;
+    background-color: white;
+    border: solid black 1px;
+}
+
+.cookie-a:hover{
+    background-color: black;
+    color: rgb(255 194 82);
+    border-color: white;
+}
+
+.cookie-r:hover{
+    background-color: black;
+    color: rgb(255 194 82);
+    border-color: white;
+}
+
+.cookie-r{
+    background-color: white;
+    border: solid black 1px;
+}
