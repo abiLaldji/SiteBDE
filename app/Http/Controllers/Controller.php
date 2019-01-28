@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
-const IP = 'localhost:3001';
+const IP = '10.64.128.131:3001';
 const TOKEN = '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F';
 
 class Controller extends BaseController
@@ -34,16 +34,16 @@ class Controller extends BaseController
 			return abort(500);
 		}
 
-		if($output){
+		if($output != '[]'){
 			$output = json_decode($output, true)[0];
+			var_dump($output);
 			if($output['password'] == hash('sha256', $_POST['password'])){
 				session_start();
-				$_SESSION['connected'] = true;
 				$_SESSION['first_name'] = $output['first_name'];
 				$_SESSION['last_name'] = $output['last_name'];
 				$_SESSION['email'] = $output['email'];
 				$_SESSION['id_user'] = $output['id_user'];
-				//$_SESSION['campus'] = $output['campus'];
+				$_SESSION['campus'] = 'Pau'; //$output['campus'];
 				$_SESSION['status'] = $output['status'];
 			}else{
 				return redirect()->route('signIn', 'notRegistered');
@@ -54,7 +54,7 @@ class Controller extends BaseController
 		return redirect()->route('signIn', 'notRegistered');
 	}
 
-
+	// signUp a user
 	public function signUp(){
 		// format user's entry
 		$_POST['first_name'] = ucfirst($_POST['first_name']);
@@ -78,7 +78,6 @@ class Controller extends BaseController
 		
 		// L'utilisateur a t il deja un compte 
 		$_POST['password'] = hash('sha256', $_POST['password']);
-
 
 
 		$ch = curl_init();
@@ -105,11 +104,12 @@ class Controller extends BaseController
 	public function deconnect(){
 		session_start();
 
-		unset($_SESSION['connected']);
 		unset($_SESSION['first_name']);
 		unset($_SESSION['last_name']);
 		unset($_SESSION['email']);
 		unset($_SESSION['id_user']);
+		unset($_SESSION['campus']);
+		unset($_SESSION['status']);
 
 		return redirect('/');
 	}
@@ -139,8 +139,9 @@ class Controller extends BaseController
 		return redirect('/');
 	}
 
+	// returns the event list from the API
 	public function getEvents(){
-
+		// request the event list to the API
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/event");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -149,43 +150,61 @@ class Controller extends BaseController
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
 		curl_close($ch);
-
 		if($info['http_code'] != '200'){
 			return abort(500);
 		}
 
+		// decode the reponse of the API
 		$events = json_decode($output, true);
 
-		if($events == []){
-			$events = [['title'=> '', 'description'=> '', 'date' => '', 'picture_url' => './pictures/defaultPicture.png', 'is_approved'=> 1, 'is_public' => 1, 'first_name' => '', 'last_name' => '']];
+		// if the user is not connected or if he is a student, remove events which are not public
+		if (!isset($_SESSION['status']) || $_SESSION['status'] == 'student'){
+			$publicEvents = [];
+			$eventNumber = sizeof($events);
+			for($i=0 ; $i < $eventNumber; $i++){
+				$event = array_shift($events);
+				if($event['is_public'] == 1){
+					array_push($publicEvents, $event);
+				}
+			}
+			return $publicEvents;
 		}
 
+		// return all events
 		return $events;
 	}
 
+	// returns the ideas from the event list
 	public function getIdeas(){
 		$events = $this->getEvents();
 
 		$ideas = [];
-		$j = 0;
+		$eventNumber = sizeof($events);
 
-		for ($i = 0; $i < sizeof($events); $i++){
-			if($events[$i]['is_approved'] == 0 && $events[$i]['is_public'] == 1){
-				$ideas[$j] = $events[$i];
-				$j++;
+		for ($i = 0; $i < $eventNumber; $i++){
+			$event = array_shift($events);
+			if($event['is_approved'] == 0){
+				array_push($ideas, $event);
 			}
 		}
 
 		return $ideas;
 	}
 
+	// returns the event which have the most votes
 	public function getMonthEvent(){
 		$event = ['title' => 'titre', 'organizator' => 'lui', 'date' => 'aujourdhui', 'description' => 'ceci', 'pictureURL' => ''];
+		$events = $this->getEvents();
 
+		echo '<br><br>';
+		$voteCount = array_column($events, 'vote_count');
 
-		return $event;
+		array_multisort($voteCount, SORT_DESC, $events);
+
+		return array_shift($events);
 	}
 
+	// sends a new idea to the API
 	public function submitIdea(Request $request){
 		session_start();
 
@@ -225,39 +244,40 @@ class Controller extends BaseController
 		var_dump($_POST);
 	}
 
-
-
+	// returns the events that have not occured yet from the event list
 	public function getNextEvents(){
 
 		$events = $this->getEvents();
 
 		$nextEvents = [];
-		$j = 0;
+		$eventNumber = sizeof($events);
 
-		for ($i = 0; $i < sizeof($events); $i++){
-			if($events[$i]['is_approved'] == 1 && $events[$i]['is_public'] == 1 && $events[$i]['date'] > date('j')){
-				$nextEvents[$j] = $events[$i]; 
-				$j++;
+		for ($i = 0; $i < $eventNumber; $i++){
+			$event = array_shift($events);
+			if($event['is_approved'] == 1 && $event['date'] > date('j')){
+				array_push($nextEvents, $event);
 			}
 		}
 
 		return $nextEvents;
 	}
 
+	// returns the next event that will occure from the event list
 	public function getNextEvent(){
 
 		$events = $this->getEvents();
 
-		$nextEvent = $events[0];
+		$nextEvent = array_shift($events);
 		for ($i = 1; $i < sizeof($events); $i++){
-
+			$event = array_shift($events);
 			if($events[$i]['is_approved'] == 1 && $events[$i]['is_public'] == 1 && $events[$i]['date'] > $nextEvent['date']){
-				$nextEvent = $event[$i]; 
+				$nextEvent = $event[$i];
 			}
 		}
 		return $nextEvent;
 	}
 
+	// returns the 3 best selling products from the API 
 	public function getTopSales(){
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
@@ -272,7 +292,6 @@ class Controller extends BaseController
 
 		var_dump($output);
 
-		$products = [['name' => 'rae', 'price' => '11', 'picture_url' => './pictures/defaultPicture.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '10', 'picture_url' => './pictures/defaultPicture.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '9', 'picture_url' => './pictures/defaultPicture.png', 'description' =>'decrire'],['name' => 'rae', 'price' => '12', 'picture_url' => './pictures/defaultPicture.png', 'description' =>'decrire']];
 
 		$price = array_column($products, 'price');
 
@@ -280,11 +299,12 @@ class Controller extends BaseController
 
 		$topSales[0] = $products[0];
 		$topSales[1] = $products[1];
-		$topSales[2] = $products[2];
+	//	$topSales[2] = $products[2];
 
 		return $topSales;
 	}
 
+	// returns the products categories from the API
 	public function getCategories(){
 		$categories = ['stylo', 'pull', 'saccoche', 'fourchette', 'voiture', 'fusée', 'etoile', 'divers'];
 
@@ -302,6 +322,7 @@ class Controller extends BaseController
 		//return $categories;
 	}
 
+	// returns the campuses from the API
 	public function getCampus(){
 
 		$ch = curl_init();
