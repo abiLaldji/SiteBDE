@@ -4,8 +4,8 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
-<head>
+<html lang='fr'>
+  <head>
     <title>Accueil</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -15,99 +15,101 @@ session_start();
      <!-- FontAwesome link-->
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
   
-</head>
+  </head>
 
 @include("header")
 
-<main>
+    <main>
 
-  <aside class="aside-right">
+      <aside class="aside-right">
 
 
-    <h2>Top des ventes</h2>
-    <div class="gray-stripe-109"><br></div>
-    <article id="article-aside-right-home">
-      <!--Carousel displaying the top 3 sales-->
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Slide indicator-->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active li-carousel"></li>
-          <li data-target="#myCarousel" data-slide-to="1" class="li-carousel"></li>
-          <li data-target="#myCarousel" data-slide-to="2" class="li-carousel"></li>
-        </ol>
+        <h2>Top des ventes</h2>
+        <div class="gray-stripe-109"><br></div>
+        <article id="article-aside-right-home">
+          <!--Carousel displaying the top 3 sales-->
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Slide indicator-->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active li-carousel"></li>
+              <li data-target="#myCarousel" data-slide-to="1" class="li-carousel"></li>
+              <li data-target="#myCarousel" data-slide-to="2" class="li-carousel"></li>
+            </ol>
 
-        <!--Carousel arrows--> 
-        <div class="carousel-inner">
+            <!--Carousel arrows--> 
+            <div class="carousel-inner">
 
-          <?php 
-          $controller = new Controller();
-          $topSales = $controller->getTopSales();
-          ?>
+              <?php 
+              $controller = new Controller();
+              $topSales = $controller->getTopSales();
+              ?>
 
-          @for ($i = 0; $i < sizeof($topSales); $i++)
-          <div class="item 
+              @for ($i = 0; $i < sizeof($topSales); $i++)
+              <div class="item 
 
-          @if ($i == 0)
-          active
-          @endif
+              @if ($i == 0)
+              active
+              @endif
 
-          ">
-          <img src="{{ $topSales[$i]['picture_url']}}" alt="{{$topSales[$i]['name']}}" class="top-slide image-carousel">
-          <div class="carousel-caption">
-            <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
+
+              ">
+              <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide image-carousel">
+              <div class="carousel-caption">
+                <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
+              </div>
+
+
+            </div>
+
+            @endfor
+
           </div>
+
+          <!--Left and right arrows of the carousel -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        </article>
+        <div><br><br></div>
+      </aside>
+      <!--Aside containing a quick presentation of the BDE-->
+      <aside class="aside-left">
+
+        <h2 class="presentation-title">Qui sommes nous ?</h2>
+
+
+        <div>
+          Nous somme le BDE (<span class="italique">Bureau des élèves</span>) du campus CESI de Pau, nôtre objectif est d'améliorer le cadre de vie des
+          étudiants en apportant de la vie sur le campus notament grace à l'organisation d'activitées.
+        </div>
+
+        <h2 class="presentation-title">Les activités</h2>
+
+        <div>
+          Les activités proposées seront toutes gratuites (l'ensemble des frais seront pris en charge par le BDE).<br>
+          Nous souhaitons une diversitée dans nos activitées, pour cela nous éviter de remettre en place une activité qui a deja eu lieu.<br>
+          <span class="bold">Types d'activités proposées :</span>
+          <ul>
+            <li>Soirées</li>
+            <li>Activités sportives</li>
+            <li>Activités culturelles</li>
+          </ul>
+        </div>
+
+        <h2 class="presentation-title">Direction</h2>
+
+        <div>
+          Le BDE est composé d'élèves de différentes promos, des réunions sont régulièrements organisés avec les représentant de chaques promotions l'objectifs étant d'amener un maximum de personne à chaque évènements.
 
         </div>
 
-        @endfor
-
-      </div>
-
-      <!--Left and right arrows of the carousel -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </article>
-  <div><br><br></div>
-</aside>
-<!--Aside containing a quick presentation of the BDE-->
-<aside class="aside-left">
-
-  <h2 class="presentation-title">Qui sommes nous ?</h2>
-
-
-  <div>
-    Nous somme le BDE (<span class="italique">Bureau des élèves</span>) du campus CESI de Pau, nôtre objectif est d'améliorer le cadre de vie des
-    étudiants en apportant de la vie sur le campus notament grace à l'organisation d'activitées.
-  </div>
-
-  <h2 class="presentation-title">Les activités</h2>
-
-  <div>
-    Les activités proposées seront toutes gratuites (l'ensemble des frais seront pris en charge par le BDE).<br>
-    Nous souhaitons une diversitée dans nos activitées, pour cela nous éviter de remettre en place une activité qui a deja eu lieu.<br>
-    <span class="bold">Types d'activités proposées :</span>
-    <ul>
-      <li>Soirées</li>
-      <li>Activités sportives</li>
-      <li>Activités culturelles</li>
-    </ul>
-  </div>
-
-  <h2 class="presentation-title">Direction</h2>
-
-  <div>
-    Le BDE est composé d'élèves de différentes promos, des réunions sont régulièrements organisés avec les représentant de chaques promotions l'objectifs étant d'amener un maximum de personne à chaque évènements.
-
-  </div>
-
-</aside>
+      </aside>
 
 <article class="article-home">
 

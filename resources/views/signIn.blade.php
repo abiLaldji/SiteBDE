@@ -1,7 +1,7 @@
 <?php session_start() ?>
 
 <!DOCTYPE html>
-<html>
+<html lang='fr'>
 <head>
 	<title>Connexion</title>
 	<meta charset="utf-8">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
      <!-- FontAwesome link-->
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
+	
 
 </head>
 
@@ -71,6 +71,7 @@
 	</main>
 
     @include("footer")
-
+	
+	<script  src="{{ URL::asset('js/checkForms.js') }}"></script>
 	</body>
 </html>

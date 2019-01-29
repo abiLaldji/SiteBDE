@@ -4,21 +4,19 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
-<head>
+<html lang='fr'>
+	<head>
 
-	<title>Boîte à idées</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<title>Boîte à idées</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
 
-	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
+		<!-- bootstrap link-->
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+		<!-- FontAwesome link-->
+		<link rel="stylesheet" href="./fontawesome/css/all.min.css">
 
-	<!-- bootstrap link-->
-	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-	<!-- FontAwesome link-->
-	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
-
-</head>
+	</head>
 
 
 @include("header")
@@ -129,8 +127,8 @@ session_start();
 
     @include("footer")
 
-
-    <script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
+	<script src="{{ URL::asset('js/checkForms.js') }}"></script>
+    <script src="{{ URL::asset('js/picturePreview.js') }}"></script>
 
 	</body>
 </html>

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang='fr'>
+    <head>
 
-    <title>Images de l'évènement</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <title>Image de l'évènement</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        
+        <!-- bootstrap link-->
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+        <!-- FontAwesome link-->
+        <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+
     
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  
-</head>
+    </head>
 
 @include("header")
     

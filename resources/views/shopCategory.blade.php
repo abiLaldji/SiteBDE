@@ -10,18 +10,18 @@ $products = $controller->getProductsByCategory($currentCategory);
  ?>
 
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Catégorie boutique</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+<html lang='fr'>
+    <head>
+        <title>Catégorie boutique</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+        
+        <!-- bootstrap link-->
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+        <!-- FontAwesome link-->
+        <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
     
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
-  
-</head>
+    </head>
 
 
 @include("headerShop")
@@ -39,12 +39,12 @@ $products = $controller->getProductsByCategory($currentCategory);
                     @csrf
                     <input type="hidden" value="{{$currentCategory}}" name="current_category">
                     <!-- enter minimum price -->
-                    <label>Min</label><input id="input-text-min-aside-section-category" type="text" name="min">
+                    <label>Min</label><input  alt="min" id="input-text-min-aside-section-category" type="text" name="min">
                     <!-- enter maximum price -->
-                    <label>Max</label><input id="input-text-max-aside-section-category" type="text" name="max">
+                    <label>Max</label><input alt="max" id="input-text-max-aside-section-category" type="text" name="max">
 
                     <br>
-                    <input type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis">
+                    <input alt="trier" type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis">
                     <br> 
                 </form>
             </section>
@@ -73,7 +73,7 @@ $products = $controller->getProductsByCategory($currentCategory);
                             </td>
                             <!-- display the price -->
                             <td class="td-3-category"><p>{{$products[$i]['price']}} €</p></td>
-                            <td class="td-4-category"><input type="image" src="../pictures/suppr.png" class="suppr-category"></td>
+                            <td class="td-4-category"><input alt="suppr" type="image" src="../pictures/suppr.png" class="suppr-category"></td>
                         </tr>
                         @endfor
 
