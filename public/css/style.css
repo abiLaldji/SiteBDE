@@ -16,7 +16,7 @@ body{
 main{
     margin-top: -20px;
     background-color: black;
-    min-height: 875px;
+    min-height: 950px;
 }
 
 .cente{
@@ -473,7 +473,6 @@ table{
     padding-left: 15%;
     padding-right: 15%;
     padding-top: 9.5%;
-    padding-bottom: 9.5%;
 }
 
 .signIn-section-center{   
@@ -1606,6 +1605,13 @@ table{
         width: 107.5%;
     }
 
+    .gray-stripe-109{
+        background-color: rgb(80, 80, 80) ;
+        margin-bottom: 3%;
+        margin-left: -3%;
+        width: 106%;
+    }
+
     .float-left{
         float: left;
     }
@@ -1702,12 +1708,88 @@ table{
         margin-bottom: 5%;
     }
 
+
+    /*-----------------------------------------------------singUp--------------------------------------------------------*/
     
+    .signUp-article-center{
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+
+
+    /*--------------------------------------------------home-------------------------------------------------------------*/
+
+    .aside-right{
+        float:none;
+        width: 35%;
+        margin-left: 32.5%;
+        margin-top: -20px;
+    }
+
+    .aside-left{
+        float:none;
+        width: 40%;
+        margin-left: 30%;
+        max-width: none;
+        min-width: none;
+        margin-bottom: 3%;
+    }
+
+    .article-home{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+
+    /*----------------------------------------------signIn-------------------------------------------------------------*/
+
+    .signIn-article-center{
+    margin-left: 12%;
+    margin-right: 12%;
+    padding-bottom: 2%;
+    }
+
+
+    /*-------------------------------------------------shop-category---------------------------------------------------*/
+
+    #aside-category{
+    float: none;
+    margin-left: 30%;
+    width: 40%;
+    margin-top: 0%;
+    }
+
+    #article-category{
+        width: 70%;
+        margin-left: 15%;
+    }
+
+
+    /*-------------------------------------------shop-article-----------------------------------------------------------*/
+
+    #article-article{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    #button-article{
+        margin-right: -25%;
+        margin-top: 12.5%;
+ 
+        font-size: 1.5em;
+    }
+
+    #button-article:hover{
+        margin-right: -25%;
+    }
+
+    #price-article{
+        width: 25%;
+        margin-right: 10%;
+        margin-top: 5%;
+        font-size: 1.5em;
+    }
 }
-
-
-
-
 
 /*-------------------------------------------------screen-0/699px------------------------------------------------------*/
 
@@ -1722,6 +1804,13 @@ table{
     }
 
     .gray-stripe-111{
+        background-color: rgb(80, 80, 80) ;
+        margin-bottom: 3%;
+        margin-left: -1.75%;
+        width: 103.5%;
+    }
+
+    .gray-stripe-109{
         background-color: rgb(80, 80, 80) ;
         margin-bottom: 3%;
         margin-left: -1.75%;
@@ -1848,5 +1937,84 @@ table{
         margin-bottom: 12%;
     }
 
+
+    /*----------------------------------------------signIn-------------------------------------------------------------*/
+
+    .signIn-article-center{
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 1%;
+    }
+
+
+    /*-----------------------------------------------------singUp--------------------------------------------------------*/
+    
+    .signUp-article-center{
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+    }
+
+
+    /*--------------------------------------------------home-------------------------------------------------------------*/
+
+    .aside-right{
+        float:none;
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .aside-left{
+        float:none;
+        width: 80%;
+        margin-left: 10%;
+        max-width: none;
+        min-width: none;
+        margin-bottom: 3%;
+    }
+
+    .article-home{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    /*-------------------------------------------------shop-category---------------------------------------------------*/
+
+    #aside-category{
+        float: none;
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 0%;
+        }
+    
+    #article-category{
+        width: 95%;
+         margin-left: 2.5%;
+    }
+
+    
+    /*-------------------------------------------shop-article-----------------------------------------------------------*/
+
+    #article-article{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #button-article{
+        margin-right: -30%;
+        margin-top: 12.5%;
+ 
+        font-size: 1.25em;
+    }
+
+    #button-article:hover{
+        margin-right: -30%;
+    }
+
+    #price-article{
+        width: 30%;
+        margin-right: 10%;
+        margin-top: 5%;
+        font-size: 1.25em;
+    }
 
 }

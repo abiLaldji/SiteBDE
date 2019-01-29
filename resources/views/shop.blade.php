@@ -51,6 +51,7 @@ $newProducts = $controller->getNewProducts();
                   @endfor
                 </div>
               </div>
+              <br>
         </aside>
         
         <!-- Display all categories of articles -->

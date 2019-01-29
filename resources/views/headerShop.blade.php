@@ -39,7 +39,7 @@
                     
                 </li>
 
-                <li><a href="{{url('events')}}" class="categories"><span class="navtext">ÉVÈNEMENTS</span></a></li>
+                <li><a href="{{url('events')}}" class="categories float-left"><span class="navtext">ÉVÈNEMENTS</span></a></li>
 
                 <!--different type of event-->
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
