@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-const IP = '10.64.128.131:3001';
+const IP = 'localhost:3001';
 const TOKEN = '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F';
 
 class Controller extends BaseController
@@ -557,7 +557,7 @@ echo '<br><br>';
 	public function makeOrder(){
 		session_start();
 
-		$ch = curl_init();
+	/*	$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/purchase/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_POST, true);
@@ -576,11 +576,44 @@ echo '<br><br>';
 			$this->addToOrder($product['quantity'], $insertId, $product['quantity']);
 		}
 
-		// deletes the cart cookie
-		unset($_COOKIE['cart']);
-   		setcookie('cart', '', time() - 3600);
+		
+*/
 
-   		return redirect()->route('cart', 'success');
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/user/status/bde_member");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+
+		$bdeMembers = json_decode($output, true);
+
+		var_dump($bdeMembers);
+
+		$emailMessage = "L'utilisateur " . $_SESSION['first_name'] . " " . $_SESSION['last_name'] . " a passer une commande :\n";
+		/*$total = 0;
+		foreach ($cart as $key => $product) {
+			$emailMessage = $emailMessage . "\t" . $cart['name'] . " : "  . $cart['quantity'] . "\n";
+			$total += $cart['price'] * $cart['quantity'];
+		}
+
+		$emailMessage = $emailMessage . "Montant : " . $total . "€";*/
+
+		echo $emailMessage;
+
+		foreach ($bdeMembers as $key => $bdeMember) {
+			mail('antonin.beaurgard@viacesi.fr', "Commande n°" . '1', 'test');
+		}
+
+		// deletes the cart cookie
+		/*unset($_COOKIE['cart']);
+   		setcookie('cart', '', time() - 3600);*/
+
+
+   		//return redirect()->route('cart', 'success');
 	}
 
 	/*public function sortProducts(){

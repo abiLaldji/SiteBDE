@@ -115,4 +115,4 @@ Route::post('addToCart', 'Controller@addToCart');
 
 Route::post('makeOrder', 'Controller@makeOrder');
 
-Route::get('test', 'Controller@addToCart');
+Route::get('test', 'Controller@makeOrder');
