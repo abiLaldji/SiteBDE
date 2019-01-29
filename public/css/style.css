@@ -140,6 +140,7 @@ table{
 .h2white{
     color:white;
     margin-bottom: 6%;
+
 }
 
 /*---------------------------------------------------------Header--------------------------------------------------------*/
@@ -1093,7 +1094,7 @@ input[type=submit]:hover {
 
 .article-shop{
     width: 27%;
-    height: 18em;
+    height: auto;
     margin-left: 4.75%;
     margin-bottom: 3%;
     border: solid black;
@@ -1125,7 +1126,7 @@ input[type=submit]:hover {
 
 .p-shop{
     color: black;
-    margin-top: -35px;
+    margin-top: -50px;
 }
 
 #aside-2-shop{
@@ -1373,7 +1374,7 @@ table{
 
 .article-image_event{
     width: 27%;
-    height: 18em;
+    height: auto;
     margin-left: 4.75%;
     margin-top: 6%;
     margin-bottom: 3%;
