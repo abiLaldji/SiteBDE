@@ -19,21 +19,15 @@ use App\Http\Controllers\Controller
 
 @include("header")
 
-
-
 	<main>
 
-
 		<article class="pastevent-article-center">
-
-			
 
 			<section class="pastevent-section-center">
 				<h2> Évènements passés </h2>
 				<div class="blue-stripe"><br></div>
+				<!--Tableau contenant la liste des évènements passés et leur description-->
 				<table class="table-event">
-
-
 
 <?php 
 $controller = new Controller();
@@ -48,7 +42,7 @@ $events = $controller->getPastEvents();
 							<p class="bold">Organisateur : {{$events[$i]['first_name'] . ' ' . $events[$i]['last_name']}}</p>
 							<p class="bold">Date : {{$events[$i]['date']}}</p> 
 							<p class="desc-event"><span class="bold">Description : </span>{{$events[$i]['description']}}</p>
-
+							<!--Bouton permettant d'obtenir plus d'infos sur un évènement-->
 							<div>
 								<a href="imageEvent" class="btn btn-primary btn-infos">Plus d'infos</a>
 							</div>
@@ -68,3 +62,5 @@ $events = $controller->getPastEvents();
 
     @include("footer")
 
+	</body>
+</html>

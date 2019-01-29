@@ -81,3 +81,6 @@ session_start();
 </main>
 
 @include("footer")
+
+</body>
+</html>

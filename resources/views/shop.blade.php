@@ -8,7 +8,6 @@ session_start();
 <html>
 <head>
 
-
     <title>Boutique</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
@@ -20,7 +19,6 @@ session_start();
   
 </head>
 
-
 @include("headerShop")
    
     <main id="main-shop">
@@ -28,6 +26,7 @@ session_start();
         <aside id="aside-1-shop" class="border-raduis">
             <h2>Nouveautés</h2>
             <div class="gray-stripe-111"><br></div>
+
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
             
                 <!-- Wrapper for slides -->
@@ -52,9 +51,6 @@ $newProducts = $controller->getNewProducts();
                   @endfor
                 </div>
               </div>
-            <div>
-                <br>
-            </div>
         </aside>
         
         <!-- Display all categories of articles -->
@@ -63,10 +59,12 @@ $newProducts = $controller->getNewProducts();
             <div class="blue-stripe"><br></div>
             <section id="section-shop" class="border-raduis">
 
+
 <?php 
 $categories = $controller->getCategories();
  ?>
                 @for($i=0 ; $i < sizeof($categories) ; $i++)
+
                 <article class="article-shop">
                     <a class="a-shop" href="shop/{{$categories[$i]['name']}}"><img src="../pictures/defaultPicture.png" class="image-shop"><p class="p-shop">salut</p></a>
                 </article>
@@ -78,12 +76,8 @@ $categories = $controller->getCategories();
         <aside id="aside-2-shop" class="border-raduis">
             <h2>Top vente</h2>
             <div class="gray-stripe-111"><br></div>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
             
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-            <div class="carousel-inner">
-
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
   <?php 
@@ -123,3 +117,10 @@ $categories = $controller->getCategories();
   </main>
 
 @include("footer")
+
+
+<script src="./js/autoComplete.js"></script>
+
+
+</body>
+</html>

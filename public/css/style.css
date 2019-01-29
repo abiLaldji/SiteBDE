@@ -1702,6 +1702,10 @@ table{
         float: left;
     }
 
+    .titre-carousel{
+        margin-top: -1px;
+    }
+
 
     /*-----------------------------------------------------shop----------------------------------------------------------*/
     
@@ -1777,7 +1781,7 @@ table{
     
     #navbar-search-bar{
         float: none;
-        margin-left: -6%;
+        margin-left: -8%;
     }
 
 

@@ -18,17 +18,9 @@ use App\Http\Controllers\Controller
 
 @include("header")
 
-
 	<main>
 
-
-
 		<aside class="event-aside">
-
-			
-
-
-
 
 			<section class="section-aside-event">
 				<h2>Évènement du mois</h2>
@@ -59,11 +51,10 @@ use App\Http\Controllers\Controller
 
 		<article class="event-article-center">
 
-			
-
 			<section class="event-section-center">
 			<h2>Évènements à venir</h2>
 			<div class="blue-stripe"><br></div>
+			<!--Tableau contenant la liste des évènements-->
 				<table class="table-event">
 
 					<?php 
@@ -81,6 +72,7 @@ use App\Http\Controllers\Controller
 						</td>
 						<td class="td-img-event">
 							<div>
+								<!--Bouton d'inscription à un évènement-->
 								<button type="submit" class="btn btn-primary">S'inscrire</button>
 							</div>
 						</td>
@@ -98,3 +90,7 @@ use App\Http\Controllers\Controller
 
 
 @include("footer")
+
+
+</body>
+</html>

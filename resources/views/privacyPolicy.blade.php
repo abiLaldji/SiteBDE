@@ -15,9 +15,6 @@
 
 @include("header")
 
-	
-
-
 	<main>
 
 		<article class="ln-article-center">
@@ -31,7 +28,7 @@
 			</div>
 
 			<div class="ln-corp">
-
+				<!--Introduction-->
 				<div class="ln-intro">
 
 					CESI est engagé dans une démarche continue de conformité avec le Règlement général sur la protection des données du 27 avril 2016. Avec ce nouveau règlement CESI renforce sa politique de protection de données personnelles afin que les données de nos utilisateurs soient collectées et utilisées de manière transparente, confidentielle et sécurisée.
@@ -112,5 +109,8 @@
 
 </main>
 
-
 @include("footer")
+
+
+</body>
+</html>

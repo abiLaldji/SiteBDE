@@ -12,11 +12,7 @@
   
 </head>
 
-
 @include("header")
-
-	
-
 
 	<main>
 
@@ -37,7 +33,6 @@
 				<div>
 					L'objet de ce contrat est la vente en ligne de Produits proposés par le BDE du CESI.
 				</div>
-
 
 				<h3 class="h3-ln">Prix</h3>
 
@@ -79,3 +74,7 @@
 
 
 @include("footer")
+
+
+</body>
+</html>

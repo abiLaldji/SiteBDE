@@ -48,3 +48,10 @@ $product = $controller->getProduct(app('request')->route()->parameters['product'
 
     
 @include("footer")
+
+
+<script src="./js/autoComplete.js"></script>
+
+
+</body>
+</html>
