@@ -1789,6 +1789,23 @@ table{
         margin-top: 5%;
         font-size: 1.5em;
     }
+
+
+    /*----------------------------------------------------event----------------------------------------------------------*/
+
+    .event-aside{   
+        float: none;
+        min-width: 40%;
+        max-width: 40%;
+        margin-left: 30%;
+        margin-right: 2%;
+        margin-top: 0%;
+    }
+
+    .event-article-center{
+        width: 60%;
+        margin-left: 20%;
+    }
 }
 
 /*-------------------------------------------------screen-0/699px------------------------------------------------------*/
@@ -2015,6 +2032,22 @@ table{
         margin-right: 10%;
         margin-top: 5%;
         font-size: 1.25em;
+    }
+
+     /*----------------------------------------------------event----------------------------------------------------------*/
+
+     .event-aside{   
+        float: none;
+        min-width: 60%;
+        max-width: 60%;
+        margin-left: 20%;
+        margin-right: 2%;
+        margin-top: 0%;
+    }
+
+    .event-article-center{
+        width: 95%;
+        margin-left: 2.5%;
     }
 
 }
