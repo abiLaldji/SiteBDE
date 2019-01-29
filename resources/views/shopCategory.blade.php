@@ -6,6 +6,7 @@ $controller = new Controller();
 $currentCategory = app('request')->route()->parameters['category'];
 
 $products = $controller->getProductsByCategory($currentCategory);
+
  ?>
 
 <!DOCTYPE html>
@@ -34,7 +35,6 @@ $products = $controller->getProductsByCategory($currentCategory);
                 <div class="gray-stripe"><br></div>
                 <h3>Prix</h3>
 
-                <form method="POST" action="{{url('sortProducts')}}">
                     @csrf
                     <input type="hidden" value="{{$currentCategory}}" name="current_category">
                     <!-- enter minimum price -->
@@ -43,9 +43,8 @@ $products = $controller->getProductsByCategory($currentCategory);
                     <label>Max</label><input id="input-text-max-aside-section-category" type="text" name="max">
 
                     <br>
-                    <input type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis">
+                    <input type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis" onclick="sort({{json_encode($products)}}, '{{$currentCategory}}')">
                     <br> 
-                </form>
             </section>
             <div> <br></div>
         </aside>
@@ -58,24 +57,7 @@ $products = $controller->getProductsByCategory($currentCategory);
             <div class="blue-stripe"><br></div>
                 <article class="article-category">
                     <table id="table-category">
-
-                        @for($i=0 ; $i < sizeof($products) ; $i++)
-                        <tr class="tr-category">
-
-                            <!-- display image of product and redirection to article-->
-                            <td class="td-1-category"><a href="{{$currentCategory . '/' . $products[$i]['name']}}"><img src=".{{$products[$i]['picture_url']}}" class="image-category" alt="{{$products[$i]['picture_alt']}}"></a></td>
-
-                            <td class="td-2-category">
-                                <!--redirection to article-->
-                                <a href="{{$currentCategory . '/' . $products[$i]['name']}}"><h4>{{$products[$i]['name']}}</h4></a>
-                                    {{$products[$i]['picture_alt']}}
-                            </td>
-                            <!-- display the price -->
-                            <td class="td-3-category"><p>{{$products[$i]['price']}} €</p></td>
-                            <td class="td-4-category"><input type="image" src="../pictures/suppr.png" class="suppr-category"></td>
-                        </tr>
-                        @endfor
-
+                        
                     </table>
                 </article>
                 <br>
@@ -86,9 +68,8 @@ $products = $controller->getProductsByCategory($currentCategory);
     
 @include("footer")
 
-
-<script src="./js/autoComplete.js"></script>
-
+    <script type="text/javascript" src="{{ URL::asset('js/sortPrice.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/autoComplete.js') }}"></script>
 
 </body>
 </html>
