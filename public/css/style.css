@@ -1764,6 +1764,31 @@ table{
         margin-left: 15%;
     }
 
+
+    /*-------------------------------------------shop-article-----------------------------------------------------------*/
+
+    #article-article{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    #button-article{
+        margin-right: -25%;
+        margin-top: 12.5%;
+ 
+        font-size: 1.5em;
+    }
+
+    #button-article:hover{
+        margin-right: -25%;
+    }
+
+    #price-article{
+        width: 25%;
+        margin-right: 10%;
+        margin-top: 5%;
+        font-size: 1.5em;
+    }
 }
 
 /*-------------------------------------------------screen-0/699px------------------------------------------------------*/
@@ -1961,9 +1986,35 @@ table{
         margin-top: 0%;
         }
     
-        #article-category{
-            width: 95%;
-            margin-left: 2.5%;
-        }
+    #article-category{
+        width: 95%;
+         margin-left: 2.5%;
+    }
+
+    
+    /*-------------------------------------------shop-article-----------------------------------------------------------*/
+
+    #article-article{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #button-article{
+        margin-right: -30%;
+        margin-top: 12.5%;
+ 
+        font-size: 1.25em;
+    }
+
+    #button-article:hover{
+        margin-right: -30%;
+    }
+
+    #price-article{
+        width: 30%;
+        margin-right: 10%;
+        margin-top: 5%;
+        font-size: 1.25em;
+    }
 
 }
