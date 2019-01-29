@@ -15,11 +15,7 @@
 
 </head>
 
-
 @include("header")
-
-
-
 
 	<main>
 
@@ -33,20 +29,20 @@
 				@if (isset($_SESSION['firstName']))
 				<p> Vous êtes déjà connecté </p>
 				@else
-				<!--Formulaire de connexion-->
+				<!--Login form-->
 				<form name="login" method="POST" onsubmit="return validateFormSignIn(this);" action="signIn">
 					<div class="formulaire">
 
 						@csrf
 
 						<div class="form-group">
-							<!--Adresse mail-->
+							<!--email adress-->
 							<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Adresse mail" name="email">
 							<div id ="error_email">
 							 </div>
 						</div>
 						<div class="form-group">
-							<!--Mot de passe-->
+							<!--Password-->
 							<input type="password" class="form-control" placeholder="Mot de passe" name="password">
 							<div id ="error_password">
 							</div>
@@ -55,19 +51,18 @@
 
 					<div class="connecIns">
 						<div class="form-check">
-							<!--Case à cocher : se souvenir de moi -->
+							<!--Checkbox: remember me-->
 							<input type="checkbox" class="form-check-input" name="remember_me">
 							<label class="form-check-label">Se souvenir de moi</label>
 						</div>
-						<!--Bouton de connexion-->
+						<!--Connexion button-->
 						<button type="submit" class="btn btn-primary">Se connecter</button>
 					</div>
 				</form>
-				<!--Phrase permettant de rediriger les personnes non inscrites vers la page d'inscription-->
+				<!--Phrase to redirect non-registered people to the registration page-->
 				<div class="already">Pas encore inscrit ? <a href="signUp"><span>S'inscrire</span></a> </div>
 
 				@endif
-
 
 			</section>
 
@@ -75,9 +70,7 @@
 
 	</main>
 
-
     @include("footer")
-
 
 	</body>
 </html>

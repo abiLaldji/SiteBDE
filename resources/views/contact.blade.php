@@ -25,14 +25,14 @@
 				<div class="blue-stripe"><br></div>
 
 				<div class="center">
-					<!--Logo d'enveloppe + adresse mail-->
+					<!--Envelope logo + email address-->
 					<div class="email-div">
 
 						<i class="fas fa-envelope email-pic"></i>
 						<p class="email-address"><a href="mailto:bde.pau@cesi.fr">bde.pau@cesi.fr</a></p>
 
 					</div>
-					<!--Logo telephone + n° de téléphone-->
+					<!--Phone logo + phone number-->
 					<div class="phone-number-div">
 
 						<i class="fas fa-phone phone-pic"></i>
@@ -47,7 +47,6 @@
 		</article>
 
 	</main>
-
 
     @include("footer")
 

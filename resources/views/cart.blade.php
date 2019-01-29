@@ -23,13 +23,13 @@
 
     <?php /*$_COOKIE['cart'] = [['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '52', 'unitPrice' => '14'], ['pictureURL' => './pictures/stylo2.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '14', 'unitPrice' => '128'],['pictureURL' => './pictures/stylo3.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '25', 'unitPrice' => '4'],['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '8', 'unitPrice' => '54']] */ ?>
     
-    <!--Si le client posséde des articles dans son panier-->
+    <!--If the customer has items in his cart-->
     @if (isset($_COOKIE['cart']))
 
     <section class="cart-section-center">
       <h2>Panier</h2>
       <div class="blue-stripe"><br></div>
-      <!--Tableau contenant l'ensemble des produits du panier-->
+      <!--Table containing all the products in the cart-->
       <table class="table-cart">
 
         <tr>
@@ -62,7 +62,7 @@
      </tr>
      @endfor
    </table>
-  <!--Affichage du prix total + bouton de validation de la commande-->
+  <!--Total price display + order confirmation button-->
    <div class="confirmation-cart">
     <p class="prix-total-cart">Prix total : <span class="right">{{$total}} €</span></p>
     <form method="POST" action="makeOrder">
@@ -73,7 +73,7 @@
 
 </section>
 @else
-<!--Si le client ne possède aucun article dans son panier-->
+<!--If the customer does not have any items in his cart-->
 <section class="section-center section-empty-cart">
   <h2>Panier</h2>
     <div class="blue-stripe"><br></div>

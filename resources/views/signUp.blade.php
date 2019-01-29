@@ -32,7 +32,7 @@ use App\Http\Controllers\Controller;
      @if (isset($_SESSION['id_user']))
      <p> Vous êtes déjà connecté </p>
      @else
-     <!--Formulaire d'inscription-->
+     <!--signUp form-->
      <form name="signUp" method="POST" action="signUp" onsubmit="return validateFormSignUp(this); ">
        <div class="formulaire">
 
@@ -43,19 +43,19 @@ use App\Http\Controllers\Controller;
                 @endisset
 
         <div class="form-group">
-          <!--Prenom-->
+          <!--First name-->
           <input type="text" class="form-control" name="first_name" placeholder="Prenom">
           <div id ="error_fname">
 							</div>
         </div>
 
         <div class="form-group">
-          <!--Nom-->
+          <!--Last name-->
           <input type="text" class="form-control" name="last_name" placeholder="Nom">
           <div id ="error_lname">
 							</div>
         </div>
-        <!--Sélection du campus Cesi-->
+        <!--CESI Campus Selection-->
         <select class=form-control name="campus_name">
 <?php 
   $controller = new Controller();
@@ -74,14 +74,14 @@ use App\Http\Controllers\Controller;
         </div>
 
         <div class="form-group">
-          <!--Mot de passe-->
+          <!--Password-->
           <input type="password" class="form-control" name="password" placeholder="Mot de passe">
           <div id ="error_password">
 							</div>
         </div>
 
         <div class="form-group">
-          <!--Confirmation mot de passe-->
+          <!--Password confirmation-->
           <input type="password" class="form-control" name="password_conf" placeholder="Confirmez le mot de passe">
           <div id ="error_password_conf">
 							</div>
@@ -92,12 +92,12 @@ use App\Http\Controllers\Controller;
       </div>
 
       <div class="connecIns">
-        <!--Bouton d'inscription-->
+        <!--Registration button-->
        <button type="submit" class="btn btn-primary">S'inscrire</button>
      </div>
 
    </form>
-   <!--Phrase permettant de de rediriger les personnes deja inscrites vers la page de connexion-->
+   <!--Phrase to redirect people already registered to the login page-->
    <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
 
    @endif

@@ -27,16 +27,16 @@ session_start();
     <h2>Top des ventes</h2>
     <div class="gray-stripe-109"><br></div>
     <article id="article-aside-right-home">
-      <!--Carousel affichant le top 3 des ventes-->
+      <!--Carousel displaying the top 3 sales-->
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicateurs -->
+        <!-- Slide indicator-->
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active li-carousel"></li>
           <li data-target="#myCarousel" data-slide-to="1" class="li-carousel"></li>
           <li data-target="#myCarousel" data-slide-to="2" class="li-carousel"></li>
         </ol>
 
-        <!-- Flèches du carousel--> -->
+        <!--Carousel arrows--> 
         <div class="carousel-inner">
 
           <?php 
@@ -63,7 +63,7 @@ session_start();
 
       </div>
 
-      <!-- Fleches de droite et de gauche du carousel  -->
+      <!--Left and right arrows of the carousel -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
         <span class="sr-only">Previous</span>
@@ -76,7 +76,7 @@ session_start();
   </article>
   <div><br><br></div>
 </aside>
-<!--Aside contenant une présentation rapide du BDE-->
+<!--Aside containing a quick presentation of the BDE-->
 <aside class="aside-left">
 
   <h2 class="presentation-title">Qui sommes nous ?</h2>
@@ -114,7 +114,7 @@ session_start();
     <?php 
     $nextEvent = $controller->getNextEvent();
     ?>
-    <!-- Image du prochain évènement-->
+    <!--Image of the next event-->
     <img src="./pictures/defaultPicture.png" alt="activite" class="img-accueil"/>
 
     <div class="description">

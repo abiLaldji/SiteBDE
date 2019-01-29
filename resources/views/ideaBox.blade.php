@@ -17,10 +17,7 @@ session_start();
 
 </head>
 
-
 @include("header")
-
-
 
 <main>
 
@@ -32,7 +29,7 @@ session_start();
 			<h2>Création d'évènement</h2>
 			<div class="gray-stripe"><br></div>
 			<form method="POST" action="submitIdea">
-				<!--Formulaire de création d'une idéé d'évènement-->
+				<!--Form for creating an idea of ​​an event-->
 				<div class="formulaire">
 
 					@csrf
@@ -47,7 +44,7 @@ session_start();
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Titre" name="title">
 					</div>
-					<!--Description de l'évènement-->
+					<!--Description of the event-->
 					<div class="form-group">
 						<textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
 					</div>
@@ -56,18 +53,18 @@ session_start();
 						<input type="date" class="form-control optional" name="date">
 						<p class="optional-text">Optionnel</p>
 					</div>
-					<!--Image choisi pour illustrer l'évènement-->
+					<!--Image chosen to illustrate the event-->
 					<div class="center">
 						<img src="./pictures/stylo2.png" alt="" class="picture-event preview">
 					</div>
 
 					<div class="center">
-						<!--Bouton "parcourir" permettant de choisir l'image voulu sur son ordinateur-->
+						<!--"Browse" button to choose the desired image on your computer-->
 						<label class="btn btn-default btn-file">
 							Parcourir <input type="file" style="display: none;" onchange="readURL(this);" name="picture">
 						</label>
 					</div>
-					<!--Bouton de validation, permettant de publier son idée-->
+					<!--Validation button, to publish his idea-->
 					<div class="connecIns">
 						<button type="submit" class="btn btn-primary">Publier</button>
 
@@ -94,7 +91,7 @@ session_start();
 					<tr>
 						<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
-							<!--Logo permettant de valider ou supprimer un idée-->
+							<!--Logo to validate or delete an idea-->
 							<div class="desc-right">
 								<button class="ideabox-check"><i class="fas fa-check ideabox-check"></i></button>
 								<button class="ideabox-cross"><i class="fas fa-times"></i></button>
@@ -104,7 +101,7 @@ session_start();
 								<p class="bold">Organisateur : {{$ideas[$i]['first_name'] . ' ' . $ideas[$i]['last_name']}}</p>
 								<p class="bold">Date : {{$ideas[$i]['date']}}</p> 
 								<p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}</p>
-								<!--Logos permettant de liker une idée ou de la signaler-->
+								<!--Logos to like an idea or to report it-->
 								<div class="like">
 									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
 									<p class="like-counter">1</p>
