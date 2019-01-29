@@ -28,16 +28,6 @@
 
 
                 <li><a href="{{url('shop')}}" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
-                
-                <!--different categories of the shop-->
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="shopCategory">T-shirt</a></li>
-                        <li><a href="shopCategory">Pull</a></li>
-                        <li><a href="shopCategory">Goodies</a></li>
-                    </ul>
-                    
-                </li>
 
                 <li><a href="{{url('events')}}" class="categories float-left"><span class="navtext">ÉVÈNEMENTS</span></a></li>
 
