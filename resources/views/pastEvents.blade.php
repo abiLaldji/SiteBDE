@@ -62,3 +62,5 @@ $events = $controller->getPastEvents();
 
     @include("footer")
 
+	</body>
+</html>

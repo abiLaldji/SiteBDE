@@ -110,3 +110,5 @@ use App\Http\Controllers\Controller;
 
     @include("footer")
 
+    </body>
+</html>

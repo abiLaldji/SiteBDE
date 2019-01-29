@@ -125,4 +125,8 @@ session_start();
 
 </main>
 
-@include("footer")
+    @include("footer")
+
+	</body>
+</html>
+

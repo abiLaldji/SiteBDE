@@ -73,3 +73,7 @@ $campus = $controller->getCampus();
 
         
 @include("footer")
+
+
+</body>
+</html>
