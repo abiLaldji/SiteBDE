@@ -57,3 +57,6 @@
 
 
     @include("footer")
+
+	</body>
+</html>

@@ -129,3 +129,7 @@ session_start();
 
 
     @include("footer")
+
+
+	</body>
+</html>

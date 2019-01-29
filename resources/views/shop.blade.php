@@ -147,3 +147,10 @@ $newProducts = $controller->getNewProducts();
   </main>
 
 @include("footer")
+
+
+<script src="./js/autoComplete.js"></script>
+
+
+</body>
+</html>

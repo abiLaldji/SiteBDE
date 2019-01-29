@@ -64,3 +64,7 @@
   </main>
   
 @include("footer")
+
+
+</body>
+</html>
