@@ -26,17 +26,22 @@ $products = $controller->getProductsByCategory($currentCategory);
 @include("headerShop")
         
     <main>
+        <!-- allows us to choose a range of price -->
         <aside id="aside-category" class="border-raduis">
             
             <section id="aside-section-category" class="border-raduis">
                 <h2>Tri</h2>
                 <div class="gray-stripe"><br></div>
                 <h3>Prix</h3>
+
                 <form method="POST" action="{{url('sortProducts')}}">
                     @csrf
                     <input type="hidden" value="{{$currentCategory}}" name="current_category">
+                    <!-- enter minimum price -->
                     <label>Min</label><input id="input-text-min-aside-section-category" type="text" name="min">
+                    <!-- enter maximum price -->
                     <label>Max</label><input id="input-text-max-aside-section-category" type="text" name="max">
+
                     <br>
                     <input type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis">
                     <br> 
@@ -44,6 +49,8 @@ $products = $controller->getProductsByCategory($currentCategory);
             </section>
             <div> <br></div>
         </aside>
+
+        <!-- display all article in the category -->
         <article id="article-category">
             
             <section id="section-category">
@@ -54,11 +61,16 @@ $products = $controller->getProductsByCategory($currentCategory);
 
                         @for($i=0 ; $i < sizeof($products) ; $i++)
                         <tr class="tr-category">
+
+                            <!-- display image of product and redirection to article-->
                             <td class="td-1-category"><a href="{{$currentCategory . '/' . $products[$i]['name']}}"><img src=".{{$products[$i]['picture_url']}}" class="image-category" alt="{{$products[$i]['picture_alt']}}"></a></td>
+
                             <td class="td-2-category">
+                                <!--redirection to article-->
                                 <a href="{{$currentCategory . '/' . $products[$i]['name']}}"><h4>{{$products[$i]['name']}}</h4></a>
                                     {{$products[$i]['picture_alt']}}
                             </td>
+                            <!-- display the price -->
                             <td class="td-3-category"><p>{{$products[$i]['price']}} €</p></td>
                             <td class="td-4-category"><input type="image" src="../pictures/suppr.png" class="suppr-category"></td>
                         </tr>

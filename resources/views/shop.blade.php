@@ -24,6 +24,7 @@ session_start();
 @include("headerShop")
    
     <main id="main-shop">
+        <!-- Carousel with news product -->
         <aside id="aside-1-shop" class="border-raduis">
             <h2>Nouveautés</h2>
             <div class="gray-stripe-111"><br></div>
@@ -51,13 +52,12 @@ $newProducts = $controller->getNewProducts();
                   @endfor
                 </div>
               </div>
-
-
-              <div>
+            <div>
                 <br>
-
             </div>
         </aside>
+        
+        <!-- Display all categories of articles -->
         <article id="article-shop">
             <h2>Catégories d'article</h2>
             <div class="blue-stripe"><br></div>
@@ -71,7 +71,9 @@ $categories = $controller->getCategories();
                     <a class="a-shop" href="shop/{{$categories[$i]['name']}}"><img src="../pictures/defaultPicture.png" class="image-shop"><p class="p-shop">salut</p></a>
                 </article>
                 @endfor
+                <div class="break"><br></div>
             </section>
+        <!-- Carousel with top sales -->    
         </article>
         <aside id="aside-2-shop" class="border-raduis">
             <h2>Top vente</h2>

@@ -25,9 +25,11 @@ $product = $controller->getProduct(app('request')->route()->parameters['product'
     
         <main>
             <article id="article-article">
+                <!-- display one article -->
                 <section id="section-article">
                     <h2 class="titre_page">{{$product['name']}}</h2>
                     <div class="blue-stripe"><br></div>
+
                     <img id="image-article" src="../.{{$product['picture_url']}}">
                     <p id="price-article">{{$product['price']}} €</p>
                     <form method="POST" action="{{url('addToCart')}}" style='display: inline;'>
@@ -35,6 +37,7 @@ $product = $controller->getProduct(app('request')->route()->parameters['product'
                         <input type="hidden" value="{{$product['id_product']}}" name="id_product">
                         <input type="submit" class="border-raduis" id="button-article" value="Ajouter au panier">
                     </form>
+
                     <p id="description-article">
                         {{$product['picture_alt']}}
                     </p>

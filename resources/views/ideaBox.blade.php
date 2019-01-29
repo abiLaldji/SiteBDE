@@ -97,8 +97,8 @@ session_start();
 						<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<div class="desc-right">
-								<i class="fas fa-check ideabox-check"></i>
-								<i class="fas fa-times ideabox-cross"></i>
+								<button class="ideabox-check"><i class="fas fa-check ideabox-check"></i></button>
+								<button class="ideabox-cross"><i class="fas fa-times"></i></button>
 							</div>
 							<div class="desc-left">
 								<p class="bold">Titre : {{$ideas[$i]['title']}}</p>

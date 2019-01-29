@@ -395,6 +395,7 @@ class Controller extends BaseController
 
 		$newProducts = [];
 
+
 		for($i=0 ; $i < 3 ; $i++){
 			array_push($newProducts, array_pop($products));
 		}
