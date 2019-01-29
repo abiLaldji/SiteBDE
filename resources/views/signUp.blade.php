@@ -8,12 +8,14 @@ use App\Http\Controllers\Controller;
 <head>
 	<title>Inscription</title>
 	<meta charset="utf-8">
+
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <!-- bootstrap link-->
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
   <!-- FontAwesome link-->
   <link rel="stylesheet" href="./fontawesome/css/all.min.css">
   
+
 
 </head>
 
@@ -57,6 +59,7 @@ use App\Http\Controllers\Controller;
         </div>
         <!--CESI Campus Selection-->
         <select class=form-control name="campus_name">
+
           <?php 
           $controller = new Controller();
           $campus = $controller->getCampus();
@@ -66,9 +69,10 @@ use App\Http\Controllers\Controller;
           @endfor
         </select>
 
+
         <div class="form-group">
           <!--email-->
-          <input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Adresse mail">
+          <input type="email" class="form-control" name="email" placeholder="Adresse mail">
           <div id ="error_email">
           </div>
         </div>
@@ -108,7 +112,10 @@ use App\Http\Controllers\Controller;
 
 </main>
 
-@include("footer")
+
+    @include("footer")
+    <script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
+
 
 <script  src="{{ URL::asset('js/checkForms.js') }}"></script>
 </body>

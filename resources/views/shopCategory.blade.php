@@ -7,6 +7,7 @@ $controller = new Controller();
 $currentCategory = app('request')->route()->parameters['category'];
 
 $products = $controller->getProductsByCategory($currentCategory);
+
  ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,6 @@ $products = $controller->getProductsByCategory($currentCategory);
                 <div class="gray-stripe"><br></div>
                 <h3>Prix</h3>
 
-                <form method="POST" action="{{url('sortProducts')}}">
                     @csrf
                     <input type="hidden" value="{{$currentCategory}}" name="current_category">
                     <!-- enter minimum price -->
@@ -44,9 +44,10 @@ $products = $controller->getProductsByCategory($currentCategory);
                     <label>Max</label><input alt="max" id="input-text-max-aside-section-category" type="text" name="max">
 
                     <br>
-                    <input alt="trier" type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis">
+
+                    <input alt="trier" type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis" onclick="sort({{json_encode($products)}}, '{{$currentCategory}}')">
+
                     <br> 
-                </form>
             </section>
             <div> <br></div>
         </aside>
@@ -59,6 +60,7 @@ $products = $controller->getProductsByCategory($currentCategory);
             <div class="blue-stripe"><br></div>
                 <article class="article-category">
                     <table id="table-category">
+
 
                         @for($i=0 ; $i < sizeof($products) ; $i++)
                         <tr class="tr-category">
@@ -77,6 +79,7 @@ $products = $controller->getProductsByCategory($currentCategory);
                         </tr>
                         @endfor
 
+
                     </table>
                 </article>
                 <br>
@@ -87,9 +90,8 @@ $products = $controller->getProductsByCategory($currentCategory);
     
 @include("footer")
 
-
-<script src="./js/autoComplete.js"></script>
-
+    <script type="text/javascript" src="{{ URL::asset('js/sortPrice.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/autoComplete.js') }}"></script>
 
 </body>
 </html>

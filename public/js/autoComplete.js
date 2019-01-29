@@ -1,7 +1,4 @@
-function autocomplete(inp, arr) {
-
-  console.log(arr);
-  
+function autocomplete(inp, arr) {  
 
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
@@ -109,7 +106,7 @@ function loadXMLDoc() {
     }
   };
 
-  xmlhttp.open("GET", "http://localhost:3001/bde_site/api/product", true);
+  xmlhttp.open("GET", "http://10.64.128.131:3001/bde_site/api/product", true);
   xmlhttp.setRequestHeader('Authorization', '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F')
 
   xmlhttp.send();
