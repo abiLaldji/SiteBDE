@@ -53,7 +53,7 @@ session_start();
  $categories = $controller->getCategories();
 ?>
           @for ($i = 0; $i < sizeof($categories); $i++)
-          <option value="{{$categories[$i]}}">{{$categories[$i]}}</option>
+          <option value="{{$categories[$i]['name']}}">{{$categories[$i]['name']}}</option>
           @endfor
         </select>
         <div class="form-group">
