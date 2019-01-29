@@ -11,12 +11,12 @@ session_start();
 
     <title>Boutique</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     
      <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
      <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
   
 </head>
 
@@ -42,30 +42,13 @@ $newProducts = $controller->getNewProducts();
                      active
                   @endif
                    ">
-                    <img src="{{$newProducts[$i]['picture_url']}}" alt="{{$newProducts[$i]['picture_alt']}}" class="top-slide image-carousel">
+                    <img src=".{{$newProducts[$i]['picture_url']}}" alt="{{$newProducts[$i]['picture_alt']}}" class="top-slide image-carousel">
                     <div class="carousel-caption">
                       <h3 class="text-black titre-carousel">{{$newProducts[$i]['name']}}</h3>
                       
                     </div>
                   </div>
                   @endfor
-                  <div class="item">
-                    <img src="pictures/mug.jpg" alt="mug" class="top-slide image-carousel" >
-                    <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">mug</h3>
-                      
-                    </div>
-                  </div>
-                
-                  <div class="item">
-                    <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide image-carousel" >
-                    <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">Stylo</h3>
-
-                      
-                    </div>
-                  </div>
-              
                 </div>
               </div>
 
@@ -79,24 +62,15 @@ $newProducts = $controller->getNewProducts();
             <h2>Catégories d'article</h2>
             <div class="blue-stripe"><br></div>
             <section id="section-shop" class="border-raduis">
+
+<?php 
+$categories = $controller->getCategories();
+ ?>
+                @for($i=0 ; $i < sizeof($categories) ; $i++)
                 <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/hoodi.png" class="image-shop"><p class="p-shop">salut</p></a>
+                    <a class="a-shop" href="shop/{{$categories[$i]['name']}}"><img src="../pictures/defaultPicture.png" class="image-shop"><p class="p-shop">salut</p></a>
                 </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/mug.jpg" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/stylo.jpg" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/hoodi.png" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/mug.jpg" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/stylo.jpg" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
+                @endfor
             </section>
         </article>
         <aside id="aside-2-shop" class="border-raduis">
@@ -125,7 +99,7 @@ $newProducts = $controller->getNewProducts();
 
 
         ">
-          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <img src=".{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>

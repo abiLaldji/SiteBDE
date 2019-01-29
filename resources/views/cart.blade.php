@@ -38,16 +38,19 @@
          <th>Annuler</th>
        </tr>
 
-       <?php $total = 0; ?>
-       @for ($i = 0; $i < sizeof($_COOKIE['cart']) ; $i++)
+<?php 
+  $total = 0; 
+  $cart = json_decode($_COOKIE['cart'], true);
+?>
+       @for ($i = 0; $i < sizeof($cart) ; $i++)
        <tr>
-        <td><img src="{{$_COOKIE['cart'][$i]['pictureURL']}}" alt="" class="img-article"></td>
-        <td><span class="blod">{{$_COOKIE['cart'][$i]['name']}} : </span>{{$_COOKIE['cart'][$i]['description']}}</td>
-        <td>{{$_COOKIE['cart'][$i]['quantity']}}</td>
-        <td>{{$_COOKIE['cart'][$i]['unitPrice']}}</td>
+        <td><img src="{{$cart[$i]['quantity']}}" alt="" class="img-article"></td>
+        <td><span class="blod">{{$cart[$i]['quantity']}} : </span>{{$cart[$i]['quantity']}}</td>
+        <td>{{$cart[$i]['quantity']}}</td>
+        <td>{{$cart[$i]['quantity']}}</td>
         <td>
          <?php 
-         $subTotal = $_COOKIE['cart'][$i]['quantity'] * $_COOKIE['cart'][$i]['unitPrice'];
+         $subTotal = 1;
          $total += $subTotal;
          echo $subTotal;
          ?>
@@ -61,8 +64,11 @@
    </table>
 
    <div class="confirmation-cart">
-    <p class="prix-total-cart">Prix total : <span class="right">{{$total}} €</span></p>						
-    <button type="button" values="Commander" onclick="" class="order-cart">Commander</button>
+    <p class="prix-total-cart">Prix total : <span class="right">{{$total}} €</span></p>
+    <form method="POST" action="makeOrder">
+      @csrf
+      <input type="submit" value="Commander" class="order-cart">
+    </form>
   </div>
 
 </section>
