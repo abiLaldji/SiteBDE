@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-const IP = 'localhost:3001';
+const IP = '10.64.128.131:3001';
 const TOKEN = '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F';
 
 class Controller extends BaseController
@@ -355,8 +355,8 @@ class Controller extends BaseController
 	}
 
 	public function getProduct($product){
-		echo $product;
-
+		$product = rawurlencode($product);
+				
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/product/name/" . $product);
@@ -367,9 +367,10 @@ class Controller extends BaseController
 		curl_close($ch);
 
 		$output = json_decode($output, true);
+
 		var_dump($output);
 
-		return ['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos', 'id_product' => '1'];
+		return $output[0];
 	}
 
 	// returns the 3 best selling products from the API 
@@ -508,6 +509,7 @@ class Controller extends BaseController
 		return redirect()->route('home');
 	}
 
+
 	public function addToCart(){
 		if(isset($_COOKIE['isUsingCookies']) && $_COOKIE['isUsingCookies'] == true){
 			$expirationTime = time()+60*60*24*62;
@@ -518,13 +520,19 @@ class Controller extends BaseController
 
 		if(isset($_COOKIE['cart'])){
 			$previousCart = json_decode($_COOKIE['cart'],true);
-			array_push($previousCart, [$_POST['id_product'], 'quantity' => '1']);
+			/*foreach ($previousCart as $key => $product) {
+				if ($product
+			}*/
+
+
+
+			array_push($previousCart, ['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]);
 			$newCart = json_encode($previousCart);
 
 
 			setcookie('cart', $newCart, $expirationTime);
 		}else{
-			setcookie('cart', json_encode([[$_POST['id_product'], 'quantity' => '1']]), $expirationTime);
+			setcookie('cart', json_encode(['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]), $expirationTime);
 		}
 
 		return redirect()->route('cart');
@@ -588,5 +596,32 @@ class Controller extends BaseController
 
 		return view('shop/' . $_POST['current_category'], $filteredProducts);
 	}*/
+
+	public function privateEvent($id_event){
+		// send the request
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/event/id_event/" . $id_event);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
+
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array("is_public"=>"0")));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+	}
+
+	public function approveEvent($id_event){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/event/id_event/" . $id_event);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
+
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array("is_approved"=>"1")));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+	}
 
 }
