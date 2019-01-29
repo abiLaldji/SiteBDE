@@ -51,11 +51,13 @@ session_start();
               active
               @endif
 
+
               ">
               <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide image-carousel">
               <div class="carousel-caption">
                 <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
               </div>
+
 
             </div>
 
