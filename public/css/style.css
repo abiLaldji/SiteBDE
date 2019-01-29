@@ -473,7 +473,6 @@ table{
     padding-left: 15%;
     padding-right: 15%;
     padding-top: 9.5%;
-    padding-bottom: 9.5%;
 }
 
 .signIn-section-center{   
@@ -1703,11 +1702,16 @@ table{
     }
 
     
+
+    /*----------------------------------------------signIn-------------------------------------------------------------*/
+
+    .signIn-article-center{
+    margin-left: 12%;
+    margin-right: 12%;
+    padding-bottom: 2%;
+    }
+
 }
-
-
-
-
 
 /*-------------------------------------------------screen-0/699px------------------------------------------------------*/
 
@@ -1846,6 +1850,14 @@ table{
         margin-left: 5%;
         margin-top: 10%;
         margin-bottom: 12%;
+    }
+
+    /*----------------------------------------------signIn-------------------------------------------------------------*/
+
+    .signIn-article-center{
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 1%;
     }
 
 
