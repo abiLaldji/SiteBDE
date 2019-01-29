@@ -31,7 +31,7 @@ use App\Http\Controllers\Controller
 				?>
 
 				<h3>{{$monthEvent['title']}}</h3>
-
+				<!--Event of the month-->
 				<div class="pic-view">
 					<img src="./pictures/stylo2.png" alt="" class="event-month-pic">
 				</div>
@@ -54,7 +54,7 @@ use App\Http\Controllers\Controller
 			<section class="event-section-center">
 			<h2>Évènements à venir</h2>
 			<div class="blue-stripe"><br></div>
-			<!--Tableau contenant la liste des évènements-->
+			<!--Table containing the list of events-->
 				<table class="table-event">
 
 					<?php 
@@ -72,7 +72,7 @@ use App\Http\Controllers\Controller
 						</td>
 						<td class="td-img-event">
 							<div>
-								<!--Bouton d'inscription à un évènement-->
+								<!--Event registration button-->
 								<button type="submit" class="btn btn-primary">S'inscrire</button>
 							</div>
 						</td>

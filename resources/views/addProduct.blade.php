@@ -31,20 +31,20 @@ session_start();
        <img src="./pictures/stylo2.png" alt="" class="picture-product preview">
      </div>
 
-     <!--Formulaire pour ajouter un produit-->
+     <!--Form to add a product-->
      <form method="POST" action="addProduct">
       <div class="center">
-        <!--Selection de l'image-->
+        <!--Selection of the image-->
         <label class="btn btn-default btn-file">
           Parcourir <input type="file" style="display: none;" onchange="readURL(this);" name="picutre_url">
         </label>
       </div>
 
       @csrf
-      <!--Selection des autres informations-->
+      <!--Selection of other information-->
       <div class="formulaire">
         <div class="form-group">
-          <!-- Nom du produit-->
+          <!-- Name of the product-->
           <input type="text" class="form-control" placeholder="Nom du produit" name="name">
         </div>
         <select class=form-control name="name_category">
@@ -57,7 +57,7 @@ session_start();
           @endfor
         </select>
         <div class="form-group">
-          <!--Prix du produit-->
+          <!--Price of the product-->
           <input type="number" class="form-control" placeholder="Prix" name="price">
         </div>
         <div class="form-group">
@@ -66,15 +66,13 @@ session_start();
         </div>
 
       </div>
-      <!-- Bouton de validation-->
+      <!-- Validation button-->
       <div class="connecIns">
        <button type="submit" class="btn btn-primary">Valider</button>
      </div>
    </form>
 
-
  </section>
-
 
 </article>
 

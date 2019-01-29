@@ -26,7 +26,7 @@ use App\Http\Controllers\Controller
 			<section class="pastevent-section-center">
 				<h2> Évènements passés </h2>
 				<div class="blue-stripe"><br></div>
-				<!--Tableau contenant la liste des évènements passés et leur description-->
+				<!--Table containing the list of past events and their description-->
 				<table class="table-event">
 
 <?php 
@@ -42,7 +42,7 @@ $events = $controller->getPastEvents();
 							<p class="bold">Organisateur : {{$events[$i]['first_name'] . ' ' . $events[$i]['last_name']}}</p>
 							<p class="bold">Date : {{$events[$i]['date']}}</p> 
 							<p class="desc-event"><span class="bold">Description : </span>{{$events[$i]['description']}}</p>
-							<!--Bouton permettant d'obtenir plus d'infos sur un évènement-->
+							<!--Button to get more info about an event-->
 							<div>
 								<a href="imageEvent" class="btn btn-primary btn-infos">Plus d'infos</a>
 							</div>
