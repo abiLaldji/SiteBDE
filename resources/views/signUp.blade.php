@@ -87,7 +87,7 @@ use App\Http\Controllers\Controller;
 							</div>
         </div>
 
-        <input type="hidden" name="status" value="etudiant">
+        <input type="hidden" name="status" value="student">
 
       </div>
 

@@ -1,5 +1,6 @@
 <?php 
-use App\Http\Controllers\Controller
+use App\Http\Controllers\Controller;
+session_start();
 ?>
 
 <!DOCTYPE html>

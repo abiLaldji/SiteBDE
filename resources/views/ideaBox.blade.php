@@ -89,14 +89,15 @@ session_start();
 					$ideas = $controller->getIdeas();
 					?>
 					@for ($i = 0; $i < sizeof($ideas); $i++)
+					@if($ideas[$i]['is_public'] == 1)
 					<tr>
 						<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<!--Logo to validate or delete an idea-->
 							<div class="desc-right">
 
-								<button class="fas fa-check ideabox-check" onclick="{{$controller->approveEvent($ideas[$i]['id_event'])}}"></button>
-								<button class="fas fa-times ideabox-cross" onclick="{{$controller->privateEvent($ideas[$i]['id_event'])}}"></button>
+								<a href="approveIdea/{{$ideas[$i]['id_event']}}"><button class="fas fa-check ideabox-check"></button></a>
+								<a href="declineIdea/{{$ideas[$i]['id_event']}}"><button class="fas fa-times ideabox-cross"></button>
 
 							</div>
 							<div class="desc-left">
@@ -115,6 +116,7 @@ session_start();
 
 					</td>
 				</tr>
+				@endif
 				@endfor
 
 			</table>

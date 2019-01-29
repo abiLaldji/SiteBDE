@@ -1,5 +1,6 @@
 <?php 
 use App\Http\Controllers\Controller;
+session_start();
 
 $controller = new Controller();
 

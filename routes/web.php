@@ -119,4 +119,8 @@ Route::post('deleteFromCart', 'Controller@deleteFromCart');
 
 Route::get('downloadAllEventPictures', 'Controller@downloadAllEventPictures');
 
-Route::get('test', 'Controller@makeOrder');
+Route::get('approveIdea/{id}', 'Controller@approveEvent');
+
+Route::get('declineIdea/{id}', 'Controller@privateEvent');
+
+Route::get('subscribe/{id}', 'Controller@subscribe');

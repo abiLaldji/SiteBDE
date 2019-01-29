@@ -205,10 +205,10 @@ class Controller extends BaseController
 					array_push($publicEvents, $event);
 				}
 			}
-			//$publicEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+
 			return $publicEvents;
 		}
-		//$events = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+
 		// return all events
 		return $events;
 	}
@@ -227,7 +227,6 @@ class Controller extends BaseController
 			}
 		}
 
-		//$ideas = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
 		return $ideas;
 	}
 
@@ -270,7 +269,7 @@ class Controller extends BaseController
 		$_POST['is_approved'] = 0;
 		$_POST['is_public'] = 1;
 		$_POST['id_user'] = $_SESSION['id_user'];
-		$picture = $_POST['picture'];
+		$_POST['picture_url'] = '\\pictures\\events\\' . $name;
 
 		unset($_POST['picture']);
 
@@ -299,7 +298,7 @@ class Controller extends BaseController
 			}
 		}
 
-		//$nextEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+
 		return $nextEvents;
 	}
 
@@ -317,7 +316,7 @@ class Controller extends BaseController
 			}
 		}
 
-//$pastEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+
 		return $pastEvents;
 	}
 
@@ -328,7 +327,7 @@ class Controller extends BaseController
 		$nextEvent = array_shift($events);
 		for ($i = 1; $i < sizeof($events); $i++){
 			$event = array_shift($events);
-			if($events[$i]['is_approved'] == 1 && $events[$i]['date'] > $nextEvent['date']){
+			if($events[0]['is_approved'] == 1 && $events[0]['date'] > $nextEvent['date']){
 				$nextEvent = $event;
 			}
 		}
@@ -380,7 +379,6 @@ class Controller extends BaseController
 
 		$topSales = [];
 
-		//$topSales = [['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit2', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit3', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos']];
 		for($i=0;$i<3;$i++){
 			array_push($topSales, array_shift($products));
 		}
@@ -399,7 +397,7 @@ class Controller extends BaseController
 		}
 		return $newProducts;
 
-		//return [['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit2', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit3', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos']];
+
 	}
 
 	// returns the products categories from the API
@@ -644,6 +642,19 @@ class Controller extends BaseController
 
 	public function downloadAllEventPictures(){
 		return response()->download(public_path('pictures/events'));
+	}
+
+	public function subscribe($id_event){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/subscribe/");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
+
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['id_event' => $id_event, 'id_user' => $_SESSION['id_user']]));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
 	}
 
 }

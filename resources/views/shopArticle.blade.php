@@ -1,5 +1,7 @@
 <?php 
 use App\Http\Controllers\Controller;
+session_start();
+
 $controller = new Controller();
 $product = $controller->getProduct(app('request')->route()->parameters['product']);
  ?>

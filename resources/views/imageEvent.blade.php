@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Image de l'évènement</title>
+    <title>Images de l'évènement</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
