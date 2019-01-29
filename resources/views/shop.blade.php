@@ -123,4 +123,4 @@ $categories = $controller->getCategories();
 
 
 </body>
-</html>
+</html> 

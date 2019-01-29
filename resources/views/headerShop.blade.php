@@ -27,7 +27,9 @@
                 <li class="active"><a href="{{url('/')}}"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
 
+
                 <li><a href="{{url('shop')}}" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
+
 
                 <li><a href="{{url('events')}}" class="categories float-left"><span class="navtext">ÉVÈNEMENTS</span></a></li>
 
