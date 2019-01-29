@@ -16,7 +16,7 @@ body{
 main{
     margin-top: -20px;
     background-color: black;
-    min-height: 875px;
+    min-height: 950px;
 }
 
 .cente{
@@ -1747,6 +1747,16 @@ table{
     margin-left: 12%;
     margin-right: 12%;
     padding-bottom: 2%;
+    }
+
+
+    /*-------------------------------------------------shop-category---------------------------------------------------*/
+
+    #aside-category{
+    float: none;
+    margin-left: 30%;
+    width: 40%;
+    margin-top: 0%;
     }
 
 }
