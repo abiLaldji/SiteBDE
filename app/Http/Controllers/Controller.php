@@ -509,6 +509,7 @@ class Controller extends BaseController
 		return redirect()->route('home');
 	}
 
+
 	public function addToCart(){
 		if(isset($_COOKIE['isUsingCookies']) && $_COOKIE['isUsingCookies'] == true){
 			$expirationTime = time()+60*60*24*62;
@@ -595,5 +596,32 @@ class Controller extends BaseController
 
 		return view('shop/' . $_POST['current_category'], $filteredProducts);
 	}*/
+
+	public function privateEvent($id_event){
+		// send the request
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/event/id_event/" . $id_event);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
+
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array("is_public"=>"0")));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+	}
+
+	public function approveEvent($id_event){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/event/id_event/" . $id_event);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
+
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array("is_approved"=>"1")));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+	}
 
 }

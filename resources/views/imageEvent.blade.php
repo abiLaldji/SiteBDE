@@ -26,34 +26,34 @@
                 <!--one image-->
                 <article class="article-image_event">
                     <!--title of image-->
-                    <p class="name-image_event">Johnny Depp</p>
+                    <p class="name-image_event">Depp</p>
                     <!--redirection to comment on the image-->
                     <a class="a-image_event" href="commentImageEvent"><img src="pictures/hoodi.png" class="image-image_event"><p class="p-image_event">Commenter</p></a>
                     <!--this button allows us to count the number of likes-->
                     <button class="button-image_event"><i class="fas fa-thumbs-up"></i></button>
                 </article>
                 <article class="article-image_event">
-                    <p class="name-image_event">Michael Jackson</p>
+                    <p class="name-image_event">Jackson</p>
                     <a class="a-image_event" href="commentImageEvent"><img src="pictures/mug.jpg" class="image-image_event"><p class="p-image_event">Commenter</p></a>
                     <button class="button-image_event"><i class="fas fa-thumbs-up"></i></button>
                 </article>
                 <article class="article-image_event">
-                    <p class="name-image_event">Barack Obama</p>
+                    <p class="name-image_event">Obama</p>
                     <a class="a-image_event" href="commentImageEvent"><img src="pictures/stylo.jpg" class="image-image_event"><p class="p-image_event">Commenter</p></a>
                     <button class="button-image_event"><i class="fas fa-thumbs-up"></i></button>
                 </article>
                 <article class="article-image_event">
-                    <p class="name-image_event">Nelson Mandela</p>
+                    <p class="name-image_event">Mandela</p>
                     <a class="a-image_event" href="commentImageEvent"><img src="pictures/hoodi.png" class="image-image_event"><p class="p-image_event">Commenter</p></a>
                     <button class="button-image_event"><i class="fas fa-thumbs-up"></i></button>
                 </article>
                 <article class="article-image_event">
-                    <p class="name-image_event">Tony Stark</p>
+                    <p class="name-image_event">Stark</p>
                     <a class="a-image_event" href="commentImageEvent"><img src="pictures/mug.jpg" class="image-image_event"><p class="p-image_event">Commenter</p></a>
                     <button class="button-image_event"><i class="fas fa-thumbs-up"></i></button>
                 </article>
                 <article class="article-image_event">
-                    <p class="name-image_event">Sylvester Stallone</p>
+                    <p class="name-image_event">Stallone</p>
                     <a class="a-image_event" href="commentImageEvent"><img src="pictures/stylo.jpg" class="image-image_event"><p class="p-image_event">Commenter</p></a>
                     <button class="button-image_event"><i class="fas fa-thumbs-up"></i></button>
                 </article>
