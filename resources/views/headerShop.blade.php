@@ -27,7 +27,7 @@
                 <li class="active"><a href="{{url('/')}}"><i class="fas fa-home ycolor"></i><span class="navtext"> ACCUEIL</span></a></li>
 
 
-                <li><a href="{{url('shop')}}" class="categories"><span class="navtext">BOUTIQUE</span></a></li>
+                <li><a href="{{url('shop')}}" class="categories float-left"><span class="navtext">BOUTIQUE</span></a></li>
                 
                 <!--different categories of the shop-->
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span></a>
