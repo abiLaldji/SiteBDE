@@ -3,7 +3,7 @@ use App\Http\Controllers\Controller
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang='fr'>
 <head>
     <title>Evènement</title>
     <meta charset="utf-8">
