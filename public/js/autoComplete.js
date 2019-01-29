@@ -1,14 +1,13 @@
-function autocomplete(inp, arr) {
+var custom_val = "{{$data['myVal']}}"
 
-  console.log(arr);
-  
+function autocomplete(inp, arr) {
 
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
-  var currentFocus;
+  let currentFocus;
   /*execute a function when someone writes in the text field:*/
   inp.addEventListener("input", function (e) {
-    var a, b, i, val = this.value;
+    let a, b, i, val = this.value;
     /*close any already open lists of autocompleted values*/
     closeAllLists();
     if (!val) { return false; }
@@ -43,8 +42,8 @@ function autocomplete(inp, arr) {
     }
   });
   /*execute a function presses a key on the keyboard:*/
-  inp.addEventListener("keydown", function (e) {
-    var x = document.getElementById(this.id + "autocomplete-list");
+  inp.addEventListener("keydown", e => {
+    let x = document.getElementById(this.id + "autocomplete-list");
     if (x) x = x.getElementsByTagName("div");
     if (e.keyCode == 40) {
       /*If the arrow DOWN key is pressed,
@@ -109,8 +108,8 @@ function loadXMLDoc() {
     }
   };
 
-  xmlhttp.open("GET", "http://localhost:3001/bde_site/api/product", true);
-  xmlhttp.setRequestHeader('Authorization', '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F')
+  xmlhttp.open("GET", "http://" + config.IP + "/bde_site/api/product", true);
+  xmlhttp.setRequestHeader('Authorization', config.TOKEN)
 
   xmlhttp.send();
 }
