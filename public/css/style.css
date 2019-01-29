@@ -43,6 +43,7 @@ footer{
     background-color: black;
     color: white;
     text-align: center;
+    padding-top: 5%;
     display: inline;
     position: relative;
     bottom: 0;
@@ -1574,4 +1575,226 @@ table{
     background-color: black;
     color: rgb(255 194 82);
     border-color: white;
+}
+
+/*-------------------------------------------------screen-700/1200px----------------------------------------------------*/
+
+@media screen and (min-width: 700px) and (max-width: 1200px){
+
+
+    /*------------------------------------------------------global-----------------------------------------------------*/
+    
+    .break{
+        float: none;
+        clear: both;
+    }
+
+    .gray-stripe-111{
+        background-color: rgb(80, 80, 80) ;
+        margin-bottom: 3%;
+        margin-left: -3.75%;
+        width: 107.5%;
+    }
+
+    .float-left{
+        float: left;
+    }
+
+
+    /*-----------------------------------------------------shop----------------------------------------------------------*/
+
+    #main-shop{
+        
+        padding-top: 1px;  
+    }
+
+    #aside-1-shop{
+        position: relative;
+        float: none;
+        width: 30%;
+        margin-left: 35%;
+        margin-top: 5%;
+        padding-top: 1px;  
+    }
+
+    #article-shop{
+        position: relative;
+        float: none;
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+
+    .article-shop{
+        width: 42.5%;
+        margin-left: 5%;
+    }
+
+    #aside-2-shop{
+        float: none;
+        width: 30%;
+        margin-left: 35%;
+        margin-top: 5%;
+    
+        
+    }
+
+
+    /*-------------------------------------------------header----------------------------------------------------------*/
+    
+    #header{
+        height: 150px;
+    }
+
+    #titre{
+        position: relative;
+        float: none;
+        left: 5%;
+        padding-top: 30px;
+    }
+
+    #logo-profile{
+        position: relative;
+        float: none;
+        left: 50%;
+       
+    }
+
+    #logo-cart{
+        position: relative;   
+        float: right;
+        right: 4%;
+    }
+
+
+    /*------------------------------------------------------nav-bar-----------------------------------------------------*/
+    
+    #navbar-search-bar{
+        float: none;
+        margin-left: -6%;
+      }
+}
+
+
+
+
+
+/*-------------------------------------------------screen-0/699px------------------------------------------------------*/
+
+@media screen and (max-width: 699px){
+
+
+    /*------------------------------------------------------global-----------------------------------------------------*/
+    
+    .break{
+        float: none;
+        clear: both;
+    }
+
+    .gray-stripe-111{
+        background-color: rgb(80, 80, 80) ;
+        margin-bottom: 3%;
+        margin-left: -1.75%;
+        width: 103.5%;
+    }
+
+    .float-left{
+        float: left;
+    }
+
+
+    /*-----------------------------------------------------shop----------------------------------------------------------*/
+    
+    #main-shop{
+        
+        padding-top: 1px;  
+    }
+
+    #aside-1-shop{
+        position: relative;
+        float: none;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;
+        padding-top: 1px;  
+    }
+
+    #article-shop{
+        position: relative;
+        float: none;
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+
+    .article-shop{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #aside-2-shop{
+        float: none;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;  
+    }
+
+
+    /*-------------------------------------------------header----------------------------------------------------------*/
+    
+    #header{
+        height: 275px;
+    }
+
+    #logo-cesi{
+        float: none;
+    }
+
+    #titre{
+        position: relative;
+        float: none;
+        left: 5%;
+        
+    }
+
+    #logo-profile{
+        position: relative;
+        float: left;
+        left: 5%;
+        padding-top: 0%;
+       
+    }
+
+    #logo-cart{
+        position: relative;   
+        float: none;
+        left: 14%;
+        padding-top: 3%;
+    }
+
+
+    /*------------------------------------------------------nav-bar-----------------------------------------------------*/
+    
+    #navbar-search-bar{
+        float: none;
+        margin-left: -6%;
+    }
+
+
+    /*-------------------------------------------------------footer-----------------------------------------------------*/
+
+    .contact{
+        float: none;
+        margin-right: 5%;
+        margin-top: 1%;
+        display: inline-flex;
+    }
+
+    .footer-text{
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-top: 2%;
+        text-align: justify;
+    }
+
 }

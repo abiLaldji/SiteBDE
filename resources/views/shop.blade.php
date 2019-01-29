@@ -95,6 +95,7 @@ $newProducts = $controller->getNewProducts();
                 <article class="article-shop">
                     <a class="a-shop" href="shopCategory"><img src="pictures/stylo.jpg" class="image-shop"><p class="p-shop">salut</p></a>
                 </article>
+                <div class="break"><br></div>
             </section>
         <!-- Carousel with top sales -->    
         </article>
