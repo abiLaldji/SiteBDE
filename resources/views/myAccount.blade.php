@@ -31,11 +31,11 @@ use App\Http\Controllers\Controller;
                 <div class="blue-stripe"><br></div>
                     @if($_SESSION['status'] == 'bde_member')
                         <!--redirection to add product-->
-                        <button id="key-admin"><i class="fas fa-key"></i></button>
+                        <a href="addProduct"><button id="key-admin"><i class="fas fa-key"></i></button></a>
                     @endif
                     @if($_SESSION['status'] == 'employe')
                         <!--allows us to download all images-->
-                        <button id="download-all-pic"><i class="fas fa-file-download"></i></button>
+                        <a href="{{url('downloadAllEventPictures')}}" download><button id="download-all-pic"><i class="fas fa-file-download"></i></button></a>
                     @endif
                     <!--form-->
                     <form method="POST" action="putUser">

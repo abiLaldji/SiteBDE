@@ -115,4 +115,8 @@ Route::post('addToCart', 'Controller@addToCart');
 
 Route::post('makeOrder', 'Controller@makeOrder');
 
+Route::post('deleteFromCart', 'Controller@deleteFromCart');
+
+Route::get('downloadAllEventPictures', 'Controller@downloadAllEventPictures');
+
 Route::get('test', 'Controller@makeOrder');

@@ -44,7 +44,6 @@
 <?php 
   $total = 0; 
   $cart = json_decode($_COOKIE['cart'], true);
-  var_dump($cart);
 ?>
 
        @for ($i = 0; $i < sizeof($cart) ; $i++)

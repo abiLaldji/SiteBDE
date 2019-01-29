@@ -249,10 +249,10 @@ class Controller extends BaseController
 
 		
 		$name = date('Y-m-d_h-m-s') . $_FILES['picture']['name'];
-		$targetPath = $_SERVER['DOCUMENT_ROOT'] . '\\pictures\\' . $name;
+		$targetPath = $_SERVER['DOCUMENT_ROOT'] . '\\pictures\\events\\' . $name;
 		move_uploaded_file($_FILES['picture']['tmp_name'], $targetPath);
 
-		/*if(!isset($_SESSION['id_user'])){
+		if(!isset($_SESSION['id_user'])){
 			return redirect()->route('ideaBox', 'notConnected');
 		}
 
@@ -281,7 +281,7 @@ class Controller extends BaseController
 		$info = curl_getinfo($ch);
 		curl_close($ch);
 
-		return redirect()->route('ideaBox', 'success');*/
+		return redirect()->route('ideaBox', 'success');
 	}
 
 	// returns the events that have not occured yet from the event list
@@ -517,26 +517,28 @@ class Controller extends BaseController
 		unset($_POST['_token']);
 		if(isset($_COOKIE['cart'])){
 			$previousCart = json_decode($_COOKIE['cart'],true);
-			/*foreach ($previousCart as $key => $product) {
+			foreach ($previousCart as $key => $product) {
 				var_dump($product);
-			}*/
-			var_dump($previousCart);
-echo '<br><br>';
+				echo'<br>';
+
+				if($_POST['id_product'] == $product['id_product']){
+					$previousCart[$key]['quantity'] += 1;
+					setcookie('cart', json_encode($previousCart), $expirationTime);
+					return redirect()->route('cart');
+				}
+			}
 
 			array_push($previousCart, ['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]);
 			$newCart = json_encode($previousCart);
 
-			var_dump($newCart);
 			setcookie('cart', $newCart, $expirationTime);
 		}else{
-			setcookie('cart', json_encode(['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]), $expirationTime);
+			setcookie('cart', json_encode([['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]]), $expirationTime);
 
-			var_dump($_COOKIE['cart']);
+
 		}
 
-		//var_dump(json_decode($_COOKIE['cart']));
-
-		//return redirect()->route('cart');
+		return redirect()->route('cart');
 	}
 
 	public function addToOrder($productId, $insertId, $quantity){
@@ -557,7 +559,7 @@ echo '<br><br>';
 	public function makeOrder(){
 		session_start();
 
-	/*	$ch = curl_init();
+		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/purchase/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_POST, true);
@@ -576,10 +578,7 @@ echo '<br><br>';
 			$this->addToOrder($product['quantity'], $insertId, $product['quantity']);
 		}
 
-		
-*/
-
-
+/*
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/user/status/bde_member");
@@ -594,40 +593,27 @@ echo '<br><br>';
 		var_dump($bdeMembers);
 
 		$emailMessage = "L'utilisateur " . $_SESSION['first_name'] . " " . $_SESSION['last_name'] . " a passer une commande :\n";
-		/*$total = 0;
+		$total = 0;
 		foreach ($cart as $key => $product) {
 			$emailMessage = $emailMessage . "\t" . $cart['name'] . " : "  . $cart['quantity'] . "\n";
 			$total += $cart['price'] * $cart['quantity'];
 		}
 
-		$emailMessage = $emailMessage . "Montant : " . $total . "€";*/
+		$emailMessage = $emailMessage . "Montant : " . $total . "€";
 
 		echo $emailMessage;
 
 		foreach ($bdeMembers as $key => $bdeMember) {
 			mail('antonin.beaurgard@viacesi.fr', "Commande n°" . '1', 'test');
-		}
+		}*/
 
 		// deletes the cart cookie
-		/*unset($_COOKIE['cart']);
-   		setcookie('cart', '', time() - 3600);*/
+		unset($_COOKIE['cart']);
+   		setcookie('cart', '', time() - 3600);
 
 
-   		//return redirect()->route('cart', 'success');
+   		return redirect()->route('cart', 'success');
 	}
-
-	/*public function sortProducts(){
-		$products = $this->getProductsByCategory($_POST['current_category']);
-
-		$filteredProducts = [];
-		foreach ($products as $key => $product) {
-			if($product['price'] > $_POST['min'] && $product['price'] < $_POST['max']){
-				array_push($filteredProducts, $product);
-			}
-		}
-
-		return view('shop/' . $_POST['current_category'], $filteredProducts);
-	}*/
 
 	public function privateEvent($id_event){
 		// send the request
@@ -654,6 +640,10 @@ echo '<br><br>';
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
 		curl_close($ch);
+	}
+
+	public function downloadAllEventPictures(){
+		return response()->download(public_path('pictures/events'));
 	}
 
 }
