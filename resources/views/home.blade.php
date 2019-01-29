@@ -14,7 +14,6 @@ session_start();
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <!-- FontAwesome link-->
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-    >>>>>>> 832f4678e952c18b993ac0bf0727086a3f658e5a
 
   </head>
 
@@ -83,7 +82,7 @@ session_start();
       <!--Presentation of the BDE-->
       <h2 class="presentation-title">Qui sommes nous ?</h2>
       <div>
-        Nous somme le BDE (<span class="italique">Bureau des élèves</span>) du campus CESI de Pau, nôtre objectif est d'améliorer le cadre de vie des
+        Nous somme le BDE (<span class="italic">Bureau des élèves</span>) du campus CESI de Pau, nôtre objectif est d'améliorer le cadre de vie des
         étudiants en apportant de la vie sur le campus notament grace à l'organisation d'activitées.
       </div>
 
