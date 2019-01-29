@@ -6,9 +6,21 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Boîte à idées</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
+
+</head>
+
+
+@include("header")
+
+
+
+	<main>
 
 	<!-- bootstrap link-->
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
@@ -19,9 +31,12 @@ session_start();
 
 @include("header")
 
-<main>
+
+				<form method="POST" action="submitIdea" onsubmit="return validateFormIdeaBox(this);">
+					<div class="formulaire">
 
 	<aside class="aside-ideaBox">
+
 
 
 
@@ -31,6 +46,23 @@ session_start();
 			<form method="POST" action="submitIdea">
 				<!--Form for creating an idea of ​​an event-->
 				<div class="formulaire">
+
+						@if (isset($_GET['notConnected']))
+						<p class="error">Vous devez être connecté pour ajouter une idée</p>
+						@endif
+
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Titre" name="title">
+							<div id ="error_title">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
+							<div id ="error_description">
+							</div>
+						</div>
+
 
 					@csrf
 
@@ -93,8 +125,10 @@ session_start();
 						<td class="td-event-left">
 							<!--Logo to validate or delete an idea-->
 							<div class="desc-right">
-								<button class="ideabox-check"><i class="fas fa-check ideabox-check"></i></button>
-								<button class="ideabox-cross"><i class="fas fa-times"></i></button>
+
+								<button class="fas fa-check ideabox-check" onclick="{{$controller->approveEvent($ideas[$i]['id_event'])}}"></button>
+								<button class="fas fa-times ideabox-cross" onclick="{{$controller->privateEvent($ideas[$i]['id_event'])}}"></button>
+
 							</div>
 							<div class="desc-left">
 								<p class="bold">Titre : {{$ideas[$i]['title']}}</p>
