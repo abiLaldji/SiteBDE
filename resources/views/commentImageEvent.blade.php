@@ -73,7 +73,7 @@
                 </table>
 
                 <!--Allows us to enter a message and send it-->
-                <input type="text" id="input-text-Comment_image_event">
+                <input type="text" placeholder="entrer commentaire" id="input-text-Comment_image_event">
                 <input type="submit" id="input-submit-Comment_image_event" class="border-raduis" value="Poster commentaire">
 
 

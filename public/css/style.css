@@ -1442,7 +1442,7 @@ table{
 #article-Comment_image_event{
     background-color: black;
     width: 50%;
-    height: 800px;
+    min-height: 800px;
     margin-left: 25%;
     text-align: center;
     color: white;
@@ -1513,7 +1513,8 @@ table{
 
 #input-text-Comment_image_event{
     margin-top: 2%;
-    width: 71%; 
+    width: 71%;
+    border: 1px solid rgb(40, 40, 40); 
 }
 
 #input-submit-Comment_image_event{
@@ -1836,6 +1837,23 @@ table{
         margin-left: 12%;
         margin-right: 12%;
     }
+
+
+    /*-----------------------------------------------legal-notice------------------------------------------------------*/
+
+    .ln-article-center{   
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+
+    /*------------------------------------------------comment-image-event----------------------------------------------*/
+
+    #article-Comment_image_event{
+        background-color: black;
+        width: 80%;
+        margin-left: 10%;
+    }
 }
 
 /*-------------------------------------------------screen-0/699px------------------------------------------------------*/
@@ -2107,6 +2125,35 @@ table{
     .contact-article-center{
         margin-left: 0.5%;
         margin-right: 0.5%;
+    }
+
+
+    /*-----------------------------legal-notice-/-privacy-policy-/-terms&conditions--------------------------------------*/
+
+    .ln-article-center{   
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    /*------------------------------------------------comment-image-event----------------------------------------------*/
+
+    #article-Comment_image_event{
+        background-color: black;
+        width: 95%;
+        margin-left: 2.5%;
+       
+    }
+
+    #section-image-Comment_image_event{
+        float: none;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    #section-Comment_image_event{
+        
+        width: 100%;
+        margin-left: 0.1%;
     }
 
 }
