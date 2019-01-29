@@ -17,13 +17,7 @@ use App\Http\Controllers\Controller;
 
 </head>
 
-
-
 @include("header")
-
-
-
-
 
   <main>
 
@@ -38,11 +32,9 @@ use App\Http\Controllers\Controller;
      @if (isset($_SESSION['id_user']))
      <p> Vous êtes déjà connecté </p>
      @else
-
-
+     <!--Formulaire d'inscription-->
      <form name="signUp" method="POST" action="signUp" onsubmit="return validateFormSignUp(this); ">
        <div class="formulaire">
-
 
                 @csrf
 
@@ -51,17 +43,19 @@ use App\Http\Controllers\Controller;
                 @endisset
 
         <div class="form-group">
+          <!--Prenom-->
           <input type="text" class="form-control" name="first_name" placeholder="Prenom">
           <div id ="error_fname">
 							</div>
         </div>
 
         <div class="form-group">
+          <!--Nom-->
           <input type="text" class="form-control" name="last_name" placeholder="Nom">
           <div id ="error_lname">
 							</div>
         </div>
-        
+        <!--Sélection du campus Cesi-->
         <select class=form-control name="campus_name">
 <?php 
   $controller = new Controller();
@@ -72,20 +66,22 @@ use App\Http\Controllers\Controller;
                   @endfor
                  </select>
 
-
         <div class="form-group">
+          <!--email-->
           <input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Adresse mail">
           <div id ="error_email">
 							</div>
         </div>
 
         <div class="form-group">
+          <!--Mot de passe-->
           <input type="password" class="form-control" name="password" placeholder="Mot de passe">
           <div id ="error_password">
 							</div>
         </div>
 
         <div class="form-group">
+          <!--Confirmation mot de passe-->
           <input type="password" class="form-control" name="password_conf" placeholder="Confirmez le mot de passe">
           <div id ="error_password_conf">
 							</div>
@@ -96,13 +92,12 @@ use App\Http\Controllers\Controller;
       </div>
 
       <div class="connecIns">
+        <!--Bouton d'inscription-->
        <button type="submit" class="btn btn-primary">S'inscrire</button>
-
      </div>
 
    </form>
-
-
+   <!--Phrase permettant de de rediriger les personnes deja inscrites vers la page de connexion-->
    <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
 
    @endif

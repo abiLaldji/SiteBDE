@@ -15,15 +15,9 @@
 
 @include("header")
 
-
-
-
 	<main>
 
 		<article class="contact-article-center">
-
-
-
 
 			<section class="contact-section-center">
 
@@ -31,14 +25,14 @@
 				<div class="blue-stripe"><br></div>
 
 				<div class="center">
-
+					<!--Logo d'enveloppe + adresse mail-->
 					<div class="email-div">
 
 						<i class="fas fa-envelope email-pic"></i>
 						<p class="email-address"><a href="mailto:bde.pau@cesi.fr">bde.pau@cesi.fr</a></p>
 
 					</div>
-
+					<!--Logo telephone + n° de téléphone-->
 					<div class="phone-number-div">
 
 						<i class="fas fa-phone phone-pic"></i>
@@ -47,7 +41,6 @@
 					</div>
 
 				</div>
-
 
 			</section>
 

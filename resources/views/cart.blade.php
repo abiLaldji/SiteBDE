@@ -22,11 +22,14 @@
     
 
     <?php /*$_COOKIE['cart'] = [['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '52', 'unitPrice' => '14'], ['pictureURL' => './pictures/stylo2.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '14', 'unitPrice' => '128'],['pictureURL' => './pictures/stylo3.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '25', 'unitPrice' => '4'],['pictureURL' => './pictures/stylo1.png', 'name' => 'leNom', 'description' => 'ceci', 'quantity' => '8', 'unitPrice' => '54']] */ ?>
+    
+    <!--Si le client posséde des articles dans son panier-->
     @if (isset($_COOKIE['cart']))
 
     <section class="cart-section-center">
       <h2>Panier</h2>
       <div class="blue-stripe"><br></div>
+      <!--Tableau contenant l'ensemble des produits du panier-->
       <table class="table-cart">
 
         <tr>
@@ -38,16 +41,19 @@
          <th>Annuler</th>
        </tr>
 
-       <?php $total = 0; ?>
-       @for ($i = 0; $i < sizeof($_COOKIE['cart']) ; $i++)
+<?php 
+  $total = 0; 
+  $cart = json_decode($_COOKIE['cart'], true);
+?>
+       @for ($i = 0; $i < sizeof($cart) ; $i++)
        <tr>
-        <td><img src="{{$_COOKIE['cart'][$i]['pictureURL']}}" alt="" class="img-article"></td>
-        <td><span class="blod">{{$_COOKIE['cart'][$i]['name']}} : </span>{{$_COOKIE['cart'][$i]['description']}}</td>
-        <td>{{$_COOKIE['cart'][$i]['quantity']}}</td>
-        <td>{{$_COOKIE['cart'][$i]['unitPrice']}}</td>
+        <td><img src="{{$cart[$i]['quantity']}}" alt="" class="img-article"></td>
+        <td><span class="blod">{{$cart[$i]['quantity']}} : </span>{{$cart[$i]['quantity']}}</td>
+        <td>{{$cart[$i]['quantity']}}</td>
+        <td>{{$cart[$i]['quantity']}}</td>
         <td>
          <?php 
-         $subTotal = $_COOKIE['cart'][$i]['quantity'] * $_COOKIE['cart'][$i]['unitPrice'];
+         $subTotal = 1;
          $total += $subTotal;
          echo $subTotal;
          ?>
@@ -55,19 +61,19 @@
        <td><i class="fas fa-times"></i></td>
      </tr>
      @endfor
-
-
-
    </table>
-
+  <!--Affichage du prix total + bouton de validation de la commande-->
    <div class="confirmation-cart">
-    <p class="prix-total-cart">Prix total : <span class="right">{{$total}} €</span></p>						
-    <button type="button" values="Commander" onclick="" class="order-cart">Commander</button>
+    <p class="prix-total-cart">Prix total : <span class="right">{{$total}} €</span></p>
+    <form method="POST" action="makeOrder">
+      @csrf
+      <input type="submit" value="Commander" class="order-cart">
+    </form>
   </div>
 
 </section>
 @else
-
+<!--Si le client ne possède aucun article dans son panier-->
 <section class="section-center section-empty-cart">
   <h2>Panier</h2>
     <div class="blue-stripe"><br></div>
