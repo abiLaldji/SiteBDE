@@ -355,8 +355,8 @@ class Controller extends BaseController
 	}
 
 	public function getProduct($product){
-		echo $product;
-
+		$product = rawurlencode($product);
+				
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/product/name/" . $product);
@@ -367,9 +367,10 @@ class Controller extends BaseController
 		curl_close($ch);
 
 		$output = json_decode($output, true);
+
 		var_dump($output);
 
-		return ['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos', 'id_product' => '1'];
+		return $output[0];
 	}
 
 	// returns the 3 best selling products from the API 
@@ -519,13 +520,19 @@ class Controller extends BaseController
 
 		if(isset($_COOKIE['cart'])){
 			$previousCart = json_decode($_COOKIE['cart'],true);
-			array_push($previousCart, [$_POST['id_product'], 'quantity' => '1']);
+			/*foreach ($previousCart as $key => $product) {
+				if ($product
+			}*/
+
+
+
+			array_push($previousCart, ['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]);
 			$newCart = json_encode($previousCart);
 
 
 			setcookie('cart', $newCart, $expirationTime);
 		}else{
-			setcookie('cart', json_encode([[$_POST['id_product'], 'quantity' => '1']]), $expirationTime);
+			setcookie('cart', json_encode(['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]), $expirationTime);
 		}
 
 		return redirect()->route('cart');
