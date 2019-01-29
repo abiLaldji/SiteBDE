@@ -520,19 +520,19 @@ class Controller extends BaseController
 
 		if(isset($_COOKIE['cart'])){
 			$previousCart = json_decode($_COOKIE['cart'],true);
-			foreach ($previousCart as $key => $product) {
+			/*foreach ($previousCart as $key => $product) {
 				if ($product
-			}
+			}*/
 
 
 
-			array_push($previousCart, ['id_product' => $_POST['id_product'], 'quantity' => 1, 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]);
+			array_push($previousCart, ['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]);
 			$newCart = json_encode($previousCart);
 
 
 			setcookie('cart', $newCart, $expirationTime);
 		}else{
-			setcookie('cart', json_encode(['id_product' => $_POST['id_product'], 'quantity' => $1, 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]), $expirationTime);
+			setcookie('cart', json_encode(['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]), $expirationTime);
 		}
 
 		return redirect()->route('cart');
