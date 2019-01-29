@@ -1,24 +1,26 @@
 <?php 
 use App\Http\Controllers\Controller;
+session_start();
+
 $controller = new Controller();
 $product = $controller->getProduct(app('request')->route()->parameters['product']);
  ?>
 
 
 <!DOCTYPE html>
-<html>
-<head>
+<html lang='fr'>
+    <head>
 
-    <title>Article boutique</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+        <title>Article boutique</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+        
+        <!-- bootstrap link-->
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+        <!-- FontAwesome link-->
+        <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
     
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
-  
-</head>
+    </head>
 
 @include("headerShop")
 

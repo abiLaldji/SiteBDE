@@ -140,6 +140,7 @@ table{
 .h2white{
     color:white;
     margin-bottom: 6%;
+
 }
 
 /*---------------------------------------------------------Header--------------------------------------------------------*/
@@ -421,7 +422,7 @@ table{
 .addProduct-article-center{
     margin-left: 22%;
     margin-right: 22%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 5%;
@@ -999,7 +1000,7 @@ input[type=submit]:hover {
     text-align: center;
     width: 50%;
     margin-left: 25%;
-    height: 700px; 
+    min-height: 700px; 
 }
 
 #section_compte{
@@ -1093,7 +1094,7 @@ input[type=submit]:hover {
 
 .article-shop{
     width: 27%;
-    height: 18em;
+    height: auto;
     margin-left: 4.75%;
     margin-bottom: 3%;
     border: solid black;
@@ -1125,7 +1126,7 @@ input[type=submit]:hover {
 
 .p-shop{
     color: black;
-    margin-top: -35px;
+    margin-top: -50px;
 }
 
 #aside-2-shop{
@@ -1290,7 +1291,7 @@ table{
     margin-left: 25%;
     color: white;
     text-align: center;
-    height: 800px;
+    min-height: 800px;
 }
 
 #section-article{
@@ -1373,7 +1374,7 @@ table{
 
 .article-image_event{
     width: 27%;
-    height: 18em;
+    height: auto;
     margin-left: 4.75%;
     margin-top: 6%;
     margin-bottom: 3%;
@@ -1442,7 +1443,7 @@ table{
 #article-Comment_image_event{
     background-color: black;
     width: 50%;
-    height: 800px;
+    min-height: 800px;
     margin-left: 25%;
     text-align: center;
     color: white;
@@ -1513,7 +1514,8 @@ table{
 
 #input-text-Comment_image_event{
     margin-top: 2%;
-    width: 71%; 
+    width: 71%;
+    border: 1px solid rgb(40, 40, 40); 
 }
 
 #input-submit-Comment_image_event{
@@ -1836,6 +1838,55 @@ table{
         margin-left: 12%;
         margin-right: 12%;
     }
+
+
+    /*-----------------------------------------------legal-notice------------------------------------------------------*/
+
+    .ln-article-center{   
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+
+    /*------------------------------------------------comment-image-event----------------------------------------------*/
+
+    #article-Comment_image_event{
+        background-color: black;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+
+    /*--------------------------------------------------------idea-box---------------------------------------------------*/
+
+    .aside-ideaBox{   
+        float: none;
+        min-width: 60%;
+        max-width: 60%;
+        margin-left: 20%;
+    }
+
+    .ib-article-center{   
+        width: 80%;
+        margin-left: 10%;
+  
+    }
+
+
+    /*------------------------------------------------------cart-------------------------------------------------------*/
+
+    .cart-article-center{
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+
+
+    /*----------------------------------------------add-product---------------------------------------------------------*/
+
+    .addProduct-article-center{
+        margin-left: 12%;
+        margin-right: 12%;
+    }
 }
 
 /*-------------------------------------------------screen-0/699px------------------------------------------------------*/
@@ -1988,17 +2039,20 @@ table{
     /*----------------------------------------------signIn-------------------------------------------------------------*/
 
     .signIn-article-center{
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-   
+        margin-left: 1%;
+        margin-right: 1%;
+        padding-right: 0%;
+        padding-left: 0%;
     }
 
 
     /*-----------------------------------------------------singUp--------------------------------------------------------*/
     
     .signUp-article-center{
-        margin-left: 0.5%;
-        margin-right: 0.5%;
+        margin-left: 1%;
+        margin-right: 1%;
+        padding-right: 0%;
+        padding-left: 0%;
     }
 
 
@@ -2094,6 +2148,7 @@ table{
     #article_compte{
         width: 98%;
         margin-left: 1%;
+
     }
 
     .input-account{
@@ -2107,6 +2162,71 @@ table{
     .contact-article-center{
         margin-left: 0.5%;
         margin-right: 0.5%;
+    }
+
+
+    /*-----------------------------legal-notice-/-privacy-policy-/-terms&conditions--------------------------------------*/
+
+    .ln-article-center{   
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    /*------------------------------------------------comment-image-event----------------------------------------------*/
+
+    #article-Comment_image_event{
+        background-color: black;
+        width: 95%;
+        margin-left: 2.5%;
+       
+    }
+
+    #section-image-Comment_image_event{
+        float: none;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    #section-Comment_image_event{
+        
+        width: 100%;
+        margin-left: 0.1%;
+    }
+
+
+    /*--------------------------------------------------------idea-box---------------------------------------------------*/
+
+    .aside-ideaBox{   
+        float: none;
+        min-width: 98%;
+        max-width: 98%;
+        margin-left: 1%;
+    }
+    
+    .ib-article-center{   
+        width: 98%;
+        margin-left: 1%;
+      
+    }
+
+    /*------------------------------------------------------cart-------------------------------------------------------*/
+
+    .cart-article-center{
+        margin-left: 0.1%;
+        margin-right: 0.1%;
+        padding-left: 0%;
+        padding-right: 0%;
+        padding-top: 5%;
+    }
+
+
+    /*----------------------------------------------add-product---------------------------------------------------------*/
+
+    .addProduct-article-center{
+        margin-left: 1%;
+        margin-right: 1%;
+        padding-left: 0%;
+        padding-right: 0%;
     }
 
 }

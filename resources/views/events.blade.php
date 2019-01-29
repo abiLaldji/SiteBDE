@@ -1,9 +1,10 @@
 <?php
-use App\Http\Controllers\Controller
+use App\Http\Controllers\Controller;
+session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang='fr'>
 <head>
     <title>Evènement</title>
     <meta charset="utf-8">
@@ -73,7 +74,7 @@ use App\Http\Controllers\Controller
 						<td class="td-img-event">
 							<div>
 								<!--Event registration button-->
-								<button type="submit" class="btn btn-primary">S'inscrire</button>
+								<a href="subscribe/{{$events[$i]['id_event']}}"><button class="btn btn-primary">S'inscrire</button></a>
 							</div>
 						</td>
 					</tr>

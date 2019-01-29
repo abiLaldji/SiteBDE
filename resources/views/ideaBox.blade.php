@@ -4,21 +4,19 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
-<head>
+<html lang='fr'>
+	<head>
 
-	<title>Boîte à idées</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<title>Boîte à idées</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
 
-	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
+		<!-- bootstrap link-->
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+		<!-- FontAwesome link-->
+		<link rel="stylesheet" href="./fontawesome/css/all.min.css">
 
-	<!-- bootstrap link-->
-	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-	<!-- FontAwesome link-->
-	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
-
-</head>
+	</head>
 
 
 @include("header")
@@ -89,14 +87,15 @@ session_start();
 					$ideas = $controller->getIdeas();
 					?>
 					@for ($i = 0; $i < sizeof($ideas); $i++)
+					@if($ideas[$i]['is_public'] == 1)
 					<tr>
 						<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<!--Logo to validate or delete an idea-->
 							<div class="desc-right">
 
-								<button class="fas fa-check ideabox-check" onclick="{{$controller->approveEvent($ideas[$i]['id_event'])}}"></button>
-								<button class="fas fa-times ideabox-cross" onclick="{{$controller->privateEvent($ideas[$i]['id_event'])}}"></button>
+								<a href="approveIdea/{{$ideas[$i]['id_event']}}"><button class="fas fa-check ideabox-check"></button></a>
+								<a href="declineIdea/{{$ideas[$i]['id_event']}}"><button class="fas fa-times ideabox-cross"></button>
 
 							</div>
 							<div class="desc-left">
@@ -115,6 +114,7 @@ session_start();
 
 					</td>
 				</tr>
+				@endif
 				@endfor
 
 			</table>
@@ -127,8 +127,8 @@ session_start();
 
     @include("footer")
 
-
-    <script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
+	<script src="{{ URL::asset('js/checkForms.js') }}"></script>
+    <script src="{{ URL::asset('js/picturePreview.js') }}"></script>
 
 	</body>
 </html>

@@ -3,17 +3,17 @@ use App\Http\Controllers\Controller;
 session_start();
 ?>
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Ajouter produit</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  
-</head>
+<html lang='fr'>
+  <head>
+      <title>Ajouter produit</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="./css/style.css">
+      <!-- bootstrap link-->
+      <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+      <!-- FontAwesome link-->
+      <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    
+  </head>
 
 
 @include("header")
@@ -23,9 +23,10 @@ session_start();
 
    <article class="addProduct-article-center">
 
-    <h2 class="h2white"> Ajout de produit </h2>
+    
 
     <section class="addProduct-section-center">
+      <h2> Ajout de produit </h2>
 
       <div class="center">
        <img src="./pictures/stylo2.png" alt="" class="picture-product preview">
@@ -81,7 +82,7 @@ session_start();
 @include("footer")
 
 
-  <script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
+  <script src="{{ URL::asset('js/picturePreview.js') }}"></script>
   
 </body>
 </html>

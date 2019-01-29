@@ -7,18 +7,18 @@ if (!isset($_SESSION['id_user'])){
 use App\Http\Controllers\Controller;
 ?>
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Mon compte</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+<html lang='fr'>
+    <head>
+        <title>Mon compte</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        
+        <!-- bootstrap link-->
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+        <!-- FontAwesome link-->
+        <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  
-</head>
+    </head>
 
 @include("header")
 
@@ -31,11 +31,11 @@ use App\Http\Controllers\Controller;
                 <div class="blue-stripe"><br></div>
                     @if($_SESSION['status'] == 'bde_member')
                         <!--redirection to add product-->
-                        <button id="key-admin"><i class="fas fa-key"></i></button>
+                        <a href="addProduct"><button id="key-admin"><i class="fas fa-key"></i></button></a>
                     @endif
                     @if($_SESSION['status'] == 'employe')
                         <!--allows us to download all images-->
-                        <button id="download-all-pic"><i class="fas fa-file-download"></i></button>
+                        <a href="{{url('downloadAllEventPictures')}}" download><button id="download-all-pic"><i class="fas fa-file-download"></i></button></a>
                     @endif
                     <!--form-->
                     <form method="POST" action="putUser">
@@ -44,6 +44,7 @@ use App\Http\Controllers\Controller;
 
                         <label id="first-label-compte"> Nom : {{$_SESSION['last_name']}}   </label><input type="text" placeholder="Nouveau nom"  class="border-raduis input-account" name="first_name"><br><br>
                         <label> Prénom : {{$_SESSION['first_name']}}</label>   <input type="text" placeholder="Nouveau prenom"  class="border-raduis input-account" name="last_name"><br><br>
+                        <!--dropdown list-->
                         <label for="campus">Centre CESI : </label>
                         <select name="campus_name" id="campus" class="border-raduis">
                             <optgroup label='Centre Actuel'>
@@ -64,6 +65,7 @@ $campus = $controller->getCampus();
                         <label> Adresse mail : {{$_SESSION['email']}}   </label><input type="text" placeholder="Nouvelle adresse"  class="border-raduis input-account" name="email"><br><br>
                         <label> Changer de mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account" name="password"><br><br>
                         <label> Retaper le nouveau mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account" name="password_conf"><br><br>
+                        <!--confirm change-->
                         <input id="valider-les-modifications" type="submit" value="Valider les modifications">
                     </form>
                     <div><br></div>
