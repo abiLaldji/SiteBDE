@@ -87,14 +87,17 @@ session_start();
     étudiants en apportant de la vie sur le campus notament grace à l'organisation d'activitées.
   </div>
 
-  <h2 class="presentation-title">Nos objectifs</h2>
+  <h2 class="presentation-title">Les activités</h2>
 
   <div>
-    Animation du campus : 
-    <br/>
-    -Organisation d'évènements<br/>
-    -Organisation de soirées
-
+    Les activités proposées seront toutes gratuites (l'ensemble des frais seront pris en charge par le BDE).<br>
+    Nous souhaitons une diversitée dans nos activitées, pour cela nous éviter de remettre en place une activité qui a deja eu lieu.<br>
+    <span class="bold">Types d'activités proposées :</span>
+    <ul>
+      <li>Soirées</li>
+      <li>Activités sportives</li>
+      <li>Activités culturelles</li>
+    </ul>
   </div>
 
   <h2 class="presentation-title">Direction</h2>
