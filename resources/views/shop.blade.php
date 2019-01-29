@@ -8,98 +8,79 @@ session_start();
 <html>
 <head>
 
-
-    <title>Index</title>
+    <title>Boutique</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     
      <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
      <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
   
 </head>
-
 
 @include("headerShop")
    
     <main id="main-shop">
+        <!-- Carousel with news product -->
         <aside id="aside-1-shop" class="border-raduis">
-            <h2 class="titre-page h2white">Nouveautés</h2>
+            <h2>Nouveautés</h2>
+            <div class="gray-stripe-111"><br></div>
+
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
             
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-            
-                  <div class="item active">
-                    <img src="pictures/hoodi.png" alt="hoodi" class="top-slide image-carousel">
-                    <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">hoodi</h3>
-                      
-                    </div>
-                  </div>
-            
-                  <div class="item">
-                    <img src="pictures/mug.jpg" alt="mug" class="top-slide image-carousel" >
-                    <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">mug</h3>
-                      
-                    </div>
-                  </div>
-                
-                  <div class="item">
-                    <img src="pictures/stylo.jpg" alt="Stylo" class="top-slide image-carousel" >
-                    <div class="carousel-caption">
-                      <h3 class="text-black titre-carousel">Stylo</h3>
+<?php 
+$controller = new Controller();
+$newProducts = $controller->getNewProducts();
+ ?>
+                  @for($i=0 ; $i < sizeof($newProducts) ; $i++)
+                  <div class="item 
 
+                  @if ($i == 0)
+                     active
+                  @endif
+                   ">
+                    <img src=".{{$newProducts[$i]['picture_url']}}" alt="{{$newProducts[$i]['picture_alt']}}" class="top-slide image-carousel">
+                    <div class="carousel-caption">
+                      <h3 class="text-black titre-carousel">{{$newProducts[$i]['name']}}</h3>
                       
                     </div>
                   </div>
-              
+                  @endfor
                 </div>
               </div>
-
-
-              <div>
-                <br>
-
-            </div>
         </aside>
+        
+        <!-- Display all categories of articles -->
         <article id="article-shop">
-            <h1 class="titre-page">Catégories d'article</h1>
+            <h2>Catégories d'article</h2>
+            <div class="blue-stripe"><br></div>
             <section id="section-shop" class="border-raduis">
+
+
+<?php 
+$categories = $controller->getCategories();
+ ?>
+                @for($i=0 ; $i < sizeof($categories) ; $i++)
+
                 <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/hoodi.png" class="image-shop"><p class="p-shop">salut</p></a>
+                    <a class="a-shop" href="shop/{{$categories[$i]['name']}}"><img src="../pictures/defaultPicture.png" class="image-shop"><p class="p-shop">salut</p></a>
                 </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/mug.jpg" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/stylo.jpg" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/hoodi.png" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/mug.jpg" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
-                <article class="article-shop">
-                    <a class="a-shop" href="shopCategory"><img src="pictures/stylo.jpg" class="image-shop"><p class="p-shop">salut</p></a>
-                </article>
+                @endfor
+                <div class="break"><br></div>
             </section>
+        <!-- Carousel with top sales -->    
         </article>
         <aside id="aside-2-shop" class="border-raduis">
-            <h1 class="titre-page">Top vente</h1>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <h2>Top vente</h2>
+            <div class="gray-stripe-111"><br></div>
             
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-            <div class="carousel-inner">
-
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
   <?php 
-  $controller = new Controller();
   $topSales = $controller->getTopSales();
   ?>
 
@@ -114,7 +95,7 @@ session_start();
 
 
         ">
-          <img src="{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <img src=".{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>
@@ -136,3 +117,10 @@ session_start();
   </main>
 
 @include("footer")
+
+
+<script src="./js/autoComplete.js"></script>
+
+
+</body>
+</html>

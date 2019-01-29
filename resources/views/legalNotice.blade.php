@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Mentions légales</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -21,7 +21,7 @@
 		<article class="ln-article-center">
 
 			<div class="ln-header">
-				<h2 class="h2white ln-h2">Mentions légales</h2>
+				<h2 class="ln-h2">Mentions légales</h2>
 			</div>
 
 			<div class="ln-ystripe"><br/></div>
@@ -116,3 +116,5 @@
 
 @include("footer")
 
+</body>
+</html>

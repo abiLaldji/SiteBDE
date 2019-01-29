@@ -79,14 +79,6 @@ Route::get('shop', function (){
 	return view('shop');
 });
 
-Route::get('shopArticle', function (){
-	return view('shopArticle');
-});
-
-Route::get('shopCategory', function (){
-	return view('shopCategory');
-});
-
 Route::get('header', function (){
 	return view('header');
 })->name('header');
@@ -95,6 +87,13 @@ Route::get('headerShop', function (){
 	return view('headerShop');
 });
 
+Route::get('shop/{category}', function($category){
+	return view('shopCategory', ['name' => $category]);
+});
+
+Route::get('shop/{category}/{product}', function ($product){
+	return view('shopArticle');
+});
 
 Route::get('deconnexion', 'Controller@deconnect');
 
@@ -111,3 +110,9 @@ Route::post('putUser', 'Controller@updateUser');
 Route::get('acceptCookies', 'Controller@acceptCookies');
 
 Route::get('declineCookies', 'Controller@declineCookies');
+
+Route::post('addToCart', 'Controller@addToCart');
+
+Route::post('makeOrder', 'Controller@makeOrder');
+
+Route::get('test', 'Controller@addToCart');

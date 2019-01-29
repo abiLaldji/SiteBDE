@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Accueil</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -25,16 +25,18 @@ session_start();
 
 
     <h2>Top des ventes</h2>
+    <div class="gray-stripe-109"><br></div>
     <article id="article-aside-right-home">
+      <!--Carousel displaying the top 3 sales-->
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
+        <!-- Slide indicator-->
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active li-carousel"></li>
           <li data-target="#myCarousel" data-slide-to="1" class="li-carousel"></li>
           <li data-target="#myCarousel" data-slide-to="2" class="li-carousel"></li>
         </ol>
 
-        <!-- Wrapper for slides -->
+        <!--Carousel arrows--> 
         <div class="carousel-inner">
 
           <?php 
@@ -61,7 +63,7 @@ session_start();
 
       </div>
 
-      <!-- Left and right controls -->
+      <!--Left and right arrows of the carousel -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
         <span class="sr-only">Previous</span>
@@ -74,7 +76,7 @@ session_start();
   </article>
   <div><br><br></div>
 </aside>
-
+<!--Aside containing a quick presentation of the BDE-->
 <aside class="aside-left">
 
   <h2 class="presentation-title">Qui sommes nous ?</h2>
@@ -100,20 +102,11 @@ session_start();
   <div>
     Le BDE est composé d'élèves de différentes promos, des réunions sont régulièrements organisés avec les représentant de chaques promotions l'objectifs étant d'amener un maximum de personne à chaque évènements.
 
-
-
   </div>
-
-  
-
-
 
 </aside>
 
 <article class="article-home">
-
-
-
 
   <section id="section-home">
     <h2 class="titre_page"> Prochain évènement </h2>
@@ -121,8 +114,7 @@ session_start();
     <?php 
     $nextEvent = $controller->getNextEvent();
     ?>
-
-
+    <!--Image of the next event-->
     <img src="./pictures/defaultPicture.png" alt="activite" class="img-accueil"/>
 
     <div class="description">
@@ -140,3 +132,5 @@ session_start();
 
 @include("footer")
    
+</body>
+</html>

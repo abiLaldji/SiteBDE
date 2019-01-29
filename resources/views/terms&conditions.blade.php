@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Condition générale de vente</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -12,18 +12,14 @@
   
 </head>
 
-
 @include("header")
-
-	
-
 
 	<main>
 
 		<article class="ln-article-center">
 
 			<div class="ln-header">
-				<h2 class="h2white ln-h2">Conditions générales de ventes</h2>
+				<h2 class=" ln-h2">Conditions générales de ventes</h2>
 			</div>
 
 			<div class="ln-ystripe">
@@ -37,7 +33,6 @@
 				<div>
 					L'objet de ce contrat est la vente en ligne de Produits proposés par le BDE du CESI.
 				</div>
-
 
 				<h3 class="h3-ln">Prix</h3>
 
@@ -77,5 +72,7 @@
 
 	</main>
 
-
 @include("footer")
+
+</body>
+</html>

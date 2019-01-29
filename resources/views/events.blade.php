@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Evènement</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -18,27 +18,20 @@ use App\Http\Controllers\Controller
 
 @include("header")
 
-
 	<main>
-
-
 
 		<aside class="event-aside">
 
-			
-
-
-
-
 			<section class="section-aside-event">
 				<h2>Évènement du mois</h2>
+				<div class="gray-stripe"><br></div>
 				<?php 
 				$controller = new Controller();
 				$monthEvent = $controller->getMonthEvent();
 				?>
 
 				<h3>{{$monthEvent['title']}}</h3>
-
+				<!--Event of the month-->
 				<div class="pic-view">
 					<img src="./pictures/stylo2.png" alt="" class="event-month-pic">
 				</div>
@@ -58,10 +51,10 @@ use App\Http\Controllers\Controller
 
 		<article class="event-article-center">
 
-			
-
 			<section class="event-section-center">
 			<h2>Évènements à venir</h2>
+			<div class="blue-stripe"><br></div>
+			<!--Table containing the list of events-->
 				<table class="table-event">
 
 					<?php 
@@ -79,6 +72,7 @@ use App\Http\Controllers\Controller
 						</td>
 						<td class="td-img-event">
 							<div>
+								<!--Event registration button-->
 								<button type="submit" class="btn btn-primary">S'inscrire</button>
 							</div>
 						</td>
@@ -96,3 +90,7 @@ use App\Http\Controllers\Controller
 
 
 @include("footer")
+
+
+</body>
+</html>

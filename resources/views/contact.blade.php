@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Contact</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -15,29 +15,24 @@
 
 @include("header")
 
-
-
-
 	<main>
 
 		<article class="contact-article-center">
 
-
-
-
 			<section class="contact-section-center">
 
 				<h2>Contact</h2>
+				<div class="blue-stripe"><br></div>
 
 				<div class="center">
-
+					<!--Envelope logo + email address-->
 					<div class="email-div">
 
 						<i class="fas fa-envelope email-pic"></i>
 						<p class="email-address"><a href="mailto:bde.pau@cesi.fr">bde.pau@cesi.fr</a></p>
 
 					</div>
-
+					<!--Phone logo + phone number-->
 					<div class="phone-number-div">
 
 						<i class="fas fa-phone phone-pic"></i>
@@ -47,12 +42,13 @@
 
 				</div>
 
-
 			</section>
 
 		</article>
 
 	</main>
 
-
     @include("footer")
+
+	</body>
+</html>

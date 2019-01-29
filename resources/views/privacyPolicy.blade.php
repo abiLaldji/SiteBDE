@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Politique de confidentialité</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
@@ -15,15 +15,12 @@
 
 @include("header")
 
-	
-
-
 	<main>
 
 		<article class="ln-article-center">
 
 			<div class="ln-header">
-				<h2 class="h2white ln-h2">Politique de confidentialité</h2>
+				<h2 class="ln-h2">Politique de confidentialité</h2>
 			</div>
 
 			<div class="ln-ystripe">
@@ -31,7 +28,7 @@
 			</div>
 
 			<div class="ln-corp">
-
+				<!--Introduction-->
 				<div class="ln-intro">
 
 					CESI est engagé dans une démarche continue de conformité avec le Règlement général sur la protection des données du 27 avril 2016. Avec ce nouveau règlement CESI renforce sa politique de protection de données personnelles afin que les données de nos utilisateurs soient collectées et utilisées de manière transparente, confidentielle et sécurisée.
@@ -112,5 +109,8 @@
 
 </main>
 
-
 @include("footer")
+
+
+</body>
+</html>

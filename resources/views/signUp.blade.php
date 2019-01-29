@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 <head>
 	<title>Inscription</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
       <!-- bootstrap link-->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
      <!-- FontAwesome link-->
@@ -17,13 +17,7 @@ use App\Http\Controllers\Controller;
 
 </head>
 
-
-
 @include("header")
-
-
-
-
 
   <main>
 
@@ -32,16 +26,15 @@ use App\Http\Controllers\Controller;
     <section class="signUp-section-center">
 
      <h2>Inscription</h2>
+     <div class="blue-stripe"><br></div>
 
 
      @if (isset($_SESSION['id_user']))
      <p> Vous êtes déjà connecté </p>
      @else
-
-
+     <!--signUp form-->
      <form name="signUp" method="POST" action="signUp" onsubmit="return validateFormSignUp(this); ">
        <div class="formulaire">
-
 
                 @csrf
 
@@ -50,17 +43,19 @@ use App\Http\Controllers\Controller;
                 @endisset
 
         <div class="form-group">
+          <!--First name-->
           <input type="text" class="form-control" name="first_name" placeholder="Prenom">
           <div id ="error_fname">
 							</div>
         </div>
 
         <div class="form-group">
+          <!--Last name-->
           <input type="text" class="form-control" name="last_name" placeholder="Nom">
           <div id ="error_lname">
 							</div>
         </div>
-        
+        <!--CESI Campus Selection-->
         <select class=form-control name="campus_name">
 <?php 
   $controller = new Controller();
@@ -71,20 +66,22 @@ use App\Http\Controllers\Controller;
                   @endfor
                  </select>
 
-
         <div class="form-group">
+          <!--email-->
           <input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Adresse mail">
           <div id ="error_email">
 							</div>
         </div>
 
         <div class="form-group">
+          <!--Password-->
           <input type="password" class="form-control" name="password" placeholder="Mot de passe">
           <div id ="error_password">
 							</div>
         </div>
 
         <div class="form-group">
+          <!--Password confirmation-->
           <input type="password" class="form-control" name="password_conf" placeholder="Confirmez le mot de passe">
           <div id ="error_password_conf">
 							</div>
@@ -95,13 +92,12 @@ use App\Http\Controllers\Controller;
       </div>
 
       <div class="connecIns">
+        <!--Registration button-->
        <button type="submit" class="btn btn-primary">S'inscrire</button>
-
      </div>
 
    </form>
-
-
+   <!--Phrase to redirect people already registered to the login page-->
    <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
 
    @endif
@@ -114,3 +110,5 @@ use App\Http\Controllers\Controller;
 
     @include("footer")
 
+    </body>
+</html>

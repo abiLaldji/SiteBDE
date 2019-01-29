@@ -43,6 +43,7 @@ footer{
     background-color: black;
     color: white;
     text-align: center;
+    padding-top: 5%;
     display: inline;
     position: relative;
     bottom: 0;
@@ -73,6 +74,20 @@ th{
 .gray-stripe{
     background-color: rgb(80, 80, 80) ;
     margin-bottom: 3%;
+}
+
+.gray-stripe-109{
+    background-color: rgb(80, 80, 80) ;
+    margin-bottom: 3%;
+    margin-left: -4.5%;
+    width: 109%;
+}
+
+.gray-stripe-111{
+    background-color: rgb(80, 80, 80) ;
+    margin-bottom: 3%;
+    margin-left: -5.5%;
+    width: 111%;
 }
 
 .border-raduis{
@@ -191,8 +206,8 @@ table{
 /*-------------------------------------------------------Acceuil--------------------------------------------------------*/
 
 .aside-right{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     float: right;
     width: 24.25%;
     margin-right: 2.125%;
@@ -391,7 +406,7 @@ table{
 .cart-article-center{
     margin-left: 22%;
     margin-right: 22%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 5%;
@@ -401,7 +416,6 @@ table{
 .cart-section-center{
     background-color: white;
     border: solid black 2px;
-    border-radius: 10px;
 }
 
 .addProduct-article-center{
@@ -417,13 +431,13 @@ table{
 .addProduct-section-center{
     background-color: white;
     border: solid black 2px;
-    border-radius: 10px;
+    
 }
 
 .contact-article-center{
     margin-left: 22%;
     margin-right: 22%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 5%;
@@ -433,13 +447,13 @@ table{
 .contact-section-center{
     background-color: white;
     border: solid black 2px;
-    border-radius: 10px;
+    
 }
 
 .signUp-article-center{
     margin-left: 22%;
     margin-right: 22%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 5.15%;
     padding-bottom: 5.2%;
     padding-left: 15%;
@@ -449,13 +463,13 @@ table{
 .signUp-section-center{    
     background-color: white;
     border: solid black 2px;
-    border-radius: 10px;
+    
 }
 
 .signIn-article-center{
     margin-left: 22%;
     margin-right: 22%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-left: 15%;
     padding-right: 15%;
     padding-top: 9.5%;
@@ -465,13 +479,13 @@ table{
 .signIn-section-center{   
     background-color: white;
     border: solid black 2px;
-    border-radius: 10px;
+    
 }
 
 .ib-article-center{   
     margin-left: 5%;
     margin-right: 35%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 4%;
@@ -481,7 +495,7 @@ table{
 .ib-section-center{   
     background-color: white;
     border: solid black 2px;
-    border-radius: 10px;
+    
 }
 
 .event-article-center{
@@ -497,13 +511,13 @@ table{
 .event-section-center{
     background-color: white;
     border: solid black 2px;
-    border-radius: 10px;
+    
 }
 
 .pastevent-article-center{
     margin-left: 20%;
     margin-right: 20%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 4%;
@@ -511,9 +525,10 @@ table{
 }
 
 .pastevent-section-center{
+    
     background-color: white;
     border: solid black 2px;
-    border-radius: 10px;
+    
 }
 
 
@@ -776,7 +791,7 @@ table{
 }
 
 .aside-ideaBox{   
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     float: right;
     min-width: 30%;
     max-width: 30%;
@@ -925,15 +940,14 @@ input[type=submit]:hover {
 
 .ln-article-center{   
     border: solid black 5px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    border-radius: 20px;
+    
     margin-left: 20%;
     margin-right: 20%;
+    background-color: white;
 }
 
 .ln-header{
-    background-color: rgb(40, 40, 40);
+    background-color: white;
     padding-top: 5%;
     padding-bottom: 2%;
     border-top-left-radius: 14px;
@@ -1048,8 +1062,8 @@ input[type=submit]:hover {
 }
 
 #aside-1-shop{
-    background-color:black;
-    color: white;
+    background-color:white;
+    color: black;
     float: left;
     width: 20%;
     margin-left: 2.5%;
@@ -1116,8 +1130,8 @@ input[type=submit]:hover {
 }
 
 #aside-2-shop{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     float: right;
     width: 20%;
     margin-right: 2.5%;
@@ -1539,23 +1553,300 @@ table{
 .cookie-a{       
     margin-right: 14%;
     margin-left: 10%;
+
+}
+.cookie-a-bnt{       
+  
     background-color: white;
     border: solid black 1px;
 }
-
-.cookie-a:hover{
+.cookie-a-bnt:hover{
     background-color: black;
     color: rgb(255 194 82);
     border-color: white;
 }
 
-.cookie-r:hover{
+.cookie-r-bnt{
+    background-color: white;
+    border: solid black 1px;
+}
+
+.cookie-r-bnt:hover{
     background-color: black;
     color: rgb(255 194 82);
     border-color: white;
 }
 
-.cookie-r{
-    background-color: white;
-    border: solid black 1px;
+/*-------------------------------------------------screen-1200/1600px----------------------------------------------------*/
+
+@media screen and (min-width: 1201px) and (max-width: 1600px){
+
+    .button-image_event{
+        margin-left: 10%;
+    }
+}
+
+
+/*-------------------------------------------------screen-700/1200px----------------------------------------------------*/
+
+@media screen and (min-width: 700px) and (max-width: 1200px){
+
+
+    /*------------------------------------------------------global-----------------------------------------------------*/
+    
+    .break{
+        float: none;
+        clear: both;
+    }
+
+    .gray-stripe-111{
+        background-color: rgb(80, 80, 80) ;
+        margin-bottom: 3%;
+        margin-left: -3.75%;
+        width: 107.5%;
+    }
+
+    .float-left{
+        float: left;
+    }
+
+
+    /*-----------------------------------------------------shop----------------------------------------------------------*/
+
+    #main-shop{
+        
+        padding-top: 1px;  
+    }
+
+    #aside-1-shop{
+        position: relative;
+        float: none;
+        width: 30%;
+        margin-left: 35%;
+        margin-top: 5%;
+        padding-top: 1px;  
+    }
+
+    #article-shop{
+        position: relative;
+        float: none;
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+
+    .article-shop{
+        width: 42.5%;
+        margin-left: 5%;
+    }
+
+    #aside-2-shop{
+        float: none;
+        width: 30%;
+        margin-left: 35%;
+        margin-top: 5%;
+    
+        
+    }
+
+
+    /*-------------------------------------------------header----------------------------------------------------------*/
+    
+    #header{
+        height: 150px;
+    }
+
+    #titre{
+        position: relative;
+        float: none;
+        left: 5%;
+        padding-top: 30px;
+    }
+
+    #logo-profile{
+        position: relative;
+        float: none;
+        left: 50%;
+       
+    }
+
+    #logo-cart{
+        position: relative;   
+        float: right;
+        right: 4%;
+    }
+
+
+    /*------------------------------------------------------nav-bar-----------------------------------------------------*/
+    
+    #navbar-search-bar{
+        float: none;
+        margin-left: -6%;
+    }
+
+
+    /*-------------------------------------------------image-event-----------------------------------------------------*/
+
+    #article-image_event{
+        position: relative;
+        float: none;
+        width: 70%;
+        margin-left: 15%;
+      
+    }
+
+    .article-image_event{
+        width: 42.5%;
+        margin-left: 5%;
+        margin-top: 8%;
+        margin-bottom: 5%;
+    }
+
+    
+}
+
+
+
+
+
+/*-------------------------------------------------screen-0/699px------------------------------------------------------*/
+
+@media screen and (max-width: 699px){
+
+
+    /*------------------------------------------------------global-----------------------------------------------------*/
+    
+    .break{
+        float: none;
+        clear: both;
+    }
+
+    .gray-stripe-111{
+        background-color: rgb(80, 80, 80) ;
+        margin-bottom: 3%;
+        margin-left: -1.75%;
+        width: 103.5%;
+    }
+
+    .float-left{
+        float: left;
+    }
+
+    .titre-carousel{
+        margin-top: -1px;
+    }
+
+
+    /*-----------------------------------------------------shop----------------------------------------------------------*/
+    
+    #main-shop{
+        
+        padding-top: 1px;  
+    }
+
+    #aside-1-shop{
+        position: relative;
+        float: none;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;
+        padding-top: 1px;  
+    }
+
+    #article-shop{
+        position: relative;
+        float: none;
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+
+    .article-shop{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #aside-2-shop{
+        float: none;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;  
+    }
+
+
+    /*-------------------------------------------------header----------------------------------------------------------*/
+    
+    #header{
+        height: 275px;
+    }
+
+    #logo-cesi{
+        float: none;
+    }
+
+    #titre{
+        position: relative;
+        float: none;
+        left: 5%;
+        
+    }
+
+    #logo-profile{
+        position: relative;
+        float: left;
+        left: 5%;
+        padding-top: 0%;
+       
+    }
+
+    #logo-cart{
+        position: relative;   
+        float: none;
+        left: 14%;
+        padding-top: 3%;
+    }
+
+
+    /*------------------------------------------------------nav-bar-----------------------------------------------------*/
+    
+    #navbar-search-bar{
+        float: none;
+        margin-left: -8%;
+    }
+
+
+    /*-------------------------------------------------------footer-----------------------------------------------------*/
+
+    .contact{
+        float: none;
+        margin-right: 5%;
+        margin-top: 1%;
+        display: inline-flex;
+    }
+
+    .footer-text{
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-top: 2%;
+        text-align: justify;
+    }
+
+    /*-------------------------------------------------image-event-----------------------------------------------------*/
+
+    #article-image_event{
+        position: relative;
+        float: none;
+        width: 70%;
+        margin-left: 15%;
+          
+    }
+    
+    .article-image_event{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10%;
+        margin-bottom: 12%;
+    }
+
+
 }
