@@ -1806,6 +1806,14 @@ table{
         width: 60%;
         margin-left: 20%;
     }
+
+
+    /*----------------------------------------------------past-event----------------------------------------------------*/
+
+    .pastevent-article-center{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 
 /*-------------------------------------------------screen-0/699px------------------------------------------------------*/
@@ -2038,9 +2046,9 @@ table{
 
      .event-aside{   
         float: none;
-        min-width: 60%;
-        max-width: 60%;
-        margin-left: 20%;
+        min-width: 80%;
+        max-width: 80%;
+        margin-left: 10%;
         margin-right: 2%;
         margin-top: 0%;
     }
@@ -2048,6 +2056,14 @@ table{
     .event-article-center{
         width: 95%;
         margin-left: 2.5%;
+    }
+
+
+    /*----------------------------------------------------past-event----------------------------------------------------*/
+
+    .pastevent-article-center{
+        margin-left: 1%;
+        margin-right: 1%;
     }
 
 }
