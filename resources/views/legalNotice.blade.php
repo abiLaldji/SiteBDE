@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Mentions légales</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  
-</head>
+<html lang='fr'>
+	<head>
+		<title>Mentions légales</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		
+		<!-- bootstrap link-->
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+		<!-- FontAwesome link-->
+		<link rel="stylesheet" href="./fontawesome/css/all.min.css">
+	
+	</head>
 
 
 @include("header")
@@ -19,14 +19,14 @@
 	<main>
 
 		<article class="ln-article-center">
-
+			<!--header of the article-->
 			<div class="ln-header">
 				<h2 class="ln-h2">Mentions légales</h2>
 			</div>
-
+			<!--Yellow stripe-->
 			<div class="ln-ystripe"><br/></div>
-
-			<div class="ln-corp">
+			<!--body of the legal notice-->
+			<div class="ln-body">
 
 				<h3 class="h3-ln">Éditeur : BDE CESI PAU</h3>
 

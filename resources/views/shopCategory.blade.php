@@ -1,5 +1,6 @@
 <?php 
 use App\Http\Controllers\Controller;
+session_start();
 
 $controller = new Controller();
 
@@ -10,18 +11,18 @@ $products = $controller->getProductsByCategory($currentCategory);
  ?>
 
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Catégorie boutique</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+<html lang='fr'>
+    <head>
+        <title>Catégorie boutique</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+        
+        <!-- bootstrap link-->
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+        <!-- FontAwesome link-->
+        <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
     
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
-  
-</head>
+    </head>
 
 
 @include("headerShop")
@@ -38,12 +39,14 @@ $products = $controller->getProductsByCategory($currentCategory);
                     @csrf
                     <input type="hidden" value="{{$currentCategory}}" name="current_category">
                     <!-- enter minimum price -->
-                    <label>Min</label><input id="input-text-min-aside-section-category" type="text" name="min">
+                    <label>Min</label><input  alt="min" id="input-text-min-aside-section-category" type="text" name="min">
                     <!-- enter maximum price -->
-                    <label>Max</label><input id="input-text-max-aside-section-category" type="text" name="max">
+                    <label>Max</label><input alt="max" id="input-text-max-aside-section-category" type="text" name="max">
 
                     <br>
-                    <input type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis" onclick="sort({{json_encode($products)}}, '{{$currentCategory}}')">
+
+                    <input alt="trier" type="submit" value="Trier" id="input-button-aside-section-category" class="border-raduis" onclick="sort({{json_encode($products)}}, '{{$currentCategory}}')">
+
                     <br> 
             </section>
             <div> <br></div>
@@ -57,7 +60,26 @@ $products = $controller->getProductsByCategory($currentCategory);
             <div class="blue-stripe"><br></div>
                 <article class="article-category">
                     <table id="table-category">
-                        
+
+
+                        @for($i=0 ; $i < sizeof($products) ; $i++)
+                        <tr class="tr-category">
+
+                            <!-- display image of product and redirection to article-->
+                            <td class="td-1-category"><a href="{{$currentCategory . '/' . $products[$i]['name']}}"><img src=".{{$products[$i]['picture_url']}}" class="image-category" alt="{{$products[$i]['picture_alt']}}"></a></td>
+
+                            <td class="td-2-category">
+                                <!--redirection to article-->
+                                <a href="{{$currentCategory . '/' . $products[$i]['name']}}"><h4>{{$products[$i]['name']}}</h4></a>
+                                    {{$products[$i]['picture_alt']}}
+                            </td>
+                            <!-- display the price -->
+                            <td class="td-3-category"><p>{{$products[$i]['price']}} €</p></td>
+                            <td class="td-4-category"><input alt="suppr" type="image" src="../pictures/suppr.png" class="suppr-category"></td>
+                        </tr>
+                        @endfor
+
+
                     </table>
                 </article>
                 <br>

@@ -4,67 +4,34 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
-<head>
+<html lang='fr'>
+	<head>
 
-	<title>Boîte à idées</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<title>Boîte à idées</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
 
-	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
+		<!-- bootstrap link-->
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+		<!-- FontAwesome link-->
+		<link rel="stylesheet" href="./fontawesome/css/all.min.css">
 
-</head>
+	</head>
 
 
 @include("header")
-
-
-
-	<main>
-
-	<!-- bootstrap link-->
-	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-	<!-- FontAwesome link-->
-	<link rel="stylesheet" href="./fontawesome/css/all.min.css">
-
-</head>
-
-@include("header")
-
-
-				<form method="POST" action="submitIdea" onsubmit="return validateFormIdeaBox(this);">
-					<div class="formulaire">
+<main>
 
 	<aside class="aside-ideaBox">
-
-
-
 
 		<section class="section-aside-ideaBox">
 			<h2>Création d'évènement</h2>
 			<div class="gray-stripe"><br></div>
-			<form method="POST" action="submitIdea">
+			<form method="POST" action="submitIdea" onsubmit="return validateFormIdeaBox(this);" enctype="multipart/form-data">
 				<!--Form for creating an idea of ​​an event-->
 				<div class="formulaire">
 
-						@if (isset($_GET['notConnected']))
-						<p class="error">Vous devez être connecté pour ajouter une idée</p>
-						@endif
-
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Titre" name="title">
-							<div id ="error_title">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
-							<div id ="error_description">
-							</div>
-						</div>
-
-
-					@csrf
+					@csrf <!--token for Laravel-->
 
 					@if (isset($_GET['fieldEmpty']))
 					<p class='error'>Tous les champs obligatoires doivent être remplis</p>
@@ -120,14 +87,15 @@ session_start();
 					$ideas = $controller->getIdeas();
 					?>
 					@for ($i = 0; $i < sizeof($ideas); $i++)
+					@if($ideas[$i]['is_public'] == 1)
 					<tr>
 						<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<!--Logo to validate or delete an idea-->
 							<div class="desc-right">
 
-								<button class="fas fa-check ideabox-check" onclick="{{$controller->approveEvent($ideas[$i]['id_event'])}}"></button>
-								<button class="fas fa-times ideabox-cross" onclick="{{$controller->privateEvent($ideas[$i]['id_event'])}}"></button>
+								<a href="approveIdea/{{$ideas[$i]['id_event']}}"><button class="fas fa-check ideabox-check"></button></a>
+								<a href="declineIdea/{{$ideas[$i]['id_event']}}"><button class="fas fa-times ideabox-cross"></button>
 
 							</div>
 							<div class="desc-left">
@@ -146,6 +114,7 @@ session_start();
 
 					</td>
 				</tr>
+				@endif
 				@endfor
 
 			</table>
@@ -157,6 +126,9 @@ session_start();
 </main>
 
     @include("footer")
+
+	<script src="{{ URL::asset('js/checkForms.js') }}"></script>
+    <script src="{{ URL::asset('js/picturePreview.js') }}"></script>
 
 	</body>
 </html>

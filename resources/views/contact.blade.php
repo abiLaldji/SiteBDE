@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Contact</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  
-</head>
+<html lang='fr'>
+	<head>
+		<title>Contact</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		
+		<!-- bootstrap link-->
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+		<!-- FontAwesome link-->
+		<link rel="stylesheet" href="./fontawesome/css/all.min.css">
+	
+	</head>
 
 
 @include("header")
 
 	<main>
-
+		<!--Principal article of the contact page-->
 		<article class="contact-article-center">
-
+			<!--Principal section of the contact page-->
 			<section class="contact-section-center">
 
 				<h2>Contact</h2>

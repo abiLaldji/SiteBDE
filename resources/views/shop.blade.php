@@ -5,19 +5,19 @@ session_start();
 
 
 <!DOCTYPE html>
-<html>
-<head>
+<html lang='fr'>
+  <head>
 
-    <title>Boutique</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+      <title>Boutique</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+      
+      <!-- bootstrap link-->
+      <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+      <!-- FontAwesome link-->
+      <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
     
-     <!-- bootstrap link-->
-    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-     <!-- FontAwesome link-->
-    <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
-  
-</head>
+  </head>
 
 @include("headerShop")
    
@@ -51,6 +51,7 @@ $newProducts = $controller->getNewProducts();
                   @endfor
                 </div>
               </div>
+              <br>
         </aside>
         
         <!-- Display all categories of articles -->
@@ -66,7 +67,7 @@ $categories = $controller->getCategories();
                 @for($i=0 ; $i < sizeof($categories) ; $i++)
 
                 <article class="article-shop">
-                    <a class="a-shop" href="shop/{{$categories[$i]['name']}}"><img src="../pictures/defaultPicture.png" class="image-shop"><p class="p-shop">salut</p></a>
+                    <a class="a-shop" href="shop/{{$categories[$i]['name']}}"><img src="../pictures/defaultPicture.png" class="image-shop"><p class="p-shop">{{$categories[$i]['name']}}</p></a>
                 </article>
                 @endfor
                 <div class="break"><br></div>
@@ -93,9 +94,8 @@ $categories = $controller->getCategories();
           active
         @endif
 
-
         ">
-          <img src=".{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
+          <img src=".{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide image-carousel">
           <div class="carousel-caption">
             <h3 class="text-black titre-carousel">{{$topSales[$i]['name']}}</h3>
           </div>
@@ -123,4 +123,4 @@ $categories = $controller->getCategories();
 
 
 </body>
-</html>
+</html> 
