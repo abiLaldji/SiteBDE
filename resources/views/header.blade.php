@@ -7,7 +7,7 @@
         <div id="logo-cesi">
             <!--redirection to home-->
             <a href="/"><img src="./pictures/logoCesi.png" alt="logo du cesi"></a>
-        </div> 
+        </div>
         <div id="header-right">
             <h1 id="titre">SITE BDE DU CESI PAU</h1>
             <!--redirection to cart-->
