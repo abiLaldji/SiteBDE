@@ -1577,6 +1577,16 @@ table{
     border-color: white;
 }
 
+/*-------------------------------------------------screen-1200/1600px----------------------------------------------------*/
+
+@media screen and (min-width: 1201px) and (max-width: 1600px){
+
+    .button-image_event{
+        margin-left: 10%;
+    }
+}
+
+
 /*-------------------------------------------------screen-700/1200px----------------------------------------------------*/
 
 @media screen and (min-width: 700px) and (max-width: 1200px){
