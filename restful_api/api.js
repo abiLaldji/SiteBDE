@@ -33,8 +33,6 @@ router.route('/bde_site/api/:table/:field?/:value?/:add?')
 	// HTTP GET verb
 	.get((req, res) => {
 
-		
-
 		// Verify if token in header correspond with the variable in .env file
 		if (process.env.TOKEN !== req.header("Authorization") || req.header("Authorization") === undefined) res.json({ message: "Invalid Token" })
 
@@ -79,9 +77,6 @@ router.route('/bde_site/api/:table/:field?/:value?/:add?')
 
 		if (field === 'date') if (value === 'futur') r += "WHERE e.date > now()"; else r += "WHERE e.date <= now()";
 
-		console.log(r);
-
-
 		connection.query(r, (err, result) => {
 			if (err) throw err
 			res.json(result);
@@ -99,9 +94,6 @@ router.route('/bde_site/api/:table/:field?/:value?/:add?')
 		*/
 		let r = 'INSERT INTO ' + req.params.table + ' (' + Object.keys(req.body).toString() + ')' +
 			' VALUES  (' + Object.values(req.body).map(x => { if (!new RegExp(/.+\(\)/).test(x)) { return "'" + x + "'" } else return x }).join(",") + ')';
-
-		console.log(r);
-
 
 		connection.query(r, (error, results) => {
 			if (error) throw error;
