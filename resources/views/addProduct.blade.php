@@ -80,5 +80,8 @@ session_start();
 
 @include("footer")
 
+
+  <script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
+  
 </body>
 </html>

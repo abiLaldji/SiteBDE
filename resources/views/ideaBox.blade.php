@@ -13,15 +13,6 @@ session_start();
 
 	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
 
-</head>
-
-
-@include("header")
-
-
-
-	<main>
-
 	<!-- bootstrap link-->
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 	<!-- FontAwesome link-->
@@ -29,21 +20,16 @@ session_start();
 
 </head>
 
+
 @include("header")
-
-
-				<form method="POST" action="submitIdea" onsubmit="return validateFormIdeaBox(this);">
-					<div class="formulaire">
+<main>
 
 	<aside class="aside-ideaBox">
-
-
-
 
 		<section class="section-aside-ideaBox">
 			<h2>Création d'évènement</h2>
 			<div class="gray-stripe"><br></div>
-			<form method="POST" action="submitIdea">
+			<form method="POST" action="submitIdea" onsubmit="return validateFormIdeaBox(this);" enctype="multipart/form-data">
 				<!--Form for creating an idea of ​​an event-->
 				<div class="formulaire">
 
@@ -157,6 +143,9 @@ session_start();
 </main>
 
     @include("footer")
+
+
+    <script type="text/javascript" src="{{ URL::asset('js/picturePreview.js') }}"></script>
 
 	</body>
 </html>

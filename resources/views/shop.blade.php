@@ -93,7 +93,6 @@ $categories = $controller->getCategories();
           active
         @endif
 
-
         ">
           <img src=".{{ $topSales[$i]['picture_url']}}" alt="Los Angeles" class="top-slide" width="100%">
           <div class="carousel-caption">

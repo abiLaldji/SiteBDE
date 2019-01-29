@@ -44,21 +44,23 @@
 <?php 
   $total = 0; 
   $cart = json_decode($_COOKIE['cart'], true);
+  var_dump($cart);
 ?>
+
        @for ($i = 0; $i < sizeof($cart) ; $i++)
        <tr>
-        <td><img src="{{$cart[$i]['quantity']}}" alt="" class="img-article"></td>
-        <td><span class="blod">{{$cart[$i]['quantity']}} : </span>{{$cart[$i]['quantity']}}</td>
+        <td><img src="{{$cart[$i]['picture_url']}}" alt="{{$cart[$i]['picture_alt']}}" class="img-article"></td>
+        <td><span class="blod">{{$cart[$i]['name']}} : </span>{{$cart[$i]['picture_alt']}}</td>
         <td>{{$cart[$i]['quantity']}}</td>
-        <td>{{$cart[$i]['quantity']}}</td>
+        <td>{{$cart[$i]['price']}}</td>
         <td>
          <?php 
-         $subTotal = 1;
+         $subTotal = $cart[$i]['price'];
          $total += $subTotal;
          echo $subTotal;
          ?>
        </td>
-       <td><i class="fas fa-times"></i></td>
+       <td><a href="{{url('deleteFromCart')}}"><i class="fas fa-times"></i></td>
      </tr>
      @endfor
    </table>
