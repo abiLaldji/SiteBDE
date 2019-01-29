@@ -19,14 +19,14 @@
 	<main>
 
 		<article class="ln-article-center">
-
+			<!--header of the article-->
 			<div class="ln-header">
 				<h2 class="ln-h2">Mentions légales</h2>
 			</div>
-
+			<!--Yellow stripe-->
 			<div class="ln-ystripe"><br/></div>
-
-			<div class="ln-corp">
+			<!--body of the legal notice-->
+			<div class="ln-body">
 
 				<h3 class="h3-ln">Éditeur : BDE CESI PAU</h3>
 

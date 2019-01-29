@@ -17,16 +17,16 @@
 	<main>
 
 		<article class="ln-article-center">
-
+			<!--Header of the article-->
 			<div class="ln-header">
 				<h2 class=" ln-h2">Conditions générales de ventes</h2>
 			</div>
-
+			<!--Yellow stripe-->
 			<div class="ln-ystripe">
 				<br/>
 			</div>
-
-			<div class="ln-corp">
+			<!--Contenu des conditions générales de ventes-->
+			<div class="ln-body">
 
 				<h3 class="h3-ln">Objet</h3>
 

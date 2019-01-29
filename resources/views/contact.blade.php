@@ -16,9 +16,9 @@
 @include("header")
 
 	<main>
-
+		<!--Principal article of the contact page-->
 		<article class="contact-article-center">
-
+			<!--Principal section of the contact page-->
 			<section class="contact-section-center">
 
 				<h2>Contact</h2>

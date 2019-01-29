@@ -33,7 +33,7 @@ session_start();
 				<!--Form for creating an idea of ​​an event-->
 				<div class="formulaire">
 
-					@csrf
+					@csrf <!--token for Laravel-->
 
 					@if (isset($_GET['fieldEmpty']))
 					<p class='error'>Tous les champs obligatoires doivent être remplis</p>

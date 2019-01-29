@@ -20,7 +20,7 @@ use App\Http\Controllers\Controller;
 @include("header")
 
   <main>
-
+    <!--Principal article of the signUp page-->
    <article class="signUp-article-center">
 
     <section class="signUp-section-center">
@@ -36,7 +36,7 @@ use App\Http\Controllers\Controller;
      <form name="signUp" method="POST" action="signUp" onsubmit="return validateFormSignUp(this); ">
        <div class="formulaire">
 
-                @csrf
+                @csrf <!--Token for Laravel-->
 
                 @isset ($_GET['userExist'])
                   <p class="error">L'adresse email est déjà utilisée</p>
@@ -76,8 +76,7 @@ use App\Http\Controllers\Controller;
         <div class="form-group">
           <!--Password-->
           <input type="password" class="form-control" name="password" placeholder="Mot de passe">
-          <div id ="error_password">
-							</div>
+          <div id ="error_password"></div>
         </div>
 
         <div class="form-group">
@@ -86,7 +85,7 @@ use App\Http\Controllers\Controller;
           <div id ="error_password_conf">
 							</div>
         </div>
-
+        <!--Statut field of the POST method-->
         <input type="hidden" name="status" value="etudiant">
 
       </div>
@@ -97,7 +96,7 @@ use App\Http\Controllers\Controller;
      </div>
 
    </form>
-   <!--Phrase to redirect people already registered to the login page-->
+   <!--Sentence to redirect people already registered to the login page-->
    <div class="already">Déjà inscrit ? <a href="signIn"><span>Se connecter</span></a> </div>
 
    @endif
