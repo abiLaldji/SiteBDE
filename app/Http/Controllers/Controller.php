@@ -177,7 +177,7 @@ class Controller extends BaseController
 	// returns the event list from the API
 	public function getEvents(){
 		// request the event list to the API
-		/*$ch = curl_init();
+		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/event");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
@@ -204,18 +204,18 @@ class Controller extends BaseController
 				if($event['is_public'] == 1){
 					array_push($publicEvents, $event);
 				}
-			}*/
-			$publicEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+			}
+			//$publicEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
 			return $publicEvents;
-		/*}*/
-		$events = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+		}
+		//$events = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
 		// return all events
 		return $events;
 	}
 
 	// returns the ideas from the event list
 	public function getIdeas(){
-		/*$events = $this->getEvents();
+		$events = $this->getEvents();
 
 		$ideas = [];
 		$eventNumber = sizeof($events);
@@ -225,23 +225,22 @@ class Controller extends BaseController
 			if($event['is_approved'] == 0){
 				array_push($ideas, $event);
 			}
-		}*/
+		}
 
-		$ideas = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+		//$ideas = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
 		return $ideas;
 	}
 
 	// returns the event which have the most votes
 	public function getMonthEvent(){
-		/*$events = $this->getEvents();
+		$events = $this->getEvents();
 
-		echo '<br><br>';
 		$voteCount = array_column($events, 'vote_count');
 
-		array_multisort($voteCount, SORT_DESC, $events);*/
+		array_multisort($voteCount, SORT_DESC, $events);
 
-		return ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'];
-		//return array_shift($events);
+		//return ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'];
+		return array_shift($events);
 	}
 
 	// sends a new idea to the API
@@ -290,7 +289,7 @@ class Controller extends BaseController
 	// returns the events that have not occured yet from the event list
 	public function getNextEvents(){
 
-		/*$events = $this->getEvents();
+		$events = $this->getEvents();
 
 		$nextEvents = [];
 		$eventNumber = sizeof($events);
@@ -300,15 +299,15 @@ class Controller extends BaseController
 			if($event['is_approved'] == 1 && $event['date'] > date('Y-m-d')){
 				array_push($nextEvents, $event);
 			}
-		}*/
+		}
 
-		$nextEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+		//$nextEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
 		return $nextEvents;
 	}
 
 	public function getPastEvents(){
 
-		/*$events = $this->getEvents();
+		$events = $this->getEvents();
 
 		$pastEvents = [];
 		$eventNumber = sizeof($events);
@@ -318,15 +317,15 @@ class Controller extends BaseController
 			if($event['is_approved'] == 1 && $event['date'] < date('Y-m-d')){
 				array_push($pastEvents, $event);
 			}
-		}*/
+		}
 
-$pastEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
+//$pastEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event2', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event3', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'], ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata']];
 		return $pastEvents;
 	}
 
 	// returns the next event that will occure from the event list
 	public function getNextEvent(){
-/*$events = $this->getEvents();
+		$events = $this->getEvents();
 
 		$nextEvent = array_shift($events);
 		for ($i = 1; $i < sizeof($events); $i++){
@@ -334,15 +333,14 @@ $pastEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => '
 			if($events[$i]['is_approved'] == 1 && $events[$i]['date'] > $nextEvent['date']){
 				$nextEvent = $event;
 			}
-		}*/
+		}
 
-			$nextEvent = ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'];
+			//$nextEvent = ['title' => 'event4', 'date' => "aujourd'hui", 'description' => 'un evenement', 'picture' => './pictures/defaultPicture.png', 'first_name' => 'toto', 'last_name' => 'tata'];
 		return $nextEvent;
 	}
 
-	// returns the 3 best selling products from the API 
-	public function getTopSales(){
-		/*$ch = curl_init();
+	public function getProducts(){
+		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/product");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -353,66 +351,91 @@ $pastEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => '
 
 		$products = json_decode($output, true);
 
+		return $products;
+	}
+
+	public function getProduct($product){
+		echo $product;
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/product/name/" . $product);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+
+		$output = json_decode($output, true);
+		var_dump($output);
+
+		return ['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos', 'id_product' => '1'];
+	}
+
+	// returns the 3 best selling products from the API 
+	public function getTopSales(){
+		$products = $this->getProducts();
 
 		$price = array_column($products, 'price');
 
 		array_multisort($price, SORT_DESC, $products);
 
-		$topSales = [];*/
+		$topSales = [];
 
-		$topSales = [['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit2', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit3', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos']];
-		/*for($i=0;$i<3;$i++){
+		//$topSales = [['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit2', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit3', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos']];
+		for($i=0;$i<3;$i++){
 			array_push($topSales, array_shift($products));
-		}*/
+		}
 
 		return $topSales;
 	}
 
 	public function getNewProducts(){
-		/*$ch = curl_init();
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
-		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/product");
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		
-		$output = curl_exec($ch);
-		$info = curl_getinfo($ch);
-		curl_close($ch);
-		
-		$products = json_decode($output, true);
+		$products = $this->getProducts();
 
-		var_dump($info);
+		$newProducts = [];
 
-		$newProducts = [];*/
 
-		/*for($i=0 ; $i < 1 ; $i++){
+		for($i=0 ; $i < 3 ; $i++){
 			array_push($newProducts, array_pop($products));
 		}
-		return $newProducts;*/
+		return $newProducts;
 
-		return [['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit2', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit3', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos']];
-
+		//return [['name' => 'produit1', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit2', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos'],['name' => 'produit3', 'price' => '50', 'picture_url' => './pictures/defaultPicture.png', 'picture_alt' => 'descritpion', 'stock' => '15', 'item_sold' => '2', 'name_category' => 'Stylos']];
 	}
 
 	// returns the products categories from the API
 	public function getCategories(){
-
-		/*$ch = curl_init();
+		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/category/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 		$output = curl_exec($ch);
 		$info = curl_getinfo($ch);
-		curl_close($ch);*/
+		curl_close($ch);
 
-		$categories = ['pull', 'cerf volant', 'fusée', 'tank'];
+		$categories = json_decode($output, true);
+
+		//$categories = [['name' => 'pull', ], ['name' => 'cerf volant'], ['name' => 'fusée'], ['name' => 'tank']];
 		return $categories;
+	}
+
+	public function getProductsByCategory(String $category){
+		$products = $this->getProducts();
+		$categoryProducts = [];
+		foreach ($products as $key => $product) {
+			if($product['name_category'] == $category){
+				array_push($categoryProducts, $product);
+			}
+		}
+		return $categoryProducts;
 	}
 
 	// returns the campuses from the API
 	public function getCampus(){
 
-		/*$ch = curl_init();
+		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: ' . TOKEN));
 		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/campus/");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -422,9 +445,10 @@ $pastEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => '
 		curl_close($ch);
 
 
-		$campus = json_decode($output, true);*/
+		$campus = json_decode($output, true);
+		var_dump($campus);
 
-		$campus = ['pau', 'paris', 'nantes'];
+		//$campus = [['campus_name' => 'pau'], ['campus_name' =>  'paris'], ['campus_name' => 'nantes']];
 		return $campus;
 	}
 
@@ -483,5 +507,86 @@ $pastEvents = [['title' => 'event1', 'date' => "aujourd'hui", 'description' => '
 		setcookie('isUsingCookies', false, 0);
 		return redirect()->route('home');
 	}
+
+	public function addToCart(){
+		if(isset($_COOKIE['isUsingCookies']) && $_COOKIE['isUsingCookies'] == true){
+			$expirationTime = time()+60*60*24*62;
+		}else{
+			$expirationTime = 0;
+		}
+
+
+		if(isset($_COOKIE['cart'])){
+			$previousCart = json_decode($_COOKIE['cart'],true);
+			array_push($previousCart, [$_POST['id_product'], 'quantity' => '1']);
+			$newCart = json_encode($previousCart);
+
+
+			setcookie('cart', $newCart, $expirationTime);
+		}else{
+			setcookie('cart', json_encode([[$_POST['id_product'], 'quantity' => '1']]), $expirationTime);
+		}
+
+		return redirect()->route('cart');
+	}
+
+	public function addToOrder($productId, $insertId, $quantity){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/contain/" . $productId);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
+
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['id_product' => $productId,'id_purchase' => $insertId,'quantity' => $quantity]));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+
+
+	}
+
+	public function makeOrder(){
+		session_start();
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://" . IP . "/bde_site/api/purchase/");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: ' . TOKEN));
+
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['id_user' => $_SESSION['id_user'], 'date' => date('Y-m-d')]));
+		$output = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+
+		$insertId = json_decode($output,true)['insertId'];
+
+		$cart = json_decode($_COOKIE['cart'], true);
+
+		var_dump($cart);
+		foreach ($cart as $key => $product) {
+			var_dump($product);
+			$this->addToOrder($product['quantity'], $insertId, $product['quantity']);
+		}
+
+		// deletes the cart cookie
+		unset($_COOKIE['cart']);
+   		setcookie('cart', '', time() - 3600);
+
+   		return redirect()->route('cart', 'success');
+	}
+
+	/*public function sortProducts(){
+		$products = $this->getProductsByCategory($_POST['current_category']);
+
+		$filteredProducts = [];
+		foreach ($products as $key => $product) {
+			if($product['price'] > $_POST['min'] && $product['price'] < $_POST['max']){
+				array_push($filteredProducts, $product);
+			}
+		}
+
+		return view('shop/' . $_POST['current_category'], $filteredProducts);
+	}*/
 
 }
