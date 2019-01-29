@@ -86,31 +86,30 @@ session_start();
 			<div class="blue-stripe"><br></div>
 
 			<table class="table-event">
-
-
-				<?php 
-				$controller = new Controller();
-				$ideas = $controller->getIdeas();
-				?>
-				@for ($i = 0; $i < sizeof($ideas); $i++)
-				<tr>
-					<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
-					<td class="td-event-left">
-						<!--Logo permettant de valider ou supprimer un idée-->
-						<div class="desc-right">
-							<i class="fas fa-check ideabox-check"></i>
-							<i class="fas fa-times ideabox-cross"></i>
-						</div>
-						<div class="desc-left">
-							<p class="bold">Titre : {{$ideas[$i]['title']}}</p>
-							<p class="bold">Organisateur : {{$ideas[$i]['first_name'] . ' ' . $ideas[$i]['last_name']}}</p>
-							<p class="bold">Date : {{$ideas[$i]['date']}}</p> 
-							<p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}</p>
-							<!--Logos permettant de liker une idée ou de la signaler-->
-							<div class="like">
-								<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
-								<p class="like-counter">1</p>
-								<i class="fas fa-flag ideabox-flag"></i>
+					<?php 
+					$controller = new Controller();
+					$ideas = $controller->getIdeas();
+					?>
+					@for ($i = 0; $i < sizeof($ideas); $i++)
+					<tr>
+						<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
+						<td class="td-event-left">
+							<!--Logo permettant de valider ou supprimer un idée-->
+							<div class="desc-right">
+								<button class="ideabox-check"><i class="fas fa-check ideabox-check"></i></button>
+								<button class="ideabox-cross"><i class="fas fa-times"></i></button>
+							</div>
+							<div class="desc-left">
+								<p class="bold">Titre : {{$ideas[$i]['title']}}</p>
+								<p class="bold">Organisateur : {{$ideas[$i]['first_name'] . ' ' . $ideas[$i]['last_name']}}</p>
+								<p class="bold">Date : {{$ideas[$i]['date']}}</p> 
+								<p class="desc-event"><span class="bold">Description :</span> {{$ideas[$i]['description']}}</p>
+								<!--Logos permettant de liker une idée ou de la signaler-->
+								<div class="like">
+									<a href="/"><i class="fas fa-thumbs-up ideabox-thumb"></i></a>
+									<p class="like-counter">1</p>
+									<i class="fas fa-flag ideabox-flag"></i>
+								</div>
 							</div>
 						</div>
 

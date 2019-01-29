@@ -25,16 +25,19 @@ use App\Http\Controllers\Controller;
    
     <main>
         <article id="article_compte">
+            <!--displays a form that allows to modify our profile-->
             <section id="section_compte">
                 <h2>Mon compte</h2>
                 <div class="blue-stripe"><br></div>
                     @if($_SESSION['status'] == 'bde_member')
+                        <!--redirection to add product-->
                         <button id="key-admin"><i class="fas fa-key"></i></button>
                     @endif
                     @if($_SESSION['status'] == 'employe')
+                        <!--allows us to download all images-->
                         <button id="download-all-pic"><i class="fas fa-file-download"></i></button>
                     @endif
-                    
+                    <!--form-->
                     <form method="POST" action="putUser">
 
                         @csrf
