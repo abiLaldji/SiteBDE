@@ -52,7 +52,7 @@
                 <!--Make sure the form has the autocomplete function switched off:-->
                 <form autocomplete="off" action="/action_page.php">
                     <div class="autocomplete" style="width:300px;">
-                        <input id="myInput" type="text" name="myCountry" placeholder="Rechercher produit">
+                        <input id="searchBar" type="text" name="product" placeholder="Rechercher produit">
                     </div>
                     <input type="submit">
                 </form>

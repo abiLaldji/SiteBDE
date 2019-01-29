@@ -17,7 +17,6 @@ session_start();
   
 	<script type="text/javascript" src="{{ URL::asset('js/checkForms.js') }}"></script>
 
-
 </head>
 
 
@@ -102,8 +101,8 @@ session_start();
 						<td><img src="./pictures/defaultPicture.png" alt="" class="pic-event"></td>
 						<td class="td-event-left">
 							<div class="desc-right">
-								<i class="fas fa-check ideabox-check"></i>
-								<i class="fas fa-times ideabox-cross"></i>
+								<button class="fas fa-check ideabox-check" onclick="{{$controller->approveEvent($ideas[$i]['id_event'])}}"></button>
+								<button class="fas fa-times ideabox-cross" onclick="{{$controller->privateEvent($ideas[$i]['id_event'])}}"></button>
 							</div>
 							<div class="desc-left">
 								<p class="bold">Titre : {{$ideas[$i]['title']}}</p>
