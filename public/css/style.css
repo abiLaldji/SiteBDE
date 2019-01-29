@@ -421,7 +421,7 @@ table{
 .addProduct-article-center{
     margin-left: 22%;
     margin-right: 22%;
-    background-color: rgb(40, 40, 40);
+    background-color: black;
     padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 5%;
@@ -1878,6 +1878,14 @@ table{
         margin-left: 12%;
         margin-right: 12%;
     }
+
+
+    /*----------------------------------------------add-product---------------------------------------------------------*/
+
+    .addProduct-article-center{
+        margin-left: 12%;
+        margin-right: 12%;
+    }
 }
 
 /*-------------------------------------------------screen-0/699px------------------------------------------------------*/
@@ -2204,6 +2212,16 @@ table{
         padding-left: 0%;
         padding-right: 0%;
         padding-top: 5%;
+    }
+
+
+    /*----------------------------------------------add-product---------------------------------------------------------*/
+
+    .addProduct-article-center{
+        margin-left: 1%;
+        margin-right: 1%;
+        padding-left: 0%;
+        padding-right: 0%;
     }
 
 }

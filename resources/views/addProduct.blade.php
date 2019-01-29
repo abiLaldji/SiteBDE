@@ -23,9 +23,10 @@ session_start();
 
    <article class="addProduct-article-center">
 
-    <h2 class="h2white"> Ajout de produit </h2>
+    
 
     <section class="addProduct-section-center">
+      <h2> Ajout de produit </h2>
 
       <div class="center">
        <img src="./pictures/stylo2.png" alt="" class="picture-product preview">
