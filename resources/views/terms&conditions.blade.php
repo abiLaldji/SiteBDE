@@ -68,8 +68,6 @@
 				<div>
 					Une fois vôtre commande effectuée, un membre du BDE vous contactera sous 48h (jours ouvrés seulement) afin de convenir d'un lieu de rendez-vous pour le paiement (si par espèce) et la remise de la commande.<br>
 					Si vous n'avez reçu aucun message au bout de 48h n'hésitez pas à <a href="contact">nous contacter</a> , nous vous répondrons dès que possible.
-
-					<!-- Une fois commandés, les produits seront livrés sous 48h (jours ouvrés seulement) directement en main propre par un membre du BDE, si le produit n'a pas été livré sous 48h ou que le contenu de la commande est incorrect, <a href="contact">contactez nous</a>, nous règleront le problème le plus rapidement possible.<br> -->
 				</div>
 				<br>
 				<div class="bold">Pour les membres des autres centres : <br></div>
