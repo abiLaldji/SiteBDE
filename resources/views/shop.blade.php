@@ -8,7 +8,6 @@ session_start();
 <html>
 <head>
 
-
     <title>Boutique</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -20,13 +19,13 @@ session_start();
   
 </head>
 
-
 @include("headerShop")
    
     <main id="main-shop">
         <aside id="aside-1-shop" class="border-raduis">
             <h2>Nouveautés</h2>
             <div class="gray-stripe-111"><br></div>
+            <!--Carousel affichant les nouveaux produits de la boutique-->
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
             
                 <!-- Wrapper for slides -->
@@ -63,7 +62,6 @@ $newProducts = $controller->getNewProducts();
                 </div>
               </div>
 
-
               <div>
                 <br>
 
@@ -73,6 +71,7 @@ $newProducts = $controller->getNewProducts();
             <h2>Catégories d'article</h2>
             <div class="blue-stripe"><br></div>
             <section id="section-shop" class="border-raduis">
+              <!--Liste des articles de la boutique-->
                 <article class="article-shop">
                     <a class="a-shop" href="shopCategory"><img src="pictures/hoodi.png" class="image-shop"><p class="p-shop">salut</p></a>
                 </article>
@@ -96,12 +95,8 @@ $newProducts = $controller->getNewProducts();
         <aside id="aside-2-shop" class="border-raduis">
             <h2>Top vente</h2>
             <div class="gray-stripe-111"><br></div>
+            <!--Carousel contenant le top 3 des articles les plus vendus-->
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-            <div class="carousel-inner">
-
 
 
   <?php 
