@@ -60,7 +60,7 @@ session_start();
 
 
           </div>
-
+          @endfor
           <!--Left and right arrows of the carousel -->
           <!--Left arrow-->
           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -104,8 +104,6 @@ session_start();
       <div>
         Le BDE est composé d'élèves de différentes promos, des réunions sont régulièrements organisés avec les représentant de chaques promotions l'objectifs étant d'amener un maximum de personne à chaque évènements.
       </div>
-
-      @endfor
 
 
     </aside>

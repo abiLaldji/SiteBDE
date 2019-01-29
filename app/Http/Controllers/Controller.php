@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 
 // The API IP
-const IP = '10.64.128.131:3001';
+const IP = 'localhost:3001';
 
 // The token for the API
 const TOKEN = '8SIE4CaWSiGb9IFQa8DSPyXVQ63n9jWHiXRsatOpoxBrHyxKKnTSFOC8TpIWxo4F';

@@ -67,7 +67,7 @@ $categories = $controller->getCategories();
                 @for($i=0 ; $i < sizeof($categories) ; $i++)
 
                 <article class="article-shop">
-                    <a class="a-shop" href="shop/{{$categories[$i]['name']}}"><img src="../pictures/defaultPicture.png" class="image-shop"><p class="p-shop">salut</p></a>
+                    <a class="a-shop" href="shop/{{$categories[$i]['name']}}"><img src="../pictures/defaultPicture.png" class="image-shop"><p class="p-shop">{{$categories[$i]['name']}}</p></a>
                 </article>
                 @endfor
                 <div class="break"><br></div>
