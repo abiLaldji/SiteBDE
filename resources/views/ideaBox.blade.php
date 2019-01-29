@@ -33,23 +33,6 @@ session_start();
 				<!--Form for creating an idea of ​​an event-->
 				<div class="formulaire">
 
-						@if (isset($_GET['notConnected']))
-						<p class="error">Vous devez être connecté pour ajouter une idée</p>
-						@endif
-
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Titre" name="title">
-							<div id ="error_title">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<textarea class="form-control" placeholder="Description" rows="3" name="description"></textarea>
-							<div id ="error_description">
-							</div>
-						</div>
-
-
 					@csrf
 
 					@if (isset($_GET['fieldEmpty']))
