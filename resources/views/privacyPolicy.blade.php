@@ -18,16 +18,16 @@
 	<main>
 
 		<article class="ln-article-center">
-
+			<!--Header of the article-->
 			<div class="ln-header">
 				<h2 class="ln-h2">Politique de confidentialité</h2>
 			</div>
-
+			<!--Yellow stripe-->
 			<div class="ln-ystripe">
 				<br/>
 			</div>
-
-			<div class="ln-corp">
+			<!--body of the article-->
+			<div class="ln-body">
 				<!--Introduction-->
 				<div class="ln-intro">
 

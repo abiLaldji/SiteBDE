@@ -44,6 +44,7 @@ use App\Http\Controllers\Controller;
 
                         <label id="first-label-compte"> Nom : {{$_SESSION['last_name']}}   </label><input type="text" placeholder="Nouveau nom"  class="border-raduis input-account" name="first_name"><br><br>
                         <label> Prénom : {{$_SESSION['first_name']}}</label>   <input type="text" placeholder="Nouveau prenom"  class="border-raduis input-account" name="last_name"><br><br>
+                        <!--dropdown list-->
                         <label for="campus">Centre CESI : </label>
                         <select name="campus_name" id="campus" class="border-raduis">
                             <optgroup label='Centre Actuel'>
@@ -64,6 +65,7 @@ $campus = $controller->getCampus();
                         <label> Adresse mail : {{$_SESSION['email']}}   </label><input type="text" placeholder="Nouvelle adresse"  class="border-raduis input-account" name="email"><br><br>
                         <label> Changer de mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account" name="password"><br><br>
                         <label> Retaper le nouveau mot de passe   </label><input type="text" placeholder="Nouveau mot de passe"  class="border-raduis input-account" name="password_conf"><br><br>
+                        <!--confirm change-->
                         <input id="valider-les-modifications" type="submit" value="Valider les modifications">
                     </form>
                     <div><br></div>

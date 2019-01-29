@@ -32,6 +32,7 @@
         <div class="blue-stripe"><br></div>
             <article class="article-Comment_image_event">
                 <div> <br></div>
+                <!--table cut into 4 columns, username, timestamping, comment and suppr-->
                 <table id="table-Comment_image_event">
                     <tr class="tr-Comment_image_event">
                         <td class="td-1-Comment_image_event"><p>Simpson Bart</p></td>

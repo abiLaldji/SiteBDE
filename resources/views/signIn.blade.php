@@ -33,7 +33,7 @@
 				<form name="login" method="POST" onsubmit="return validateFormSignIn(this);" action="signIn">
 					<div class="formulaire">
 
-						@csrf
+						@csrf<!--Token for Laravel-->
 
 						<div class="form-group">
 							<!--email adress-->
