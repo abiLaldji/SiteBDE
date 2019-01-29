@@ -247,8 +247,12 @@ class Controller extends BaseController
 	public function submitIdea(Request $request){
 		session_start();
 
+		
+		$name = date('Y-m-d_h-m-s') . $_FILES['picture']['name'];
+		$targetPath = $_SERVER['DOCUMENT_ROOT'] . '\\pictures\\' . $name;
+		move_uploaded_file($_FILES['picture']['tmp_name'], $targetPath);
 
-		if(!isset($_SESSION['id_user'])){
+		/*if(!isset($_SESSION['id_user'])){
 			return redirect()->route('ideaBox', 'notConnected');
 		}
 
@@ -277,13 +281,7 @@ class Controller extends BaseController
 		$info = curl_getinfo($ch);
 		curl_close($ch);
 
-		var_dump($output);
-		echo '<br>';
-		var_dump($info);
-		echo '<br>';
-		var_dump($_POST);
-
-		return redirect()->route('ideaBox', 'success');
+		return redirect()->route('ideaBox', 'success');*/
 	}
 
 	// returns the events that have not occured yet from the event list
@@ -368,7 +366,6 @@ class Controller extends BaseController
 
 		$output = json_decode($output, true);
 
-		var_dump($output);
 
 		return $output[0];
 	}
@@ -447,7 +444,6 @@ class Controller extends BaseController
 
 
 		$campus = json_decode($output, true);
-		var_dump($campus);
 
 		//$campus = [['campus_name' => 'pau'], ['campus_name' =>  'paris'], ['campus_name' => 'nantes']];
 		return $campus;
@@ -511,31 +507,36 @@ class Controller extends BaseController
 
 
 	public function addToCart(){
+
+
 		if(isset($_COOKIE['isUsingCookies']) && $_COOKIE['isUsingCookies'] == true){
 			$expirationTime = time()+60*60*24*62;
 		}else{
 			$expirationTime = 0;
 		}
-
-
+		unset($_POST['_token']);
 		if(isset($_COOKIE['cart'])){
 			$previousCart = json_decode($_COOKIE['cart'],true);
 			/*foreach ($previousCart as $key => $product) {
-				if ($product
+				var_dump($product);
 			}*/
-
-
+			var_dump($previousCart);
+echo '<br><br>';
 
 			array_push($previousCart, ['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]);
 			$newCart = json_encode($previousCart);
 
-
+			var_dump($newCart);
 			setcookie('cart', $newCart, $expirationTime);
 		}else{
 			setcookie('cart', json_encode(['id_product' => $_POST['id_product'], 'quantity' => '1', 'price' => $_POST['price'], 'picture_url' => $_POST['picture_url'], 'name' => $_POST['name'], 'picture_alt' => $_POST['picture_alt'], 'stock' => $_POST['stock'], 'item_sold' => $_POST['item_sold'], 'name_category' => $_POST['name_category']]), $expirationTime);
+
+			var_dump($_COOKIE['cart']);
 		}
 
-		return redirect()->route('cart');
+		//var_dump(json_decode($_COOKIE['cart']));
+
+		//return redirect()->route('cart');
 	}
 
 	public function addToOrder($productId, $insertId, $quantity){
@@ -571,9 +572,7 @@ class Controller extends BaseController
 
 		$cart = json_decode($_COOKIE['cart'], true);
 
-		var_dump($cart);
 		foreach ($cart as $key => $product) {
-			var_dump($product);
 			$this->addToOrder($product['quantity'], $insertId, $product['quantity']);
 		}
 

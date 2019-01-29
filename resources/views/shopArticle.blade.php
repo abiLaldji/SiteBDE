@@ -35,6 +35,13 @@ $product = $controller->getProduct(app('request')->route()->parameters['product'
                     <form method="POST" action="{{url('addToCart')}}" style='display: inline;'>
                         @csrf
                         <input type="hidden" value="{{$product['id_product']}}" name="id_product">
+                        <input type="hidden" value="{{$product['picture_url']}}" name="picture_url">
+                        <input type="hidden" value="{{$product['price']}}" name="price">
+                        <input type="hidden" value="{{$product['picture_alt']}}" name="picture_alt">
+                        <input type="hidden" value="{{$product['name']}}" name="name">
+                        <input type="hidden" value="{{$product['stock']}}" name="stock">
+                        <input type="hidden" value="{{$product['item_sold']}}" name="item_sold">
+                        <input type="hidden" value="{{$product['name_category']}}" name="name_category">
                         <input type="submit" class="border-raduis" id="button-article" value="Ajouter au panier">
                     </form>
 
